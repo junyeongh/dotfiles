@@ -1,0 +1,50 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "assistant": {
+    "default_model": {
+      "model": "claude-3-7-sonnet",
+      "provider": "copilot_chat"
+    },
+    "version": "2"
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_family": "D2CodingLigature Nerd Font",
+  "buffer_font_size": 16,
+  "edit_predictions": {
+    "disabled_globs": [ ],
+    "mode": "eager_preview"
+  },
+  "ensure_final_newline_on_save": false,
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "format_on_save": "off",
+  "icon_theme": "Material Icon Theme",
+  "show_edit_predictions": true,
+  "show_whitespaces": "all",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "terminal": {
+    "font_family": "FiraCode Nerd Font",
+    "font_size": 12,
+    "line_height": "standard"
+  },
+  "theme": "Github Dark Dimmed",
+  "ui_font_size": 16,
+  "vim_mode": false,
+  // panels
+  "collaboration_panel": { "button": false },
+  "git_panel": { "dock": "right" },
+  "outline_panel": { "dock": "right" },
+  "notification_panel": { "button": false },
+  "project_panel": { "show_hidden_files": true }
+}

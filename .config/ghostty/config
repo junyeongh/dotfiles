@@ -1,0 +1,7 @@
+# Appearance
+theme = Dimidium
+font-family = "FiraCode Nerd Font"
+
+# Window size
+window-width  = 120
+window-height = 36

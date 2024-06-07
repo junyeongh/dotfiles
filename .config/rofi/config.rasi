@@ -1,0 +1,10 @@
+configuration {
+    display-drun: "Applications";
+    drun-display-format: "{icon} {name}";
+    display-windw: "Windows";
+    modi: "drun,window";
+    show-icons: true;
+    // dpi: 192;
+}
+
+@theme "themes/spotlight.rasi"
