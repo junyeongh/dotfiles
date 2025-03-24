@@ -15,8 +15,6 @@ yarn-error.log*
 *.old
 *.tmp
 *.temp
-*.~lock
-*.lock
 *.cache
 *.gz
 *.zip
