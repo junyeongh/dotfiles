@@ -1,31 +1,32 @@
 [user]
-    name = Junyeong Heo
-    email = hhjjyy1122@gmail.com
+	name = Junyeong Heo
+	email = hhjjyy1122@gmail.com
 [init]
-    defaultBranch = main
+	defaultBranch = main
 [filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [safe]
-    directory = *
+	directory = *
 [include]
-    path = ~/.gitconfig_local
+	path = ~/.gitconfig_local
 [core]
-    pager = delta
-    editor = code --wait
-    excludesfile = ~/.gitignore
+	pager = delta
+	editor = code --wait
+	excludesfile = ~/.gitignore
+	autocrlf = input
 [delta]
-    side-by-side = true
-    hunk-header-style = file line-number syntax
+	side-by-side = true
+	hunk-header-style = file line-number syntax
 
 # Diff tool
 [diff]
-    tool = difftastic
+	tool = difftastic
 [difftool]
-    prompt = false
+	prompt = false
 [difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+	cmd = difft "$LOCAL" "$REMOTE"
 [difftool "code"]
-    cmd = code --wait --diff "$LOCAL" "$REMOTE"
+	cmd = code --wait --diff "$LOCAL" "$REMOTE"
