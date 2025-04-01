@@ -39,3 +39,5 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4
 
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['']"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys volume-step 5
