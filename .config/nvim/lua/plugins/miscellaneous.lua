@@ -41,11 +41,10 @@ return {
     event = "InsertCharPre", -- Set the event to 'InsertCharPre' for better compatibility
     priority = 1000,
   },
+  -- visual-whitespace.nvim
   {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      -- Disable default tab keybinding in LuaSnip
-      return {}
-    end,
+    "mcauley-penney/visual-whitespace.nvim",
+    config = true,
+    -- keys = { 'v', 'V', '<C-v>' }, -- optionally, lazy load on visual mode keys
   },
 }
