@@ -8,6 +8,7 @@
 // from the command palette or from `Zed` application menu.
 {
   "assistant": {
+    "default_profile": "code-writer",
     "default_model": {
       "model": "claude-3-7-sonnet",
       "provider": "copilot_chat"
@@ -19,7 +20,7 @@
   "buffer_font_size": 16,
   "edit_predictions": {
     "disabled_globs": [ ],
-    "mode": "eager_preview"
+    "mode": "subtle"
   },
   "ensure_final_newline_on_save": false,
   "features": {
