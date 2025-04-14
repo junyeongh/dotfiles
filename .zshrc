@@ -27,6 +27,9 @@ if [ -d "/home/linuxbrew" ]; then
     if command -v fzf &>/dev/null; then
         alias fzfp='fzf --preview "batcat --color=always --style=header,grid --line-range :500 {}"'
     fi
+    if command -v lazydocker &>/dev/null; then
+        alias ld='lazydocker'
+    fi
     if command -v lazygit &>/dev/null; then
         alias lg='lazygit'
     fi
