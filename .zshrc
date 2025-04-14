@@ -17,6 +17,9 @@ compinit
 
 if [ -d "/home/linuxbrew" ]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    if command -v direnv &>/dev/null; then
+        eval "$(direnv hook zsh)"
+    fi
     if command -v eza &>/dev/null; then
         alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
         alias tree='eza -all --tree'

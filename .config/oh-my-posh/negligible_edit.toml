@@ -11,13 +11,13 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
-    template = '{{ if .WSL }}WSL at {{ end }}{{.Icon}}'
+    template = '{{ .Icon }} {{ if .WSL }}WSL at {{ end }}{{ .UserName }}'
     foreground = 'cyan'
     type = 'os'
     style = 'powerline'
 
   [[blocks.segments]]
-    template = ' {{ .Path }} '
+    template = ' {{ .Path }}'
     foreground = 'cyan'
     type = 'path'
     style = 'plain'
@@ -26,7 +26,7 @@ version = 3
       style = 'full'
 
   [[blocks.segments]]
-    template = ':: {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }} '
+    template = ' :: {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}'
     foreground = '#F1502F'
     type = 'git'
     style = 'plain'
@@ -35,17 +35,23 @@ version = 3
       fetch_status = true
       fetch_package_manager = true
 
-
 [[blocks]]
   type = 'prompt'
   alignment = 'right'
+
+  # system::shell
+  [[blocks.segments]]
+    template = ' {{ .Name }} '
+    foreground = 'cyan'
+    type = "shell"
+    style = "powerline"
 
   # Programming languages
   [[blocks.segments]]
     type = 'node'
     foreground = '#6CA35E'
     style = 'powerline'
-    template = ' {{ if .PackageManagerIcon }}+ {{ .PackageManagerIcon }} {{ end }}v{{ .Full }} '
+    template = ' {{ if .PackageManagerIcon }}+{{ .PackageManagerIcon }} {{ end }} ({{ .Full }}) '
 
     [blocks.segments.properties]
       fetch_package_manager = true
@@ -68,13 +74,13 @@ version = 3
     type = "go"
     style = "powerline"
     foreground = "#7FD5EA"
-    template = "  {{ .Full }} "
+    template = " {{ .Full }} "
 
   [[blocks.segments]]
     type = "haskell"
     style = "powerline"
     foreground = "#906cff"
-    template = "  {{ .Full }}"
+    template = " {{ .Full }} "
 
   # system::root
   [[blocks.segments]]
@@ -85,8 +91,8 @@ version = 3
 
   # time
   [[blocks.segments]]
-    template = ' {{ .CurrentDate | date .Format }} '
-    foreground = 'lightWhite'
+    template = '{{ .CurrentDate | date .Format }}'
+    foreground = 'default'
     type = 'time'
     style = 'plain'
 
@@ -96,7 +102,7 @@ version = 3
   newline = true
 
   [[blocks.segments]]
-    template = '➜ '
+    template = '$ '
     foreground = 'lightGreen'
     type = 'status'
     style = 'powerline'

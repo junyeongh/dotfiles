@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 brew "bat"
 brew "difftastic"
+brew "direnv"
 brew "eza"
 brew "fastfetch"
 brew "fnm"
