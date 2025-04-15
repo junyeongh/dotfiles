@@ -3,7 +3,7 @@
 ```shell
 cd ~/dotfiles
 stow -D . # Unlink all
-stow . # Link all
+stow .    # Link all
 ```
 
 ## [Homebrew](https://brew.sh/) for linux
