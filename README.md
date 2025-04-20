@@ -6,7 +6,17 @@ stow -D . # Unlink all
 stow .    # Link all
 ```
 
-## [Homebrew](https://brew.sh/) for linux
+## Nix
+
+[Download | Nix & NixOS](https://nixos.org/download/)
+
+```shell
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
+[NixOS Search - Packages](https://search.nixos.org/packages)
+
+## [Homebrew](https://brew.sh/) for linux (deprecated; replaced with Nix)
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
