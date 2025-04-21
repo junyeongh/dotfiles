@@ -33,8 +33,6 @@ build/
 target/
 tmp/
 temp/
-result/
-result
 *.class
 *.jar
 *.war

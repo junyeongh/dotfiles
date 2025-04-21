@@ -13,6 +13,13 @@ compinit
 # End of lines added by compinstall
 
 ####################################################################################################
+# Homebrew for Linux
+
+if [ -d "/home/linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+####################################################################################################
 # Alias definitions
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases

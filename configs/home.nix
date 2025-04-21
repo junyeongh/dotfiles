@@ -20,6 +20,7 @@
       neovim
       oh-my-posh
       ripgrep
+      stow
       uv
       yazi
       zoxide

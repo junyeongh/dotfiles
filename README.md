@@ -2,8 +2,14 @@
 
 ```shell
 cd ~/dotfiles
-stow -D . # Unlink all
-stow .    # Link all
+
+# After installing Nix,
+nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch -f configs/home.nix
+# or
+nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ./configs#yeong
+
+stow -D configs # Unlink all
+stow configs    # Link all
 ```
 
 ## Nix
@@ -14,7 +20,25 @@ stow .    # Link all
 sh <(curl -L https://nixos.org/nix/install) --daemon
 ```
 
+[Home Manager Manual](https://nix-community.github.io/home-manager/index.xhtml)
+
+```shell
+# Install using nix profile
+nix profile install nixpkgs#home-manager
+# or
+# Install using nix-channel
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+
+nix-shell '<home-manager>' -A install
+
+# After installing home-manager
+home-manager switch -f configs/home.nix
+```
+
 [NixOS Search - Packages](https://search.nixos.org/packages)
+
+---
 
 ## [Homebrew](https://brew.sh/) for linux (deprecated; replaced with Nix)
 
@@ -25,34 +49,4 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 ```shell
 brew bundle dump
 brew bundle
-```
-
-## Install Programming Languages
-
-### Install Rust
-
-<https://www.rust-lang.org/tools/install/>
-
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-### Install Haskell
-
-<https://www.haskell.org/ghcup/>
-
-```bash
-sudo apt install build-essential curl libffi-dev libffi8 libgmp-dev libgmp10 libncurses-dev pkg-config
-curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
-```
-
-### Install Clojure
-
-<https://clojure.org/guides/install_clojure/>
-
-```bash
-sudo apt install
-curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh
-chmod +x linux-install.sh
-sudo ./linux-install.sh
 ```
