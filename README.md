@@ -22,18 +22,21 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 [Home Manager Manual](https://nix-community.github.io/home-manager/index.xhtml)
 
-```shell
+<!--
 # Install using nix profile
 nix profile install nixpkgs#home-manager
-# or
+-->
+```shell
 # Install using nix-channel
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 
 nix-shell '<home-manager>' -A install
 
-# After installing home-manager
-home-manager switch -f configs/home.nix
+# After installing home-manager, update packages using:
+home-manager switch -f home.nix
+# or
+home-manager switch --flake flake.nix
 ```
 
 [NixOS Search - Packages](https://search.nixos.org/packages)
