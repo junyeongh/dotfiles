@@ -5,7 +5,7 @@
     username = "yeong";
     homeDirectory = "/home/yeong";
     stateVersion = "24.11";
-    packages = with pkgs; [
+    packages = with pkgs; [ # https://search.nixos.org/packages
       bat
       btop
       delta
@@ -15,6 +15,7 @@
       fastfetch
       fnm
       fzf
+      git
       lazydocker
       lazygit
       neovim
@@ -24,6 +25,12 @@
       uv
       yazi
       zoxide
+
+      # GUI tools
+      # discord
+      # firefox
+      # slack
+      # spotify
     ];
     file = { };
     sessionVariables = { };

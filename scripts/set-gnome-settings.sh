@@ -18,10 +18,10 @@ gsettings set org.gnome.shell.keybindings open-new-window-application-7 "['<Shif
 gsettings set org.gnome.shell.keybindings open-new-window-application-8 "['<Shift><Alt>8']"
 gsettings set org.gnome.shell.keybindings open-new-window-application-9 "['<Shift><Alt>9']"
 
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 ['<Shift><Super>1']
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 ['<Shift><Super>2']
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 ['<Shift><Super>3']
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 ['<Shift><Super>4']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>4']"
 
 gsettings set org.gnome.shell.keybindings toggle-message-tray "['<Super>m']"
 gsettings set org.gnome.shell.keybindings show-screenshot-ui "['Print']"

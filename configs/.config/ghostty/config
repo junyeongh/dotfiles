@@ -5,3 +5,6 @@ font-family = "FiraCode Nerd Font"
 # Window size
 window-width  = 120
 window-height = 36
+
+# copy-on-select = clipboard
+# clipboard-trim-trailing-spaces = true
