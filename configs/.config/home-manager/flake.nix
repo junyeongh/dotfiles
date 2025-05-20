@@ -1,10 +1,6 @@
 {
   description = "Home Manager configuration of yeong";
 
-  nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
-  };
-
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -14,11 +10,13 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
       homeConfigurations."yeong" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 

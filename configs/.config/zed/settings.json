@@ -8,9 +8,9 @@
 // from the command palette or from `Zed` application menu.
 {
   "assistant": {
-    "default_profile": "code-writer",
+    "default_profile": "minimal",
     "default_model": {
-      "model": "claude-3-7-sonnet",
+      "model": "claude-3.7-sonnet",
       "provider": "copilot_chat"
     },
     "version": "2"

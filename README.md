@@ -4,9 +4,9 @@
 cd ~/dotfiles
 
 # After installing Nix,
-nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch -f configs/home.nix
+nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch -f ~/dotfiles/configs/.config/home-manager/home.nix
 # or
-nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ./configs#yeong
+nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ~/dotfiles/configs/.config/home-manager#yeong
 
 stow -D configs # Unlink all
 stow configs    # Link all
@@ -22,10 +22,6 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 [Home Manager Manual](https://nix-community.github.io/home-manager/index.xhtml)
 
-<!--
-# Install using nix profile
-nix profile install nixpkgs#home-manager
--->
 ```shell
 # Install using nix-channel
 nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
@@ -33,10 +29,11 @@ nix-channel --update
 
 nix-shell '<home-manager>' -A install
 
+# Install using nix profile
+nix profile install nixpkgs#home-manager
+
 # After installing home-manager, update packages using:
-home-manager switch -f home.nix
-# or
-home-manager switch --flake flake.nix
+home-manager switch
 ```
 
 [NixOS Search - Packages](https://search.nixos.org/packages)

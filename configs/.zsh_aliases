@@ -74,8 +74,6 @@ function cd_ls() {
 }
 alias cd='cd_ls'
 
-alias homeup='nix-channel --update && home-manager switch -f ~/home.nix'
-
 # Environment variables
 export EDITOR='nvim'
 export VISUAL='code'
