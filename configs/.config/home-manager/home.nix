@@ -25,12 +25,6 @@
       uv
       yazi
       zoxide
-
-      # GUI tools
-      # discord
-      # firefox
-      # slack
-      # spotify
     ];
     file = { };
     sessionVariables = { };
