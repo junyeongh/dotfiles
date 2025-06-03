@@ -24,7 +24,6 @@
       ripgrep
       stow
       uv
-      yazi
       zoxide
     ];
     file = { };

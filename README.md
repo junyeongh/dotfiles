@@ -8,10 +8,16 @@ nix --extra-experimental-features "nix-command flakes" run home-manager/master -
 # or
 nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ~/dotfiles/configs/.config/home-manager#yeong
 
-stow -D configs # Unlink all
+stow --delete configs # Unlink all
 stow configs    # Link all
 ```
 
+```shell
+# stow options
+-S, --stow            Stow the package names that follow this option
+-D, --delete          Unstow the package names that follow this option
+-R, --restow          Restow (like stow -D followed by stow -S)
+```
 ## Nix
 
 [Download | Nix & NixOS](https://nixos.org/download/)
