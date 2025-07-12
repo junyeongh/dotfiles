@@ -18,6 +18,7 @@ stow configs    # Link all
 -D, --delete          Unstow the package names that follow this option
 -R, --restow          Restow (like stow -D followed by stow -S)
 ```
+
 ## Nix
 
 [Download | Nix & NixOS](https://nixos.org/download/)
