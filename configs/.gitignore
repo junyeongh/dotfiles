@@ -66,7 +66,13 @@ __pycache__/
 .vscode/
 
 # ------------------------------
-# Other files
+# OS-specific files
+# ------------------------------
+.DS_Store
+Thumbs.db
+
+# ------------------------------
+# Miscellaneous
 # ------------------------------
 .env
 .env.*
@@ -80,9 +86,4 @@ public.pem
 *.pfx
 *.p12
 *.jks
-
-# ------------------------------
-# OS-specific files
-# ------------------------------
-.DS_Store
-Thumbs.db
+*.local.*
