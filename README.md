@@ -9,7 +9,7 @@ nix --extra-experimental-features "nix-command flakes" run home-manager/master -
 nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ~/dotfiles/configs/.config/home-manager#yeong
 
 stow --delete configs # Unlink all
-stow configs    # Link all
+stow configs          # Link all
 ```
 
 ```shell
@@ -47,7 +47,7 @@ home-manager switch
 
 ---
 
-## [Homebrew](https://brew.sh/) for linux (deprecated; replaced with Nix)
+## [Homebrew](https://brew.sh/) for Linux (deprecated; replaced with Nix)
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

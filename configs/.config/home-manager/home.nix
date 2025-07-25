@@ -17,6 +17,7 @@
       fzf
       git
       git-lfs
+      just
       lazydocker
       lazygit
       neovim
