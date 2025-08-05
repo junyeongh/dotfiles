@@ -84,7 +84,7 @@ version = 3
 
   # system::root
   [[blocks.segments]]
-    template = '| root |'
+    template = '| root | '
     foreground = 'red'
     type = 'root'
     style = 'plain'

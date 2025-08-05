@@ -3,7 +3,7 @@
 ```shell
 cd ~/dotfiles
 
-# After installing Nix,
+# After installing Nix, run the following command to set up Home Manager
 nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch -f ~/dotfiles/configs/.config/home-manager/home.nix
 # or
 nix --extra-experimental-features "nix-command flakes" run home-manager/master -- switch --flake ~/dotfiles/configs/.config/home-manager#yeong
@@ -47,13 +47,20 @@ home-manager switch
 
 ---
 
-## [Homebrew](https://brew.sh/) for Linux (deprecated; replaced with Nix)
+## [Homebrew](https://brew.sh/) for Linux (deprecated)
+
+Managing CLI tools is replaced with Nix + Home Manager
 
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+<https://docs.brew.sh/>
 ```shell
+# List installed formulae that are not dependencies of another installed formula or cask.
+brew leaves
+
+# Bundler for non-Ruby dependencies from Homebrew, Homebrew Cask, Mac App Store, Whalebrew and Visual Studio Code (and forks/variants).
 brew bundle dump
 brew bundle
 ```
