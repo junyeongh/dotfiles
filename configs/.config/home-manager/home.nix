@@ -4,7 +4,8 @@
   home = {
     username = "yeong";
     homeDirectory = "/home/yeong";
-    stateVersion = "25.05";
+    stateVersion = "25.11";
+
     packages = with pkgs; [ # https://search.nixos.org/packages
       bat
       btop
@@ -32,4 +33,5 @@
   };
 
   programs.home-manager.enable = true;
+  targets.genericLinux.enable = true;
 }

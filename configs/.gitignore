@@ -1,59 +1,57 @@
 # ------------------------------
 # Logs & Temp files
 # ------------------------------
+*.cache
+*.gz
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 *.pid
 *.seed
 *.state
-*.swp
-*.swo
 *.swn
-*.bak
-*.old
-*.tmp
-*.temp
-*.cache
-*.gz
-*.zip
+*.swo
+*.swp
 *.tar
 *.tar.gz
+*.temp
+*.tmp
+*.zip
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # ------------------------------
 # Dependencies & Build artifacts
 # ------------------------------
-node_modules/
 bower_components/
-vendor/
-dist/
-out/
 build/
+dist/
+node_modules/
+out/
 target/
-tmp/
 temp/
-*.class
-*.jar
-*.war
-*.ear
-*.dll
-*.exe
-*.o
-*.so
+tmp/
+vendor/
 *.a
-*.pyc
-*.pyo
-*.pyd
-*.whl
-*.egg-info/
-__pycache__/
+*.class
 *.dSYM
-*.obj
-*.lib
+*.dll
+*.ear
+*.egg-info/
+*.exe
 *.exp
 *.idb
+*.jar
+*.lib
+*.o
+*.obj
 *.pdb
+*.pyc
+*.pyd
+*.pyo
+*.so
+*.war
+*.whl
+__pycache__/
 
 # ------------------------------
 # Security & Certificates
@@ -64,21 +62,22 @@ __pycache__/
 credentials.json
 private.key
 public.pem
-*.pem
 *.crt
-*.key
-*.pfx
-*.p12
 *.jks
+*.key
+*.p12
+*.pem
+*.pfx
 
 # ------------------------------
 # OS-specific files
 # ------------------------------
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # ------------------------------
 # Miscellaneous
 # ------------------------------
-*.local.*
 *.local
+*.local.*
