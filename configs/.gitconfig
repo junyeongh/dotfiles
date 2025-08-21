@@ -13,10 +13,11 @@
 [include]
 	path = ~/.gitconfig_local
 [core]
-	pager = delta
+	autocrlf = input
 	editor = code --wait
 	excludesfile = ~/.gitignore
-	autocrlf = input
+	ignorecase = false
+	pager = delta
 [delta]
 	side-by-side = true
 	hunk-header-style = file line-number syntax
