@@ -7,13 +7,12 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
+  "agent": {
     "default_profile": "minimal",
     "default_model": {
       "model": "claude-3.7-sonnet",
       "provider": "copilot_chat"
     },
-    "version": "2"
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "D2CodingLigature Nerd Font",
@@ -47,5 +46,4 @@
   "git_panel": { "dock": "right" },
   "outline_panel": { "dock": "right" },
   "notification_panel": { "button": false },
-  "project_panel": { "show_hidden_files": true }
 }
