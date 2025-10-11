@@ -1,0 +1,41 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "title": "Winget Pecondary",
+  "Sources": [
+    {
+      "Packages": [
+        // Tools and Utilities
+        { "PackageIdentifier": "Anthropic.Claude" },
+        { "PackageIdentifier": "Bandisoft.BandiView" },
+        { "PackageIdentifier": "Bandisoft.Bandizip" },
+        { "PackageIdentifier": "Google.ChromeRemoteDesktopHost" },
+        { "PackageIdentifier": "Grammarly.Grammarly.Office" },
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "voidtools.Everything" },
+        // Productivity
+        // { "PackageIdentifier": "JonatanHeyman.Heynote" },
+        { "PackageIdentifier": "Obsidian.Obsidian" },
+        // Communication
+        { "PackageIdentifier": "Discord.Discord" },
+        { "PackageIdentifier": "Kakao.KakaoTalk" },
+        // { "PackageIdentifier": "SlackTechnologies.Slack" },
+        { "PackageIdentifier": "Zoom.Zoom" },
+        // Media & Entertainment
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "Spotify.Spotify" },
+        { "PackageIdentifier": "Valve.Steam" }
+        // VPN
+        // { "PackageIdentifier": "AdGuard.AdGuardVPN" },
+        // { "PackageIdentifier": "MullvadVPN.MullvadVPN" }
+        // { "PackageIdentifier": "Surfshark.Surfshark" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ]
+}

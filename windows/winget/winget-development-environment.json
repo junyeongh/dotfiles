@@ -1,0 +1,46 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "title": "Winget Development Packages",
+  "Sources": [
+    {
+      "Packages": [
+        // WSL
+        // { "PackageIdentifier": "Canonical.Ubuntu" },
+        // { "PackageIdentifier": "Microsoft.WSL" },
+        // Development Tools
+        { "PackageIdentifier": "Microsoft.VisualStudioCode" },
+        // Utilities
+        { "PackageIdentifier": "Git.Git" },
+        { "PackageIdentifier": "WinSCP.WinSCP" },
+        // CLI Tools
+        { "PackageIdentifier": "Fastfetch-cli.Fastfetch" },
+        { "PackageIdentifier": "GnuWin32.Which" },
+        { "PackageIdentifier": "JanDeDobbeleer.OhMyPosh", "Scope": "machine" },
+        { "PackageIdentifier": "Wilfred.difftastic" },
+        { "PackageIdentifier": "dandavison.delta" },
+        { "PackageIdentifier": "eza-community.eza" },
+        // Programming languages and Runtimes: JavaScript, Python, Rust, Go
+        //   Python
+        // { "PackageIdentifier": "Anaconda.Anaconda3" }, // install interactively `winget install Anaconda.Anaconda3 --interactive`
+        { "PackageIdentifier": "Python.Python.3.13" },
+        // { "PackageIdentifier": "astral-sh.ruff" }, // ruff via uvx mainly
+        { "PackageIdentifier": "astral-sh.uv" },
+        //   JavaScript
+        { "PackageIdentifier": "DenoLand.Deno" },
+        { "PackageIdentifier": "Oven-sh.Bun" },
+        { "PackageIdentifier": "Schniz.fnm" },
+        // //   Rust
+        { "PackageIdentifier": "Rustlang.Rustup" },
+        { "PackageIdentifier": "Microsoft.VisualStudio.2022.BuildTools" }, // <- for toolchain: stable-x86_64-pc-windows-msvc
+        // //   Go
+        { "PackageIdentifier": "GoLang.Go" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 [
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-shift-tab": "pane::ActivatePreviousItem",
-      "ctrl-tab": "pane::ActivateNextItem"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "ctrl-r": [ "projects::OpenRecent", { "create_new_window": false } ]
-    }
-  }
+  // {
+  //   "context": "Editor",
+  //   "bindings": {
+  //     "ctrl-shift-tab": "pane::ActivatePreviousItem",
+  //     "ctrl-tab": "pane::ActivateNextItem"
+  //   }
+  // },
+  // {
+  //   "context": "Workspace",
+  //   "bindings": {
+  //     "ctrl-r": [ "projects::OpenRecent", { "create_new_window": false } ]
+  //   }
+  // }
 ]
