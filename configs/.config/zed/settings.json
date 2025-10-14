@@ -1,24 +1,16 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "agent": {
     "default_profile": "minimal",
     "default_model": {
-      "model": "claude-3.7-sonnet",
+      "model": "claude-sonnet-4-5",
       "provider": "copilot_chat"
-    },
+    }
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "D2CodingLigature Nerd Font",
   "buffer_font_size": 16,
   "edit_predictions": {
-    "disabled_globs": [ ],
+    "disabled_globs": [],
     "mode": "subtle"
   },
   "ensure_final_newline_on_save": false,
@@ -38,12 +30,12 @@
     "font_size": 12,
     "line_height": "standard"
   },
-  "theme": "Github Dark Dimmed",
+  "theme": "Nord",
   "ui_font_size": 16,
   "vim_mode": false,
   // panels
   "collaboration_panel": { "button": false },
   "git_panel": { "dock": "right" },
   "outline_panel": { "dock": "right" },
-  "notification_panel": { "button": false },
+  "notification_panel": { "button": false }
 }
