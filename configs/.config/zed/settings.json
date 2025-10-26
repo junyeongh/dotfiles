@@ -1,10 +1,10 @@
 {
   "agent": {
-    "default_profile": "minimal",
     "default_model": {
       "model": "claude-sonnet-4-5",
       "provider": "copilot_chat"
-    }
+    },
+    "default_profile": "minimal"
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "D2CodingLigature Nerd Font",
@@ -30,9 +30,11 @@
     "font_size": 12,
     "line_height": "standard"
   },
-  "theme": "Nord",
+  "theme": "Nord Dark",
   "ui_font_size": 16,
+  // keymaps
   "vim_mode": false,
+  "helix_mode": false,
   // panels
   "collaboration_panel": { "button": false },
   "git_panel": { "dock": "right" },
