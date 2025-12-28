@@ -1,9 +1,10 @@
 { pkgs, ... }:
 
-with pkgs; [
+with pkgs; [ # https://search.nixos.org/packages
   # CLI Tools & Development Utilities
   bat
   btop
+  ctop
   delta
   difftastic
   direnv
@@ -16,6 +17,7 @@ with pkgs; [
   just
   lazydocker
   lazygit
+  mise
   neovim
   oh-my-posh
   ripgrep

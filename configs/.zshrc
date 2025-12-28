@@ -28,6 +28,8 @@ fi
 ####################################################################################################
 # Programming languages and runtimes
 
+eval "$(/home/yeong/.local/bin/mise activate zsh)"
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 # alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
