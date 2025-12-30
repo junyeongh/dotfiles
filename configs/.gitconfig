@@ -36,37 +36,10 @@
 
 # Aliases
 [alias]
-	aa=add .
-	aaa=add --all
-	au=add --update
-	b=branch
-	bd=branch --delete
-	c=commit
-	cm=commit --message
-	cf=commit --fixup
-	co=checkout
-	cob=checkout -b
-	com=checkout master
-	cos=checkout staging
-	cod=checkout develop
-	d=diff
-	da=diff HEAD
-	i=init
-	lg=log --graph --oneline --decorate --all
-	ld=log --pretty=format:"%h %ad %s" --date=short --all
-	m=merge --no-ff
-	ma=merge --abort
-	mc=merge --continue
-	p=pull
-	pr=pull --rebase
-	r=rebase
-	s=status
-	ss=status --short
-	st=stash
-	sta=stash apply
-	std=stash drop
-	stl=stash list
-	stp=stash pop
-	sts=stash save
+	# nickname
+	uncommit=reset --soft HEAD~1
+	unadd=restore --staged .
+	discard=restore .
 
+	# abbreviation
 	difft = -c diff.external=difft diff

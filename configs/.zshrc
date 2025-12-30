@@ -21,8 +21,11 @@ fi
 
 ####################################################################################################
 # Alias definitions
-if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
+if [ -f ~/shell_aliases/.aliases ]; then
+    . ~/shell_aliases/.aliases
+fi
+if [ -f ~/shell_aliases/.zsh_aliases ]; then
+    . ~/shell_aliases/.zsh_aliases
 fi
 
 ####################################################################################################
