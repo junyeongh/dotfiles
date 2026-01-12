@@ -1,12 +1,7 @@
-# oh-my-posh
-oh-my-posh init pwsh | Invoke-Expression
-# themes: https://ohmyposh.dev/docs/themes
-oh-my-posh init pwsh --config 'D:\Source\Repositories\dotfiles\configs\.config\oh-my-posh\negligible_edit.toml' | Invoke-Expression
+# oh-my-posh (themes: https://ohmyposh.dev/docs/themes)
+oh-my-posh init pwsh --config '~\.config\oh-my-posh\negligible_edit.toml' | Invoke-Expression
 # oh-my-posh init pwsh --config 'C:\Program Files (x86)\oh-my-posh\themes\{theme}.omp.json' | Invoke-Expression
 # theme in themes = [kushal, quick-term, robbyrussell, tokyo]
-
-# ╭─ {OS & user} {shell} {folder} :: {git:(main  ?2)} || {status} {time}
-# ╰
 
 # Alias
 if (Get-Command eza -ErrorAction SilentlyContinue) {
@@ -27,4 +22,4 @@ if (Get-Command eza -ErrorAction SilentlyContinue) {
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 
 # Fast and simple Node.js version manager, built in Rust
-fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression # Uncomment this
+fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression

@@ -1,0 +1,5 @@
+[default.files]
+configs = "~"
+
+[settings]
+default_target_type = "symbolic"

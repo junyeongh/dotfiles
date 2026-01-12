@@ -8,12 +8,14 @@ with pkgs; [ # https://search.nixos.org/packages
   delta
   difftastic
   direnv
+  dotter
   eza
   fastfetch
   fnm
   fzf
   git
   git-lfs
+  hyperfine
   just
   lazydocker
   lazygit
