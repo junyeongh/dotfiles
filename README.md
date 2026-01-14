@@ -5,15 +5,8 @@
 cd ~/dotfiles
 
 # After installing Nix and Home Manager and run the following command to set up Home Manager
-stow --delete configs # Unlink all
-stow configs          # Link all
-```
-
-```shell
-# stow options
--S, --stow            Stow the package names that follow this option
--D, --delete          Unstow the package names that follow this option
--R, --restow          Restow (like stow -D followed by stow -S)
+dotter undeploy # Unlink all
+dotter deploy   # Link all
 ```
 
 ## Nix

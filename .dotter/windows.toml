@@ -1,0 +1,8 @@
+includes = []
+packages = ["default"]
+
+[files]
+"windows\\powershell" = "~\\Documents\\PowerShell"
+"windows\\configs" = "~"
+
+[variables]
