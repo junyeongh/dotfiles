@@ -1,13 +1,13 @@
 {
   "enabledPlugins": {
-    "typescript-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
     "github@claude-plugins-official": false,
-    "figma@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": false
   },
   "statusLine": {
     "type": "command",
-    "command": "~/.claude/statusline.sh",
+    "command": "powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\statusline.ps1",
     "padding": 0
   },
   "hooks": {
@@ -22,16 +22,6 @@
       }
     ],
     "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cmd /c chcp 65001 >nul && powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\hooks\\claude-hook-toast.ps1"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
       {
         "hooks": [
           {

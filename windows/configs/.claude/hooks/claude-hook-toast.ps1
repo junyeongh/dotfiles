@@ -2,11 +2,9 @@
 $json = ($input | Out-String) | ConvertFrom-Json -ErrorAction SilentlyContinue
 $hookEvent = $json.hook_event_name
 $message = switch ($hookEvent) {
-    "SessionStart"  { "Session started" }
-    "SessionEnd"    { "Session completed" }
     "Stop"          { "Response finished" }
     "Notification"  { $json.message }
-    default         { "$hookEvent : $($json.message)" }
+    default         { "$($hookEvent): $($json.message)" }
 }
 
 # Windows Toast Notification
