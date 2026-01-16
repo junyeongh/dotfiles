@@ -25,8 +25,7 @@ if command -v oh-my-posh &>/dev/null; then
     # themes = [kushal, robbyrussell, di4am0nd, negligible]
 fi
 if command -v zoxide >/dev/null; then
-    eval "$(zoxide init zsh)"
-    alias z='zoxide'
+    eval "$(zoxide init zsh --cmd z)"
 fi
 
 # Environment variables

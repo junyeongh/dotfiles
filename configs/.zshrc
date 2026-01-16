@@ -13,27 +13,21 @@ compinit
 # End of lines added by compinstall
 
 ####################################################################################################
-# Homebrew for Linux
-
-if [ -d "/home/linuxbrew" ]; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-####################################################################################################
-# Alias definitions
-if [ -f ~/shell_aliases/.aliases ]; then
-    . ~/shell_aliases/.aliases
-fi
-if [ -f ~/shell_aliases/.zsh_aliases ]; then
-    . ~/shell_aliases/.zsh_aliases
-fi
-
-####################################################################################################
 # Programming languages and runtimes
 
 eval "$(/home/yeong/.local/bin/mise activate zsh)"
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-# alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+
+alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
+
+####################################################################################################
+# Alias definitions
+if [ -f ~/shell_aliases/.zsh_aliases ]; then
+    . ~/shell_aliases/.zsh_aliases
+fi
+if [ -f ~/shell_aliases/.aliases ]; then
+    . ~/shell_aliases/.aliases
+fi
