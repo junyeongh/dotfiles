@@ -25,9 +25,13 @@ RESET='\033[0m'
 term_width=$(tput cols 2>/dev/null || echo 80)
 
 progress_bar() {
-  pct="${1:-0}"; width="${2:-10}"
-  [[ "$pct" =~ ^[0-9]+$ ]] || pct=0; ((pct<0))&&pct=0; ((pct>100))&&pct=100
-  filled=$(( pct * width / 100 )); empty=$(( width - filled ))
+  pct="${1:-0}"
+  width="${2:-10}"
+  [[ "$pct" =~ ^[0-9]+$ ]] || pct=0
+  ((pct < 0)) && pct=0
+  ((pct > 100)) && pct=100
+  filled=$((pct * width / 100))
+  empty=$((width - filled))
   printf '%*s' "$filled" '' | tr ' ' '='
   printf '%*s' "$empty" '' | tr ' ' '-'
 }
@@ -71,9 +75,13 @@ USERNAME=$(whoami)
 GIT_BRANCH=$(get_git_branch)
 
 progress_bar() {
-  pct="${1:-0}"; width="${2:-10}"
-  [[ "$pct" =~ ^[0-9]+$ ]] || pct=0; ((pct<0))&&pct=0; ((pct>100))&&pct=100
-  filled=$(( pct * width / 100 )); empty=$(( width - filled ))
+  pct="${1:-0}"
+  width="${2:-10}"
+  [[ "$pct" =~ ^[0-9]+$ ]] || pct=0
+  ((pct < 0)) && pct=0
+  ((pct > 100)) && pct=100
+  filled=$((pct * width / 100))
+  empty=$((width - filled))
   printf '%*s' "$filled" '' | tr ' ' '='
   printf '%*s' "$empty" '' | tr ' ' '-'
 }
@@ -102,11 +110,11 @@ fi
 
 USAGE=$(echo "$input" | jq '.context_window.current_usage')
 if [ "$USAGE" != "null" ]; then
-    # Calculate current context from current_usage fields
-    CURRENT_TOKENS=$(echo "$USAGE" | jq '.input_tokens + .cache_creation_input_tokens + .cache_read_input_tokens')
-    PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
-    output="${output}$CURRENT_TOKENS/$CONTEXT_WINDOW_SIZE ($PERCENT_USED%) "
-    output="${output}[$(progress_bar "$PERCENT_USED" 10)] "
+  # Calculate current context from current_usage fields
+  CURRENT_TOKENS=$(echo "$USAGE" | jq '.input_tokens + .cache_creation_input_tokens + .cache_read_input_tokens')
+  PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
+  output="${output}$CURRENT_TOKENS/$CONTEXT_WINDOW_SIZE ($PERCENT_USED%) "
+  output="${output}[$(progress_bar "$PERCENT_USED" 10)] "
 fi
 
 # Output the final line

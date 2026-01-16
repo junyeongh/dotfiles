@@ -1,15 +1,4 @@
 {
-  "enabledPlugins": {
-    "context7@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
-    "github@claude-plugins-official": false,
-    "typescript-lsp@claude-plugins-official": false
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\statusline.ps1",
-    "padding": 0
-  },
   "hooks": {
     "Notification": [
       {
@@ -41,5 +30,15 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\statusline.ps1",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "context7@claude-plugins-official": true,
+    "figma@claude-plugins-official": false,
+    "github@claude-plugins-official": false
   }
 }
