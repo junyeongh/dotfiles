@@ -15,7 +15,7 @@ compinit
 ####################################################################################################
 # Programming languages and runtimes
 
-eval "$(/home/yeong/.local/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"

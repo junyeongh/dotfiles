@@ -4,14 +4,15 @@
     "bindings": {
       "ctrl-shift-tab": "pane::ActivatePreviousItem",
       "ctrl-tab": "pane::ActivateNextItem",
-      "alt-shift-f": "editor::Format"
-    }
+      "alt-shift-f": "editor::Format",
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "ctrl-r": ["projects::OpenRecent", { "create_new_window": false }]
-    }
+      // "ctrl-r": ["projects::OpenRecent", { "create_new_window": false }],
+      "ctrl-r": "projects::OpenRecent",
+    },
   },
   {
     "context": "Editor && (showing_code_actions || showing_completions)",
@@ -19,7 +20,7 @@
       "ctrl-p": "editor::ContextMenuPrevious",
       "ctrl-n": "editor::ContextMenuNext",
       "pageup": "editor::ContextMenuFirst",
-      "pagedown": "editor::ContextMenuLast"
-    }
-  }
+      "pagedown": "editor::ContextMenuLast",
+    },
+  },
 ]
