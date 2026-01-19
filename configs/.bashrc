@@ -120,7 +120,10 @@ fi
 ####################################################################################################
 # Programming languages and runtimes
 
+eval "$(mise activate bash)"
+
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-# alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+
+alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"

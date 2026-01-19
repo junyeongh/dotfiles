@@ -21,3 +21,6 @@ if command -v zoxide >/dev/null; then
     eval "$(zoxide init bash)"
     alias z='zoxide'
 fi
+if command -v wt >/dev/null 2>&1; then
+    eval "$(command wt config shell init bash)"
+fi
