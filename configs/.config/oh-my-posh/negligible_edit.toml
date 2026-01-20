@@ -11,7 +11,7 @@ version = 3
   alignment = 'left'
 
   [[blocks.segments]]
-    template = '{{ .Icon }} [{{ .UserName }}]'
+    template = '{{ .Icon }} [{{ .UserName }}@{{ .HostName }}]'
     foreground = 'cyan'
     type = 'os'
     style = 'powerline'

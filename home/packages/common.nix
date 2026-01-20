@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
-with pkgs; [ # https://search.nixos.org/packages
+# https://search.nixos.org/packages
+with pkgs;
+[
   # CLI Tools & Development Utilities
   bat
   btop
@@ -21,6 +23,7 @@ with pkgs; [ # https://search.nixos.org/packages
   lazygit
   mise
   neovim
+  nixfmt
   oh-my-posh
   ripgrep
   stow

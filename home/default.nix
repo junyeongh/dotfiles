@@ -1,19 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
-let
-  packages = import ./packages.nix { inherit pkgs; };
-in
 {
   home = {
     username = "yeong";
     homeDirectory = "/home/yeong";
     stateVersion = "25.11";
-
-    packages = packages;
+    packages = import ./packages/common.nix { inherit pkgs; };
     file = { };
     sessionVariables = { };
   };
 
   programs.home-manager.enable = true;
-  targets.genericLinux.enable = true;
 }
