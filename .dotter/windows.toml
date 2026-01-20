@@ -2,7 +2,7 @@ includes = []
 packages = ["default"]
 
 [files]
-"windows\\powershell" = "~\\Documents\\PowerShell"
-"windows\\configs" = "~"
+"hosts\\windows\\powershell" = "~\\Documents\\PowerShell"
+"hosts\\windows\\configs" = "~"
 
 [variables]
