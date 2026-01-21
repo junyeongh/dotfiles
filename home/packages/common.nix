@@ -26,6 +26,7 @@ with pkgs;
   nixfmt
   oh-my-posh
   ripgrep
+  ripgrep
   stow
   uv
   zoxide

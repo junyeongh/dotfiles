@@ -44,6 +44,12 @@ function cd_ls() {
 }
 alias cd='cd_ls'
 
+alias nix-up="sudo nixos-rebuild switch --flake .#nixos"
+alias home-up="home-manager switch --flake .#wsl"
+# if [ -f "$HOME/.cargo" ];
+#   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
+# fi
+
 # pnpm
 export PNPM_HOME="/home/yeong/.local/share/pnpm"
 case ":$PATH:" in
@@ -51,3 +57,4 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+

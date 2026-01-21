@@ -21,8 +21,6 @@ eval "$(mise activate zsh)"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
 
-alias cargo_upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
-
 ####################################################################################################
 # Alias definitions
 if [ -f ~/shell_aliases/.zsh_aliases ]; then
