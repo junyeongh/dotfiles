@@ -3,7 +3,6 @@
 # https://search.nixos.org/packages
 with pkgs;
 [
-  # CLI Tools & Development Utilities
   bat
   btop
   ctop
@@ -23,6 +22,7 @@ with pkgs;
   lazygit
   mise
   neovim
+  nil
   nixfmt
   oh-my-posh
   ripgrep

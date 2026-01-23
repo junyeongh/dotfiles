@@ -1,7 +1,7 @@
 # NixOS manual: 'nixos-help'
 # 'man configuration.nix'
 
-{ config, pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -14,7 +14,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -34,7 +34,6 @@
 
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Seoul";
-  i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -43,8 +42,20 @@
     layout = "kr";
     variant = "kr104";
   };
-  # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "ko_KR.UTF-8/UTF-8"
+    ];
+    inputMethod = {
+      enable = true;
+      type = "kime";
+      kime.iconColor = "White";
+    };
+  };
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
@@ -64,19 +75,30 @@
   services.openssh.enable = true;
   services.printing.enable = true;
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.d2coding
-    nerd-fonts.fira-code
-  ];
-
-  programs.zsh.enable = true;
-  users.defaultUserShell = "/bin/zsh";
-
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
-    #  wget
+  ];
+
+  # Programs
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+  programs._1password-gui.polkitPolicyOwners = [ "yeong" ];
+  programs.git.enable = true;
+  programs.git.config = {
+    "gpg \"ssh\"" = {
+      program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
+    };
+  };
+
+  fonts.packages = with pkgs; [
+    nanum
+    nerd-fonts.d2coding
+    nerd-fonts.fira-code
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -87,9 +109,9 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
+    # packages = with pkgs; [
+    #   thunderbird
+    # ];
   };
 
   system.stateVersion = "25.11"; # Did you read the comment?

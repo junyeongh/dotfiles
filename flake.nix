@@ -28,10 +28,7 @@
           inherit pkgs;
           modules = [
             ./home
-            ({ lib, ... }: {
-              home.packages = lib.mkAfter (import ./home/packages/wsl.nix { inherit pkgs; });
-              targets.genericLinux.enable = true;
-            })
+            ./hosts/wsl/home
           ];
         };
       };
@@ -47,10 +44,14 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                users.yeong = { lib, pkgs, ... }: {
-                  imports = [ ./home ];
-                  home.packages = lib.mkAfter (import ./home/packages/nixos.nix { inherit pkgs; });
-                };
+                users.yeong =
+                  { lib, pkgs, ... }:
+                  {
+                    imports = [
+                      ./home
+                      ./hosts/nixos/home
+                    ];
+                  };
               };
             }
           ];

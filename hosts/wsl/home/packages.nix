@@ -5,5 +5,4 @@
 with pkgs;
 [
   # WSL utilities
-  # wslu
 ]

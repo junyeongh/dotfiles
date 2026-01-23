@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   home = {
     username = "yeong";
     homeDirectory = "/home/yeong";
     stateVersion = "25.11";
-    packages = import ./packages/common.nix { inherit pkgs; };
+    packages = import ./packages { inherit pkgs; };
     file = { };
     sessionVariables = { };
   };
