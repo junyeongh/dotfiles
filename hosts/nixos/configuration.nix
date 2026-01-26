@@ -97,11 +97,12 @@
 
   fonts.packages = with pkgs; [
     nanum
+    pretendard
+    # Nerd Fonts
     nerd-fonts.d2coding
     nerd-fonts.fira-code
   ];
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yeong = {
     isNormalUser = true;
     description = "Junyeong Heo";
@@ -114,5 +115,5 @@
     # ];
   };
 
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
