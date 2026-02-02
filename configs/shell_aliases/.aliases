@@ -57,7 +57,8 @@ if command -v cargo &>/dev/null; then
 fi
 
 # pnpm
-export PNPM_HOME="/home/yeong/.local/share/pnpm"
+export PATH="$HOME/.local/bin:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
 *":$PNPM_HOME:"*) ;;
 *) export PATH="$PNPM_HOME:$PATH" ;;

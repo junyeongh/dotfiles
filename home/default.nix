@@ -4,8 +4,8 @@
   home = {
     username = "yeong";
     homeDirectory = "/home/yeong";
-    stateVersion = "25.11";
-    packages = import ./packages { inherit pkgs; };
+    stateVersion = "26.05";
+    packages = import ./packages.nix { inherit pkgs; };
     file = { };
     sessionVariables = { };
   };

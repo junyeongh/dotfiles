@@ -10,6 +10,7 @@ with pkgs;
   firefox
   gh
   ghostty
+  gnome-tweaks
   google-chrome
   obsidian
   tailscale
@@ -21,7 +22,7 @@ with pkgs;
   gnomeExtensions.blur-my-shell # Blur my Shell
   gnomeExtensions.caffeine # Caffeine
   gnomeExtensions.dash-to-dock # Dash to Dock
+  gnomeExtensions.clipboard-indicator # Clipboard Indicator
   gnomeExtensions.osd-volume-number # OSD Volume Number
   gnomeExtensions.removable-drive-menu # Removable Drive Menu
-  gnomeExtensions.user-themes # User Themes
 ]

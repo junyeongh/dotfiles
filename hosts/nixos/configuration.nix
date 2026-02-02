@@ -14,7 +14,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
+  networking.networkmanager.enable = true;
+  # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -32,7 +33,6 @@
   ];
   nixpkgs.config.allowUnfree = true;
 
-  networking.networkmanager.enable = true;
   time.timeZone = "Asia/Seoul";
 
   # Enable the X11 windowing system.
@@ -42,7 +42,7 @@
     layout = "kr";
     variant = "kr104";
   };
-  services.xserver.libinput.enable = true;
+  # services.xserver.libinput.enable = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -52,14 +52,16 @@
     ];
     inputMethod = {
       enable = true;
-      type = "kime";
-      kime.iconColor = "White";
+      type = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [ hangul ];
     };
   };
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
+  # services.displayManager.gdm.wayland = false;
   services.desktopManager.gnome.enable = true;
+  services.gnome.gnome-keyring.enable = true;
 
   # Sounds
   services.pulseaudio.enable = false;
@@ -75,6 +77,8 @@
   services.openssh.enable = true;
   services.printing.enable = true;
 
+  services.tailscale.enable = true;
+
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
@@ -88,12 +92,14 @@
   programs._1password.enable = true;
   programs._1password-gui.enable = true;
   programs._1password-gui.polkitPolicyOwners = [ "yeong" ];
+
   programs.git.enable = true;
   programs.git.config = {
     "gpg \"ssh\"" = {
       program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
     };
   };
+  programs.nix-ld.enable = true;
 
   fonts.packages = with pkgs; [
     nanum
