@@ -44,6 +44,12 @@
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = {
+                pkgs = import nixpkgs-unstable {
+                  inherit system;
+                  config.allowUnfree = true;
+                };
+              };
               home-manager.users.yeong =
                 { lib, pkgs, ... }:
                 {
@@ -52,7 +58,6 @@
                     ./hosts/nixos/home
                   ];
                   home.enableNixpkgsReleaseCheck = false;
-                  nixpkgs.config.allowUnfree = true;
                 };
             }
           ];
