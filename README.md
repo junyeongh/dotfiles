@@ -45,9 +45,9 @@ nix-collect-garbage -d
 # To update packages, run
 cd ~/dotfiles
 
-# 
-nixos-rebuild switch --flake .#nixos
-# 
+# For NixOS environment, rebuild the system
+sudo nixos-rebuild switch --flake .#{attribute-name}
+# For non-NixOS environment, apply home-manager configurations
 home-manager switch --flake .#{attribute-name}
 ```
 
