@@ -25,7 +25,7 @@
       # Standalone home-manager configurations (for non-NixOS systems)
       homeConfigurations = {
         # WSL
-        "wsl" = home-manager.lib.homeManagerConfiguration {
+        wsl = home-manager.lib.homeManagerConfiguration {
           pkgs = pkgs-unstable;
           modules = [
             ./home
@@ -57,7 +57,6 @@
                     ./home
                     ./hosts/nixos/home
                   ];
-                  home.enableNixpkgsReleaseCheck = false;
                 };
             }
           ];

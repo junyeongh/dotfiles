@@ -12,10 +12,12 @@ with pkgs;
   ghostty
   gnome-tweaks
   google-chrome
+  heynote
   obsidian
   tailscale
   vlc
   vscode
+  zed-editor
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
   gnomeExtensions.apps # Apps Menu
