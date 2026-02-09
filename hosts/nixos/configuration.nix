@@ -41,6 +41,7 @@
   services.xserver.xkb = {
     layout = "kr";
     variant = "kr104";
+    options = "lv3:ralt_alt";
   };
   # services.xserver.libinput.enable = true;
 

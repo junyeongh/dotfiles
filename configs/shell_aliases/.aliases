@@ -44,16 +44,33 @@ function cd_ls() {
 }
 alias cd='cd_ls'
 
+if command -v cargo &>/dev/null; then
+  alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
+fi
+if command -v claude &>/dev/null; then
+  alias claudex='claude --dangerously-skip-permissions'
+fi
+if command -v eza &>/dev/null; then
+  alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
+  alias tree='eza -all --tree'
+fi
+if command -v fzf &>/dev/null; then
+  alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
+fi
+if command -v lazydocker &>/dev/null; then
+  alias ld='lazydocker'
+fi
+if command -v lazygit &>/dev/null; then
+  alias lg='lazygit'
+fi
+
+# nix related
 if command -v nixos-rebuild &>/dev/null; then
   alias nix-up="sudo nixos-rebuild switch --flake ~/dotfiles#nixos"
 fi
 
 if command -v home-manager &>/dev/null; then
   alias home-up="home-manager switch --flake ~/dotfiles#wsl"
-fi
-
-if command -v cargo &>/dev/null; then
-  alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 fi
 
 # pnpm

@@ -2,30 +2,18 @@
 if command -v direnv &>/dev/null; then
     eval "$(direnv hook zsh)"
 fi
-if command -v eza &>/dev/null; then
-    alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
-    alias tree='eza -all --tree'
-fi
 if command -v fnm &>/dev/null; then
     eval "$(fnm env --use-on-cd --shell zsh)"
 fi
-if command -v fzf &>/dev/null; then
-    alias fzfp='fzf --preview "batcat --color=always --style=header,grid --line-range :500 {}"'
-fi
-if command -v lazydocker &>/dev/null; then
-    alias ld='lazydocker'
-fi
-if command -v lazygit &>/dev/null; then
-    alias lg='lazygit'
-fi
+
 if command -v oh-my-posh &>/dev/null; then
     eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
     # eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
     # themes = [kushal, robbyrussell, di4am0nd, negligible]
 fi
-if command -v zoxide >/dev/null; then
-    eval "$(zoxide init zsh --cmd z)"
-fi
 if command -v wt >/dev/null 2>&1; then
     eval "$(command wt config shell init zsh)"
+fi
+if command -v zoxide >/dev/null; then
+    eval "$(zoxide init zsh --cmd z)"
 fi
