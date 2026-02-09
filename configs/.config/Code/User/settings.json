@@ -1,0 +1,270 @@
+{
+  //////////////////////////////////////////////////
+  // Languages specific
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.wordWrap": "on",
+    "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.tabSize": 4
+  },
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vhdl]": {
+    "editor.fontLigatures": false
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  // Other Configurations
+  "ActiveFileInStatusBar.fullpath": false,
+  "ActiveFileInStatusBar.revealFile": true,
+  "breadcrumbs.filePath": "last",
+  "chat.agent.enabled": true,
+  // "chat.disableAIFeatures": true,
+  "chat.math.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "cursor-global": true,
+    "cursor-workspace": true,
+    "windsurf": true
+  },
+  "chat.mcp.gallery.enabled": true,
+  "chat.viewWelcome.enabled": false,
+  "claudeCode.useCtrlEnterToSend": true,
+  "debug.toolBarLocation": "docked",
+  "diffEditor.experimental.showMoves": true,
+  "diffEditor.experimental.useTrueInlineView": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  // editor
+  "editor.aiStats.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.folding": false,
+  "editor.fontFamily": "'D2CodingLigature Nerd Font','FiraCode Nerd Font', Consolas, monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.guides.bracketPairs": "active",
+  "editor.indentSize": "tabSize",
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlineSuggest.minShowDelay": 100,
+  "editor.linkedEditing": true,
+  "editor.minimap.autohide": "mouseover",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.sectionHeaderFontSize": 18,
+  "editor.pasteAs.preferences": ["text.plain"],
+  "editor.renderLineHighlight": "all",
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [80, 100, 120],
+  "editor.smoothScrolling": true,
+  "editor.tabSize": 2,
+  "errorLens.excludeBySource": ["cSpell", "Harper"],
+  "errorLens.gutterIconsEnabled": true,
+  // explorer
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.dart": "${capture}.g.dart",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "Cargo.toml": "Cargo.lock",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+  "explorer.sortOrder": "type",
+  "files.associations": {
+    ".prettierrc": "jsonc",
+    "*.base": "yaml",
+    "*.css": "tailwindcss",
+    "*.json": "jsonc",
+    "*.mdx": "markdown",
+    "config": "shellscript"
+  },
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "frontMatter.content.wysiwyg": false,
+  // git
+  "git-graph.date.format": "ISO Date & Time",
+  "git.autofetch": true,
+  "git.blame.editorDecoration.enabled": true,
+  "git.confirmSync": false,
+  "git.openRepositoryInParentFolders": "always",
+  "git.verboseCommit": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.enable": { "*": false },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "githubPullRequests.createOnPublishBranch": "never",
+  "githubPullRequests.pullBranch": "never",
+  "go.inlayHints.parameterNames": true,
+  "go.toolsManagement.autoUpdate": true,
+  "indentRainbow.colors": [
+    "rgba(255, 0, 0, 0.5)",
+    "rgba(255, 127, 0, 0.5)",
+    "rgba(255, 255, 0, 0.5)",
+    "rgba(0, 255, 0, 0.5)",
+    "rgba(0, 0, 255, 0.5)",
+    "rgba(75, 0, 130, 0.5)",
+    "rgba(148, 0, 211, 0.5)"
+  ],
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 2,
+  "inlineChat.enableV2": true,
+  "inlineChat.notebookAgent": true,
+  "javascript.inlayHints.parameterNames.enabled": "all",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "json.format.keepLines": true, // on and off when needed
+  "markdown-pdf.highlightStyle": "github.css",
+  "markdown-preview-github-styles.colorTheme": "system",
+  "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdownlint.config": {
+    "default": true,
+    "MD004": false, // Unordered list style
+    "MD010": false, // Hard tabs
+    "MD018": false, // No space after hash on atx style heading
+    "MD024": false, // Multiple headings with the same content
+    "MD026": false, // Trailing punctuation in heading
+    "MD028": false, // Blank line inside blockquote
+    "MD029": false, // Ordered list item prefix
+    "MD031": false, // Fenced code blocks should be surrounded by blank lines
+    "MD033": false, // Inline HTML
+    // "MD034": false, // Bare URL used
+    "MD036": false, // Emphasis used instead of a heading
+    "MD040": false, // Fenced code blocks should have a language specified
+    "MD041": false, // First line in a file should be a top-level heading
+    "MD045": false, // Images should have alternate text (alt text)
+    // "MD051": false, // Link fragments should be valid
+    "MD053": false, // Link and image reference definitions should be needed
+    "MD058": false, // Tables should be surrounded by blank lines
+    "MD060": {
+      // Table column style
+      "style": "compact",
+      "aligned_delimiter": false
+    }
+  },
+  "notebook.lineNumbers": "on",
+  "quotick.showWelcomeMessage": false,
+  "remote.autoForwardPortsSource": "hybrid",
+  "resmon.show.battery": false,
+  "resmon.show.cpufreq": false,
+  "resmon.show.cpuusage": false,
+  "ruff.lineLength": 120,
+  "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredSettings": [
+    // "-window.zoomLevel"
+  ],
+  "settingsSync.keybindingsPerPlatform": false,
+  "tailwind-fold.autoFold": false,
+  "tailwind-fold.foldStyle": "QUOTES",
+  "tailwind-fold.unfoldIfLineSelected": true,
+  "telemetry.telemetryLevel": "off",
+  "terminal.external.windowsExec": "C:/WINDOWS/System32/wsl.exe",
+  "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Consolas, monospace",
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.suggest.enabled": true,
+  "testing.resultsView.layout": "treeLeft",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.disableExtension": true, // by default, false (enabled)
+  // window
+  "window.customTitleBarVisibility": "auto",
+  "window.newWindowProfile": "Default",
+  // workbench
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    // dimidium
+    "terminal.ansiBlack": "#000000",
+    "terminal.ansiBlue": "#0575d8",
+    "terminal.ansiBrightBlack": "#817e7e",
+    "terminal.ansiBrightBlue": "#688dfd",
+    "terminal.ansiBrightCyan": "#32e0fb",
+    "terminal.ansiBrightGreen": "#37e57b",
+    "terminal.ansiBrightMagenta": "#ed6fe9",
+    "terminal.ansiBrightRed": "#ff643b",
+    "terminal.ansiBrightWhite": "#d3d8d9",
+    "terminal.ansiBrightYellow": "#fccd1a",
+    "terminal.ansiCyan": "#1db6bb",
+    "terminal.ansiGreen": "#60b442",
+    "terminal.ansiMagenta": "#af5ed2",
+    "terminal.ansiRed": "#cf494c",
+    "terminal.ansiWhite": "#bab7b6",
+    "terminal.ansiYellow": "#db9c11",
+    "terminal.background": "#141414",
+    "terminal.foreground": "#bab7b6",
+    "terminal.selectionBackground": "#8db8e5",
+    "terminalCursor.foreground": "#37e57b"
+  },
+  "workbench.colorTheme": "Nord",
+  "workbench.editor.customLabels.patterns": {
+    "**/index.{ts,tsx}": "${dirname}/index.${extname}",
+    "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}"
+  },
+  "workbench.editor.showTabIndex": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+  "chat.useAgentSkills": true,
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
+  "terminal.integrated.initialHint": false,
+  "markdown.extension.list.indentationSize": "inherit",
+  "foam.completion.linkFormat": "link",
+  "foam.files.newNotePath": "currentDir",
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      // "diagnostics": {
+      //  "ignored": ["unused_binding", "unused_with"],
+      // },
+      "formatting": {
+        "command": ["nixfmt"]
+      }
+    }
+  },
+  "chatgpt.enterBehavior": "cmdIfMultiline",
+  "claudeCode.preferredLocation": "panel",
+  "chat.viewSessions.orientation": "stacked"
+}

@@ -2,39 +2,48 @@
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+      "model": "claude-sonnet-4.5"
     },
     "default_model": {
       "model": "claude-sonnet-4-5",
-      "provider": "copilot_chat",
+      "provider": "copilot_chat"
     },
-    "default_profile": "minimal",
+    "default_profile": "minimal"
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "D2CodingLigature Nerd Font",
   "buffer_font_size": 16,
   "edit_predictions": {
+    "provider": "copilot",
     "disabled_globs": [],
-    "mode": "subtle",
+    "mode": "subtle"
   },
   "ensure_final_newline_on_save": false,
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "format_on_save": "off",
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": {
+    "mode": "system",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
   "show_edit_predictions": true,
   "show_whitespaces": "all",
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
+    "metrics": false
   },
   "terminal": {
+    "toolbar": {
+      "breadcrumbs": true
+    },
     "font_family": "FiraCode Nerd Font",
     "font_size": 12,
-    "line_height": "standard",
+    "line_height": "standard"
   },
-  "theme": "Nord Dark",
+  "theme": {
+    "mode": "system",
+    "light": "Nord Dark",
+    "dark": "Nord Dark"
+  },
   "ui_font_size": 16,
   // keymaps
   "vim_mode": false,
@@ -43,5 +52,5 @@
   "collaboration_panel": { "button": false },
   "git_panel": { "dock": "right" },
   "outline_panel": { "dock": "right" },
-  "notification_panel": { "button": false },
+  "notification_panel": { "button": false }
 }

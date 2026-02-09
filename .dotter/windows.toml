@@ -2,6 +2,8 @@ includes = []
 packages = ["default"]
 
 [files]
+"configs\\.config\\Code" = "~\\AppData\\Roaming\\Code"
+"configs\\.config\\zed" = "~\\AppData\\Roaming\\Zed"
 "hosts\\windows\\powershell" = "~\\Documents\\PowerShell"
 "hosts\\windows\\configs" = "~"
 

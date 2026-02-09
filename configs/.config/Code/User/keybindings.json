@@ -1,0 +1,296 @@
+[
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus",
+    "args": {
+      "text": "\\\r\n"
+    }
+  },
+  // Editor Navigation & Management
+  {
+    "command": "workbench.action.files.saveAll",
+    "key": "ctrl+alt+s"
+  },
+  {
+    "command": "-workbench.action.files.saveAll",
+    "key": "ctrl+k s"
+  },
+  {
+    "command": "workbench.action.nextEditorInGroup",
+    "key": "ctrl+tab"
+  },
+  {
+    "command": "-workbench.action.openNextRecentlyUsedEditorInGroup",
+    "key": "ctrl+tab"
+  },
+  {
+    "command": "-workbench.action.quickOpenNavigateNextInEditorPicker",
+    "key": "ctrl+tab",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "command": "workbench.action.previousEditor",
+    "key": "ctrl+shift+tab"
+  },
+  {
+    "command": "-workbench.action.openPreviousRecentlyUsedEditorInGroup",
+    "key": "ctrl+shift+tab"
+  },
+  {
+    "command": "-workbench.action.quickOpenNavigatePreviousInEditorPicker",
+    "key": "ctrl+shift+tab",
+    "when": "inEditorsPicker && inQuickOpen"
+  },
+  {
+    "command": "explorer.newFile",
+    "key": "ctrl+n"
+  },
+  {
+    "command": "-markdown.showPreview",
+    "key": "ctrl+shift+v",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "command": "workbench.action.switchWindow",
+    "key": "ctrl+k ctrl+r"
+  },
+  {
+    "command": "-workbench.action.keybindingsReference",
+    "key": "ctrl+k ctrl+r"
+  },
+  // Emmet & Formatting
+  {
+    "command": "editor.emmet.action.incrementNumberByOne",
+    "key": "ctrl+shift+numpad_add"
+  },
+  {
+    "command": "editor.emmet.action.decrementNumberByOne",
+    "key": "ctrl+shift+numpad_subtract"
+  },
+  {
+    "command": "-workbench.action.zoomIn",
+    "key": "ctrl+shift+oem_plus"
+  },
+  {
+    "command": "-workbench.action.zoomIn",
+    "key": "ctrl+oem_plus"
+  },
+  {
+    "command": "-workbench.action.zoomOut",
+    "key": "ctrl+shift+oem_minus"
+  },
+  {
+    "command": "-workbench.action.zoomOut",
+    "key": "ctrl+oem_minus"
+  },
+  {
+    "command": "notebook.formatCell",
+    "key": "shift+alt+f",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "command": "-notebook.formatCell",
+    "key": "ctrl+shift+i",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "command": "editor.action.formatDocument",
+    "key": "shift+alt+f",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "command": "-editor.action.formatDocument",
+    "key": "ctrl+shift+i",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "command": "editor.action.formatDocument.none",
+    "key": "shift+alt+f",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.formatDocument.none",
+    "key": "ctrl+shift+i",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "command": "notebook.format",
+    "key": "shift+alt+f",
+    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "command": "-notebook.format",
+    "key": "ctrl+shift+i",
+    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+  },
+  // UI Toggles & Layout
+  {
+    "command": "workbench.action.toggleMaximizedPanel",
+    "key": "ctrl+k ctrl+m"
+  },
+  {
+    "command": "-workbench.action.toggleMaximizeEditorGroup",
+    "key": "ctrl+k ctrl+m",
+    "when": "editorPartMaximizedEditorGroup || editorPartMultipleEditorGroups"
+  },
+  {
+    "command": "workbench.action.quickOpen",
+    "key": "shift+f1"
+  },
+  {
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "workbench.action.toggleSidebarVisibility",
+        "workbench.action.toggleAuxiliaryBar"
+      ],
+      "when": "(!sideBarVisible && !auxiliaryBarVisible) || (sideBarVisible && auxiliaryBarVisible)"
+    },
+    "key": "ctrl+shift+alt+b"
+  },
+  {
+    "command": "workbench.action.closeSidebar",
+    "key": "ctrl+shift+alt+b",
+    "when": "sideBarVisible && !auxiliaryBarVisible"
+  },
+  {
+    "command": "workbench.action.closeAuxiliaryBar",
+    "key": "ctrl+shift+alt+b",
+    "when": "!sideBarVisible && auxiliaryBarVisible"
+  },
+  {
+    "command": "workbench.action.toggleZenMode",
+    "key": "shift+alt+f11",
+    "when": "!isAuxiliaryWindowFocusedContext"
+  },
+  // Multi-cursor & Text Editing
+  {
+    "command": "-editor.action.insertCursorAbove",
+    "key": "shift+alt+up",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "editor.action.insertCursorAbove",
+    "key": "ctrl+alt+up",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "-editor.action.insertCursorAbove",
+    "key": "ctrl+shift+up",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "editor.action.insertCursorBelow",
+    "key": "ctrl+alt+down",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "-editor.action.insertCursorBelow",
+    "key": "ctrl+shift+down",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "-editor.action.insertCursorBelow",
+    "key": "shift+alt+down",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "editor.action.copyLinesUpAction",
+    "key": "shift+alt+up",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.copyLinesUpAction",
+    "key": "ctrl+shift+alt+up",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "editor.action.copyLinesDownAction",
+    "key": "shift+alt+down",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "command": "-editor.action.copyLinesDownAction",
+    "key": "ctrl+shift+alt+down",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  // Markdown
+  {
+    "command": "-markdown.extension.editing.toggleBold",
+    "key": "ctrl+b",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  {
+    "command": "-markdown.extension.editing.toggleItalic",
+    "key": "ctrl+i",
+    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  },
+  // Terminal
+  {
+    "args": {
+      "text": "\\\r\n"
+    },
+    "command": "workbench.action.terminal.sendSequence",
+    "key": "shift+enter",
+    "when": "terminalFocus"
+  },
+  // Chat & AI
+  // {
+  //   "command": "-workbench.action.chat.open",
+  //   "key": "ctrl+alt+i"
+  // },
+  // {
+  //   "command": "-workbench.action.chat.openEditSession",
+  //   "key": "ctrl+shift+i",
+  //   "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
+  // },
+  // {
+  //   "key": "ctrl+shift+i",
+  //   "command": "workbench.action.chat.openAsk",
+  //   "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  // },
+  // {
+  //   "key": "ctrl+shift+i",
+  //   "command": "-workbench.action.chat.openAgent",
+  //   "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  // },
+  {
+    "key": "ctrl+shift+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "outline.focus"
+  },
+  // {
+  //   "key": "tab",
+  //   "command": "tabout",
+  //   "when": "editorTextFocus && !editorHasMultipleSelections && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible && !inlineEditIsVisible"
+  // },
+  // {
+  //   "key": "tab",
+  //   "command": "-tabout",
+  //   "when": "editorTextFocus && !editorHasMultipleSelections && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible"
+  // },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "-editor.action.formatSelection",
+    "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+k ctrl+f",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.chat.openask",
+    "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-workbench.action.chat.openagent",
+    "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  }
+]
