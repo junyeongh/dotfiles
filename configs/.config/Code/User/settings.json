@@ -2,47 +2,47 @@
   //////////////////////////////////////////////////
   // Languages specific
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.wordWrap": "on",
-    "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
+    "files.trimTrailingWhitespace": false, // 'double-space + enter' creates line break
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "[rust]": {
-    "editor.tabSize": 4
+    "editor.tabSize": 4,
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "vscode.typescript-language-features",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[vhdl]": {
-    "editor.fontLigatures": false
+    "editor.fontLigatures": false,
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
   // Other Configurations
   "ActiveFileInStatusBar.fullpath": false,
@@ -67,7 +67,7 @@
   // editor
   "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit"
+    "source.organizeImports.biome": "explicit",
   },
   "editor.folding": false,
   "editor.fontFamily": "'D2CodingLigature Nerd Font','FiraCode Nerd Font', Consolas, monospace",
@@ -102,7 +102,7 @@
     "Cargo.toml": "Cargo.lock",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
     "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
-    "tsconfig.json": "tsconfig.*.json"
+    "tsconfig.json": "tsconfig.*.json",
   },
   "explorer.sortOrder": "type",
   "files.associations": {
@@ -111,7 +111,7 @@
     "*.css": "tailwindcss",
     "*.json": "jsonc",
     "*.mdx": "markdown",
-    "config": "shellscript"
+    "config": "shellscript",
   },
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
@@ -137,7 +137,7 @@
     "rgba(0, 255, 0, 0.5)",
     "rgba(0, 0, 255, 0.5)",
     "rgba(75, 0, 130, 0.5)",
-    "rgba(148, 0, 211, 0.5)"
+    "rgba(148, 0, 211, 0.5)",
   ],
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
@@ -171,11 +171,11 @@
     // "MD051": false, // Link fragments should be valid
     "MD053": false, // Link and image reference definitions should be needed
     "MD058": false, // Tables should be surrounded by blank lines
-    "MD060": {
-      // Table column style
-      "style": "compact",
-      "aligned_delimiter": false
-    }
+    "MD060": false, // Table column style
+    // "MD060": {
+    //   "style": "compact",
+    //   "aligned_delimiter": false
+    // }
   },
   "notebook.lineNumbers": "on",
   "quotick.showWelcomeMessage": false,
@@ -233,12 +233,12 @@
     "terminal.background": "#141414",
     "terminal.foreground": "#bab7b6",
     "terminal.selectionBackground": "#8db8e5",
-    "terminalCursor.foreground": "#37e57b"
+    "terminalCursor.foreground": "#37e57b",
   },
   "workbench.colorTheme": "Nord",
   "workbench.editor.customLabels.patterns": {
     "**/index.{ts,tsx}": "${dirname}/index.${extname}",
-    "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}"
+    "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}",
   },
   "workbench.editor.showTabIndex": true,
   "workbench.iconTheme": "material-icon-theme",
@@ -260,11 +260,11 @@
       //  "ignored": ["unused_binding", "unused_with"],
       // },
       "formatting": {
-        "command": ["nixfmt"]
-      }
-    }
+        "command": ["nixfmt"],
+      },
+    },
   },
   "chatgpt.enterBehavior": "cmdIfMultiline",
   "claudeCode.preferredLocation": "panel",
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
 }

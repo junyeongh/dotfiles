@@ -63,6 +63,7 @@
   # services.displayManager.gdm.wayland = false;
   services.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  programs.hyprland.enable = true;
 
   # Sounds
   services.pulseaudio.enable = false;
