@@ -44,6 +44,15 @@ function cd_ls() {
 }
 alias cd='cd_ls'
 
+# pnpm
+export PATH="$HOME/.local/bin:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 if command -v cargo &>/dev/null; then
   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 fi
@@ -72,12 +81,3 @@ fi
 if command -v home-manager &>/dev/null; then
   alias home-up="home-manager switch --flake ~/dotfiles#wsl"
 fi
-
-# pnpm
-export PATH="$HOME/.local/bin:$PATH"
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end

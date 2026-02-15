@@ -14,11 +14,12 @@ with pkgs;
   google-chrome
   heynote
   obsidian
+  spotify
   tailscale
   vlc
   vscode
-  zed-editor
   wofi
+  zed-editor
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
   gnomeExtensions.apps # Apps Menu

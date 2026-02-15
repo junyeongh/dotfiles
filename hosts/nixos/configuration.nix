@@ -87,6 +87,14 @@
     git
   ];
 
+  # Fonts
+  fonts.packages = with pkgs; [
+    nanum
+    pretendard
+    # Nerd Fonts
+    nerd-fonts.d2coding
+    nerd-fonts.fira-code
+  ];
   # Programs
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
@@ -103,13 +111,11 @@
   };
   programs.nix-ld.enable = true;
 
-  fonts.packages = with pkgs; [
-    nanum
-    pretendard
-    # Nerd Fonts
-    nerd-fonts.d2coding
-    nerd-fonts.fira-code
-  ];
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+    rootless.setSocketVariable = true;
+  };
 
   users.users.yeong = {
     isNormalUser = true;
@@ -117,6 +123,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     # packages = with pkgs; [
     #   thunderbird
