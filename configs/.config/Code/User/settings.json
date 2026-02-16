@@ -2,51 +2,48 @@
   //////////////////////////////////////////////////
   // Languages specific
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.wordWrap": "on",
-    "files.trimTrailingWhitespace": false, // 'double-space + enter' creates line break
+    "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
   },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   "[rust]": {
-    "editor.tabSize": 4,
+    "editor.tabSize": 4
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vhdl]": {
-    "editor.fontLigatures": false,
+    "editor.fontLigatures": false
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  // Other Configurations
-  "ActiveFileInStatusBar.fullpath": false,
-  "ActiveFileInStatusBar.revealFile": true,
   "breadcrumbs.filePath": "last",
   "chat.agent.enabled": true,
   // "chat.disableAIFeatures": true,
@@ -58,7 +55,10 @@
     "windsurf": true
   },
   "chat.mcp.gallery.enabled": true,
+  "chat.useAgentSkills": true,
+  "chat.viewSessions.orientation": "stacked",
   "chat.viewWelcome.enabled": false,
+  "claudeCode.preferredLocation": "panel",
   "claudeCode.useCtrlEnterToSend": true,
   "debug.toolBarLocation": "docked",
   "diffEditor.experimental.showMoves": true,
@@ -67,7 +67,7 @@
   // editor
   "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
   },
   "editor.folding": false,
   "editor.fontFamily": "'D2CodingLigature Nerd Font','FiraCode Nerd Font', Consolas, monospace",
@@ -81,13 +81,13 @@
   "editor.minimap.autohide": "mouseover",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.sectionHeaderFontSize": 18,
-  "editor.pasteAs.preferences": ["text.plain"],
+  "editor.pasteAs.preferences": [ "text.plain" ],
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [80, 100, 120],
+  "editor.rulers": [ 80, 100, 120 ],
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
-  "errorLens.excludeBySource": ["cSpell", "Harper"],
+  "errorLens.excludeBySource": [ "cSpell", "Harper" ],
   "errorLens.gutterIconsEnabled": true,
   // explorer
   "explorer.compactFolders": false,
@@ -102,7 +102,7 @@
     "Cargo.toml": "Cargo.lock",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
     "pubspec.yaml": "pubspec.lock,pubspec_overrides.yaml,.packages,.flutter-plugins,.flutter-plugins-dependencies,.metadata",
-    "tsconfig.json": "tsconfig.*.json",
+    "tsconfig.json": "tsconfig.*.json"
   },
   "explorer.sortOrder": "type",
   "files.associations": {
@@ -111,10 +111,12 @@
     "*.css": "tailwindcss",
     "*.json": "jsonc",
     "*.mdx": "markdown",
-    "config": "shellscript",
+    "config": "shellscript"
   },
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
+  "foam.completion.linkFormat": "link",
+  "foam.files.newNotePath": "currentDir",
   "frontMatter.content.wysiwyg": false,
   // git
   "git-graph.date.format": "ISO Date & Time",
@@ -124,7 +126,9 @@
   "git.openRepositoryInParentFolders": "always",
   "git.verboseCommit": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.enable": { "*": false },
+  "github.copilot.enable": {
+    "*": false
+  },
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.createOnPublishBranch": "never",
   "githubPullRequests.pullBranch": "never",
@@ -137,7 +141,7 @@
     "rgba(0, 255, 0, 0.5)",
     "rgba(0, 0, 255, 0.5)",
     "rgba(75, 0, 130, 0.5)",
-    "rgba(148, 0, 211, 0.5)",
+    "rgba(148, 0, 211, 0.5)"
   ],
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
@@ -151,6 +155,7 @@
   "json.format.keepLines": true, // on and off when needed
   "markdown-pdf.highlightStyle": "github.css",
   "markdown-preview-github-styles.colorTheme": "system",
+  "markdown.extension.list.indentationSize": "inherit",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdownlint.config": {
     "default": true,
@@ -171,11 +176,23 @@
     // "MD051": false, // Link fragments should be valid
     "MD053": false, // Link and image reference definitions should be needed
     "MD058": false, // Tables should be surrounded by blank lines
-    "MD060": false, // Table column style
+    "MD060": false // Table column style
     // "MD060": {
     //   "style": "compact",
     //   "aligned_delimiter": false
     // }
+  },
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nil",
+  "nix.serverSettings": {
+    "nil": {
+      // "diagnostics": {
+      //  "ignored": ["unused_binding", "unused_with"],
+      // },
+      "formatting": {
+        "command": [ "nixfmt" ]
+      }
+    }
   },
   "notebook.lineNumbers": "on",
   "quotick.showWelcomeMessage": false,
@@ -184,6 +201,8 @@
   "resmon.show.cpufreq": false,
   "resmon.show.cpuusage": false,
   "ruff.lineLength": 120,
+  "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredSettings": [
     // "-window.zoomLevel"
@@ -196,6 +215,7 @@
   "terminal.external.windowsExec": "C:/WINDOWS/System32/wsl.exe",
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Consolas, monospace",
+  "terminal.integrated.initialHint": false,
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": true,
   "testing.resultsView.layout": "treeLeft",
@@ -233,38 +253,16 @@
     "terminal.background": "#141414",
     "terminal.foreground": "#bab7b6",
     "terminal.selectionBackground": "#8db8e5",
-    "terminalCursor.foreground": "#37e57b",
+    "terminalCursor.foreground": "#37e57b"
   },
   "workbench.colorTheme": "Nord",
   "workbench.editor.customLabels.patterns": {
     "**/index.{ts,tsx}": "${dirname}/index.${extname}",
-    "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}",
+    "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}"
   },
   "workbench.editor.showTabIndex": true,
   "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
-  "workbench.tree.renderIndentGuides": "always",
-  "chat.useAgentSkills": true,
-  "scm.repositories.explorer": true,
-  "scm.repositories.selectionMode": "single",
-  "terminal.integrated.initialHint": false,
-  "markdown.extension.list.indentationSize": "inherit",
-  "foam.completion.linkFormat": "link",
-  "foam.files.newNotePath": "currentDir",
-  "nix.enableLanguageServer": true,
-  "nix.serverPath": "nil",
-  "nix.serverSettings": {
-    "nil": {
-      // "diagnostics": {
-      //  "ignored": ["unused_binding", "unused_with"],
-      // },
-      "formatting": {
-        "command": ["nixfmt"],
-      },
-    },
-  },
-  "chatgpt.enterBehavior": "cmdIfMultiline",
-  "claudeCode.preferredLocation": "panel",
-  "chat.viewSessions.orientation": "stacked",
+  "workbench.tree.renderIndentGuides": "always"
 }

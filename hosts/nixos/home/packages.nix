@@ -19,6 +19,7 @@ with pkgs;
   vlc
   vscode
   wofi
+  yaak
   zed-editor
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support

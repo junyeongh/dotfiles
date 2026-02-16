@@ -60,7 +60,6 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  # services.displayManager.gdm.wayland = false;
   services.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.hyprland.enable = true;
@@ -85,6 +84,7 @@
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
+    jq
   ];
 
   # Fonts
