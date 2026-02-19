@@ -1,7 +1,7 @@
 #:schema https://developers.openai.com/codex/config-schema.json
 personality = "pragmatic"
 model = "gpt-5.3-codex"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 
 [tui]
 status_line = [
@@ -19,5 +19,8 @@ status_line = [
 
 [features]
 use_linux_sandbox_bwrap = true
-collab = true
+multi_agent = true
 apps = true
+
+[windows]
+sandbox = "elevated"

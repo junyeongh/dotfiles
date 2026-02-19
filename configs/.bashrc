@@ -120,7 +120,9 @@ fi
 ####################################################################################################
 # Programming languages and runtimes
 
-eval "$(mise activate bash)"
+if command -v mise >/dev/null 2>&1 && [ "$(uname -s)" = "Linux" ]; then
+  eval "$(mise activate bash)"
+fi
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
