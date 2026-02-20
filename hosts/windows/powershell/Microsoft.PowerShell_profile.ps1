@@ -23,5 +23,3 @@ Import-Module -Name Microsoft.WinGet.CommandNotFound
 
 # Fast and simple Node.js version manager, built in Rust
 fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
-
-if (Get-Command wt -ErrorAction SilentlyContinue) { Invoke-Expression (& wt config shell init powershell | Out-String) }

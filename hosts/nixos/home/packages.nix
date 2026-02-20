@@ -8,7 +8,6 @@ with pkgs;
   dropbox-cli
   ferdium
   firefox
-  gh
   ghostty
   gnome-tweaks
   google-chrome

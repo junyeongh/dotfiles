@@ -14,6 +14,7 @@ with pkgs;
   fastfetch
   fnm
   fzf
+  gh
   git
   git-lfs
   hyperfine
