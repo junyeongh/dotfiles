@@ -86,6 +86,8 @@
     git
     jq
   ];
+  programs.vim.enable = true;
+  programs.vim.defaultEditor = true;
 
   # Fonts
   fonts.packages = with pkgs; [

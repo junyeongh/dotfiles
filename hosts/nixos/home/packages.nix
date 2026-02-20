@@ -5,6 +5,7 @@
 
 with pkgs;
 [
+  bubblewrap
   dropbox-cli
   ferdium
   firefox
@@ -13,6 +14,7 @@ with pkgs;
   google-chrome
   heynote
   obsidian
+  socat
   spotify
   tailscale
   vlc
