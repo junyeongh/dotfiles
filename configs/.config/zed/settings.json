@@ -1,6 +1,7 @@
 {
   "title_bar": {
-    "show_menus": true
+    "show_menus": true,
+    "show_branch_icon": true
   },
   "agent": {
     "inline_assistant_model": {
