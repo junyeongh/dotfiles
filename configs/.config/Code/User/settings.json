@@ -58,6 +58,7 @@
   "chat.useAgentSkills": true,
   "chat.viewSessions.orientation": "stacked",
   "chat.viewWelcome.enabled": false,
+  "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "claudeCode.preferredLocation": "panel",
   "claudeCode.useCtrlEnterToSend": true,
   "debug.toolBarLocation": "docked",

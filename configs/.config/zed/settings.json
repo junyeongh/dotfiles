@@ -1,4 +1,7 @@
 {
+  "title_bar": {
+    "show_menus": true
+  },
   "agent": {
     "inline_assistant_model": {
       "provider": "copilot_chat",
