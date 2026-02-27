@@ -13,8 +13,10 @@ with pkgs;
   gnome-tweaks
   google-chrome
   heynote
+  kanata
   obsidian
   socat
+  solaar
   spotify
   tailscale
   vlc
