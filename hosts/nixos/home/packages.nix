@@ -24,6 +24,7 @@ with pkgs;
   wofi
   yaak
   zed-editor
+  zellij
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
   gnomeExtensions.apps # Apps Menu

@@ -168,6 +168,7 @@
   "markdown-preview-github-styles.colorTheme": "system",
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
+  "markdown.preview.breaks": true,
   "markdownlint.config": {
     "default": true,
     "MD004": false, // Unordered list style
