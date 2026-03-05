@@ -5,25 +5,26 @@
 
 with pkgs;
 [
-  bubblewrap
   dropbox-cli
   ferdium
   firefox
   ghostty
   gnome-tweaks
   google-chrome
-  helix
   heynote
   kanata
   obsidian
-  socat
   spotify
   vlc
   vscode
   wofi
   yaak
   # zed-editor
-  zellij
+
+  # Claude Code? Codex? sandbox
+  bubblewrap
+  socat
+
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
   gnomeExtensions.apps # Apps Menu

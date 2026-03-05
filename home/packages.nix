@@ -17,6 +17,7 @@ with pkgs;
   gh
   git
   git-lfs
+  helix
   hyperfine
   just
   lazydocker
@@ -27,6 +28,8 @@ with pkgs;
   nixfmt
   oh-my-posh
   ripgrep
+  tmux
   uv
+  zellij
   zoxide
 ]
