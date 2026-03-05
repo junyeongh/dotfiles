@@ -12,18 +12,17 @@ with pkgs;
   ghostty
   gnome-tweaks
   google-chrome
+  helix
   heynote
   kanata
   obsidian
   socat
-  solaar
   spotify
-  tailscale
   vlc
   vscode
   wofi
   yaak
-  zed-editor
+  # zed-editor
   zellij
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support

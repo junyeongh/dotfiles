@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    solaar = {
+      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
@@ -15,11 +19,15 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
+      solaar,
       ...
     }:
     let
       system = "x86_64-linux";
-      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+      pkgs-unstable = import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       # Standalone home-manager configurations (for non-NixOS systems)
@@ -38,18 +46,15 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
+          specialArgs = { inherit pkgs-unstable; };
           modules = [
             ./hosts/nixos/configuration.nix
+            solaar.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                pkgs = import nixpkgs-unstable {
-                  inherit system;
-                  config.allowUnfree = true;
-                };
-              };
+              home-manager.extraSpecialArgs = { pkgs = pkgs-unstable; };
               home-manager.users.yeong =
                 { lib, pkgs, ... }:
                 {

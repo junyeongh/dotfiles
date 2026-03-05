@@ -1,7 +1,12 @@
 # NixOS manual: 'nixos-help'
 # 'man configuration.nix'
 
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -78,11 +83,15 @@
   services.openssh.enable = true;
   services.printing.enable = true;
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = pkgs-unstable.tailscale;
+  };
+  services.solaar.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     git
     jq
   ];
