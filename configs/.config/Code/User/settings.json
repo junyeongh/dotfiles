@@ -44,6 +44,18 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "#js.ts.inlayHints.parameterNames.enabled": "all",
+  "#js.ts.inlayHints.parameterTypes.enabled": true,
+  "#js.ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "#js.ts.inlayHints.variableTypes.enabled": true,
+  "#js.ts.updateImportsOnFileMove.enabled": "never",
+  "#js/ts.inlayHints.enumMemberValues.enabled": true,
+  "#js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "#js/ts.inlayHints.parameterNames.enabled": "all",
+  "#js/ts.inlayHints.parameterTypes.enabled": true,
+  "#js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "#js/ts.tsdk": "node_modules\\typescript\\lib",
+  "#js/ts.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.filePath": "last",
   "chat.agent.enabled": true,
   // "chat.disableAIFeatures": true,
@@ -83,22 +95,13 @@
   "editor.minimap.autohide": "mouseover",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.sectionHeaderFontSize": 18,
-  "editor.pasteAs.preferences": [
-    "text.plain"
-  ],
+  "editor.pasteAs.preferences": ["text.plain"],
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    80,
-    100,
-    120
-  ],
+  "editor.rulers": [80, 100, 120],
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
-  "errorLens.excludeBySource": [
-    "cSpell",
-    "Harper"
-  ],
+  "errorLens.excludeBySource": ["cSpell", "Harper"],
   "errorLens.gutterIconsEnabled": true,
   // explorer
   "explorer.compactFolders": false,
@@ -116,6 +119,7 @@
     "tsconfig.json": "tsconfig.*.json"
   },
   "explorer.sortOrder": "type",
+  "extensions.allowOpenInModalEditor": true,
   "files.associations": {
     ".prettierrc": "jsonc",
     "*.base": "yaml",
@@ -158,11 +162,6 @@
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
   "inlineChat.enableV2": true,
   "inlineChat.notebookAgent": true,
-  "javascript.inlayHints.parameterNames.enabled": "all",
-  "javascript.inlayHints.parameterTypes.enabled": true,
-  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "javascript.inlayHints.variableTypes.enabled": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
   "json.format.keepLines": true, // on and off when needed
   "markdown-pdf.highlightStyle": "github.css",
   "markdown-preview-github-styles.colorTheme": "system",
@@ -202,9 +201,7 @@
       //  "ignored": ["unused_binding", "unused_with"],
       // },
       "formatting": {
-        "command": [
-          "nixfmt"
-        ]
+        "command": ["nixfmt"]
       }
     }
   },
@@ -228,24 +225,20 @@
   "telemetry.telemetryLevel": "off",
   "terminal.external.windowsExec": "C:/WINDOWS/System32/wsl.exe",
   "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+  "terminal.integrated.enableImages": true,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Consolas, monospace",
   "terminal.integrated.initialHint": false,
   "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.windowsUseConptyDll": true,
   "testing.resultsView.layout": "treeLeft",
-  "typescript.inlayHints.enumMemberValues.enabled": true,
-  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-  "typescript.inlayHints.parameterNames.enabled": "all",
-  "typescript.inlayHints.parameterTypes.enabled": true,
-  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "vim.disableExtension": true, // by default, false (enabled)
   // window
   "window.customTitleBarVisibility": "auto",
   "window.newWindowProfile": "Default",
   // workbench
   "workbench.activityBar.location": "top",
+  "workbench.browser.enableChatTools": true,
   "workbench.colorCustomizations": {
     // dimidium
     "terminal.ansiBlack": "#000000",
@@ -275,7 +268,9 @@
     "**/src/**/{page,layout,index,route}.{ts,tsx}": "(${dirname})/${filename}.${extname}"
   },
   "workbench.editor.showTabIndex": true,
+  "workbench.editor.useModal": "some",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.notifications.position": "top-right",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
   "workbench.tree.renderIndentGuides": "always"
