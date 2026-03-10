@@ -292,5 +292,36 @@
     "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openagent",
     "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-frontMatter.insertSnippet",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "-frontMatter.insertMedia",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.webview.reloadWebviewAction",
+    "when": "activeWebviewPanelId == 'frontMatterDashboard'"
+  },
+  {
+    "key": "alt+d",
+    "command": "-frontMatter.dashboard"
+  },
+  {
+    "key": "ctrl+oem_plus",
+    "command": "workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+oem_minus",
+    "command": "workbench.action.zoomOut"
+  },
+  {
+    "key": "alt+oem_2",
+    "command": "editor.action.inlineSuggest.trigger"
   }
 ]

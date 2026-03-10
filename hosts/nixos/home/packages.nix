@@ -19,7 +19,7 @@ with pkgs;
   vscode
   wofi
   yaak
-  # zed-editor
+  zed-editor
 
   # Claude Code? Codex? sandbox
   bubblewrap

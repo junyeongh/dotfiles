@@ -32,6 +32,9 @@
   "[rust]": {
     "editor.tabSize": 4
   },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -141,9 +144,7 @@
   "git.openRepositoryInParentFolders": "always",
   "git.verboseCommit": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.enable": {
-    "*": false
-  },
+  "github.copilot.nextEditSuggestions.eagerness": "auto",
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.createOnPublishBranch": "never",
   "githubPullRequests.pullBranch": "never",

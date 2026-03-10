@@ -81,3 +81,8 @@ fi
 if command -v home-manager &>/dev/null; then
   alias home-up="home-manager switch --flake ~/dotfiles#wsl"
 fi
+
+# Update
+if command -v pnpm &>/dev/null; then
+  alias pnpm-up='pnpm update --global --latest'
+fi
