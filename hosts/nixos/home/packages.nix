@@ -5,6 +5,8 @@
 
 with pkgs;
 [
+  bottles
+  dconf-editor
   dropbox-cli
   ferdium
   firefox
@@ -17,13 +19,16 @@ with pkgs;
   spotify
   vlc
   vscode
+  waybar
   wofi
   yaak
   zed-editor
 
-  # Claude Code? Codex? sandbox
+  # Claude Code sandbox dependencies
   bubblewrap
   socat
+  # Claude Code voice mode dependencies
+  sox
 
   # gnome extensions
   gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
@@ -35,6 +40,6 @@ with pkgs;
   gnomeExtensions.osd-volume-number # OSD Volume Number
   gnomeExtensions.quick-settings-tweaker
   gnomeExtensions.removable-drive-menu # Removable Drive Menu
-  gnomeExtensions.tactile
-  gnomeExtensions.tiling-assistant
+  gnomeExtensions.tactile # Tactile
+  gnomeExtensions.tiling-assistant # Tiling Assistant
 ]

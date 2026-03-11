@@ -10,5 +10,7 @@
     "figma@claude-plugins-official": false,
     "github@claude-plugins-official": false,
     "serena@claude-plugins-official": true
-  }
+  },
+  "voiceEnabled": true,
+  "effortLevel": "high"
 }

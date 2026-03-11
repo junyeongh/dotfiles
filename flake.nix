@@ -4,14 +4,12 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
-    solaar = {
-      url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
+    solaar.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =
@@ -54,7 +52,9 @@
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = { pkgs = pkgs-unstable; };
+              home-manager.extraSpecialArgs = {
+                pkgs = pkgs-unstable;
+              };
               home-manager.users.yeong =
                 { lib, pkgs, ... }:
                 {
