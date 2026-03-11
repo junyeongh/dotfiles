@@ -1,0 +1,34 @@
+# https://github.com/getsentry/dotagents
+version = 1
+agents = ["cursor"]
+
+[trust]
+allow_all = true
+
+[[skills]]
+name = "dotagents"
+source = "getsentry/dotagents"
+
+[[skills]]
+name = "find-skills"
+source = "vercel-labs/skills"
+
+[[skills]]
+name = "copilot-sdk"
+source = "intellectronica/agent-skills"
+
+[[skills]]
+name = "beautiful-mermaid"
+source = "intellectronica/agent-skills"
+
+[[skills]]
+name = "lorem-ipsum"
+source = "intellectronica/agent-skills"
+
+[[skills]]
+name = "promptify"
+source = "intellectronica/agent-skills"
+
+[[skills]]
+name = "youtube-transcript"
+source = "intellectronica/agent-skills"
