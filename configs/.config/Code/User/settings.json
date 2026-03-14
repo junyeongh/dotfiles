@@ -1,23 +1,8 @@
 {
   //////////////////////////////////////////////////
   // Languages specific
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
@@ -32,33 +17,12 @@
   "[rust]": {
     "editor.tabSize": 4
   },
-  "[tailwindcss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[vhdl]": {
     "editor.fontLigatures": false
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "#js.ts.inlayHints.parameterNames.enabled": "all",
-  "#js.ts.inlayHints.parameterTypes.enabled": true,
-  "#js.ts.inlayHints.propertyDeclarationTypes.enabled": true,
-  "#js.ts.inlayHints.variableTypes.enabled": true,
-  "#js.ts.updateImportsOnFileMove.enabled": "never",
-  "#js/ts.inlayHints.enumMemberValues.enabled": true,
-  "#js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
-  "#js/ts.inlayHints.parameterNames.enabled": "all",
-  "#js/ts.inlayHints.parameterTypes.enabled": true,
-  "#js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
-  "#js/ts.tsdk": "node_modules\\typescript\\lib",
-  "#js/ts.updateImportsOnFileMove.enabled": "always",
   "breadcrumbs.filePath": "last",
   "chat.agent.enabled": true,
   // "chat.disableAIFeatures": true,
@@ -72,7 +36,6 @@
   "chat.mcp.gallery.enabled": true,
   "chat.useAgentSkills": true,
   "chat.viewSessions.orientation": "stacked",
-  "chat.viewWelcome.enabled": false,
   "chatgpt.commentCodeLensEnabled": false,
   "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "claudeCode.preferredLocation": "panel",
@@ -86,6 +49,7 @@
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit"
   },
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.folding": false,
   "editor.fontFamily": "'D2CodingLigature Nerd Font','FiraCode Nerd Font', Consolas, monospace",
   "editor.fontLigatures": true,
@@ -98,14 +62,15 @@
   "editor.minimap.autohide": "mouseover",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.sectionHeaderFontSize": 18,
-  "editor.pasteAs.preferences": ["text.plain"],
+  "editor.pasteAs.preferences": [ "text.plain" ],
   "editor.renderLineHighlight": "all",
   "editor.renderWhitespace": "all",
-  "editor.rulers": [80, 100, 120],
+  "editor.rulers": [ 80, 100, 120 ],
   "editor.smoothScrolling": true,
   "editor.tabSize": 2,
-  "errorLens.excludeBySource": ["cSpell", "Harper"],
+  "errorLens.excludeBySource": [ "cSpell", "Harper" ],
   "errorLens.gutterIconsEnabled": true,
+  "evenBetterToml.formatter.arrayTrailingComma": true,
   // explorer
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -124,11 +89,11 @@
   "explorer.sortOrder": "type",
   "extensions.allowOpenInModalEditor": true,
   "files.associations": {
-    ".prettierrc": "jsonc",
     "*.base": "yaml",
     "*.css": "tailwindcss",
     "*.json": "jsonc",
     "*.mdx": "markdown",
+    ".prettierrc": "jsonc",
     "config": "shellscript"
   },
   "files.autoSave": "onFocusChange",
@@ -144,12 +109,12 @@
   "git.openRepositoryInParentFolders": "always",
   "git.verboseCommit": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.nextEditSuggestions.eagerness": "auto",
+  "github.copilot.nextEditSuggestions.eagerness": "low",
   "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.createOnPublishBranch": "never",
   "githubPullRequests.pullBranch": "never",
   "go.inlayHints.parameterNames": true,
-  "go.toolsManagement.autoUpdate": true,
+  "go.toolsManagement.autoUpdate": false,
   "indentRainbow.colors": [
     "rgba(255, 0, 0, 0.5)",
     "rgba(255, 127, 0, 0.5)",
@@ -163,14 +128,38 @@
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
   "inlineChat.enableV2": true,
   "inlineChat.notebookAgent": true,
+  "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "js/ts.inlayHints.enumMemberValues.enabled": true,
+  "js/ts.inlayHints.functionLikeReturnTypes.enabled": true,
+  "js/ts.inlayHints.parameterNames.enabled": "all",
+  "js/ts.inlayHints.parameterTypes.enabled": true,
+  "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.format.keepLines": true, // on and off when needed
+  "json.schemaDownload.trustedDomains": {
+    // "*":true,
+    "https://biomejs.dev": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://json-schema.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://raw.githubusercontent.com/*": true,
+    "https://schemastore.azurewebsites.net/": true,
+    "https://www.schemastore.org/": true
+  },
+  "json.schemas": [
+    {
+      "fileMatch": [ "*.json", "*.jsonc" ],
+      "schema": {
+        "allowTrailingCommas": true
+      }
+    }
+  ],
   "markdown-pdf.highlightStyle": "github.css",
   "markdown-preview-github-styles.colorTheme": "system",
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.preview.breaks": true,
   "markdownlint.config": {
-    "default": true,
     "MD004": false, // Unordered list style
     "MD010": false, // Hard tabs
     "MD018": false, // No space after hash on atx style heading
@@ -188,11 +177,12 @@
     // "MD051": false, // Link fragments should be valid
     "MD053": false, // Link and image reference definitions should be needed
     "MD058": false, // Tables should be surrounded by blank lines
-    "MD060": false // Table column style
+    "MD060": false,
     // "MD060": {
     //   "style": "compact",
     //   "aligned_delimiter": false
     // }
+    "default": true
   },
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
@@ -202,7 +192,7 @@
       //  "ignored": ["unused_binding", "unused_with"],
       // },
       "formatting": {
-        "command": ["nixfmt"]
+        "command": [ "nixfmt" ]
       }
     }
   },
