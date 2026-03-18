@@ -99,11 +99,24 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/shell_aliases/.bash_aliases ]; then
-  . ~/shell_aliases/.bash_aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
-if [ -f ~/shell_aliases/.aliases ]; then
-  . ~/shell_aliases/.aliases
+
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook bash)"
+fi
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env --use-on-cd --shell bash)"
+fi
+if command -v oh-my-posh &>/dev/null; then
+  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/negligible_edit.toml)"
+  # eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
+  # themes = [kushal, robbyrussell, di4am0nd, negligible]
+fi
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init bash)"
+  alias z='zoxide'
 fi
 
 # enable programmable completion features (you don't need to enable

@@ -23,9 +23,21 @@ eval "$(mise activate zsh)"
 
 ####################################################################################################
 # Alias definitions
-if [ -f ~/shell_aliases/.zsh_aliases ]; then
-    . ~/shell_aliases/.zsh_aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
-if [ -f ~/shell_aliases/.aliases ]; then
-    . ~/shell_aliases/.aliases
+
+if command -v direnv &>/dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+if command -v fnm &>/dev/null; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+if command -v oh-my-posh &>/dev/null; then
+  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
+  # eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
+  # themes = [kushal, robbyrussell, di4am0nd, negligible]
+fi
+if command -v zoxide >/dev/null; then
+  eval "$(zoxide init zsh --cmd z)"
 fi

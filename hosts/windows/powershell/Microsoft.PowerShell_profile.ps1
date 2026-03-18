@@ -3,6 +3,15 @@ oh-my-posh init pwsh --config '~\.config\oh-my-posh\negligible_edit.toml' | Invo
 # oh-my-posh init pwsh --config 'C:\Program Files (x86)\oh-my-posh\themes\{theme}.omp.json' | Invoke-Expression
 # theme in themes = [kushal, quick-term, robbyrussell, tokyo]
 
+# Command Not Found - Manually from PowerToys
+# #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
+Import-Module -Name Microsoft.WinGet.CommandNotFound
+
+# Fast and simple Node.js version manager, built in Rust
+if (Get-Command fnm -ErrorAction SilentlyContinue) {
+    fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
+}
+
 # Alias
 if (Get-Command eza -ErrorAction SilentlyContinue) {
     if (Test-Path Alias:ls) {
@@ -16,10 +25,3 @@ if (Get-Command eza -ErrorAction SilentlyContinue) {
         eza -all --tree
     }
 }
-
-# Command Not Found - Manually from PowerToys
-# #f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
-Import-Module -Name Microsoft.WinGet.CommandNotFound
-
-# Fast and simple Node.js version manager, built in Rust
-fnm env --use-on-cd --shell powershell | Out-String | Invoke-Expression
