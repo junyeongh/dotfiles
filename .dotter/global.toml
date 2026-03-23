@@ -1,6 +1,7 @@
 [default.files]
 agents = { target = "~/.agents", type = "symbolic", recurse = false } # https://github.com/SuperCuber/dotter/pull/94
 configs = "~"
+local = "~/.local"
 
 [settings]
 default_target_type = "symbolic"

@@ -62,9 +62,10 @@
   "reactFunctionalComponentWithProps": {
     "prefix": "rfcp",
     "body": [
-      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props {$2}",
+      "// interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props {$2}",
       "",
-      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1({$3}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props) {",
+      "// export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1({$3}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props) {",
+      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1() {",
       "  return (",
       "    <div>${TM_FILENAME_BASE}$4</div>",
       "  )",
@@ -81,9 +82,10 @@
     "body": [
       "import { StyleSheet, View } from 'react-native'",
       "",
-      "interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props {$2}",
+      "// interface ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props {$2}",
       "",
-      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1({$3}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props) {",
+      "// export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1({$3}: ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1Props) {",
+      "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}$1() {",
       "  return (",
       "    <View>$4</View>",
       "  )",
