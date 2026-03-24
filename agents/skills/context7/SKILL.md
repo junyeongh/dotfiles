@@ -20,12 +20,10 @@ curl -s "https://context7.com/api/v2/libs/search?libraryName=LIBRARY_NAME&query=
 ```
 
 **Parameters:**
-
 - `libraryName` (required): The library name to search for (e.g., "react", "nextjs", "fastapi", "axios")
 - `query` (required): A description of the topic for relevance ranking
 
 **Response fields:**
-
 - `id`: Library identifier for the context endpoint (e.g., `/websites/react_dev_reference`)
 - `title`: Human-readable library name
 - `description`: Brief description of the library
@@ -40,7 +38,6 @@ curl -s "https://context7.com/api/v2/context?libraryId=LIBRARY_ID&query=TOPIC&ty
 ```
 
 **Parameters:**
-
 - `libraryId` (required): The library ID from search results
 - `query` (required): The specific topic to retrieve documentation for
 - `type` (optional): Response format - `json` (default) or `txt` (plain text, more readable)

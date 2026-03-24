@@ -1,6 +1,6 @@
 # https://github.com/getsentry/dotagents
 version = 1
-agents = ["cursor"]
+agents = ["claude"]
 
 [trust]
 allow_all = true
@@ -31,4 +31,16 @@ source = "intellectronica/agent-skills"
 
 [[skills]]
 name = "youtube-transcript"
+source = "intellectronica/agent-skills"
+
+[[skills]]
+name = "markdown-output"
+source = "path:skills/markdown-output"
+
+[[skills]]
+name = "md060-formatter"
+source = "path:skills/md060-formatter"
+
+[[skills]]
+name = "context7"
 source = "intellectronica/agent-skills"
