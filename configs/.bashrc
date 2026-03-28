@@ -103,6 +103,10 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+if command -v mise >/dev/null 2>&1 && [ "$(uname -s)" = "Linux" ]; then
+  eval "$(mise activate bash)"
+fi
+
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook bash)"
 fi
@@ -132,10 +136,6 @@ fi
 
 ####################################################################################################
 # Programming languages and runtimes
-
-if command -v mise >/dev/null 2>&1 && [ "$(uname -s)" = "Linux" ]; then
-  eval "$(mise activate bash)"
-fi
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"

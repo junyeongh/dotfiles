@@ -13,18 +13,13 @@ compinit
 # End of lines added by compinstall
 
 ####################################################################################################
-# Programming languages and runtimes
-
-eval "$(mise activate zsh)"
-
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
-[ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
-
-####################################################################################################
 # Alias definitions
 if [ -f ~/.aliases ]; then
   . ~/.aliases
+fi
+
+if command -v mise &>/dev/null; then
+  eval "$(mise activate zsh)"
 fi
 
 if command -v direnv &>/dev/null; then
@@ -41,3 +36,10 @@ fi
 if command -v zoxide >/dev/null; then
   eval "$(zoxide init zsh --cmd z)"
 fi
+
+####################################################################################################
+# Programming languages and runtimes
+
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+[ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
