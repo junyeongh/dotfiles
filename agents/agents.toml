@@ -1,6 +1,6 @@
 # https://github.com/getsentry/dotagents
 version = 1
-agents = ["claude"]
+agents = ["claude", "codex"]
 
 [trust]
 allow_all = true
@@ -40,3 +40,13 @@ source = "intellectronica/agent-skills"
 [[skills]]
 name = "markdown-output"
 source = "path:skills/markdown-output"
+
+[[mcp]]
+name = "context7"
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[[mcp]]
+name = "serena"
+command = "uvx"
+args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server" ]
