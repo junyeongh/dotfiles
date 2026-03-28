@@ -2,6 +2,7 @@
 personality = "pragmatic"
 model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
+plan_mode_reasoning_effort = "xhigh"
 
 [tui]
 status_line = [
@@ -16,6 +17,7 @@ status_line = [
   "five-hour-limit",
   "weekly-limit",
 ]
+notifications = true
 
 [features]
 use_linux_sandbox_bwrap = true

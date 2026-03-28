@@ -1,13 +1,12 @@
 [
   {
-    "key": "ctrl+enter",
     "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus",
+    "key": "ctrl+enter",
     "args": {
       "text": "\\\r\n"
-    }
+    },
+    "when": "terminalFocus"
   },
-  // Editor Navigation & Management
   {
     "command": "workbench.action.files.saveAll",
     "key": "ctrl+alt+s"
@@ -16,6 +15,7 @@
     "command": "-workbench.action.files.saveAll",
     "key": "ctrl+k s"
   },
+  // Editor Navigation & Management
   {
     "command": "workbench.action.nextEditorInGroup",
     "key": "ctrl+tab"
@@ -69,21 +69,31 @@
     "key": "ctrl+shift+numpad_subtract"
   },
   {
-    "command": "-workbench.action.zoomIn",
-    "key": "ctrl+shift+oem_plus"
+    "key": "ctrl+oem_minus",
+    "command": "-workbench.action.browser.zoomOut",
+    "when": "browserFocused && browserHasUrl && !browserHasError && activeEditor == 'workbench.editor.browser'"
   },
   {
-    "command": "-workbench.action.zoomIn",
-    "key": "ctrl+oem_plus"
+    "key": "ctrl+oem_plus",
+    "command": "-workbench.action.browser.zoomIn",
+    "when": "browserFocused && browserHasUrl && !browserHasError && activeEditor == 'workbench.editor.browser'"
   },
-  {
-    "command": "-workbench.action.zoomOut",
-    "key": "ctrl+shift+oem_minus"
-  },
-  {
-    "command": "-workbench.action.zoomOut",
-    "key": "ctrl+oem_minus"
-  },
+  // {
+  //   "command": "-workbench.action.zoomIn",
+  //   "key": "ctrl+shift+oem_plus"
+  // },
+  // {
+  //   "command": "-workbench.action.zoomIn",
+  //   "key": "ctrl+oem_plus"
+  // },
+  // {
+  //   "command": "-workbench.action.zoomOut",
+  //   "key": "ctrl+shift+oem_minus"
+  // },
+  // {
+  //   "command": "-workbench.action.zoomOut",
+  //   "key": "ctrl+oem_minus"
+  // },
   {
     "command": "notebook.formatCell",
     "key": "shift+alt+f",
@@ -140,14 +150,14 @@
   },
   {
     "command": "runCommands",
+    "key": "ctrl+shift+alt+b",
     "args": {
       "commands": [
         "workbench.action.toggleSidebarVisibility",
         "workbench.action.toggleAuxiliaryBar"
       ],
       "when": "(!sideBarVisible && !auxiliaryBarVisible) || (sideBarVisible && auxiliaryBarVisible)"
-    },
-    "key": "ctrl+shift+alt+b"
+    }
   },
   {
     "command": "workbench.action.closeSidebar",
@@ -216,53 +226,33 @@
     "when": "editorTextFocus && !editorReadonly"
   },
   // Markdown
-  {
-    "command": "-markdown.extension.editing.toggleBold",
-    "key": "ctrl+b",
-    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-  },
-  {
-    "command": "-markdown.extension.editing.toggleItalic",
-    "key": "ctrl+i",
-    "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
-  },
+  // {
+  //   "command": "-markdown.extension.editing.toggleBold",
+  //   "key": "ctrl+b",
+  //   "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  // },
+  // {
+  //   "command": "-markdown.extension.editing.toggleItalic",
+  //   "key": "ctrl+i",
+  //   "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+  // },
   // Terminal
   {
+    "command": "workbench.action.terminal.sendSequence",
+    "key": "shift+enter",
+    "when": "terminalFocus",
     "args": {
       "text": "\\\r\n"
     },
-    "command": "workbench.action.terminal.sendSequence",
-    "key": "shift+enter",
-    "when": "terminalFocus"
   },
-  // Chat & AI
-  // {
-  //   "command": "-workbench.action.chat.open",
-  //   "key": "ctrl+alt+i"
-  // },
-  // {
-  //   "command": "-workbench.action.chat.openEditSession",
-  //   "key": "ctrl+shift+i",
-  //   "when": "chatEditingParticipantRegistered && view != 'workbench.panel.chat.view.edits'"
-  // },
-  // {
-  //   "key": "ctrl+shift+i",
-  //   "command": "workbench.action.chat.openAsk",
-  //   "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
-  // },
-  // {
-  //   "key": "ctrl+shift+i",
-  //   "command": "-workbench.action.chat.openAgent",
-  //   "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
-  // },
   {
-    "key": "ctrl+shift+b",
     "command": "-workbench.action.tasks.build",
+    "key": "ctrl+shift+b",
     "when": "taskCommandsRegistered"
   },
   {
-    "key": "ctrl+shift+o",
-    "command": "outline.focus"
+    "command": "outline.focus",
+    "key": "ctrl+shift+o"
   },
   // {
   //   "key": "tab",
@@ -275,53 +265,58 @@
   //   "when": "editorTextFocus && !editorHasMultipleSelections && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible"
   // },
   {
-    "key": "ctrl+k ctrl+f",
     "command": "-editor.action.formatSelection",
+    "key": "ctrl+k ctrl+f",
     "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "ctrl+k ctrl+f",
-    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    "key": "ctrl+k ctrl+f"
   },
   {
-    "key": "ctrl+shift+i",
     "command": "workbench.action.chat.openask",
+    "key": "ctrl+shift+i",
     "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
   },
   {
-    "key": "ctrl+shift+i",
     "command": "-workbench.action.chat.openagent",
+    "key": "ctrl+shift+i",
     "when": "config.chat.agent.enabled && !chatSetupDisabled && !chatSetupHidden"
   },
   {
-    "key": "ctrl+shift+v",
     "command": "-frontMatter.insertSnippet",
+    "key": "ctrl+shift+v",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+shift+i",
     "command": "-frontMatter.insertMedia",
+    "key": "ctrl+shift+i",
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+r",
     "command": "-workbench.action.webview.reloadWebviewAction",
+    "key": "ctrl+r",
     "when": "activeWebviewPanelId == 'frontMatterDashboard'"
   },
   {
-    "key": "alt+d",
-    "command": "-frontMatter.dashboard"
+    "command": "-frontMatter.dashboard",
+    "key": "alt+d"
   },
   {
-    "key": "ctrl+oem_plus",
-    "command": "workbench.action.zoomIn"
+    "command": "workbench.action.zoomIn",
+    "key": "ctrl+oem_plus"
   },
   {
-    "key": "ctrl+oem_minus",
-    "command": "workbench.action.zoomOut"
+    "command": "workbench.action.zoomOut",
+    "key": "ctrl+oem_minus"
   },
   {
-    "key": "alt+oem_2",
-    "command": "editor.action.inlineSuggest.trigger"
+    "command": "editor.action.inlineSuggest.trigger",
+    "key": "alt+oem_2"
+  },
+  {
+    "command": "workbench.action.createTerminalEditor",
+    "key": "ctrl+alt+oem_3",
+    "when": "terminalProcessSupported"
   }
 ]

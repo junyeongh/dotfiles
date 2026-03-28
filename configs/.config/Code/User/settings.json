@@ -1,12 +1,15 @@
 {
   //////////////////////////////////////////////////
   // Languages specific
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-containers"
+  },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "editor.defaultFormatter": "rvben.rumdl",
     "editor.wordWrap": "on",
     "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
   },
@@ -15,11 +18,14 @@
     "editor.tabSize": 4
   },
   "[rust]": {
-    "editor.tabSize": 4,
-    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.tabSize": 4
   },
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "[vhdl]": {
     "editor.fontLigatures": false
@@ -95,6 +101,7 @@
   "files.associations": {
     "*.base": "yaml",
     "*.css": "tailwindcss",
+    "*.keymap": "c",
     "*.mdx": "markdown",
     ".aliases": "bat",
     ".prettierrc": "jsonc",
@@ -208,7 +215,7 @@
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredSettings": [
-    // "-window.zoomLevel"
+    "-window.zoomLevel"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tailwind-fold.autoFold": false,

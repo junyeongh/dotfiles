@@ -1,0 +1,23 @@
+[tools]
+# CLI Tools
+bat = "latest"
+ctop = "latest"
+delta = "latest"
+difftastic = "latest"
+direnv = "latest"
+eza = "latest"
+fastfetch = "latest"
+fzf = "latest"
+hyperfine = "latest"
+just = "latest"
+lazydocker = "latest"
+lazygit = "latest"
+oh-my-posh = "latest"
+ripgrep = "latest"
+rumdl = "latest"
+uv = "latest"
+zoxide = "latest"
+
+# Text Editor
+helix = "latest"
+neovim = "latest"
