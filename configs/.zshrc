@@ -14,10 +14,6 @@ compinit
 
 ####################################################################################################
 # Alias definitions
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
-fi
-
 if command -v mise &>/dev/null; then
   eval "$(mise activate zsh)"
 fi
@@ -35,6 +31,10 @@ if command -v oh-my-posh &>/dev/null; then
 fi
 if command -v zoxide >/dev/null; then
   eval "$(zoxide init zsh --cmd z)"
+fi
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
 
 ####################################################################################################
