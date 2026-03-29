@@ -1,5 +1,13 @@
 {
+  // Common
+  "effortLevel": "high",
   "model": "opusplan",
+  "voiceEnabled": true,
+  "enabledPlugins": {
+    "figma@claude-plugins-official": false,
+    "github@claude-plugins-official": false
+  },
+  // Windows
   "hooks": {
     "Notification": [
       {
@@ -31,16 +39,5 @@
         ]
       }
     ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "powershell -ExecutionPolicy Bypass -File %USERPROFILE%\\.claude\\statusline.ps1",
-    "padding": 0
-  },
-  "enabledPlugins": {
-    "context7@claude-plugins-official": true,
-    "figma@claude-plugins-official": false,
-    "github@claude-plugins-official": false,
-    "serena@claude-plugins-official": true
   }
 }
