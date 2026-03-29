@@ -1,0 +1,54 @@
+{
+  "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
+  "title": "Winget - Miscellaneous",
+  "Sources": [
+    {
+      "Packages": [
+        { "PackageIdentifier": "AdGuard.AdGuard" },
+        { "PackageIdentifier": "AdGuard.AdGuardVPN" },
+        { "PackageIdentifier": "Anthropic.Claude" },
+        { "PackageIdentifier": "Discord.Discord" },
+        { "PackageIdentifier": "Elgato.StreamDeck" },
+        { "PackageIdentifier": "Ferdium.Ferdium" },
+        { "PackageIdentifier": "Figma.Figma" },
+        { "PackageIdentifier": "Figma.FigmaAgent" },
+        { "PackageIdentifier": "Google.ChromeRemoteDesktopHost" },
+        { "PackageIdentifier": "JonatanHeyman.Heynote" },
+        { "PackageIdentifier": "KDE.Okular" },
+        { "PackageIdentifier": "Kakao.KakaoTalk" },
+        { "PackageIdentifier": "KiCad.KiCad" },
+        { "PackageIdentifier": "Logitech.LogiTune" },
+        { "PackageIdentifier": "Notion.Notion" },
+        { "PackageIdentifier": "Obsidian.Obsidian" },
+        { "PackageIdentifier": "Olivia.VIA" },
+        { "PackageIdentifier": "REALiX.HWiNFO" },
+        { "PackageIdentifier": "ShareX.Share" },
+        { "PackageIdentifier": "SlackTechnologies.Slack" },
+        { "PackageIdentifier": "Surfshark.Surfshark" },
+        { "PackageIdentifier": "Valve.Steam" },
+        { "PackageIdentifier": "VideoLAN.VLC" },
+        { "PackageIdentifier": "WinSCP.WinSCP" },
+        { "PackageIdentifier": "Zoom.Zoom" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://cdn.winget.microsoft.com/cache",
+        "Identifier": "Microsoft.Winget.Source_8wekyb3d8bbwe",
+        "Name": "winget",
+        "Type": "Microsoft.PreIndexed.Package"
+      }
+    },
+    {
+      "Packages": [
+        { "PackageIdentifier": "9PKTQ5699M62", "_comment": "iCloud" },
+        { "PackageIdentifier": "9PLM9XGG6VKS", "_comment": "Codex" },
+        { "PackageIdentifier": "9PFXXSHC64H3", "_comment": "Raycast" }
+      ],
+      "SourceDetails": {
+        "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
+        "Identifier": "StoreEdgeFD",
+        "Name": "msstore",
+        "Type": "Microsoft.Rest"
+      }
+    }
+  ]
+}

@@ -1,18 +1,19 @@
 {
   "$schema": "https://aka.ms/winget-packages.schema.2.0.json",
-  "title": "Winget Primary",
+  "title": "Winget - Primary",
   "Sources": [
     {
       "Packages": [
-        { "PackageIdentifier": "AdGuard.AdGuard" },
         { "PackageIdentifier": "AgileBits.1Password" },
         { "PackageIdentifier": "AgileBits.1Password.CLI" },
+        { "PackageIdentifier": "Bandisoft.BandiView" },
+        { "PackageIdentifier": "Bandisoft.Bandizip" },
         { "PackageIdentifier": "Dropbox.Dropbox" },
         { "PackageIdentifier": "Google.Chrome" },
-        { "PackageIdentifier": "Logitech.LogiTune" },
-        { "PackageIdentifier": "Elgato.StreamDeck" },
         { "PackageIdentifier": "Logitech.OptionsPlus" },
-        { "PackageIdentifier": "Microsoft.PowerShell" }
+        { "PackageIdentifier": "Microsoft.PowerToys" },
+        { "PackageIdentifier": "Mozilla.Firefox" },
+        { "PackageIdentifier": "voidtools.Everything" }
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",
