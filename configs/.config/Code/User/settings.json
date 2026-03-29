@@ -9,7 +9,7 @@
   },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
-    "editor.defaultFormatter": "rvben.rumdl",
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.wordWrap": "on",
     "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
   },
@@ -26,6 +26,9 @@
   },
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[typst]": {
+    "editor.defaultFormatter": "myriad-dreamin.tinymist"
   },
   "[vhdl]": {
     "editor.fontLigatures": false
@@ -81,6 +84,7 @@
   "errorLens.excludeBySource": ["cSpell", "Harper"],
   "errorLens.gutterIconsEnabled": true,
   "evenBetterToml.formatter.arrayTrailingComma": true,
+  "evenBetterToml.schema.links": true,
   // explorer
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,

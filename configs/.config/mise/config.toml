@@ -7,6 +7,7 @@ go = "latest"
 rust = "latest"
 
 # CLI Tools
+act = "latest"
 bat = "latest"
 ctop = "latest"
 delta = "latest"
@@ -22,7 +23,9 @@ lazygit = "latest"
 oh-my-posh = "latest"
 ripgrep = "latest"
 rumdl = "latest"
+typst = "latest"
 uv = "latest"
+yq = "latest"
 zoxide = "latest"
 
 # Text Editor

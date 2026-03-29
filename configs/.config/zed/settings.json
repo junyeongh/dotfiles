@@ -82,7 +82,7 @@
   },
   "ui_font_size": 16,
   "use_system_window_tabs": false,
-  "vim_mode": false,
+  "vim_mode": true,
   "which_key": {
     "enabled": true
   }
