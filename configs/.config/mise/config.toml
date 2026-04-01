@@ -1,3 +1,4 @@
+#:schema https://mise.jdx.dev/schema/mise.json
 [tools]
 # Programming Languages
 bun = "latest"
@@ -31,3 +32,6 @@ zoxide = "latest"
 # Text Editor
 helix = "latest"
 neovim = "latest"
+
+[settings]
+lockfile = true

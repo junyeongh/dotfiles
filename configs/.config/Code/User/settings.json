@@ -7,6 +7,9 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "[just]": {
+    "editor.defaultFormatter": "nefrob.vscode-just-syntax"
+  },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
@@ -215,11 +218,31 @@
   "resmon.show.cpufreq": false,
   "resmon.show.cpuusage": false,
   "ruff.lineLength": 120,
+  "rumdl.rules.enable": [
+    "MD004", // Unordered list style
+    "MD010", // Hard tabs
+    "MD018", // No space after hash on atx style heading
+    "MD024", // Multiple headings with the same content
+    "MD026", // Trailing punctuation in heading
+    "MD028", // Blank line inside blockquote
+    "MD029", // Ordered list item prefix
+    "MD031", // Fenced code blocks should be surrounded by blank lines
+    // "MD033", // Inline HTML
+    // "MD034", // Bare URL used
+    "MD036", // Emphasis used instead of a heading
+    "MD040", // Fenced code blocks should have a language specified
+    "MD041", // First line in a file should be a top-level heading
+    "MD045", // Images should have alternate text (alt text)
+    // "MD051", // Link fragments should be valid
+    "MD053", // Link and image reference definitions should be needed
+    "MD058", // Tables should be surrounded by blank lines
+    "MD060"
+  ],
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredSettings": [
-    "-window.zoomLevel"
+    // "-window.zoomLevel"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tailwind-fold.autoFold": false,
