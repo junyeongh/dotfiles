@@ -5,7 +5,6 @@
 
 with pkgs;
 [
-  bottles
   dconf-editor
   dropbox-cli
   ferdium
@@ -14,12 +13,12 @@ with pkgs;
   gnome-tweaks
   google-chrome
   heynote
-  kanata
+  # kanata
   obsidian
   spotify
   vlc
   vscode
-  waybar
+  # waybar
   wofi
   yaak
   zed-editor
