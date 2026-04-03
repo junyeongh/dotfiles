@@ -32,9 +32,8 @@ alias gstd='git stash drop'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash --staged'
-alias gsts='git stash save'
 alias gwa='git worktree add'
-alias gwa='git worktree remove'
+alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
 # Other Aliases
@@ -67,6 +66,10 @@ if command -v eza &>/dev/null; then
 fi
 if command -v fzf &>/dev/null; then
   alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
+fi
+if command -v gh &>/dev/null && gh auth status &>/dev/null; then
+  export GITHUB_TOKEN=$(gh auth token)
+  export MISE_GITHUB_TOKEN=$GITHUB_TOKEN
 fi
 if command -v lazydocker &>/dev/null; then
   alias ld='lazydocker'

@@ -16,6 +16,9 @@
     "editor.wordWrap": "on",
     "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
   },
+  "[powershell]": {
+    "editor.defaultFormatter": "ms-vscode.powershell"
+  },
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.tabSize": 4
@@ -39,7 +42,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "breadcrumbs.filePath": "last",
+  // "breadcrumbs.filePath": "last",
   "chat.agent.enabled": true,
   // "chat.disableAIFeatures": true,
   "chat.math.enabled": true,
@@ -56,6 +59,7 @@
   "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "claudeCode.preferredLocation": "panel",
   "claudeCode.useCtrlEnterToSend": true,
+  "color-highlight.enable": false,
   "debug.toolBarLocation": "docked",
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
@@ -249,7 +253,7 @@
   "tailwind-fold.foldStyle": "QUOTES",
   "tailwind-fold.unfoldIfLineSelected": true,
   "telemetry.telemetryLevel": "off",
-  "terminal.external.windowsExec": "C:/WINDOWS/System32/wsl.exe",
+  "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.enableImages": true,
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Consolas, monospace",

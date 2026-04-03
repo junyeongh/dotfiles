@@ -2,9 +2,10 @@ personality = "pragmatic"
 model = "gpt-5.4"
 model_reasoning_effort = "xhigh"
 plan_mode_reasoning_effort = "xhigh"
+approvals_reviewer = "user"
 
 [tui]
-status_line = [ "codex-version", "model-name", "model-with-reasoning", "current-dir", "project-root", "git-branch", "context-used", "context-window-size", "five-hour-limit", "weekly-limit" ]
+status_line = ["codex-version", "model-name", "model-with-reasoning", "current-dir", "git-branch", "context-used", "context-window-size", "five-hour-limit", "weekly-limit", "context-remaining", "used-tokens", "total-input-tokens", "total-output-tokens", "session-id"]
 notifications = true
 
 [features]

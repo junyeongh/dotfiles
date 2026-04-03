@@ -13,11 +13,10 @@ compinit
 # End of lines added by compinstall
 
 ####################################################################################################
-# Alias definitions
+# enable tools
 if command -v mise &>/dev/null; then
   eval "$(mise activate zsh)"
 fi
-
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
@@ -30,13 +29,16 @@ if command -v oh-my-posh &>/dev/null; then
   # themes = [kushal, robbyrussell, di4am0nd, negligible]
 fi
 if command -v zoxide >/dev/null; then
-  eval "$(zoxide init zsh --cmd z)"
+  eval "$(zoxide init zsh)"
 fi
 
+# Alias definitions
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
-
+# worktrunk
+if command -v git-wt >/dev/null 2>&1; then eval "$(command git-wt config shell init zsh)"; fi
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 ####################################################################################################
 # Programming languages and runtimes
 
