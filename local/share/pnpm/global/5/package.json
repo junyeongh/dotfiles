@@ -1,7 +1,7 @@
 {
 	"dependencies": {
 		"@anthropic-ai/sandbox-runtime": "^0.0.49",
-		"@github/copilot": "^1.0.17",
+		"@github/copilot": "^1.0.19",
 		"@openai/codex": "^0.118.0",
 		"@sentry/dotagents": "^1.8.0",
 		"oxfmt": "^0.43.0",

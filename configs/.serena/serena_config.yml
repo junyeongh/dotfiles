@@ -88,8 +88,8 @@ base_modes:
 # The full set of modes to be activated is base_modes + default_modes.
 # These modes can be overridden by the project configuration (project.yml) or through the CLI (--mode).
 default_modes:
-  - interactive
-  - editing
+- interactive
+- editing
 
 # fixed set of tools to use as the base tool set (if non-empty), replacing Serena's default set of tools.
 # This cannot be combined with non-empty excluded_tools or included_optional_tools.

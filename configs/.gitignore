@@ -81,9 +81,8 @@ desktop.ini
 # Miscellaneous
 # ------------------------------
 .worktrees/
-*local
-*local.*
-*bak
-*bak.*
+*.local*
+*.local.*
+!local/
 !*example
 !*example.*

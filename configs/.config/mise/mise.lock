@@ -476,6 +476,54 @@ url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-wind
 checksum = "sha256:7465a6738e2c844742df973459c7509aed2d10d7a72bfd6de201b867b4eda4cd"
 url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-windows_amd64.zip"
 
+[[tools.fzf]]
+version = "0.71.0"
+backend = "aqua:junegunn/fzf"
+
+[tools.fzf."platforms.linux-arm64"]
+checksum = "sha256:98b7d322efae9c37e4bfbbab1cbcd8722eb742d9399511f96375feb40cc35d1d"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_arm64.tar.gz"
+
+[tools.fzf."platforms.linux-arm64-musl"]
+checksum = "sha256:98b7d322efae9c37e4bfbbab1cbcd8722eb742d9399511f96375feb40cc35d1d"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_arm64.tar.gz"
+
+[tools.fzf."platforms.linux-x64"]
+checksum = "sha256:22639bb38489dbca8acef57850cbb50231ab714d0e8e855ac52fae8b41233df4"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_amd64.tar.gz"
+
+[tools.fzf."platforms.linux-x64-baseline"]
+checksum = "sha256:22639bb38489dbca8acef57850cbb50231ab714d0e8e855ac52fae8b41233df4"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_amd64.tar.gz"
+
+[tools.fzf."platforms.linux-x64-musl"]
+checksum = "sha256:22639bb38489dbca8acef57850cbb50231ab714d0e8e855ac52fae8b41233df4"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_amd64.tar.gz"
+
+[tools.fzf."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:22639bb38489dbca8acef57850cbb50231ab714d0e8e855ac52fae8b41233df4"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-linux_amd64.tar.gz"
+
+[tools.fzf."platforms.macos-arm64"]
+checksum = "sha256:02dfb11de8773cb79aa4fc5bfc77e75c6604ee14728bc849fc162dd91a9714c4"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-darwin_arm64.tar.gz"
+
+[tools.fzf."platforms.macos-x64"]
+checksum = "sha256:144e98ee6bcffaf915366162768000561cd2db8fb53b119d73110391a8e5b5f0"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-darwin_amd64.tar.gz"
+
+[tools.fzf."platforms.macos-x64-baseline"]
+checksum = "sha256:144e98ee6bcffaf915366162768000561cd2db8fb53b119d73110391a8e5b5f0"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-darwin_amd64.tar.gz"
+
+[tools.fzf."platforms.windows-x64"]
+checksum = "sha256:15bf30fa658c596d740f0ce9a9a97b6b5d90566124903657d09fd109dd0973d2"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-windows_amd64.zip"
+
+[tools.fzf."platforms.windows-x64-baseline"]
+checksum = "sha256:15bf30fa658c596d740f0ce9a9a97b6b5d90566124903657d09fd109dd0973d2"
+url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-windows_amd64.zip"
+
 [[tools.go]]
 version = "1.26.1"
 backend = "core:go"
@@ -668,6 +716,54 @@ url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64
 checksum = "sha256:368cd9ca827cba04d9e6fc00f7ad840773c4605b6f64b9f87bdb00325d351029"
 url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-pc-windows-msvc.zip"
 
+[[tools.just]]
+version = "1.49.0"
+backend = "aqua:casey/just"
+
+[tools.just."platforms.linux-arm64"]
+checksum = "sha256:993b78f51004248114af22368f69715541542b3c9941c80e02f8ae10eb404ae0"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-aarch64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-arm64-musl"]
+checksum = "sha256:993b78f51004248114af22368f69715541542b3c9941c80e02f8ae10eb404ae0"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-aarch64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64"]
+checksum = "sha256:05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64-baseline"]
+checksum = "sha256:05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64-musl"]
+checksum = "sha256:05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.just."platforms.macos-arm64"]
+checksum = "sha256:d21b20df01ec9b9762b0ef08e56ae8dccf3738770edeafa8d2b3a750aee06d78"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-aarch64-apple-darwin.tar.gz"
+
+[tools.just."platforms.macos-x64"]
+checksum = "sha256:e0b83a9352952ab25e5cf13f6cb03dd1872416e5d89388b56d6ca58f11b0a3a8"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-apple-darwin.tar.gz"
+
+[tools.just."platforms.macos-x64-baseline"]
+checksum = "sha256:e0b83a9352952ab25e5cf13f6cb03dd1872416e5d89388b56d6ca58f11b0a3a8"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-apple-darwin.tar.gz"
+
+[tools.just."platforms.windows-x64"]
+checksum = "sha256:657338772efd17a31d67285bb5ed691da87741e44311c0366273c6cb7d913b15"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-pc-windows-msvc.zip"
+
+[tools.just."platforms.windows-x64-baseline"]
+checksum = "sha256:657338772efd17a31d67285bb5ed691da87741e44311c0366273c6cb7d913b15"
+url = "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-pc-windows-msvc.zip"
+
 [[tools.lazydocker]]
 version = "0.25.0"
 backend = "aqua:jesseduffield/lazydocker"
@@ -763,6 +859,128 @@ url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygi
 [tools.lazygit."platforms.windows-x64-baseline"]
 checksum = "sha256:435b53165ff4604e201549b9317eb0b8bb5b3f6728be612656988e90c821a9b9"
 url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_windows_x86_64.zip"
+
+[[tools.lazygit]]
+version = "0.61.0"
+backend = "aqua:jesseduffield/lazygit"
+
+[tools.lazygit."platforms.linux-arm64"]
+checksum = "sha256:7c3b1594fbb5ca29c17f875c0240849dd924f29bdeaf819ef26ae2107ccad84c"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_arm64.tar.gz"
+
+[tools.lazygit."platforms.linux-arm64-musl"]
+checksum = "sha256:7c3b1594fbb5ca29c17f875c0240849dd924f29bdeaf819ef26ae2107ccad84c"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_arm64.tar.gz"
+
+[tools.lazygit."platforms.linux-x64"]
+checksum = "sha256:4a9702b346283a23a6919c9424617e14788ac00e9cd3c9be266bac48cc6de8eb"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_x86_64.tar.gz"
+
+[tools.lazygit."platforms.linux-x64-baseline"]
+checksum = "sha256:4a9702b346283a23a6919c9424617e14788ac00e9cd3c9be266bac48cc6de8eb"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_x86_64.tar.gz"
+
+[tools.lazygit."platforms.linux-x64-musl"]
+checksum = "sha256:4a9702b346283a23a6919c9424617e14788ac00e9cd3c9be266bac48cc6de8eb"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_x86_64.tar.gz"
+
+[tools.lazygit."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:4a9702b346283a23a6919c9424617e14788ac00e9cd3c9be266bac48cc6de8eb"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_linux_x86_64.tar.gz"
+
+[tools.lazygit."platforms.macos-arm64"]
+checksum = "sha256:7dc684c3c40812de72f7852222d415fecb1c4dae2058b23e5a3c4a5341dc6e9f"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_darwin_arm64.tar.gz"
+
+[tools.lazygit."platforms.macos-x64"]
+checksum = "sha256:196232de7647094bb51681afb3fc3076d5b4eb70ae99b9cec145462b13aab54f"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_darwin_x86_64.tar.gz"
+
+[tools.lazygit."platforms.macos-x64-baseline"]
+checksum = "sha256:196232de7647094bb51681afb3fc3076d5b4eb70ae99b9cec145462b13aab54f"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_darwin_x86_64.tar.gz"
+
+[tools.lazygit."platforms.windows-x64"]
+checksum = "sha256:26bb374ee7f3c6e52627262c7f8cc96ab23f96dfd3ef95b3d485d2ef9b842764"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_windows_x86_64.zip"
+
+[tools.lazygit."platforms.windows-x64-baseline"]
+checksum = "sha256:26bb374ee7f3c6e52627262c7f8cc96ab23f96dfd3ef95b3d485d2ef9b842764"
+url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_windows_x86_64.zip"
+
+[[tools.neovim]]
+version = "0.12.0"
+backend = "vfox:mise-plugins/vfox-neovim"
+
+[tools.neovim."platforms.linux-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-arm64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-musl-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.macos-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-arm64.tar.gz"
+
+[tools.neovim."platforms.macos-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-x86_64.tar.gz"
+
+[tools.neovim."platforms.macos-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-x86_64.tar.gz"
+
+[tools.neovim."platforms.windows-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-win64.zip"
+
+[tools.neovim."platforms.windows-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-win64.zip"
+
+[[tools.neovim]]
+version = "0.12.1"
+backend = "vfox:mise-plugins/vfox-neovim"
+
+[tools.neovim."platforms.linux-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-arm64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-arm64.tar.gz"
+
+[tools.neovim."platforms.linux-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-musl"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.linux-x64-musl-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-linux-x86_64.tar.gz"
+
+[tools.neovim."platforms.macos-arm64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-macos-arm64.tar.gz"
+
+[tools.neovim."platforms.macos-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-macos-x86_64.tar.gz"
+
+[tools.neovim."platforms.macos-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-macos-x86_64.tar.gz"
+
+[tools.neovim."platforms.windows-x64"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-win64.zip"
+
+[tools.neovim."platforms.windows-x64-baseline"]
+url = "https://github.com/neovim/neovim/releases/download/v0.12.1/nvim-win64.zip"
 
 [[tools.oh-my-posh]]
 version = "29.9.2"
@@ -918,6 +1136,124 @@ url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779922"
 checksum = "sha256:c53059fc286db0571ed3bad73fcf6e0b3553d6556fd43f556037928d9a23e072"
 url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779922"
+
+[[tools.rumdl]]
+version = "0.1.66"
+backend = "github:rvben/rumdl"
+
+[tools.rumdl."platforms.linux-arm64"]
+checksum = "sha256:84cbbe7156cb65199152072590a58a9b6571b26d486f5951cf1965ffaaed8b46"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339936"
+
+[tools.rumdl."platforms.linux-arm64-musl"]
+checksum = "sha256:f9b7f5a6589312e1b220666bc36d36622723239562b8a43d16f325cd937cbbba"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339932"
+
+[tools.rumdl."platforms.linux-x64"]
+checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
+
+[tools.rumdl."platforms.linux-x64-baseline"]
+checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
+
+[tools.rumdl."platforms.linux-x64-musl"]
+checksum = "sha256:42fca374618ef5b2d3a1ba4346e28de6ceb8a46b9a5ab3dcd0a984d55915971e"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339929"
+
+[tools.rumdl."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
+
+[tools.rumdl."platforms.macos-arm64"]
+checksum = "sha256:2efc4215d6edf9f2ab3f8a9bc2ce4cb9312001b506fc9e715c715222a481fb39"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339933"
+
+[tools.rumdl."platforms.macos-x64"]
+checksum = "sha256:7e54b2f368f1086f442b198be7a1487b68f51c69af21c1ac9553c537ce9753b3"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339930"
+
+[tools.rumdl."platforms.macos-x64-baseline"]
+checksum = "sha256:7e54b2f368f1086f442b198be7a1487b68f51c69af21c1ac9553c537ce9753b3"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339930"
+
+[tools.rumdl."platforms.windows-x64"]
+checksum = "sha256:2078864720019deb3573555631a4ee133ae49c2f839db305c7b19f75341ecef1"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339939"
+
+[tools.rumdl."platforms.windows-x64-baseline"]
+checksum = "sha256:2078864720019deb3573555631a4ee133ae49c2f839db305c7b19f75341ecef1"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339939"
+
+[[tools.rumdl]]
+version = "0.1.67"
+backend = "github:rvben/rumdl"
+
+[tools.rumdl."platforms.linux-arm64"]
+checksum = "sha256:13dfb30f628d8f4f398c54ca0e799916b92512ef2729bb75a41870a0c3a41772"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907332"
+
+[tools.rumdl."platforms.linux-arm64-musl"]
+checksum = "sha256:25dd90908770899ccb9e21faf7f690e81b7e611c2e703eddbcff5def71ac7926"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907330"
+
+[tools.rumdl."platforms.linux-x64"]
+checksum = "sha256:ab1a6ceb2797ade9d97340b87016ebe08b6aa74336a19112672028f35c1d241f"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907328"
+
+[tools.rumdl."platforms.linux-x64-baseline"]
+checksum = "sha256:ab1a6ceb2797ade9d97340b87016ebe08b6aa74336a19112672028f35c1d241f"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907328"
+
+[tools.rumdl."platforms.linux-x64-musl"]
+checksum = "sha256:8e22ca80649d244b1146935e914d1d4d04fe563492edac888052d3b6acb5193f"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907327"
+
+[tools.rumdl."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:ab1a6ceb2797ade9d97340b87016ebe08b6aa74336a19112672028f35c1d241f"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907328"
+
+[tools.rumdl."platforms.macos-arm64"]
+checksum = "sha256:c06ff24e934ecd8625d513a39f37e6803c104604e35109fb56a133058592e4b1"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907334"
+
+[tools.rumdl."platforms.macos-x64"]
+checksum = "sha256:b8fcb77f6a071a3f1360d483499f7a98d757e5e3c247eb9ccf8ecab9dec1a155"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907329"
+
+[tools.rumdl."platforms.macos-x64-baseline"]
+checksum = "sha256:b8fcb77f6a071a3f1360d483499f7a98d757e5e3c247eb9ccf8ecab9dec1a155"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907329"
+
+[tools.rumdl."platforms.windows-x64"]
+checksum = "sha256:dbc00e54554eeb6c1b7b3904e5a1009c92552f264d87d13fc6dfca99fd5bdff3"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907340"
+
+[tools.rumdl."platforms.windows-x64-baseline"]
+checksum = "sha256:dbc00e54554eeb6c1b7b3904e5a1009c92552f264d87d13fc6dfca99fd5bdff3"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907340"
 
 [[tools.rust]]
 version = "1.94.1"

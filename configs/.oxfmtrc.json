@@ -1,0 +1,32 @@
+{
+  "ignorePatterns": [
+    // directories to ignore
+    "public",
+    "dist",
+    "legacy",
+    // file extensions to ignore
+    "*.md",
+    // specific files to ignore
+    "pnpm-*.yaml",
+    "tsconfig*.json"
+  ],
+  "endOfLine": "lf",
+  "printWidth": 80,
+  "quoteProps": "consistent",
+  "semi": true,
+  "singleQuote": true,
+  "sortImports": {
+    "groups": [
+      "builtin",
+      "external",
+      ["internal", "subpath"],
+      ["parent", "sibling", "index"],
+      "style",
+      "unknown"
+    ]
+  },
+  "sortPackageJson": true,
+  "sortTailwindcss": {},
+  "tabWidth": 2,
+  "trailingComma": "es5"
+}

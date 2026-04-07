@@ -1,11 +1,17 @@
 {
   //////////////////////////////////////////////////
   // Languages specific
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-containers"
   },
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[just]": {
     "editor.defaultFormatter": "nefrob.vscode-just-syntax"
@@ -42,6 +48,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "blockman.n33A01B2FromDepth0ToInwardForAllBackgrounds": "45,0,0,2; none",
   // "breadcrumbs.filePath": "last",
   "chat.agent.enabled": true,
   // "chat.disableAIFeatures": true,
@@ -98,8 +105,14 @@
   "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.patterns": {
     "*.dart": "${capture}.g.dart",
+    "*.db": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
     "*.jsx": "${capture}.js",
+    "*.s3db": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
     "*.ts": "${capture}.js",
     "*.tsx": "${capture}.ts",
     "Cargo.toml": "Cargo.lock",
@@ -112,10 +125,15 @@
   "files.associations": {
     "*.base": "yaml",
     "*.css": "tailwindcss",
+    "*.dts": "c",
+    "*.dtsi": "c",
     "*.keymap": "c",
     "*.mdx": "markdown",
+    "*.overlay": "c",
+    "*_defconfig": "properties",
     ".aliases": "bat",
     ".prettierrc": "jsonc",
+    "Kconfig*": "properties",
     "config": "shellscript"
   },
   "files.autoSave": "onFocusChange",
@@ -163,15 +181,13 @@
   "json.format.keepLines": true, // on and off when needed
   "json.schemaDownload.trustedDomains": {
     "*": true,
-    "https://developer.microsoft.com/json-schemas/": true,
-    "https://json-schema.org/": true,
-    "https://json.schemastore.org/": true,
-    "https://raw.githubusercontent.com": true,
-    "https://raw.githubusercontent.com/devcontainers/spec/": true,
-    "https://raw.githubusercontent.com/microsoft/vscode/": true,
-    "https://schemastore.azurewebsites.net/": true,
-    "https://ui.shadcn.com/schema.json": true,
-    "https://www.schemastore.org/": true
+    // "https://developer.microsoft.com/json-schemas/": true,
+    // "https://json-schema.org/": true,
+    // "https://json.schemastore.org/": true,
+    // "https://raw.githubusercontent.com": true,
+    // "https://schemastore.azurewebsites.net/": true,
+    // "https://ui.shadcn.com/schema.json": true,
+    // "https://www.schemastore.org/": true
   },
   "markdown-pdf.highlightStyle": "github.css",
   "markdown-preview-github-styles.colorTheme": "system",
@@ -245,6 +261,9 @@
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
+  "settingsSync.ignoredExtensions": [
+    // "qwtel.sqlite-viewer"
+  ],
   "settingsSync.ignoredSettings": [
     // "-window.zoomLevel"
   ],
@@ -300,7 +319,7 @@
   },
   "workbench.editor.showTabIndex": true,
   "workbench.editor.useModal": "some",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "vscode-icons",
   "workbench.notifications.position": "top-right",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
