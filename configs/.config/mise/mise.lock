@@ -144,6 +144,54 @@ url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-windows-
 checksum = "sha256:9d0e0f923e9626f3bc6044fc32e0d3ab29039aea753f5678ef8801cf26f75288"
 url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.11/bun-windows-x64-baseline.zip"
 
+[[tools.bun]]
+version = "1.3.12"
+backend = "core:bun"
+
+[tools.bun."platforms.linux-arm64"]
+checksum = "sha256:c40bc0ebca11bde7d75af497a654a874d0c7fd8d6a8d6031c173c10c9064297b"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-aarch64.zip"
+
+[tools.bun."platforms.linux-arm64-musl"]
+checksum = "sha256:731baab945bc471c17248ea375e66f71442879d2595c54045b3e861f4e8b9ab1"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-aarch64-musl.zip"
+
+[tools.bun."platforms.linux-x64"]
+checksum = "sha256:11dc3ee11bc1695e149737c6ca3d5619302cf4346e6b8a6ec7988967ef01ddc5"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-x64.zip"
+
+[tools.bun."platforms.linux-x64-baseline"]
+checksum = "sha256:f8bb377a9ae93d44697ff91a2611164d2aedc9263415d623b0c3af24a6f55dab"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-x64-baseline.zip"
+
+[tools.bun."platforms.linux-x64-musl"]
+checksum = "sha256:5a9f9a2102d4bd0d5210b4f6bd345151d2310623947085177c1b306e8587dce6"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-x64-musl.zip"
+
+[tools.bun."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:a95e079aef96f1387b86e27b69f9a6babbd08154d9a59483f29d9de285b8e3ad"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-linux-x64-musl-baseline.zip"
+
+[tools.bun."platforms.macos-arm64"]
+checksum = "sha256:6c4bb87dd013ed1a8d6a16e357a3d094959fd5530b4d7061f7f3680c3c7cea1c"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-darwin-aarch64.zip"
+
+[tools.bun."platforms.macos-x64"]
+checksum = "sha256:0f58c53a3e7947f1e626d2f8d285f97c14b7cadcca9c09ebafc0ae9d35b58c3d"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-darwin-x64.zip"
+
+[tools.bun."platforms.macos-x64-baseline"]
+checksum = "sha256:cc4e22130c2bc2d944d3a286de08f2ed37fa74136e59760f3a4661e610246474"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-darwin-x64-baseline.zip"
+
+[tools.bun."platforms.windows-x64"]
+checksum = "sha256:841ff9c5dffcaa3a2620d1e3f87ee500f32a4ca830b001cade7a3479609d4a89"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-windows-x64.zip"
+
+[tools.bun."platforms.windows-x64-baseline"]
+checksum = "sha256:2d3d5f88a95943563f56f3643c8f4e2422261018f6d915329bb2fb33f7256ba2"
+url = "https://github.com/oven-sh/bun/releases/download/bun-v1.3.12/bun-windows-x64-baseline.zip"
+
 [[tools.ctop]]
 version = "0.7.7"
 backend = "aqua:bcicen/ctop"
@@ -280,6 +328,54 @@ url = "https://dl.deno.land/release/v2.7.11/deno-x86_64-pc-windows-msvc.zip"
 checksum = "sha256:Algorithm"
 url = "https://dl.deno.land/release/v2.7.11/deno-x86_64-pc-windows-msvc.zip"
 
+[[tools.deno]]
+version = "2.7.12"
+backend = "core:deno"
+
+[tools.deno."platforms.linux-arm64"]
+checksum = "sha256:4116c1bb5fa2bba348a1f89c5392d5ecdbb505dd7166796870660556ea6c6c53"
+url = "https://dl.deno.land/release/v2.7.12/deno-aarch64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.linux-arm64-musl"]
+checksum = "sha256:4116c1bb5fa2bba348a1f89c5392d5ecdbb505dd7166796870660556ea6c6c53"
+url = "https://dl.deno.land/release/v2.7.12/deno-aarch64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.linux-x64"]
+checksum = "sha256:4646ec32b4296fdf963a62a3df3d57e342a3c70376976e5690c34d42e23a3080"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.linux-x64-baseline"]
+checksum = "sha256:4646ec32b4296fdf963a62a3df3d57e342a3c70376976e5690c34d42e23a3080"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.linux-x64-musl"]
+checksum = "sha256:4646ec32b4296fdf963a62a3df3d57e342a3c70376976e5690c34d42e23a3080"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:4646ec32b4296fdf963a62a3df3d57e342a3c70376976e5690c34d42e23a3080"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-unknown-linux-gnu.zip"
+
+[tools.deno."platforms.macos-arm64"]
+checksum = "sha256:4694916acf93954611339618f19dfec01d8128d9a11402838e65be76e572bc5e"
+url = "https://dl.deno.land/release/v2.7.12/deno-aarch64-apple-darwin.zip"
+
+[tools.deno."platforms.macos-x64"]
+checksum = "sha256:b303d779f20b9ce01355e65430cd9bf921b3b34fa04bde01e1ccea05f180fddc"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-apple-darwin.zip"
+
+[tools.deno."platforms.macos-x64-baseline"]
+checksum = "sha256:b303d779f20b9ce01355e65430cd9bf921b3b34fa04bde01e1ccea05f180fddc"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-apple-darwin.zip"
+
+[tools.deno."platforms.windows-x64"]
+checksum = "sha256:Algorithm"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-pc-windows-msvc.zip"
+
+[tools.deno."platforms.windows-x64-baseline"]
+checksum = "sha256:Algorithm"
+url = "https://dl.deno.land/release/v2.7.12/deno-x86_64-pc-windows-msvc.zip"
+
 [[tools.difftastic]]
 version = "0.68.0"
 backend = "aqua:Wilfred/difftastic"
@@ -380,6 +476,38 @@ url = "https://github.com/direnv/direnv/releases/download/v2.37.1/direnv.windows
 version = "0.23.4"
 backend = "cargo:eza"
 
+[tools.eza."platforms.linux-arm64"]
+checksum = "sha256:366e8430225f9955c3dc659b452150c169894833ccfef455e01765e265a3edda"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_aarch64-unknown-linux-gnu.tar.gz"
+
+[tools.eza."platforms.linux-arm64-musl"]
+checksum = "sha256:366e8430225f9955c3dc659b452150c169894833ccfef455e01765e265a3edda"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_aarch64-unknown-linux-gnu.tar.gz"
+
+[tools.eza."platforms.linux-x64"]
+checksum = "sha256:d231bb3ee33b08c76279b5888845dceb7034d055c42bb9be46dbe0dae39394df"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz"
+
+[tools.eza."platforms.linux-x64-baseline"]
+checksum = "sha256:d231bb3ee33b08c76279b5888845dceb7034d055c42bb9be46dbe0dae39394df"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz"
+
+[tools.eza."platforms.linux-x64-musl"]
+checksum = "sha256:d231bb3ee33b08c76279b5888845dceb7034d055c42bb9be46dbe0dae39394df"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz"
+
+[tools.eza."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:d231bb3ee33b08c76279b5888845dceb7034d055c42bb9be46dbe0dae39394df"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza_x86_64-unknown-linux-musl.tar.gz"
+
+[tools.eza."platforms.windows-x64"]
+checksum = "sha256:4d4f87f6bc8e6ee176789c28bee698234ce0275da013709eb16b0f14819c1688"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza.exe_x86_64-pc-windows-gnu.tar.gz"
+
+[tools.eza."platforms.windows-x64-baseline"]
+checksum = "sha256:4d4f87f6bc8e6ee176789c28bee698234ce0275da013709eb16b0f14819c1688"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.4/eza.exe_x86_64-pc-windows-gnu.tar.gz"
+
 [[tools.fastfetch]]
 version = "2.61.0"
 backend = "aqua:fastfetch-cli/fastfetch"
@@ -427,54 +555,6 @@ url = "https://github.com/fastfetch-cli/fastfetch/releases/download/2.61.0/fastf
 [tools.fastfetch."platforms.windows-x64-baseline"]
 checksum = "sha256:67af437124ad30d5571071649bb71951eea6f8a5cb781c31f83536dd77d48acb"
 url = "https://github.com/fastfetch-cli/fastfetch/releases/download/2.61.0/fastfetch-windows-amd64.zip"
-
-[[tools.fzf]]
-version = "0.70.0"
-backend = "aqua:junegunn/fzf"
-
-[tools.fzf."platforms.linux-arm64"]
-checksum = "sha256:90a07a13b61f56dd59ccfd0f0bf05070e9cec067713d313fa2607aab2dc0e422"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_arm64.tar.gz"
-
-[tools.fzf."platforms.linux-arm64-musl"]
-checksum = "sha256:90a07a13b61f56dd59ccfd0f0bf05070e9cec067713d313fa2607aab2dc0e422"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_arm64.tar.gz"
-
-[tools.fzf."platforms.linux-x64"]
-checksum = "sha256:8fd0e0b93bdf64ba90081ffb6658d77ea5a024c122b36852b1de30f9d2733754"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_amd64.tar.gz"
-
-[tools.fzf."platforms.linux-x64-baseline"]
-checksum = "sha256:8fd0e0b93bdf64ba90081ffb6658d77ea5a024c122b36852b1de30f9d2733754"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_amd64.tar.gz"
-
-[tools.fzf."platforms.linux-x64-musl"]
-checksum = "sha256:8fd0e0b93bdf64ba90081ffb6658d77ea5a024c122b36852b1de30f9d2733754"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_amd64.tar.gz"
-
-[tools.fzf."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:8fd0e0b93bdf64ba90081ffb6658d77ea5a024c122b36852b1de30f9d2733754"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-linux_amd64.tar.gz"
-
-[tools.fzf."platforms.macos-arm64"]
-checksum = "sha256:75f4905c2e3d00666d81dffdd001bb2a9a8e0ad4e4ac8cecfc17a7401b99e6e4"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-darwin_arm64.tar.gz"
-
-[tools.fzf."platforms.macos-x64"]
-checksum = "sha256:46af74cfeb171c5e2eb936096a653061a0de0f5aeb70319bf9935d8d193e078f"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-darwin_amd64.tar.gz"
-
-[tools.fzf."platforms.macos-x64-baseline"]
-checksum = "sha256:46af74cfeb171c5e2eb936096a653061a0de0f5aeb70319bf9935d8d193e078f"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-darwin_amd64.tar.gz"
-
-[tools.fzf."platforms.windows-x64"]
-checksum = "sha256:7465a6738e2c844742df973459c7509aed2d10d7a72bfd6de201b867b4eda4cd"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-windows_amd64.zip"
-
-[tools.fzf."platforms.windows-x64-baseline"]
-checksum = "sha256:7465a6738e2c844742df973459c7509aed2d10d7a72bfd6de201b867b4eda4cd"
-url = "https://github.com/junegunn/fzf/releases/download/v0.70.0/fzf-0.70.0-windows_amd64.zip"
 
 [[tools.fzf]]
 version = "0.71.0"
@@ -525,52 +605,52 @@ checksum = "sha256:15bf30fa658c596d740f0ce9a9a97b6b5d90566124903657d09fd109dd097
 url = "https://github.com/junegunn/fzf/releases/download/v0.71.0/fzf-0.71.0-windows_amd64.zip"
 
 [[tools.go]]
-version = "1.26.1"
+version = "1.26.2"
 backend = "core:go"
 
 [tools.go."platforms.linux-arm64"]
-checksum = "sha256:a290581cfe4fe28ddd737dde3095f3dbeb7f2e4065cab4eae44dfc53b760c2f7"
-url = "https://dl.google.com/go/go1.26.1.linux-arm64.tar.gz"
+checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
+url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-arm64-musl"]
-checksum = "sha256:a290581cfe4fe28ddd737dde3095f3dbeb7f2e4065cab4eae44dfc53b760c2f7"
-url = "https://dl.google.com/go/go1.26.1.linux-arm64.tar.gz"
+checksum = "sha256:c958a1fe1b361391db163a485e21f5f228142d6f8b584f6bef89b26f66dc5b23"
+url = "https://dl.google.com/go/go1.26.2.linux-arm64.tar.gz"
 
 [tools.go."platforms.linux-x64"]
-checksum = "sha256:031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a"
-url = "https://dl.google.com/go/go1.26.1.linux-amd64.tar.gz"
+checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
+url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-baseline"]
-checksum = "sha256:031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a"
-url = "https://dl.google.com/go/go1.26.1.linux-amd64.tar.gz"
+checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
+url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-musl"]
-checksum = "sha256:031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a"
-url = "https://dl.google.com/go/go1.26.1.linux-amd64.tar.gz"
+checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
+url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
 
 [tools.go."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:031f088e5d955bab8657ede27ad4e3bc5b7c1ba281f05f245bcc304f327c987a"
-url = "https://dl.google.com/go/go1.26.1.linux-amd64.tar.gz"
+checksum = "sha256:990e6b4bbba816dc3ee129eaeaf4b42f17c2800b88a2166c265ac1a200262282"
+url = "https://dl.google.com/go/go1.26.2.linux-amd64.tar.gz"
 
 [tools.go."platforms.macos-arm64"]
-checksum = "sha256:353df43a7811ce284c8938b5f3c7df40b7bfb6f56cb165b150bc40b5e2dd541f"
-url = "https://dl.google.com/go/go1.26.1.darwin-arm64.tar.gz"
+checksum = "sha256:32af1522bf3e3ff3975864780a429cc0b41d190ec7bf90faa661d6d64566e7af"
+url = "https://dl.google.com/go/go1.26.2.darwin-arm64.tar.gz"
 
 [tools.go."platforms.macos-x64"]
-checksum = "sha256:65773dab2f8cc4cd23d93ba6d0a805de150ca0b78378879292be0b903b8cdd08"
-url = "https://dl.google.com/go/go1.26.1.darwin-amd64.tar.gz"
+checksum = "sha256:bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966"
+url = "https://dl.google.com/go/go1.26.2.darwin-amd64.tar.gz"
 
 [tools.go."platforms.macos-x64-baseline"]
-checksum = "sha256:65773dab2f8cc4cd23d93ba6d0a805de150ca0b78378879292be0b903b8cdd08"
-url = "https://dl.google.com/go/go1.26.1.darwin-amd64.tar.gz"
+checksum = "sha256:bc3f1500d9968c36d705442d90ba91addf9271665033748b82532682e90a7966"
+url = "https://dl.google.com/go/go1.26.2.darwin-amd64.tar.gz"
 
 [tools.go."platforms.windows-x64"]
-checksum = "sha256:9b68112c913f45b7aebbf13c036721264bbba7e03a642f8f7490c561eebd1ecc"
-url = "https://dl.google.com/go/go1.26.1.windows-amd64.zip"
+checksum = "sha256:98eb3570bade15cb826b0909338df6cc6d2cf590bc39c471142002db3832b708"
+url = "https://dl.google.com/go/go1.26.2.windows-amd64.zip"
 
 [tools.go."platforms.windows-x64-baseline"]
-checksum = "sha256:9b68112c913f45b7aebbf13c036721264bbba7e03a642f8f7490c561eebd1ecc"
-url = "https://dl.google.com/go/go1.26.1.windows-amd64.zip"
+checksum = "sha256:98eb3570bade15cb826b0909338df6cc6d2cf590bc39c471142002db3832b708"
+url = "https://dl.google.com/go/go1.26.2.windows-amd64.zip"
 
 [[tools.helix]]
 version = "25.07.1"
@@ -669,54 +749,6 @@ checksum = "sha256:2508c549b049b1d4342d08edc1cb42bfac169082b6e3069431b5bab9822db
 url = "https://github.com/sharkdp/hyperfine/releases/download/v1.20.0/hyperfine-v1.20.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.just]]
-version = "1.48.1"
-backend = "aqua:casey/just"
-
-[tools.just."platforms.linux-arm64"]
-checksum = "sha256:3308721b991cf88cf2b9bbb3b31ac40550ec61a0c9b6fc011564e25e87964030"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-aarch64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.linux-arm64-musl"]
-checksum = "sha256:3308721b991cf88cf2b9bbb3b31ac40550ec61a0c9b6fc011564e25e87964030"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-aarch64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.linux-x64"]
-checksum = "sha256:9293e553ce401d1b524bf4e104918f72f268e3f9c6827e0055fe98d84a1b2522"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.linux-x64-baseline"]
-checksum = "sha256:9293e553ce401d1b524bf4e104918f72f268e3f9c6827e0055fe98d84a1b2522"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.linux-x64-musl"]
-checksum = "sha256:9293e553ce401d1b524bf4e104918f72f268e3f9c6827e0055fe98d84a1b2522"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:9293e553ce401d1b524bf4e104918f72f268e3f9c6827e0055fe98d84a1b2522"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.just."platforms.macos-arm64"]
-checksum = "sha256:03a73339ff55bcf7411a3c940cdcb0a726d98134b87203c83a9008575434e2a8"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-aarch64-apple-darwin.tar.gz"
-
-[tools.just."platforms.macos-x64"]
-checksum = "sha256:4c3e9c880b8fc93d7fc24abfde3c36b0cc59f6e9f8b31f7175095700f64125a7"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-apple-darwin.tar.gz"
-
-[tools.just."platforms.macos-x64-baseline"]
-checksum = "sha256:4c3e9c880b8fc93d7fc24abfde3c36b0cc59f6e9f8b31f7175095700f64125a7"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-apple-darwin.tar.gz"
-
-[tools.just."platforms.windows-x64"]
-checksum = "sha256:368cd9ca827cba04d9e6fc00f7ad840773c4605b6f64b9f87bdb00325d351029"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-pc-windows-msvc.zip"
-
-[tools.just."platforms.windows-x64-baseline"]
-checksum = "sha256:368cd9ca827cba04d9e6fc00f7ad840773c4605b6f64b9f87bdb00325d351029"
-url = "https://github.com/casey/just/releases/download/1.48.1/just-1.48.1-x86_64-pc-windows-msvc.zip"
-
-[[tools.just]]
 version = "1.49.0"
 backend = "aqua:casey/just"
 
@@ -813,54 +845,6 @@ checksum = "sha256:2af0b2516cd006b1849f2cdae4cd82abbf5d1c2d49b88563daffaa1fb4ac4
 url = "https://github.com/jesseduffield/lazydocker/releases/download/v0.25.0/lazydocker_0.25.0_Windows_x86_64.zip"
 
 [[tools.lazygit]]
-version = "0.60.0"
-backend = "aqua:jesseduffield/lazygit"
-
-[tools.lazygit."platforms.linux-arm64"]
-checksum = "sha256:2c699579165416eede4d2cfaf7d76ccd8f3b20f20f2e8b4abff6b5a6350fcdd7"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_arm64.tar.gz"
-
-[tools.lazygit."platforms.linux-arm64-musl"]
-checksum = "sha256:2c699579165416eede4d2cfaf7d76ccd8f3b20f20f2e8b4abff6b5a6350fcdd7"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_arm64.tar.gz"
-
-[tools.lazygit."platforms.linux-x64"]
-checksum = "sha256:6252ca6cf98bc4fd3e0d927b54225910cfa57b065d0ad88263f14592f7f9ab15"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_x86_64.tar.gz"
-
-[tools.lazygit."platforms.linux-x64-baseline"]
-checksum = "sha256:6252ca6cf98bc4fd3e0d927b54225910cfa57b065d0ad88263f14592f7f9ab15"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_x86_64.tar.gz"
-
-[tools.lazygit."platforms.linux-x64-musl"]
-checksum = "sha256:6252ca6cf98bc4fd3e0d927b54225910cfa57b065d0ad88263f14592f7f9ab15"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_x86_64.tar.gz"
-
-[tools.lazygit."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:6252ca6cf98bc4fd3e0d927b54225910cfa57b065d0ad88263f14592f7f9ab15"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_linux_x86_64.tar.gz"
-
-[tools.lazygit."platforms.macos-arm64"]
-checksum = "sha256:5045f0ff2117f12cb5232d65e01c054eb9ea6b8e2f0f0b80e99fbaa589b581b9"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_darwin_arm64.tar.gz"
-
-[tools.lazygit."platforms.macos-x64"]
-checksum = "sha256:9210a8bd8bf18537f9d7747361c8eba62518e10e4d5fbfe915cf110635eaab78"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_darwin_x86_64.tar.gz"
-
-[tools.lazygit."platforms.macos-x64-baseline"]
-checksum = "sha256:9210a8bd8bf18537f9d7747361c8eba62518e10e4d5fbfe915cf110635eaab78"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_darwin_x86_64.tar.gz"
-
-[tools.lazygit."platforms.windows-x64"]
-checksum = "sha256:435b53165ff4604e201549b9317eb0b8bb5b3f6728be612656988e90c821a9b9"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_windows_x86_64.zip"
-
-[tools.lazygit."platforms.windows-x64-baseline"]
-checksum = "sha256:435b53165ff4604e201549b9317eb0b8bb5b3f6728be612656988e90c821a9b9"
-url = "https://github.com/jesseduffield/lazygit/releases/download/v0.60.0/lazygit_0.60.0_windows_x86_64.zip"
-
-[[tools.lazygit]]
 version = "0.61.0"
 backend = "aqua:jesseduffield/lazygit"
 
@@ -907,43 +891,6 @@ url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygi
 [tools.lazygit."platforms.windows-x64-baseline"]
 checksum = "sha256:26bb374ee7f3c6e52627262c7f8cc96ab23f96dfd3ef95b3d485d2ef9b842764"
 url = "https://github.com/jesseduffield/lazygit/releases/download/v0.61.0/lazygit_0.61.0_windows_x86_64.zip"
-
-[[tools.neovim]]
-version = "0.12.0"
-backend = "vfox:mise-plugins/vfox-neovim"
-
-[tools.neovim."platforms.linux-arm64"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-arm64.tar.gz"
-
-[tools.neovim."platforms.linux-arm64-musl"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-arm64.tar.gz"
-
-[tools.neovim."platforms.linux-x64"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
-
-[tools.neovim."platforms.linux-x64-baseline"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
-
-[tools.neovim."platforms.linux-x64-musl"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
-
-[tools.neovim."platforms.linux-x64-musl-baseline"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-linux-x86_64.tar.gz"
-
-[tools.neovim."platforms.macos-arm64"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-arm64.tar.gz"
-
-[tools.neovim."platforms.macos-x64"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-x86_64.tar.gz"
-
-[tools.neovim."platforms.macos-x64-baseline"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-macos-x86_64.tar.gz"
-
-[tools.neovim."platforms.windows-x64"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-win64.zip"
-
-[tools.neovim."platforms.windows-x64-baseline"]
-url = "https://github.com/neovim/neovim/releases/download/v0.12.0/nvim-win64.zip"
 
 [[tools.neovim]]
 version = "0.12.1"
@@ -1079,124 +1026,6 @@ checksum = "sha256:124510b94b6baa3380d051fdf4650eaa80a302c876d611e9dba0b2e18d874
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-pc-windows-msvc.zip"
 
 [[tools.rumdl]]
-version = "0.1.64"
-backend = "github:rvben/rumdl"
-
-[tools.rumdl."platforms.linux-arm64"]
-checksum = "sha256:638c65d6825457f3fc4ecc05ece58efceca579ceb5ac5ccf82829cabc93657eb"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779913"
-
-[tools.rumdl."platforms.linux-arm64-musl"]
-checksum = "sha256:e006c42596c362b69efeb9c39f051fa860ab6d806d4729d88f9457cc5f28451e"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779910"
-
-[tools.rumdl."platforms.linux-x64"]
-checksum = "sha256:4f31738056b03591528ab1939b953089b4acae10c77065fa7c03785eac3913e2"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779919"
-
-[tools.rumdl."platforms.linux-x64-baseline"]
-checksum = "sha256:4f31738056b03591528ab1939b953089b4acae10c77065fa7c03785eac3913e2"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779919"
-
-[tools.rumdl."platforms.linux-x64-musl"]
-checksum = "sha256:691611c6e9b04655a752a52686f0d3d5a88c89c3eaa066a6099473e331e6919c"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779918"
-
-[tools.rumdl."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:4f31738056b03591528ab1939b953089b4acae10c77065fa7c03785eac3913e2"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779919"
-
-[tools.rumdl."platforms.macos-arm64"]
-checksum = "sha256:59d4f8af4957a9b68509b84a84c27f084dfd9f3be32781a42e1d2ebed725c8f3"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779917"
-
-[tools.rumdl."platforms.macos-x64"]
-checksum = "sha256:b3efcb0edc586f6fba9087a743e56ce924e808c72b3f8d638676fc12ecea3ba7"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779911"
-
-[tools.rumdl."platforms.macos-x64-baseline"]
-checksum = "sha256:b3efcb0edc586f6fba9087a743e56ce924e808c72b3f8d638676fc12ecea3ba7"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779911"
-
-[tools.rumdl."platforms.windows-x64"]
-checksum = "sha256:c53059fc286db0571ed3bad73fcf6e0b3553d6556fd43f556037928d9a23e072"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779922"
-
-[tools.rumdl."platforms.windows-x64-baseline"]
-checksum = "sha256:c53059fc286db0571ed3bad73fcf6e0b3553d6556fd43f556037928d9a23e072"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.64/rumdl-v0.1.64-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/385779922"
-
-[[tools.rumdl]]
-version = "0.1.66"
-backend = "github:rvben/rumdl"
-
-[tools.rumdl."platforms.linux-arm64"]
-checksum = "sha256:84cbbe7156cb65199152072590a58a9b6571b26d486f5951cf1965ffaaed8b46"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339936"
-
-[tools.rumdl."platforms.linux-arm64-musl"]
-checksum = "sha256:f9b7f5a6589312e1b220666bc36d36622723239562b8a43d16f325cd937cbbba"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339932"
-
-[tools.rumdl."platforms.linux-x64"]
-checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
-
-[tools.rumdl."platforms.linux-x64-baseline"]
-checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
-
-[tools.rumdl."platforms.linux-x64-musl"]
-checksum = "sha256:42fca374618ef5b2d3a1ba4346e28de6ceb8a46b9a5ab3dcd0a984d55915971e"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339929"
-
-[tools.rumdl."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:11c4aa30afce57054a8436dc6b14e6462645f52bb0c08d8bd6c8f53630143ae6"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339934"
-
-[tools.rumdl."platforms.macos-arm64"]
-checksum = "sha256:2efc4215d6edf9f2ab3f8a9bc2ce4cb9312001b506fc9e715c715222a481fb39"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339933"
-
-[tools.rumdl."platforms.macos-x64"]
-checksum = "sha256:7e54b2f368f1086f442b198be7a1487b68f51c69af21c1ac9553c537ce9753b3"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339930"
-
-[tools.rumdl."platforms.macos-x64-baseline"]
-checksum = "sha256:7e54b2f368f1086f442b198be7a1487b68f51c69af21c1ac9553c537ce9753b3"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339930"
-
-[tools.rumdl."platforms.windows-x64"]
-checksum = "sha256:2078864720019deb3573555631a4ee133ae49c2f839db305c7b19f75341ecef1"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339939"
-
-[tools.rumdl."platforms.windows-x64-baseline"]
-checksum = "sha256:2078864720019deb3573555631a4ee133ae49c2f839db305c7b19f75341ecef1"
-url = "https://github.com/rvben/rumdl/releases/download/v0.1.66/rumdl-v0.1.66-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/387339939"
-
-[[tools.rumdl]]
 version = "0.1.67"
 backend = "github:rvben/rumdl"
 
@@ -1255,6 +1084,65 @@ checksum = "sha256:dbc00e54554eeb6c1b7b3904e5a1009c92552f264d87d13fc6dfca99fd5bd
 url = "https://github.com/rvben/rumdl/releases/download/v0.1.67/rumdl-v0.1.67-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/388907340"
 
+[[tools.rumdl]]
+version = "0.1.68"
+backend = "github:rvben/rumdl"
+
+[tools.rumdl."platforms.linux-arm64"]
+checksum = "sha256:aaec7a4ce31d3b0da1aea81ef4d6825ffa0e08e7679f654117a4cccbec2c2d6f"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879674"
+
+[tools.rumdl."platforms.linux-arm64-musl"]
+checksum = "sha256:e4746ac04b1ef1e57cb696375aaacec9ce617a63a9b05e97af839fee98093b4c"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879676"
+
+[tools.rumdl."platforms.linux-x64"]
+checksum = "sha256:743acef627953541bcc3ef7cd70fdb8acb0a881dce930be51f57961672228122"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879677"
+
+[tools.rumdl."platforms.linux-x64-baseline"]
+checksum = "sha256:743acef627953541bcc3ef7cd70fdb8acb0a881dce930be51f57961672228122"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879677"
+
+[tools.rumdl."platforms.linux-x64-musl"]
+checksum = "sha256:32112c37142eb5f1ba5ad41256b02ae15a16f6dd016cdde91107e5691505ee97"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879669"
+
+[tools.rumdl."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:743acef627953541bcc3ef7cd70fdb8acb0a881dce930be51f57961672228122"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879677"
+
+[tools.rumdl."platforms.macos-arm64"]
+checksum = "sha256:705a262d7574d1379b2b2b2af0837fe9cf6e7ef7c150c6489724dda9d7b1bb55"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879672"
+
+[tools.rumdl."platforms.macos-x64"]
+checksum = "sha256:282fd5c41a0e6396eb31f37ca844cb410a6eda92495a51c0d2b18b50607af370"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879666"
+
+[tools.rumdl."platforms.macos-x64-baseline"]
+checksum = "sha256:282fd5c41a0e6396eb31f37ca844cb410a6eda92495a51c0d2b18b50607af370"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879666"
+
+[tools.rumdl."platforms.windows-x64"]
+checksum = "sha256:2aa1f3b55e4ec77ae174eedb34aa1f39899a35d94cf70a1e85dfcb4125005c1e"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879678"
+
+[tools.rumdl."platforms.windows-x64-baseline"]
+checksum = "sha256:2aa1f3b55e4ec77ae174eedb34aa1f39899a35d94cf70a1e85dfcb4125005c1e"
+url = "https://github.com/rvben/rumdl/releases/download/v0.1.68/rumdl-v0.1.68-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/rvben/rumdl/releases/assets/391879678"
+
 [[tools.rust]]
 version = "1.94.1"
 backend = "core:rust"
@@ -1308,52 +1196,122 @@ checksum = "sha256:51353994ac83218c3497052e89b2c432c53b9d4439cdc1b361e2ea4798ebf
 url = "https://github.com/typst/typst/releases/download/v0.14.2/typst-x86_64-pc-windows-msvc.zip"
 
 [[tools.uv]]
-version = "0.11.3"
+version = "0.11.4"
 backend = "aqua:astral-sh/uv"
 
 [tools.uv."platforms.linux-arm64"]
-checksum = "sha256:8ecec82cb9a744d5fabff6d16d7777218a7730f699d2aa0d2f751c17858e2efa"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:a02ec7667d7bb1d33cdb7e1de22f7e4242967e3df7e350bac6212515e3bce8ac"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-aarch64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-arm64-musl"]
-checksum = "sha256:8ecec82cb9a744d5fabff6d16d7777218a7730f699d2aa0d2f751c17858e2efa"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-aarch64-unknown-linux-musl.tar.gz"
+checksum = "sha256:a02ec7667d7bb1d33cdb7e1de22f7e4242967e3df7e350bac6212515e3bce8ac"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-aarch64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64"]
-checksum = "sha256:8b40cf16b849634b81a530a3d0a0bcae5f24996ef9ae782976fd69b6266d3b8e"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:36ce1c5d8997db9b6a24d0f41646d5509b6d1d8b9448c7325f8248a6ea5d4b00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-baseline"]
-checksum = "sha256:8b40cf16b849634b81a530a3d0a0bcae5f24996ef9ae782976fd69b6266d3b8e"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:36ce1c5d8997db9b6a24d0f41646d5509b6d1d8b9448c7325f8248a6ea5d4b00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl"]
-checksum = "sha256:8b40cf16b849634b81a530a3d0a0bcae5f24996ef9ae782976fd69b6266d3b8e"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:36ce1c5d8997db9b6a24d0f41646d5509b6d1d8b9448c7325f8248a6ea5d4b00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.linux-x64-musl-baseline"]
-checksum = "sha256:8b40cf16b849634b81a530a3d0a0bcae5f24996ef9ae782976fd69b6266d3b8e"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-unknown-linux-musl.tar.gz"
+checksum = "sha256:36ce1c5d8997db9b6a24d0f41646d5509b6d1d8b9448c7325f8248a6ea5d4b00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.macos-arm64"]
-checksum = "sha256:2bc3d0c7bf2bd08325b1e170abac6f7e5b3346e1d4eab3370d17cefec934996f"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:9b9cb6c6f58c3246dbf3351ed4e97c500bc3266f5f237d2fd620b66e1c31dc56"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-aarch64-apple-darwin.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64"]
-checksum = "sha256:b0e05e0b43a000fdc2132ee3f3400ba5dee427bc2337d3ec4eb8cf4f3d5722af"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:c326edaf3fd492f53d1c58777f3459c0d87bf9dae8d89e80aec4b0da6622dcf3"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-apple-darwin.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.macos-x64-baseline"]
-checksum = "sha256:b0e05e0b43a000fdc2132ee3f3400ba5dee427bc2337d3ec4eb8cf4f3d5722af"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-apple-darwin.tar.gz"
+checksum = "sha256:c326edaf3fd492f53d1c58777f3459c0d87bf9dae8d89e80aec4b0da6622dcf3"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-apple-darwin.tar.gz"
+provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64"]
-checksum = "sha256:ae681c0aaec7cc96af184648cb88d73f8393ed60fa5880abdd6bdb910f9b227c"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:26d84455a40b0272b2ab4785cad298ff2c89cd0765b482e9f85b5a1bd880a863"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-pc-windows-msvc.zip"
+provenance = "github-attestations"
 
 [tools.uv."platforms.windows-x64-baseline"]
-checksum = "sha256:ae681c0aaec7cc96af184648cb88d73f8393ed60fa5880abdd6bdb910f9b227c"
-url = "https://github.com/astral-sh/uv/releases/download/0.11.3/uv-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:26d84455a40b0272b2ab4785cad298ff2c89cd0765b482e9f85b5a1bd880a863"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.4/uv-x86_64-pc-windows-msvc.zip"
+provenance = "github-attestations"
+
+[[tools.uv]]
+version = "0.11.6"
+backend = "aqua:astral-sh/uv"
+
+[tools.uv."platforms.linux-arm64"]
+checksum = "sha256:d14ebd6f200047264152daaf97b8bd36c7885a5033e9e8bba8366cb0049c0d00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-aarch64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-arm64-musl"]
+checksum = "sha256:d14ebd6f200047264152daaf97b8bd36c7885a5033e9e8bba8366cb0049c0d00"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-aarch64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64"]
+checksum = "sha256:aa342a53abe42364093506d7704214d2cdca30b916843e520bc67759a5d20132"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-baseline"]
+checksum = "sha256:aa342a53abe42364093506d7704214d2cdca30b916843e520bc67759a5d20132"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-musl"]
+checksum = "sha256:aa342a53abe42364093506d7704214d2cdca30b916843e520bc67759a5d20132"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.linux-x64-musl-baseline"]
+checksum = "sha256:aa342a53abe42364093506d7704214d2cdca30b916843e520bc67759a5d20132"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-unknown-linux-musl.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-arm64"]
+checksum = "sha256:4b69a4e366ec38cd5f305707de95e12951181c448679a00dce2a78868dfc9f5b"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-aarch64-apple-darwin.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64"]
+checksum = "sha256:8e0ed5035eaa28c7c8cd2a46b5b9a05bfff1ef01dbdc090a010eb8fdf193a457"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-apple-darwin.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.macos-x64-baseline"]
+checksum = "sha256:8e0ed5035eaa28c7c8cd2a46b5b9a05bfff1ef01dbdc090a010eb8fdf193a457"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-apple-darwin.tar.gz"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64"]
+checksum = "sha256:99aa60edd017a256dbf378f372d1cff3292dbc6696e0ea01716d9158d773ab77"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-pc-windows-msvc.zip"
+provenance = "github-attestations"
+
+[tools.uv."platforms.windows-x64-baseline"]
+checksum = "sha256:99aa60edd017a256dbf378f372d1cff3292dbc6696e0ea01716d9158d773ab77"
+url = "https://github.com/astral-sh/uv/releases/download/0.11.6/uv-x86_64-pc-windows-msvc.zip"
+provenance = "github-attestations"
 
 [[tools.yq]]
 version = "4.52.5"

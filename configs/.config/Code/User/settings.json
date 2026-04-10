@@ -2,7 +2,8 @@
   //////////////////////////////////////////////////
   // Languages specific
   "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
+    "editor.defaultFormatter": "ms-vscode.cpptools",
+    "editor.tabSize": 4
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-containers"
@@ -125,15 +126,17 @@
   "files.associations": {
     "*.base": "yaml",
     "*.css": "tailwindcss",
+    // zmk
+    // "*_defconfig": "properties",
     "*.dts": "c",
     "*.dtsi": "c",
     "*.keymap": "c",
     "*.mdx": "markdown",
     "*.overlay": "c",
-    "*_defconfig": "properties",
     ".aliases": "bat",
     ".prettierrc": "jsonc",
     "Kconfig*": "properties",
+    // ".json": "jsonc",
     "config": "shellscript"
   },
   "files.autoSave": "onFocusChange",
@@ -180,7 +183,7 @@
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.format.keepLines": true, // on and off when needed
   "json.schemaDownload.trustedDomains": {
-    "*": true,
+    "*": true
     // "https://developer.microsoft.com/json-schemas/": true,
     // "https://json-schema.org/": true,
     // "https://json.schemastore.org/": true,
@@ -259,7 +262,6 @@
     "MD060"
   ],
   "scm.repositories.explorer": true,
-  "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [
     // "qwtel.sqlite-viewer"
@@ -268,6 +270,7 @@
     // "-window.zoomLevel"
   ],
   "settingsSync.keybindingsPerPlatform": false,
+  "tabout.enableReverseShiftTab": true,
   "tailwind-fold.autoFold": false,
   "tailwind-fold.foldStyle": "QUOTES",
   "tailwind-fold.unfoldIfLineSelected": true,
@@ -320,7 +323,6 @@
   "workbench.editor.showTabIndex": true,
   "workbench.editor.useModal": "some",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.notifications.position": "top-right",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
   "workbench.tree.renderIndentGuides": "always"

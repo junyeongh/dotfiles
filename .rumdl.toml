@@ -1,86 +1,94 @@
 #:schema https://raw.githubusercontent.com/rvben/rumdl/refs/heads/main/rumdl.schema.json
 # https://rumdl.dev/global-settings/
 [global]
-extend-enable = ["MD060", "MD063"]
-
-disable = [
-  "MD004", # ul-style - Unordered list style
-  "MD010", # no-hard-tabs - Hard tabs
-  "MD013", # line-length - Line length
-  "MD018", # no-missing-space-atx - No space after hash on atx style heading
-  "MD024", # no-duplicate-heading - Multiple headings with the same content
-  "MD026", # no-trailing-punctuation - Trailing punctuation in heading
-  "MD028", # no-blanks-blockquote - Blank line inside blockquote
-  "MD029", # ol-prefix - Ordered list item prefix
-  "MD031", # blanks-around-fences - Fenced code blocks should be surrounded by blank lines
-  "MD033", # no-inline-html - Inline HTML
-  # "MD034", # no-bare-urls - Bare URL used
-  "MD036", # no-emphasis-as-heading - Emphasis used instead of a heading
-  "MD040", # fenced-code-language - Fenced code blocks should have a language specified
-  "MD041", # first-line-heading/first-line-h1 - First line in a file should be a top-level heading
-  "MD045", # no-alt-text - Images should have alternate text (alt text)
-  # "MD051", # link-fragments - Link fragments should be valid
-  "MD053", # link-image-reference-definitions - Link and image reference definitions should be needed
-  "MD058", # blanks-around-tables - Tables should be surrounded by blank lines
+extend-enable = [ # "MD060", "MD063", "MD072", "MD073", "MD074"
+  "MD060",
+  "MD063",
 ]
+
+# Markdown lint rules
+# [rumdl/docs/rules.md at main · rvben/rumdl · GitHub](https://github.com/rvben/rumdl/blob/main/docs/rules.md)
+enable = [
+  # "MD001", # Heading increment
+  # "MD003", # Heading style
+  "MD004", # UL style
+  # "MD005", # List indent
+  # "MD007", # UL indent
+  # "MD009", # No trailing spaces
+  "MD010", # No hard tabs
+  # "MD011", # Reversed link
+  # "MD012", # No multiple blanks
+  "MD013", # Line length  "MD013", # line-length - Line length
+  # "MD014", # Commands show output
+  "MD018", # No space atx
+  # "MD019", # Multiple space atx
+  # "MD020", # No space closed atx
+  # "MD021", # Multiple space closed atx
+  # "MD022", # Blanks around headings
+  # "MD023", # Heading start left
+  "MD024", # Multiple headings
+  # "MD025", # Single title
+  "MD026", # No trailing punctuation
+  # "MD027", # Multiple spaces blockquote
+  "MD028", # Blanks blockquote
+  "MD029", # OL prefix
+  # "MD030", # List marker space
+  "MD031", # Blanks around fences
+  # "MD032", # Blanks around lists
+  "MD033", # No inline HTML
+  # "MD034", # No bare URLs
+  # "MD035", # HR style
+  "MD036", # No emphasis as heading
+  # "MD037", # Spaces around emphasis
+  # "MD038", # No space in code
+  # "MD039", # No space in links
+  "MD040", # Fenced code language
+  "MD041", # First line h1
+  # "MD042", # No empty links
+  # "MD043", # Required headings
+  # "MD044", # Proper names
+  "MD045", # No alt text
+  # "MD046", # Code block style
+  # "MD047", # File end newline
+  # "MD048", # Code fence style
+  # "MD049", # Emphasis style
+  # "MD050", # Strong style
+  # "MD051", # Link fragments
+  # "MD052", # Reference links images
+  "MD053", # Link image definitions
+  # "MD054", # Link image style
+  # "MD055", # Table pipe style
+  # "MD056", # Table column count
+  # "MD057", # Relative links
+  "MD058", # Table spacing
+  # "MD059", # Link text
+  # "MD060", # Table format
+  # "MD061", # Forbidden terms
+  # "MD062", # Link destination space
+  # "MD063", # Heading capitalization
+  # "MD064", # No multiple consecutive spaces
+  # "MD066", # Footnote validation
+  # "MD067", # Footnote definition order
+  # "MD068", # Empty footnote definitions
+  # "MD069", # No duplicate list markers
+  # "MD071", # Blank line after frontmatter
+  # "MD072", # Frontmatter key sort
+  # "MD073", # TOC validation
+  # "MD074", # MkDocs nav validation
+  # "MD075", # Orphaned table rows
+  # "MD076", # List item spacing
+  # "MD077", # List continuation indent
+]
+disable = []
 
 [MD060]
 style = "compact"
 
-
-# Markdown lint rules
-# [DavidAnson/markdownlint: A Node.js style checker and lint tool for Markdown/CommonMark files.](https://github.com/DavidAnson/markdownlint)
-
-# "MD001", # heading-increment - Heading levels should only increment by one level at a time
-# "MD003", # heading-style - Heading style
-# "MD004", # ul-style - Unordered list style
-# "MD005", # list-indent - Inconsistent indentation for list items at the same level
-# "MD007", # ul-indent - Unordered list indentation
-# "MD009", # no-trailing-spaces - Trailing spaces
-# "MD010", # no-hard-tabs - Hard tabs
-# "MD011", # no-reversed-links - Reversed link syntax
-# "MD012", # no-multiple-blanks - Multiple consecutive blank lines
-# "MD013", # line-length - Line length
-# "MD014", # commands-show-output - Dollar signs used before commands without showing output
-# "MD018", # no-missing-space-atx - No space after hash on atx style heading
-# "MD019", # no-multiple-space-atx - Multiple spaces after hash on atx style heading
-# "MD020", # no-missing-space-closed-atx - No space inside hashes on closed atx style heading
-# "MD021", # no-multiple-space-closed-atx - Multiple spaces inside hashes on closed atx style heading
-# "MD022", # blanks-around-headings - Headings should be surrounded by blank lines
-# "MD023", # heading-start-left - Headings must start at the beginning of the line
-# "MD024", # no-duplicate-heading - Multiple headings with the same content
-# "MD025", # single-title/single-h1 - Multiple top-level headings in the same document
-# "MD026", # no-trailing-punctuation - Trailing punctuation in heading
-# "MD027", # no-multiple-space-blockquote - Multiple spaces after blockquote symbol
-# "MD028", # no-blanks-blockquote - Blank line inside blockquote
-# "MD029", # ol-prefix - Ordered list item prefix
-# "MD030", # list-marker-space - Spaces after list markers
-# "MD031", # blanks-around-fences - Fenced code blocks should be surrounded by blank lines
-# "MD032", # blanks-around-lists - Lists should be surrounded by blank lines
-# "MD033", # no-inline-html - Inline HTML
-# "MD034", # no-bare-urls - Bare URL used
-# "MD035", # hr-style - Horizontal rule style
-# "MD036", # no-emphasis-as-heading - Emphasis used instead of a heading
-# "MD037", # no-space-in-emphasis - Spaces inside emphasis markers
-# "MD038", # no-space-in-code - Spaces inside code span elements
-# "MD039", # no-space-in-links - Spaces inside link text
-# "MD040", # fenced-code-language - Fenced code blocks should have a language specified
-# "MD041", # first-line-heading/first-line-h1 - First line in a file should be a top-level heading
-# "MD042", # no-empty-links - No empty links
-# "MD043", # required-headings - Required heading structure
-# "MD044", # proper-names - Proper names should have the correct capitalization
-# "MD045", # no-alt-text - Images should have alternate text (alt text)
-# "MD046", # code-block-style - Code block style
-# "MD047", # single-trailing-newline - Files should end with a single newline character
-# "MD048", # code-fence-style - Code fence style
-# "MD049", # emphasis-style - Emphasis style
-# "MD050", # strong-style - Strong style
-# "MD051", # link-fragments - Link fragments should be valid
-# "MD052", # reference-links-images - Reference links and images should use a label that is defined
-# "MD053", # link-image-reference-definitions - Link and image reference definitions should be needed
-# "MD054", # link-image-style - Link and image style
-# "MD055", # table-pipe-style - Table pipe style
-# "MD056", # table-column-count - Table column count
-# "MD058", # blanks-around-tables - Tables should be surrounded by blank lines
-# "MD059", # descriptive-link-text - Link text should be descriptive
-# "MD060", # table-column-style - Table column style
+# [MD060]
+# enabled = false              # Default: opt-in for conservative adoption
+# style = "aligned"            # Options: "aligned", "aligned-no-space", "compact", "tight", "any"
+# max-width = 0                # Default: inherit from MD013's line-length
+# column-align = "auto"        # Options: "auto", "left", "center", "right"
+# column-align-header = "auto" # Override alignment for header row only
+# column-align-body = "auto"   # Override alignment for body rows only
+# loose-last-column = false    # Cap last column at header width when true

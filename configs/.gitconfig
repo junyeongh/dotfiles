@@ -22,6 +22,8 @@
 [delta]
 	side-by-side = true
 	hunk-header-style = file line-number syntax
+[pull]
+	ff = only
 
 # Diff tool
 [diff]

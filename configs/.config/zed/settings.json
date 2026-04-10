@@ -1,4 +1,6 @@
 {
+  "ui_font_size": 16.0,
+  "ui_font_family": "Pretendard",
   "debugger": {
     "dock": "left"
   },
@@ -17,7 +19,6 @@
   },
   "autosave": "on_focus_change",
   "buffer_font_family": "D2CodingLigature Nerd Font",
-  "buffer_font_size": 16,
   "collaboration_panel": {
     "button": false
   },
@@ -48,6 +49,8 @@
     "dock": "right"
   },
   "project_panel": {
+    "git_status_indicator": true,
+    "diagnostic_badges": true,
     "hide_gitignore": false
   },
   "semantic_tokens": "combined",
@@ -80,7 +83,6 @@
     "show_branch_icon": true,
     "show_menus": true
   },
-  "ui_font_size": 16,
   "use_system_window_tabs": false,
   "vim_mode": true,
   "which_key": {

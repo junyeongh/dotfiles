@@ -11,6 +11,7 @@ with pkgs;
   git-lfs
   mise
   nil
+  nixd
   nixfmt
   tmux
   zellij

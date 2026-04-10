@@ -13,8 +13,9 @@ with pkgs;
   gnome-tweaks
   google-chrome
   heynote
-  # kanata
+  kanata
   obsidian
+  openssl
   spotify
   vlc
   vscode

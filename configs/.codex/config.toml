@@ -27,3 +27,4 @@ args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-
 command = "npx"
 args = [ "-y", "@upstash/context7-mcp" ]
 
+# Projects Below
