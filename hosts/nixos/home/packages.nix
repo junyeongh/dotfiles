@@ -14,12 +14,12 @@ with pkgs;
   google-chrome
   heynote
   kanata
+  noctalia-shell
   obsidian
   openssl
   spotify
   vlc
   vscode
-  # waybar
   wofi
   yaak
   zed-editor

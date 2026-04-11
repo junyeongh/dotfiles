@@ -31,6 +31,7 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
+  hardware.bluetooth.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
@@ -49,6 +50,8 @@
     options = "lv3:ralt_alt";
   };
   # services.xserver.libinput.enable = true;
+  services.tuned.enable = true;
+  services.upower.enable = true;
 
   i18n = {
     defaultLocale = "en_US.UTF-8";

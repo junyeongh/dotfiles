@@ -13,11 +13,9 @@
   };
 
   outputs =
-    {
+    inputs@{
       nixpkgs,
       nixpkgs-unstable,
-      home-manager,
-      solaar,
       ...
     }:
     let
@@ -31,7 +29,7 @@
       # Standalone home-manager configurations (for non-NixOS systems)
       homeConfigurations = {
         # WSL
-        wsl = home-manager.lib.homeManagerConfiguration {
+        wsl = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = pkgs-unstable;
           modules = [
             ./home
@@ -44,11 +42,12 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit pkgs-unstable; };
+          specialArgs = { inherit pkgs-unstable inputs; };
           modules = [
             ./hosts/nixos/configuration.nix
-            solaar.nixosModules.default
-            home-manager.nixosModules.home-manager
+            ./hosts/nixos/flakes
+            inputs.solaar.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = false;
               home-manager.useUserPackages = true;
