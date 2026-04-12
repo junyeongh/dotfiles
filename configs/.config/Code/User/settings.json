@@ -23,6 +23,9 @@
     "editor.wordWrap": "on",
     "files.trimTrailingWhitespace": false // 'double-space + enter' creates line break
   },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
   "[powershell]": {
     "editor.defaultFormatter": "ms-vscode.powershell"
   },
@@ -235,6 +238,7 @@
     }
   },
   "notebook.lineNumbers": "on",
+  "oxc.enable": true,
   "quotick.showWelcomeMessage": false,
   "remote.autoForwardPortsSource": "hybrid",
   "resmon.show.battery": false,
@@ -275,6 +279,7 @@
   "tailwind-fold.foldStyle": "QUOTES",
   "tailwind-fold.unfoldIfLineSelected": true,
   "telemetry.telemetryLevel": "off",
+  "terminal.external.linuxExec": "ghostty",
   "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.enableImages": true,
