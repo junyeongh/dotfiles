@@ -5,19 +5,7 @@ plan_mode_reasoning_effort = "xhigh"
 approvals_reviewer = "user"
 
 [tui]
-status_line = [
-  "codex-version",
-  "model-with-reasoning",
-  "current-dir",
-  "git-branch",
-  "context-usage",
-  "context-window-size",
-  "five-hour-limit",
-  "weekly-limit",
-  "used-tokens",
-  "total-input-tokens",
-  "total-output-tokens",
-]
+status_line = [ "codex-version", "model-with-reasoning", "current-dir", "git-branch", "context-usage", "context-window-size", "five-hour-limit", "weekly-limit", "used-tokens", "total-input-tokens", "total-output-tokens" ]
 notifications = true
 
 [features]

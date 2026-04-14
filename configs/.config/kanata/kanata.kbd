@@ -1,7 +1,16 @@
+(defcfg
+  linux-dev /dev/input/event0 ;; This one
+)
+
 (defsrc
   caps
 )
 
+(defalias
+  ;; tap-hold-press <tap-timeout> <hold-timeout> <tap-action> <hold-action>
+  escctrl (tap-hold-press 200 200 esc lctl)
+)
+
 (deflayer base
-  lctl
+  @escctrl
 )

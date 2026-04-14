@@ -11,7 +11,7 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
   ];
 
   # Bootloader
@@ -125,23 +125,33 @@
   };
   programs.nix-ld.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    rootless.enable = true;
-    rootless.setSocketVariable = true;
+  virtualisation = {
+    containers.enable = true;
+    docker = {
+      enable = true;
+      rootless.enable = true;
+      rootless.setSocketVariable = true;
+    };
+    podman = {
+      enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
   };
 
   users.users.yeong = {
     isNormalUser = true;
     description = "Junyeong Heo";
     extraGroups = [
+      "input"
       "networkmanager"
       "wheel"
+      # container
       "docker"
+      "podman"
     ];
-    # packages = with pkgs; [
-    #   thunderbird
-    # ];
+    packages = with pkgs; [
+      # thunderbird
+    ];
   };
 
   system.stateVersion = "25.11";

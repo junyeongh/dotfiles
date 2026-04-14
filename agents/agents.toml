@@ -14,40 +14,9 @@ name = "find-skills"
 source = "vercel-labs/skills"
 
 [[skills]]
-name = "copilot-sdk"
-source = "intellectronica/agent-skills"
-
-[[skills]]
 name = "beautiful-mermaid"
-source = "intellectronica/agent-skills"
-
-[[skills]]
-name = "lorem-ipsum"
 source = "intellectronica/agent-skills"
 
 [[skills]]
 name = "promptify"
 source = "intellectronica/agent-skills"
-
-[[skills]]
-name = "youtube-transcript"
-source = "intellectronica/agent-skills"
-
-[[skills]]
-name = "markdown-output"
-source = "path:skills/markdown-output"
-
-[[mcp]]
-name = "context7"
-command = "npx"
-args = ["-y", "@upstash/context7-mcp"]
-
-[[mcp]]
-name = "serena"
-command = "uvx"
-args = [
-  "--from",
-  "git+https://github.com/oraios/serena",
-  "serena",
-  "start-mcp-server",
-]

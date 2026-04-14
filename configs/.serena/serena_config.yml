@@ -76,7 +76,12 @@ default_max_tool_answer_chars: 150000
 token_count_estimator: CHAR_COUNT
 
 # the list of registered project paths (updated automatically).
-projects: []
+projects:
+- D:\Source\Projects\Urjob\yourjob_fe-app
+- D:\Source\Projects\Urjob\yourjob_fe-dashboard
+- D:\Source\Repositories\junyeongh\dotfiles
+- D:\Source\Repositories\junyeongh\zmk-cornix
+- D:\Source\Repositories\junyeongh\zmk-cornix\zmk-cornix-codex
 
 # list of mode names to that are always to be included in the set of active modes
 # The full set of modes to be activated is base_modes + default_modes.

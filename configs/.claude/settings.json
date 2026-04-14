@@ -1,7 +1,4 @@
 {
-  "effortLevel": "high",
-  "model": "opusplan",
-  "voiceEnabled": true,
   "enabledPlugins": {
     "figma@claude-plugins-official": false,
     "github@claude-plugins-official": false
@@ -10,5 +7,8 @@
     "command": "~/.claude/statusline.sh",
     "padding": 0,
     "type": "command"
-  }
+  },
+  "effortLevel": "high",
+  "model": "opusplan",
+  "voiceEnabled": true
 }

@@ -1,18 +1,30 @@
+# pnpm
+export PATH="$HOME/.local/bin:$PATH"
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+*":$PNPM_HOME:"*) ;;
+*) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Builtin command Aliases
+alias mkdir='mkdir -pv'
+
+function cd_ls() {
+  builtin cd "$@" && ls -al
+}
+alias cd='cd_ls'
+
 # Git aliases
 
 alias gaa='git add .'
 alias gaaa='git add --all'
 alias gau='git add --update'
 alias gb='git branch'
-alias gbd='git branch --delete '
+alias gbd='git branch --delete'
 alias gc='git commit'
 alias gcf='git commit --fixup'
 alias gcm='git commit --message'
-alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gcod='git checkout develop'
-alias gcom='git checkout master'
-alias gcos='git checkout staging'
 alias gd='git diff'
 alias gda='git diff HEAD'
 alias gi='git init'
@@ -27,32 +39,11 @@ alias gr='git rebase'
 alias gs='git status'
 alias gss='git status --short'
 alias gst='git stash'
-alias gsta='git stash apply'
-alias gstd='git stash drop'
 alias gstl='git stash list'
-alias gstp='git stash pop'
 alias gsts='git stash --staged'
 alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
-
-# Other Aliases
-alias mkdir='mkdir -pv'
-
-function cd_ls() {
-  builtin cd "$@" && ls -al
-}
-alias cd='cd_ls'
-
-
-# pnpm
-export PATH="$HOME/.local/bin:$PATH"
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-*":$PNPM_HOME:"*) ;;
-*) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 if command -v cargo &>/dev/null; then
   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
@@ -78,17 +69,22 @@ if command -v lazygit &>/dev/null; then
   alias lg='lazygit'
 fi
 
-# nix related
-if command -v nixos-rebuild &>/dev/null; then
-  alias nix-up="sudo nixos-rebuild switch --flake ~/dotfiles#nixos"
+# Update
+if command -v pnpm &>/dev/null; then
+  alias pnpm-up='pnpm update --global --latest'
 fi
 
+if command -v mise &>/dev/null; then
+  alias mise-up='mise upgrade && mise prune --yes'
+fi
+
+# nix related
 if command -v nix &>/dev/null; then
   alias nix-optimise="sudo nix-store --optimise"
   alias home-up="home-manager switch --flake ~/dotfiles#wsl"
 fi
 
-# Update
-if command -v pnpm &>/dev/null; then
-  alias pnpm-up='pnpm update --global --latest'
+if command -v nixos-rebuild &>/dev/null; then
+  alias nixos-up="sudo nixos-rebuild switch --flake ~/dotfiles#nixos"
+  alias nixos-gens="nixos-rebuild list-generations"
 fi

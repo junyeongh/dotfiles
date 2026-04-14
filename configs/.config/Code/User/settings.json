@@ -330,5 +330,6 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
+  "window.zoomLevel": -1
 }
