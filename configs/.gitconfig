@@ -10,22 +10,29 @@
 	required = true
 [safe]
 	directory = *
-[include]
-	path = ~/.gitconfig.local
+
+[pull]
+	ff = only
+[push]
+	autoSetupRemote = true
+[alias]
+	# nickname
+	uncommit=reset --soft HEAD~1
+	unadd=restore --staged
+	discard=restore .
+
+	# abbreviation
+	difft = -c diff.external=difft diff
 [core]
 	autocrlf = input
 	editor = code --wait
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore.global
 	ignorecase = false
-	pager = delta
 	symlinks = true
+	pager = delta
 [delta]
 	side-by-side = true
 	hunk-header-style = file line-number syntax
-[pull]
-	ff = only
-
-# Diff tool
 [diff]
 	tool = difftastic
 [difftool]
@@ -37,14 +44,5 @@
 [protocol "file"]
 	allow = always
 
-# Aliases
-[alias]
-	# nickname
-	uncommit=reset --soft HEAD~1
-	unadd=restore --staged
-	discard=restore .
-
-	# abbreviation
-	difft = -c diff.external=difft diff
-[push]
-	autoSetupRemote = true
+[include]
+	path = ~/.gitconfig.local
