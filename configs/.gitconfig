@@ -46,3 +46,5 @@
 
 	# abbreviation
 	difft = -c diff.external=difft diff
+[push]
+	autoSetupRemote = true
