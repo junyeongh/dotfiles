@@ -64,6 +64,7 @@
     "windsurf": true
   },
   "chat.mcp.gallery.enabled": true,
+  "chat.tools.confirmationCarousel.enabled": true,
   "chat.useAgentSkills": true,
   "chat.viewSessions.orientation": "stacked",
   "chatgpt.commentCodeLensEnabled": false,
@@ -330,6 +331,5 @@
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
-  "workbench.tree.renderIndentGuides": "always",
-  "window.zoomLevel": -1
+  "workbench.tree.renderIndentGuides": "always"
 }

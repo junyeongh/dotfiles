@@ -26,6 +26,7 @@
           {
             "type": "command",
             "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/hooks/claude-hook-toast.ps1\""
+            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/hooks/claude-hook-toast.ps1\""
           }
         ]
       }
