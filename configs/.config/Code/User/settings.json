@@ -128,20 +128,12 @@
   "explorer.sortOrder": "type",
   "extensions.allowOpenInModalEditor": true,
   "files.associations": {
-    "*.base": "yaml",
     "*.css": "tailwindcss",
-    // zmk
-    // "*_defconfig": "properties",
-    "*.dts": "c",
-    "*.dtsi": "c",
-    "*.keymap": "c",
     "*.mdx": "markdown",
-    "*.overlay": "c",
-    ".aliases": "bat",
-    ".prettierrc": "jsonc",
-    "Kconfig*": "properties",
-    // ".json": "jsonc",
-    "config": "shellscript"
+    "*config*": "properties",
+    ".aliases": "shellscript",
+    ".json": "jsonc",
+    ".prettierrc": "jsonc"
   },
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
