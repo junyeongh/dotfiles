@@ -1,13 +1,13 @@
 {
   "enabledPlugins": {
-    "figma@claude-plugins-official": false,
-    "github@claude-plugins-official": false
+    "github@claude-plugins-official": false,
+    "serena@claude-plugins-official": false,
+    "context7@claude-plugins-official": false
   },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
-    "padding": 0,
-    "type": "command"
+    "padding": 0
   },
   "effortLevel": "high",
   "model": "opusplan",
