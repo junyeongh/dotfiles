@@ -124,8 +124,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
-if [ -f ~/.local.aliases ]; then
-  . ~/.local.aliases
+if [ -f ~/.aliases.local ]; then
+  . ~/.aliases.local
 fi
 
 # enable programmable completion features (you don't need to enable

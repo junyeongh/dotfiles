@@ -36,6 +36,9 @@ fi
 if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
+if [ -f ~/.aliases.local ]; then
+  . ~/.aliases.local
+fi
 # worktrunk
 if command -v git-wt >/dev/null 2>&1; then eval "$(command git-wt config shell init zsh)"; fi
 if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
