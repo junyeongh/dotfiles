@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "skills": {
+    "beautiful-mermaid": {
+      "source": "intellectronica/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/intellectronica/agent-skills.git",
+      "skillPath": "skills/beautiful-mermaid/SKILL.md",
+      "skillFolderHash": "88651e5cc10e4b028798dcfa45b1c1004e93f8b2",
+      "installedAt": "2026-04-16T09:40:43.476Z",
+      "updatedAt": "2026-04-16T09:40:43.476Z"
+    },
+    "promptify": {
+      "source": "intellectronica/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/intellectronica/agent-skills.git",
+      "skillPath": "skills/promptify/SKILL.md",
+      "skillFolderHash": "2f865b7c6f067b063dbb58147963f64ff51f9c53",
+      "installedAt": "2026-04-16T09:40:43.847Z",
+      "updatedAt": "2026-04-16T09:40:43.847Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "3013fdeb8a11b10b1eb795ec3ae8bfca38f7c26d",
+      "installedAt": "2026-04-16T09:43:02.160Z",
+      "updatedAt": "2026-04-16T09:43:02.160Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "firebender",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp"
+  ]
+}
