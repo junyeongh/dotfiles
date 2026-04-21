@@ -3,6 +3,8 @@
 # Programming Languages
 bun = "latest"
 deno = "latest"
+elixir = "latest"
+erlang = "latest"
 go = "latest"
 rust = "latest"
 zig = "latest"
