@@ -45,6 +45,14 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
+# https://piechowski.io/post/git-commands-before-reading-code/
+# git frequently changed files
+alias gfcf='git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20'
+# git contributor ranking
+alias gcr='git shortlog -sn --no-merges'
+# git monthly commits count
+alias gmcc='git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c'
+
 if command -v cargo &>/dev/null; then
   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 fi
