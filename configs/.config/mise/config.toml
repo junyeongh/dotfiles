@@ -2,10 +2,10 @@
 [tools]
 # Programming Languages
 bun = "latest"
-# clojure = "latest"
 deno = "latest"
 go = "latest"
 rust = "latest"
+zig = "latest"
 
 # CLI Tools
 act = "latest"
