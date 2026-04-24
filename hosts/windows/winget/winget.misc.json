@@ -39,9 +39,10 @@
     },
     {
       "Packages": [
+        { "PackageIdentifier": "9PFXXSHC64H3", "_comment": "Raycast" },
         { "PackageIdentifier": "9PKTQ5699M62", "_comment": "iCloud" },
         { "PackageIdentifier": "9PLM9XGG6VKS", "_comment": "Codex" },
-        { "PackageIdentifier": "9PFXXSHC64H3", "_comment": "Raycast" }
+        { "PackageIdentifier": "9p7nj351x9tl", "_comment": "SPAN Finder" }
       ],
       "SourceDetails": {
         "Argument": "https://storeedgefd.dsx.mp.microsoft.com/v9.0",
