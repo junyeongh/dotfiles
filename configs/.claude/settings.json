@@ -1,14 +1,15 @@
 {
-  "enabledPlugins": {
-    "serena@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
-  },
+  "model": "opusplan",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
+  "enabledPlugins": {
+    "serena@claude-plugins-official": true,
+    "context7@claude-plugins-official": true
+  },
   "effortLevel": "high",
-  "model": "opusplan",
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "skipDangerousModePermissionPrompt": true
 }
