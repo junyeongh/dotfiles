@@ -75,7 +75,7 @@
   "debug.toolBarLocation": "docked",
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   // editor
   "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
