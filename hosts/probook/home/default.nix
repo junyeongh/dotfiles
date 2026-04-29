@@ -1,8 +1,17 @@
-{ lib, pkgs, ... }:
-
+{
+  # inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   home.packages = lib.mkAfter (import ./packages.nix { inherit pkgs; });
   home.enableNixpkgsReleaseCheck = false;
+
+  # wayland.windowManager.hyprland.enable = true;
+  # wayland.windowManager.hyprland.plugins = [
+  #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
+  # ];
 
   services.tailscale-systray.enable = true;
 

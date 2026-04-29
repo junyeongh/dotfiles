@@ -63,6 +63,9 @@ if command -v eza &>/dev/null; then
   alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
   alias tree='eza -all --tree'
 fi
+if command -v fastfetch &>/dev/null; then
+  alias ff='fastfetch'
+fi
 if command -v fzf &>/dev/null; then
   alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 fi
@@ -94,6 +97,6 @@ if command -v nix &>/dev/null; then
 fi
 
 if command -v nixos-rebuild &>/dev/null; then
-  alias nixos-up="sudo nixos-rebuild switch --flake ~/dotfiles#nixos"
+  function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
   alias nixos-gens="nixos-rebuild list-generations"
 fi

@@ -2,9 +2,9 @@
 # 'man configuration.nix'
 
 {
+  lib,
   pkgs,
   pkgs-unstable,
-  lib,
   ...
 }:
 
@@ -18,7 +18,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "probook"; # Define your hostname.
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
@@ -71,6 +71,7 @@
   services.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
   programs.hyprland.enable = true;
+  programs.hyprland.package = pkgs-unstable.hyprland;
 
   # Sounds
   services.pulseaudio.enable = false;
@@ -149,9 +150,9 @@
       "docker"
       "podman"
     ];
-    packages = with pkgs; [
-      # thunderbird
-    ];
+    # packages = with pkgs; [
+    #   # thunderbird
+    # ];
   };
 
   system.stateVersion = "25.11";
