@@ -3,7 +3,6 @@
     "@anthropic-ai/sandbox-runtime": "latest",
     "@github/copilot": "latest",
     "@openai/codex": "latest",
-    "@sentry/dotagents": "latest",
     "oxfmt": "latest",
     "oxlint": "latest",
     "portless": "latest",
