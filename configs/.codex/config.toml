@@ -5,7 +5,19 @@ plan_mode_reasoning_effort = "xhigh"
 approvals_reviewer = "user"
 
 [tui]
-status_line = [ "codex-version", "model-with-reasoning", "current-dir", "git-branch", "context-usage", "context-window-size", "five-hour-limit", "weekly-limit", "used-tokens", "total-input-tokens", "total-output-tokens" ]
+status_line = [
+  "codex-version",
+  "model-with-reasoning",
+  "current-dir",
+  "git-branch",
+  "context-usage",
+  "context-window-size",
+  "five-hour-limit",
+  "weekly-limit",
+  "used-tokens",
+  "total-input-tokens",
+  "total-output-tokens",
+]
 notifications = true
 
 [features]
@@ -21,10 +33,15 @@ enabled = true
 
 [mcp_servers.serena]
 command = "uvx"
-args = [ "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server" ]
+args = [
+  "--from",
+  "git+https://github.com/oraios/serena",
+  "serena",
+  "start-mcp-server",
+]
 
 [mcp_servers.context7]
 command = "npx"
-args = [ "-y", "@upstash/context7-mcp" ]
+args = ["-y", "@upstash/context7-mcp"]
 
 # Projects Below

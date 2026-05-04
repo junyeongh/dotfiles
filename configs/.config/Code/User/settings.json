@@ -130,7 +130,7 @@
   "files.associations": {
     "*.css": "tailwindcss",
     "*.mdx": "markdown",
-    "*config*": "properties",
+    // "*config*": "properties",
     ".aliases": "shellscript",
     ".json": "jsonc",
     ".prettierrc": "jsonc"
@@ -265,6 +265,9 @@
   ],
   "settingsSync.ignoredSettings": [
     // "-window.zoomLevel"
+    "oxc.path.node",
+    "oxc.path.oxfmt",
+    "oxc.path.oxlint"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tabout.enableReverseShiftTab": true,
