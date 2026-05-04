@@ -11,9 +11,9 @@
     solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
     solaar.inputs.nixpkgs.follows = "nixpkgs-unstable";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
-    hyprland-plugins.inputs.hyprland.follows = "hyprland";
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    # hyprland-plugins.inputs.hyprland.follows = "hyprland";
   };
 
   outputs =
