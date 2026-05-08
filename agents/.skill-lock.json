@@ -49,11 +49,13 @@
     "codex",
     "cursor",
     "deepagents",
+    "dexto",
     "firebender",
     "gemini-cli",
     "github-copilot",
     "kimi-cli",
     "opencode",
-    "warp"
+    "warp",
+    "claude-code"
   ]
 }

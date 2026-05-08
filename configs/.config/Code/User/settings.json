@@ -259,6 +259,7 @@
     "MD060"
   ],
   "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [
     // "qwtel.sqlite-viewer"
@@ -292,7 +293,9 @@
   "window.zoomPerWindow": false,
   // workbench
   "workbench.activityBar.location": "top",
+  "workbench.browser.dataStorage": "workspace",
   "workbench.browser.enableChatTools": true,
+  "workbench.browser.openLocalhostLinks": true,
   "workbench.colorCustomizations": {
     // dimidium
     "terminal.ansiBlack": "#000000",
