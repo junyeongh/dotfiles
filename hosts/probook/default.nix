@@ -8,7 +8,7 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = { inherit pkgs-unstable inputs; };
   modules = [
     ./configuration.nix
-    ./flakes
+    # ./flakes
 
     # solaar
     inputs.solaar.nixosModules.default
