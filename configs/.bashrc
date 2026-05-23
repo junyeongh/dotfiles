@@ -101,6 +101,9 @@ if command -v oh-my-posh &>/dev/null; then
   # eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
   # themes = [kushal, robbyrussell, di4am0nd, negligible]
 fi
+if command -v tailscale &>/dev/null; then
+  eval "$(tailscale completion bash)"
+fi
 if command -v zoxide >/dev/null; then
   eval "$(zoxide init bash)"
 fi

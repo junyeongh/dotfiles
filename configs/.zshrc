@@ -28,6 +28,9 @@ if command -v oh-my-posh &>/dev/null; then
   # eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
   # themes = [kushal, robbyrussell, di4am0nd, negligible]
 fi
+if command -v tailscale &>/dev/null; then
+  eval "$(tailscale completion zsh)"
+fi
 if command -v zoxide >/dev/null; then
   eval "$(zoxide init zsh)"
 fi
