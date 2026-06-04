@@ -5,6 +5,7 @@
 
 with pkgs;
 [
+  dbeaver-bin
   dconf-editor
   dropbox-cli
   ferdium
