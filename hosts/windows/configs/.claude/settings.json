@@ -38,9 +38,12 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "serena@claude-plugins-official": true,
+    "codex@openai-codex": true,
     "context7@claude-plugins-official": true,
-    "codex@openai-codex": true
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
