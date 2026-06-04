@@ -22,7 +22,9 @@ if (Get-Command git-wt -ErrorAction SilentlyContinue) {
 if (Get-Command mise -ErrorAction SilentlyContinue) {
     Invoke-Expression (&mise activate pwsh | Out-String)
 }
-
+if (Get-Command tailscale -ErrorAction SilentlyContinue) {
+    Invoke-Expression (&tailscale completion powershell | Out-String)
+}
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
     Invoke-Expression (&zoxide init powershell | Out-String )
 }

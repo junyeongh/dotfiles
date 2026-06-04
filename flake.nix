@@ -10,6 +10,10 @@
 
     solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
     solaar.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    # hyprland-plugins.inputs.hyprland.follows = "hyprland";
   };
 
   outputs =
@@ -28,43 +32,12 @@
     {
       # Standalone home-manager configurations (for non-NixOS systems)
       homeConfigurations = {
-        # WSL
-        wsl = inputs.home-manager.lib.homeManagerConfiguration {
-          pkgs = pkgs-unstable;
-          modules = [
-            ./home
-            ./hosts/wsl/home
-          ];
-        };
+        "wsl" = import ./hosts/wsl { inherit inputs system pkgs-unstable; };
       };
 
       # NixOS system configurations
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit pkgs-unstable inputs; };
-          modules = [
-            ./hosts/nixos/configuration.nix
-            ./hosts/nixos/flakes
-            inputs.solaar.nixosModules.default
-            inputs.home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = false;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = {
-                pkgs = pkgs-unstable;
-              };
-              home-manager.users.yeong =
-                { lib, pkgs, ... }:
-                {
-                  imports = [
-                    ./home
-                    ./hosts/nixos/home
-                  ];
-                };
-            }
-          ];
-        };
+        "probook" = import ./hosts/probook { inherit inputs system pkgs-unstable; };
       };
     };
 }

@@ -1,15 +1,27 @@
 {
-  "enabledPlugins": {
-    "figma@claude-plugins-official": false,
-    "github@claude-plugins-official": false
-  },
+  "model": "opusplan",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
-    "padding": 0,
-    "type": "command"
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "codex@openai-codex": true,
+    "context7@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
   },
   "effortLevel": "high",
-  "model": "opusplan",
+  "skipDangerousModePermissionPrompt": true,
   "voiceEnabled": true
 }

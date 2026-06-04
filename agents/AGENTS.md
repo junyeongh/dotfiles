@@ -2,7 +2,8 @@
 
 ## Response Format
 
-- If the question starts with `[locale]`, respond in that locale (e.g., `[ko-kr]` for Korean, `[en-us]` for American English, `[en-uk]` for British English)
+- If the question starts with `[{{locale}}]`, respond in specified language for the session
+  - (e.g., `[ko]` or `[ko-kr]` for Korean, `[en-us]` for American English, `[en-uk]` for British English)
   - Include technical terms in **both** the target language and English
   - Format: `{{term in target language}}` ({{English term}})
   - e.g., `의존성 주입` (dependency injection)

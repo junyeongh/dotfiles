@@ -1,37 +1,38 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 [tools]
 # Programming Languages
-bun = "latest"
-# clojure = "latest"
+bun  = "latest"
 deno = "latest"
-go = "latest"
+go   = "latest"
 rust = "latest"
+zig  = "latest"
+# BEAM
+elixir = "latest"
+erlang = "latest"
+gleam  = "latest"
 
 # CLI Tools
-act = "latest"
-bat = "latest"
-ctop = "latest"
-delta = "latest"
+act        = "latest"
+bat        = "latest"
+ctop       = "latest"
+delta      = "latest"
 difftastic = "latest"
-direnv = "latest"
-eza = "latest"
-fastfetch = "latest"
-fzf = "latest"
-hyperfine = "latest"
-just = "latest"
+direnv     = "latest"
+eza        = "latest"
+fastfetch  = "latest"
+fzf        = "latest"
+hyperfine  = "latest"
+just       = "latest"
 lazydocker = "latest"
-lazygit = "latest"
+lazygit    = "latest"
 oh-my-posh = "latest"
-ripgrep = "latest"
-rumdl = "latest"
-typst = "latest"
-uv = "latest"
-yq = "latest"
-zoxide = "latest"
+ripgrep    = "latest"
+rumdl      = "latest"
+typst      = "latest"
+uv         = "latest"
+yq         = "latest"
+zoxide     = "latest"
 
 # Text Editor
-helix = "latest"
+helix  = "latest"
 neovim = "latest"
-
-[settings]
-lockfile = true

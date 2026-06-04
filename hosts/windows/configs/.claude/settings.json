@@ -1,4 +1,5 @@
 {
+  "model": "opusplan",
   "hooks": {
     "Notification": [
       {
@@ -26,7 +27,6 @@
           {
             "type": "command",
             "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/hooks/claude-hook-toast.ps1\""
-            "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/hooks/claude-hook-toast.ps1\""
           }
         ]
       }
@@ -38,10 +38,22 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "figma@claude-plugins-official": false,
-    "github@claude-plugins-official": false
+    "codex@openai-codex": true,
+    "context7@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "serena@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true
   },
-  "model": "opusplan",
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    }
+  },
   "effortLevel": "high",
+  "skipDangerousModePermissionPrompt": true,
   "voiceEnabled": true
 }

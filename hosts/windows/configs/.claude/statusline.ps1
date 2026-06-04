@@ -64,7 +64,9 @@ try {
     $TOTAL_OUTPUT_TOKENS = if ($inputData.context_window.total_output_tokens) { $inputData.context_window.total_output_tokens } else { 0 }
     $VERSION = if ($inputData.version) { $inputData.version } else { "" }
     $CURRENT_USAGE = $inputData.context_window.current_usage
-    $USED_PERCENTAGE = if ($null -ne $inputData.context_window.used_percentage) { $inputData.context_window.used_percentage } else { $null }
+    $TOTAL_COST_USD = if ($null -ne $inputData.cost.total_cost_usd) { $inputData.cost.total_cost_usd } else { 0 }
+    $TOTAL_LINES_ADDED = if ($null -ne $inputData.cost.total_lines_added) { $inputData.cost.total_lines_added } else { 0 }
+    $TOTAL_LINES_REMOVED = if ($null -ne $inputData.cost.total_lines_removed) { $inputData.cost.total_lines_removed } else { 0 }
 }
 catch {
     $CONTEXT_WINDOW_SIZE = 0
@@ -76,14 +78,16 @@ catch {
     $TOTAL_OUTPUT_TOKENS = 0
     $VERSION = ""
     $CURRENT_USAGE = $null
-    $USED_PERCENTAGE = $null
+    $TOTAL_COST_USD = 0
+    $TOTAL_LINES_ADDED = 0
+    $TOTAL_LINES_REMOVED = 0
 }
 
 # Get git branch using $CURRENT_DIR as the working directory
 $GIT_BRANCH = ""
 try {
-    $gitDir = Join-Path $CURRENT_DIR ".git"
-    if (Test-Path $gitDir) {
+    & git -C $CURRENT_DIR rev-parse --git-dir 2>$null | Out-Null
+    if ($LASTEXITCODE -eq 0) {
         $GIT_BRANCH = & git -C $CURRENT_DIR -c core.fileMode=false branch --show-current 2>$null
         if (-not $GIT_BRANCH) {
             $GIT_BRANCH = & git -C $CURRENT_DIR rev-parse --short HEAD 2>$null
@@ -108,19 +112,23 @@ if ($GIT_BRANCH) {
 }
 
 $output += "${MODEL_DISPLAY_NAME} (${OUTPUT_STYLE})${RESET} "
+$output += "${BRIGHT_YELLOW}`$$(("{0:F3}" -f $TOTAL_COST_USD))${RESET} "
 
-if ($null -ne $USED_PERCENTAGE) {
-    $PERCENT_USED = [math]::Floor($USED_PERCENTAGE)
-    $output += "$PERCENT_USED% used "
-    $output += "[$(Get-ProgressBar -Percent $PERCENT_USED -Width 10)] "
-} elseif ($CURRENT_USAGE -and $CONTEXT_WINDOW_SIZE -gt 0) {
-    # Fall back to calculating from current_usage fields when used_percentage is absent
+if ($TOTAL_LINES_ADDED -ne 0 -or $TOTAL_LINES_REMOVED -ne 0) {
+    $output += "("
+    if ($TOTAL_LINES_ADDED -ne 0) { $output += "${BRIGHT_GREEN}+${TOTAL_LINES_ADDED}${RESET}" }
+    if ($TOTAL_LINES_ADDED -ne 0 -and $TOTAL_LINES_REMOVED -ne 0) { $output += ", " }
+    if ($TOTAL_LINES_REMOVED -ne 0) { $output += "${BRIGHT_RED}-${TOTAL_LINES_REMOVED}${RESET}" }
+    $output += ") "
+}
+
+if ($CURRENT_USAGE -and $CONTEXT_WINDOW_SIZE -gt 0) {
     $input_tokens = if ($CURRENT_USAGE.input_tokens) { $CURRENT_USAGE.input_tokens } else { 0 }
     $cache_creation = if ($CURRENT_USAGE.cache_creation_input_tokens) { $CURRENT_USAGE.cache_creation_input_tokens } else { 0 }
     $cache_read = if ($CURRENT_USAGE.cache_read_input_tokens) { $CURRENT_USAGE.cache_read_input_tokens } else { 0 }
     $CURRENT_TOKENS = $input_tokens + $cache_creation + $cache_read
     $PERCENT_USED = [math]::Floor($CURRENT_TOKENS * 100 / $CONTEXT_WINDOW_SIZE)
-    $output += "$CURRENT_TOKENS/$CONTEXT_WINDOW_SIZE ($PERCENT_USED%) "
+    $output += "$($CURRENT_TOKENS.ToString('#,0'))/$($CONTEXT_WINDOW_SIZE.ToString('#,0')) ($PERCENT_USED%) "
     $output += "[$(Get-ProgressBar -Percent $PERCENT_USED -Width 10)] "
 }
 

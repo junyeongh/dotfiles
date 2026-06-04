@@ -75,7 +75,7 @@
   "debug.toolBarLocation": "docked",
   "diffEditor.experimental.showMoves": true,
   "diffEditor.experimental.useTrueInlineView": true,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   // editor
   "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
@@ -128,20 +128,12 @@
   "explorer.sortOrder": "type",
   "extensions.allowOpenInModalEditor": true,
   "files.associations": {
-    "*.base": "yaml",
     "*.css": "tailwindcss",
-    // zmk
-    // "*_defconfig": "properties",
-    "*.dts": "c",
-    "*.dtsi": "c",
-    "*.keymap": "c",
     "*.mdx": "markdown",
-    "*.overlay": "c",
-    ".aliases": "bat",
-    ".prettierrc": "jsonc",
-    "Kconfig*": "properties",
-    // ".json": "jsonc",
-    "config": "shellscript"
+    // "*config*": "properties",
+    ".aliases": "shellscript",
+    ".json": "jsonc",
+    ".prettierrc": "jsonc"
   },
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
@@ -184,6 +176,7 @@
   "js/ts.inlayHints.parameterNames.enabled": "all",
   "js/ts.inlayHints.parameterTypes.enabled": true,
   "js/ts.inlayHints.propertyDeclarationTypes.enabled": true,
+  "js/ts.inlayHints.variableTypes.enabled": true,
   "js/ts.updateImportsOnFileMove.enabled": "always",
   "json.format.keepLines": true, // on and off when needed
   "json.schemaDownload.trustedDomains": {
@@ -267,12 +260,16 @@
     "MD060"
   ],
   "scm.repositories.explorer": true,
+  "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
   "settingsSync.ignoredExtensions": [
     // "qwtel.sqlite-viewer"
   ],
   "settingsSync.ignoredSettings": [
     // "-window.zoomLevel"
+    "oxc.path.node",
+    "oxc.path.oxfmt",
+    "oxc.path.oxlint"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tabout.enableReverseShiftTab": true,
@@ -297,7 +294,9 @@
   "window.zoomPerWindow": false,
   // workbench
   "workbench.activityBar.location": "top",
+  "workbench.browser.dataStorage": "workspace",
   "workbench.browser.enableChatTools": true,
+  "workbench.browser.openLocalhostLinks": true,
   "workbench.colorCustomizations": {
     // dimidium
     "terminal.ansiBlack": "#000000",

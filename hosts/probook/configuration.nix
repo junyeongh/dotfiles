@@ -2,23 +2,23 @@
 # 'man configuration.nix'
 
 {
+  lib,
   pkgs,
   pkgs-unstable,
-  lib,
   ...
 }:
 
 {
   imports = [
     # Include the results of the hardware scan.
-    /etc/nixos/hardware-configuration.nix
+    ./hardware-configuration.nix
   ];
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "probook"; # Define your hostname.
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
@@ -70,7 +70,22 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
   services.gnome.gnome-keyring.enable = true;
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "polkit-gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
+
   programs.hyprland.enable = true;
+  programs.hyprland.package = pkgs-unstable.hyprland;
 
   # Sounds
   services.pulseaudio.enable = false;
@@ -149,10 +164,10 @@
       "docker"
       "podman"
     ];
-    packages = with pkgs; [
-      # thunderbird
-    ];
+    # packages = with pkgs; [
+    #   # thunderbird
+    # ];
   };
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

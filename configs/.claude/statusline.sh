@@ -24,18 +24,6 @@ RESET='\033[0m'
 # Get terminal width
 term_width=$(tput cols 2>/dev/null || echo 80)
 
-progress_bar() {
-  pct="${1:-0}"
-  width="${2:-10}"
-  [[ "$pct" =~ ^[0-9]+$ ]] || pct=0
-  ((pct < 0)) && pct=0
-  ((pct > 100)) && pct=100
-  filled=$((pct * width / 100))
-  empty=$((width - filled))
-  printf '%*s' "$filled" '' | tr ' ' '='
-  printf '%*s' "$empty" '' | tr ' ' '-'
-}
-
 # Helper functions for common extractions
 get_context_window_size() { echo "$input" | jq -r '.context_window.context_window_size'; }
 get_current_dir() { echo "$input" | jq -r '.workspace.current_dir'; }
@@ -86,13 +74,22 @@ progress_bar() {
   printf '%*s' "$empty" '' | tr ' ' '-'
 }
 
+format_number() {
+  local n="$1" result=""
+  while [ ${#n} -gt 3 ]; do
+    result=",${n: -3}${result}"
+    n="${n:0:${#n}-3}"
+  done
+  echo "${n}${result}"
+}
+
 # Build output
 output=""
 output="${output}${GREEN}(v${VERSION})${RESET} "
 output="${output}${CYAN}${CURRENT_DIR}${RESET} "
 
 if [ -n "$GIT_BRANCH" ]; then
-  output="${output}${RED}:: ${GIT}${GIT_BRANCH}${RESET}\n"
+  output="${output}${RED}:: ${GIT_BRANCH}${RESET}\n"
 else
   output="${output}\n"
 fi
@@ -113,7 +110,7 @@ if [ "$USAGE" != "null" ]; then
   # Calculate current context from current_usage fields
   CURRENT_TOKENS=$(echo "$USAGE" | jq '.input_tokens + .cache_creation_input_tokens + .cache_read_input_tokens')
   PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
-  output="${output}$CURRENT_TOKENS/$CONTEXT_WINDOW_SIZE ($PERCENT_USED%) "
+  output="${output}$(format_number $CURRENT_TOKENS)/$(format_number $CONTEXT_WINDOW_SIZE) ($PERCENT_USED%) "
   output="${output}[$(progress_bar "$PERCENT_USED" 10)] "
 fi
 

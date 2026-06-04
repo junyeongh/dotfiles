@@ -53,12 +53,13 @@ home-manager switch --flake .#{attribute-name}
 
 [NixOS Search - Packages](https://search.nixos.org/packages)
 
-## For Windows
+## Git Configuration `~/.gitconfig.local`
 
 ```properties
-# ~/.gitconfig.local - Configuration for WSL
-[commit]
-  gpgsign = true
+# For work environment:
+[includeIf "hasconfig:remote.*.url:git@github.com:<work-organization>/**"]
+  # path = ~/.gitconfig.<work-organization>
+
 # Copy snippet from 1Password `Configure Git Commit Signing`
 [user]
   signingkey = ssh-<key type> <public key>
@@ -67,9 +68,12 @@ home-manager switch --flake .#{attribute-name}
   format = ssh
 
 [gpg "ssh"]
-  program = "/mnt/c/Users/<username>/AppData/Local/Microsoft/WindowsApps/op-ssh-sign-wsl.exe"
+  program = <op-ssh-sign path>
 
 [commit]
   gpgsign = true
 
+# Configuration for WSL
+[core]
+  sshCommand = ssh.exe
 ```

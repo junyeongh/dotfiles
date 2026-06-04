@@ -1,6 +1,6 @@
 # https://github.com/getsentry/dotagents
 version = 1
-agents = ["claude", "codex"]
+agents = ["codex"]
 
 [trust]
 allow_all = true
@@ -8,22 +8,6 @@ allow_all = true
 [[skills]]
 name = "dotagents"
 source = "getsentry/dotagents"
-
-[[skills]]
-name = "find-skills"
-source = "vercel-labs/skills"
-
-[[skills]]
-name = "beautiful-mermaid"
-source = "intellectronica/agent-skills"
-
-[[skills]]
-name = "promptify"
-source = "intellectronica/agent-skills"
-
-[[skills]]
-name = "youtube-transcript"
-source = "intellectronica/agent-skills"
 
 [[mcp]]
 name = "context7"
@@ -39,3 +23,15 @@ args = [
   "serena",
   "start-mcp-server",
 ]
+
+[[skills]]
+name = "beautiful-mermaid"
+source = "path:skills/beautiful-mermaid"
+
+[[skills]]
+name = "find-skills"
+source = "path:skills/find-skills"
+
+[[skills]]
+name = "promptify"
+source = "path:skills/promptify"

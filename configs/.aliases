@@ -45,6 +45,14 @@ alias gwa='git worktree add'
 alias gwr='git worktree remove'
 alias gwl='git worktree list'
 
+# https://piechowski.io/post/git-commands-before-reading-code/
+# git frequently changed files
+alias gfcf='git log --format=format: --name-only --since="1 year ago" | sort | uniq -c | sort -nr | head -20'
+# git contributor ranking
+alias gcr='git shortlog -sn --no-merges'
+# git monthly commits count
+alias gmcc='git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c'
+
 if command -v cargo &>/dev/null; then
   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 fi
@@ -54,6 +62,9 @@ fi
 if command -v eza &>/dev/null; then
   alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
   alias tree='eza -all --tree'
+fi
+if command -v fastfetch &>/dev/null; then
+  alias ff='fastfetch'
 fi
 if command -v fzf &>/dev/null; then
   alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
@@ -81,10 +92,11 @@ fi
 # nix related
 if command -v nix &>/dev/null; then
   alias nix-optimise="sudo nix-store --optimise"
-  alias home-up="home-manager switch --flake ~/dotfiles#wsl"
+  alias hm="home-manager --flake ~/dotfiles#wsl"
+  alias hm-up="home-manager --flake ~/dotfiles#wsl switch"
 fi
 
 if command -v nixos-rebuild &>/dev/null; then
-  alias nixos-up="sudo nixos-rebuild switch --flake ~/dotfiles#nixos"
+  function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
   alias nixos-gens="nixos-rebuild list-generations"
 fi
