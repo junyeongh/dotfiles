@@ -34,13 +34,15 @@ web_dashboard: true
 # the address the web dashboard will listen on (bind address).
 web_dashboard_listen_address: 127.0.0.1
 
-# whether to open the Dashboard window/browser tab when Serena starts (provided that web_dashboard is enabled).
-# If set to false, you can still open the dashboard manually by clicking on the Serena icon in your system
-# tray on Windows and macOS. On Linux, there is no system tray support, so you can only open the dashboard by
-# a) telling the LLM to "open the dashboard" (provided that the open_dashboard tool is enabled) or by
-# b) manually navigating to http://localhost:24282/dashboard/ in your web browser (actual port
-#    may be higher if you have multiple instances running; try ports 24283, 24284, etc.)
-# See also: https://oraios.github.io/serena/02-usage/060_dashboard.html
+# whether to open the Dashboard window/browser tab when Serena starts (provided that `web_dashboard` is enabled).
+# If set to false, you can still open the dashboard manually:
+#  * When using an interface that supports a tray icon (see setting `web_dashboard_interface`),
+#    you can conveniently open the dashboard from the system tray.
+#  * When using the `browser` interface (no tray icon), so you can only open the dashboard by
+#    a) telling the LLM to "open the dashboard" (provided that the open_dashboard tool is enabled) or by
+#    b) manually navigating to http://localhost:24282/dashboard/ in your web browser (actual port
+#       may be higher if you have multiple instances running; try ports 24283, 24284, etc.)
+# Further information: https://oraios.github.io/serena/02-usage/060_dashboard.html
 web_dashboard_open_on_launch: false
 
 # defines the interface (application mode) used for the web dashboard (if enabled).
@@ -56,6 +58,9 @@ web_dashboard_open_on_launch: false
 #      opening the dashboard in browser tabs when selected from the tray menu.
 #      This is EXPERIMENTAL. It is tested on Windows only. We will establish macOS support, but it is yet untested.
 #      On Linux, this cannot be universally supported, but it may work in some desktop environments.
+#      On NixOS, when using the package from flake.nix, both modern AppIndicator trays as well as
+#      older Xorg-/XEmbed-based trays should be supported.
+# See https://oraios.github.io/serena/02-usage/060_dashboard.html
 web_dashboard_interface:
 
 # the minimum log level for the GUI log window and the dashboard (10 = debug, 20 = info, 30 = warning, 40 = error)
@@ -79,13 +84,17 @@ excluded_tools: []
 
 # list of optional tools (which are disabled by default) to be included
 included_optional_tools: []
+
+# Used as default for tools where the apply method has a default maximal answer length.
+# Even though the value of the max_answer_chars can be changed when calling the tool, it may make sense to adjust this default
+# through the global configuration.
 default_max_tool_answer_chars: 150000
 
 # the name of the token count estimator to use for tool usage statistics.
 # See the `RegisteredTokenCountEstimator` enum for available options.
 #
 # By default, a very naive character count estimator is used, which simply counts the number of characters.
-# You can configure this to TIKTOKEN_GPT4 to use a local tiktoken-based estimator for GPT-4 (will download tiktoken
+# You can configure this to TIKTOKEN_GPT4O to use a local tiktoken-based estimator for GPT-4o (will download tiktoken
 # data files on first run), or ANTHROPIC_CLAUDE_SONNET_4 which will use the (free of cost) Anthropic API to
 # estimate the token count using the Claude Sonnet 4 tokenizer.
 token_count_estimator: CHAR_COUNT
@@ -93,10 +102,11 @@ token_count_estimator: CHAR_COUNT
 # the list of registered project paths (updated automatically).
 projects: []
 
-# list of mode names to that are always to be included in the set of active modes
-# The full set of modes to be activated is base_modes + default_modes.
-# If this is undefined, no base modes are included.
-# The project configuration (project.yml) may override this setting.
+# list of mode names to that are always to be included in the set of active modes.
+# The full set of modes to be activated is base_modes + default_modes + added_modes,
+# where added_modes can be defined by projects/CLI parameters.
+# If this is undefined/empty, no base modes are included.
+# See https://oraios.github.io/serena/02-usage/050_configuration.html#modes
 base_modes:
 
 # list of mode names that are to be activated by default.
@@ -109,8 +119,6 @@ default_modes:
 # fixed set of tools to use as the base tool set (if non-empty), replacing Serena's default set of tools.
 # This cannot be combined with non-empty excluded_tools or included_optional_tools.
 fixed_tools: []
-
-# address where JetBrains plugin servers are running (only relevant when using the JetBrains language backend)
 jetbrains_plugin_server_address: 127.0.0.1
 
 # list of paths to ignore across all projects.
@@ -157,3 +165,11 @@ line_ending: native
 # You can extend the list on a per-project basis in the project.yml configuration file.
 # Example: ["_archive/.*", "_episodes/.*"]
 ignored_memory_patterns: []
+
+# trusted hosts used to access the web dashboard.
+# By default, only allow access via local addresses for security reasons.
+# If you want to allow access from remote machines, add the hostname used to access the dashboard to this list.
+# If the list is empty/undefined, all hosts are trusted.
+web_dashboard_trusted_hosts:
+- 127.0.0.1
+- localhost

@@ -33,6 +33,9 @@
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.tabSize": 4
   },
+  "[racket]": {
+    "editor.defaultFormatter": "evzen-wybitul.magic-racket"
+  },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.tabSize": 4
@@ -77,7 +80,6 @@
   "diffEditor.experimental.useTrueInlineView": true,
   "diffEditor.ignoreTrimWhitespace": false,
   // editor
-  "editor.aiStats.enabled": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports.biome": "explicit"
   },
@@ -239,7 +241,7 @@
   "resmon.show.cpufreq": false,
   "resmon.show.cpuusage": false,
   "ruff.lineLength": 120,
-  "rumdl.rules.enable": [
+  "rumdl.rules.disable": [
     "MD004", // Unordered list style
     "MD010", // Hard tabs
     "MD018", // No space after hash on atx style heading
@@ -269,7 +271,8 @@
     // "-window.zoomLevel"
     "oxc.path.node",
     "oxc.path.oxfmt",
-    "oxc.path.oxlint"
+    "oxc.path.oxlint",
+    "deno.path"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tabout.enableReverseShiftTab": true,
