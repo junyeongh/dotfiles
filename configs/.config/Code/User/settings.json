@@ -244,6 +244,7 @@
   "rumdl.rules.disable": [
     "MD004", // Unordered list style
     "MD010", // Hard tabs
+    "MD013",
     "MD018", // No space after hash on atx style heading
     "MD024", // Multiple headings with the same content
     "MD026", // Trailing punctuation in heading

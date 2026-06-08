@@ -16,7 +16,7 @@
   // Typescript
   "console.log with variable name": {
     "prefix": "clgv",
-    "body": ["console.log('$1', $1);"],
+    "body": ["console.log('$1: ', $1);"],
     "description": "import style module"
   },
   "back tick": {
