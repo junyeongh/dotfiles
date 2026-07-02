@@ -150,8 +150,13 @@
   "git.openRepositoryInParentFolders": "always",
   "git.verboseCommit": true,
   "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "github.copilot.enable": {
-    "*": false
+    "*": true,
+    "markdown": false,
+    "plaintext": false,
+    "rust": false,
+    "scminput": false
   },
   "github.copilot.nextEditSuggestions.eagerness": "low",
   "github.copilot.nextEditSuggestions.enabled": true,
@@ -214,11 +219,11 @@
     // "MD051": false, // Link fragments should be valid
     "MD053": false, // Link and image reference definitions should be needed
     "MD058": false, // Tables should be surrounded by blank lines
-    "MD060": false,
-    // "MD060": {
-    //   "style": "compact",
-    //   "aligned_delimiter": false
-    // }
+    // "MD060": false,
+    "MD060": {
+      "aligned_delimiter": false,
+      "style": "compact"
+    },
     "default": true
   },
   "nix.enableLanguageServer": true,
@@ -262,6 +267,7 @@
     "MD058", // Tables should be surrounded by blank lines
     "MD060"
   ],
+  "scm.defaultViewMode": "tree",
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
