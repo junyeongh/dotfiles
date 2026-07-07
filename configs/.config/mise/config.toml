@@ -4,7 +4,6 @@
 bun  = "latest"
 deno = "latest"
 go   = "latest"
-rust = "latest"
 zig  = "latest"
 # BEAM
 elixir = "latest"
