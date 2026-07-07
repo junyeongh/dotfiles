@@ -61,8 +61,10 @@
     ];
     inputMethod = {
       enable = true;
-      type = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [ hangul ];
+      type = "kime";
+      kime.iconColor = "Black";
+      # type = "ibus";
+      # ibus.engines = with pkgs.ibus-engines; [ hangul ];
     };
   };
 
