@@ -28,6 +28,7 @@ hl.config({
   -- https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/
   dwindle = {
     preserve_split = true, -- You probably want this
+    force_split    = 2,
   },
   -- https://wiki.hypr.land/Configuring/Layouts/Master-Layout/
   master = {

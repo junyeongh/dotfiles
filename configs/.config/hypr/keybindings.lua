@@ -19,42 +19,52 @@ local fileManager = "nautilus"
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + E",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 
+-- Windows management
+hl.bind(mainMod .. " + CTRL + SHIFT + C", hl.dsp.window.close())
 -- Move focus
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
 -- Move active window
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
 hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.center())
 -- Resize active window
 hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -50, y = 0, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = -20, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = 20, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 50, y = 0, relative = true, window = "activewindow" }))
-
+-- Window states
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
-
+hl.bind("SUPER + X", function()
+  if hl.get_workspace("special:minimized") then
+    hl.dispatch(hl.dsp.window.move({ workspace = hl.get_active_workspace(), window = "tag:minimized" }))
+    hl.dispatch(hl.dsp.window.clear_tags({ window = "tag:minimized" }))
+  else
+    hl.dispatch(hl.dsp.window.tag({ tag = "minimized", window = hl.get_active_window() }))
+    hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
+  end
+end)
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
+-- Move between workspaces
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ workspace = "e+1" }))
-
 for i = 1, 10 do
-  local key = i % 10   -- 10 maps to key 0
+  local key = i % 10 -- 10 maps to key 0
   -- Switch workspaces with mainMod + [0-9]
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
   -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -62,10 +72,10 @@ for i = 1, 10 do
 end
 
 -- Requires playerctl
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+-- hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
+-- hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+-- hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
+-- hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
 
 -- noctalia - Core binds
 local ipc = "noctalia-shell ipc call"
@@ -82,3 +92,6 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked 
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. " volume muteInput"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
+
+-- Custom binds
+hl.bind("CTRL + ALT + SPACE", hl.dsp.exec_cmd("1password --quick-access"))
