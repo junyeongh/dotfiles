@@ -45,7 +45,7 @@
         "backgroundOpacity": 0.93,
         "barType": "floating",
         "capsuleColorKey": "primary",
-        "capsuleOpacity": 0.5,
+        "capsuleOpacity": 0.75,
         "contentPadding": 2,
         "density": "compact",
         "displayMode": "always_visible",
@@ -197,11 +197,12 @@
                     "blacklist": [
                     ],
                     "chevronColor": "none",
-                    "colorizeIcons": true,
+                    "colorizeIcons": false,
                     "drawerEnabled": true,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
+                        "kime"
                     ]
                 },
                 {
@@ -223,13 +224,6 @@
                         "terminalCommand": ""
                     },
                     "id": "plugin:tailscale"
-                },
-                {
-                    "displayMode": "forceOpen",
-                    "iconColor": "none",
-                    "id": "KeyboardLayout",
-                    "showIcon": true,
-                    "textColor": "none"
                 },
                 {
                     "displayMode": "onhover",
@@ -379,10 +373,52 @@
         }
     },
     "desktopWidgets": {
-        "enabled": false,
-        "gridSnap": false,
-        "gridSnapScale": false,
+        "enabled": true,
+        "gridSnap": true,
+        "gridSnapScale": true,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "hideMode": "hidden",
+                        "id": "MediaPlayer",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showAlbumArt": true,
+                        "showBackground": true,
+                        "showButtons": true,
+                        "showVisualizer": false,
+                        "visualizerType": "linear",
+                        "x": 780,
+                        "y": 40
+                    },
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "scale": 1,
+                        "showBackground": true,
+                        "statType": "CPU",
+                        "x": 20,
+                        "y": 40
+                    },
+                    {
+                        "colorName": "primary",
+                        "height": 72,
+                        "hideWhenIdle": true,
+                        "id": "AudioVisualizer",
+                        "roundedCorners": true,
+                        "scale": 1.25,
+                        "showBackground": true,
+                        "visualizerType": "linear",
+                        "width": 320,
+                        "x": 780,
+                        "y": 980
+                    }
+                ]
+            }
         ],
         "overviewEnabled": true
     },
@@ -712,14 +748,14 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/yeong/Dropbox/Pictures/Wallpapers/",
+        "directory": "/home/yeong/Dropbox/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
         ],
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": false,
+        "hideWallpaperFilenames": true,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
         ],
@@ -729,7 +765,7 @@
         "panelPosition": "follow_bar",
         "randomIntervalSec": 300,
         "setWallpaperOnAllMonitors": true,
-        "showHiddenFiles": false,
+        "showHiddenFiles": true,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
         "sortOrder": "name",
