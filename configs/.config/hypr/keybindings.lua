@@ -61,12 +61,14 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 -- Move between workspaces
+hl.bind(mainMod .. " + CTRL + Left", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + CTRL + Right", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ workspace = "e+1" }))
 for i = 1, 10 do
   local key = i % 10 -- 10 maps to key 0
   -- Switch workspaces with mainMod + [0-9]
-  hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+  hl.bind(mainMod .. " + CTRL + " .. key, hl.dsp.focus({ workspace = i }))
   -- Move active window to a workspace with mainMod + SHIFT + [0-9]
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
