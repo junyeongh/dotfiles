@@ -12,6 +12,7 @@ gleam  = "latest"
 
 # CLI Tools
 act        = "latest"
+ast-grep   = "latest"
 bat        = "latest"
 ctop       = "latest"
 delta      = "latest"
