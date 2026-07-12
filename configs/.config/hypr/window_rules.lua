@@ -38,24 +38,16 @@ hl.window_rule({
 
 -- Custom window rules for specific applications
 hl.window_rule({
-    name = "heynote",
-    match = { class = "Heynote" },
+    name = "floating apps at right",
+    match = { class = "^(Heynote)$" },
 
     float = true,
     size = { "monitor_w / 3", "monitor_h * 0.8" },
     move = { "monitor_w * 2 / 3", "monitor_h * 0.1" }
 })
 hl.window_rule({
-    name = "1password",
-    match = { class = "1password" },
-
-    float = true,
-    center = true,
-    size = { "monitor_w * 0.75", "monitor_h * 0.75" }
-})
-hl.window_rule({
-    name = "spotify",
-    match = { class = "Spotify" },
+    name = "floating apps at center",
+    match = { class = "^(Ferdium|1password|Spotify)$" },
 
     float = true,
     center = true,
