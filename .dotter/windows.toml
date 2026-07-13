@@ -6,6 +6,5 @@ packages = ["default"]
 "configs\\.config\\zed" = "~\\AppData\\Roaming\\Zed"
 "hosts\\windows\\configs" = "~"
 "hosts\\windows\\powershell" = { target = "~\\Documents\\PowerShell", type = "symbolic" }
-"local\\share" = "~\\AppData\\Local"
 
 [variables]

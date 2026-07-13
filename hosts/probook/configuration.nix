@@ -61,8 +61,10 @@
     ];
     inputMethod = {
       enable = true;
-      type = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [ hangul ];
+      type = "kime";
+      kime.iconColor = "Black";
+      # type = "ibus";
+      # ibus.engines = with pkgs.ibus-engines; [ hangul ];
     };
   };
 
@@ -128,17 +130,18 @@
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
-  programs._1password.enable = true;
-  programs._1password-gui.enable = true;
-  programs._1password-gui.polkitPolicyOwners = [ "yeong" ];
-
+  programs.nix-ld.enable = true;
   programs.git.enable = true;
   programs.git.config = {
     "gpg \"ssh\"" = {
       program = lib.getExe' pkgs._1password-gui "op-ssh-sign";
     };
   };
-  programs.nix-ld.enable = true;
+
+  programs._1password.enable = true;
+  programs._1password-gui.enable = true;
+  programs._1password-gui.polkitPolicyOwners = [ "yeong" ];
+  programs.steam.enable = true;
 
   virtualisation = {
     containers.enable = true;

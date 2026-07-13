@@ -4,7 +4,6 @@
 bun  = "latest"
 deno = "latest"
 go   = "latest"
-rust = "latest"
 zig  = "latest"
 # BEAM
 elixir = "latest"
@@ -13,6 +12,7 @@ gleam  = "latest"
 
 # CLI Tools
 act        = "latest"
+ast-grep   = "latest"
 bat        = "latest"
 ctop       = "latest"
 delta      = "latest"

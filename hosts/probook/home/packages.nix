@@ -23,6 +23,7 @@ with pkgs;
   vscode
   wofi
   yaak
+  zathura
   zed-editor
 
   # Claude Code sandbox dependencies
