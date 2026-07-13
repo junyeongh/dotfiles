@@ -47,7 +47,7 @@ hl.window_rule({
 })
 hl.window_rule({
     name = "floating apps at center",
-    match = { class = "^(Ferdium|1password|Spotify)$" },
+    match = { class = "^(1password|Ferdium|obsidian|Spotify)$" },
 
     float = true,
     center = true,

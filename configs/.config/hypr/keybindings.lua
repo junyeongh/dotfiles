@@ -45,9 +45,9 @@ hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = 20, relative 
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 50, y = 0, relative = true, window = "activewindow" }))
 -- Window states
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("togglesplit")) -- dwindle only
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
-hl.bind("SUPER + X", function()
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + SHIFT + X", function()
   if hl.get_workspace("special:minimized") then
     hl.dispatch(hl.dsp.window.move({ workspace = hl.get_active_workspace(), window = "tag:minimized" }))
     hl.dispatch(hl.dsp.window.clear_tags({ window = "tag:minimized" }))
