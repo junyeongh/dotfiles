@@ -102,10 +102,10 @@
                 {
                     "clockColor": "none",
                     "customFont": "",
-                    "formatHorizontal": "HH:mm AP",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatHorizontal": "hh:mm AP",
+                    "formatVertical": "HH:mm yyyy-MM-dd",
                     "id": "Clock",
-                    "tooltipFormat": "HH:mm:ss AP",
+                    "tooltipFormat": "hh:mm:ss AP",
                     "useCustomFont": false
                 }
             ],
@@ -568,7 +568,7 @@
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
-        "disableDiscoverability": false,
+        "disableDiscoverability": true,
         "networkPanelView": "wifi",
         "wifiDetailsViewMode": "grid"
     },
