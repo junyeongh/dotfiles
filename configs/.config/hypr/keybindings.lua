@@ -43,6 +43,34 @@ hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -50, y = 0, relative
 hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = -20, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + K", hl.dsp.window.resize({ x = 0, y = 20, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.window.resize({ x = 50, y = 0, relative = true, window = "activewindow" }))
+hl.bind(mainMod .. " + ALT + C", function()
+  local active_window = hl.get_active_window()
+  if active_window == nil or active_window.floating then
+    hl.dispatch(hl.dsp.window.float({
+      action = "disable",
+      window = "activewindow",
+    }))
+  else
+    local active_monitor = hl.get_active_monitor()
+    if active_monitor == nil then
+      return
+    end
+
+    hl.dispatch(hl.dsp.window.float({
+      action = "enable",
+      window = "activewindow",
+    }))
+    hl.dispatch(hl.dsp.window.resize({
+      x        = (active_monitor.width / active_monitor.scale) * 0.75,
+      y        = (active_monitor.height / active_monitor.scale) * 0.75,
+      relative = false,
+      window   = "activewindow",
+    }))
+    hl.dispatch(hl.dsp.window.center({
+      window = "activewindow",
+    }))
+  end
+end)
 -- Window states
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())

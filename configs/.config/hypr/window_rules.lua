@@ -53,3 +53,11 @@ hl.window_rule({
     center = true,
     size = { "monitor_w * 0.75", "monitor_h * 0.75" }
 })
+hl.window_rule({
+    name = "floating terminal on occupied workspace",
+    match = { class = "^(com\\.mitchellh\\.ghostty|org\\.gnome\\.Nautilus)$", workspace = "w[1-99]" },
+
+    float = true,
+    center = true,
+    size = { "monitor_w * 0.75", "monitor_h * 0.75" }
+})
