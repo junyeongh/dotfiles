@@ -39,7 +39,7 @@ hl.window_rule({
 -- Custom window rules for specific applications
 hl.window_rule({
     name = "floating apps at right",
-    match = { class = "^(Heynote)$" },
+    match = { class = "^(Heynote|org\\.pwmt\\.zathura)$" },
 
     float = true,
     size = { "monitor_w / 3", "monitor_h * 0.8" },

@@ -1,20 +1,4 @@
-require("appearances")
-require("inputs")
-require("keybindings")
-require("window_rules")
-require("workspace_rules")
-
-------------------
----- MONITORS ----
-------------------
-
--- https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "1",
-})
+require("configs")
 
 -------------------
 ---- AUTOSTART ----
@@ -47,8 +31,8 @@ hl.env("XMODIFIERS", "@im=kime")
 -----------------------
 
 -- https://wiki.hypr.land/Configuring/Advanced-and-Cool/Permissions/
--- Please note permission changes here require a Hyprland restart and are not applied on-the-fly
--- for security reasons
+-- Please note permission changes here require a Hyprland restart
+-- and are not applied on-the-fly for security reasons
 
 -- hl.config({
 --   ecosystem = {
