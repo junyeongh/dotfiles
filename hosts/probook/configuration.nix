@@ -33,6 +33,14 @@
   # networking.firewall.enable = false;
   hardware.bluetooth.enable = true;
 
+  # Keep the laptop awake with the lid closed only while on AC power;
+  # still suspend on lid-close when running on battery.
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "ignore";
+    HandleLidSwitchDocked = "ignore";
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
