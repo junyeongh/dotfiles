@@ -3,6 +3,7 @@ for _, m in ipairs({
   "inputs",
   "keybindings",
   "monitors",
+  "plugins",
   "window_rules",
   "workspace_rules",
 }) do

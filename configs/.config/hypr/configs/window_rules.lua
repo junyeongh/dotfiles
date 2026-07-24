@@ -36,28 +36,39 @@ hl.window_rule({
     float = true,
 })
 
+-- Build a "^(a|b|c)$" class-match regex from a plain list of class names,
+-- escaping literal dots so they aren't treated as regex wildcards.
+local function class_match(classes)
+    local escaped = {}
+    for i, class in ipairs(classes) do
+        escaped[i] = class:gsub("%.", "\\.")
+    end
+    return "^(" .. table.concat(escaped, "|") .. ")$"
+end
 -- Custom window rules for specific applications
 hl.window_rule({
     name = "floating apps at right",
-    match = { class = "^(Heynote|org\\.pwmt\\.zathura)$" },
+    match = { class = class_match({ "Heynote", "org.pwmt.zathura" }) },
 
     float = true,
     size = { "monitor_w / 3", "monitor_h * 0.8" },
     move = { "monitor_w * 2 / 3", "monitor_h * 0.1" }
 })
 hl.window_rule({
-    name = "floating apps at center",
-    match = { class = "^(1password|Ferdium|obsidian|Spotify)$" },
+    name = "floating apps at center on occupied workspace",
+    match = {
+        class = class_match({
+            "1password",
+            "Ferdium",
+            "obsidian",
+            "Spotify",
+            "com.mitchellh.ghostty",
+            "org.gnome.Nautilus",
+        }),
+        workspace = "w[1-99]"
+    },
 
     float = true,
     center = true,
-    size = { "monitor_w * 0.75", "monitor_h * 0.75" }
-})
-hl.window_rule({
-    name = "floating terminal on occupied workspace",
-    match = { class = "^(com\\.mitchellh\\.ghostty|org\\.gnome\\.Nautilus)$", workspace = "w[1-99]" },
-
-    float = true,
-    center = true,
-    size = { "monitor_w * 0.75", "monitor_h * 0.75" }
+    size = { "monitor_w * 0.80", "monitor_h * 0.80" }
 })

@@ -61,8 +61,8 @@ hl.bind(mainMod .. " + ALT + C", function()
       window = "activewindow",
     }))
     hl.dispatch(hl.dsp.window.resize({
-      x        = (active_monitor.width / active_monitor.scale) * 0.75,
-      y        = (active_monitor.height / active_monitor.scale) * 0.75,
+      x        = (active_monitor.width / active_monitor.scale) * 0.8,
+      y        = (active_monitor.height / active_monitor.scale) * 0.8,
       relative = false,
       window   = "activewindow",
     }))
@@ -101,25 +101,21 @@ for i = 1, 10 do
   hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
--- Requires playerctl
--- hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
--- hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
--- hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
--- hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
-
 -- noctalia - Core binds
-local ipc = "noctalia-shell ipc call"
-hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. " settings toggle"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. " controlCenter toggle"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. " launcher toggle"))
+local ipc = "noctalia-shell msg "
+hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "settings toggle"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
 
-hl.bind(mainMod .. " + CTRL + SHIFT + L", hl.dsp.exec_cmd(ipc .. " lockScreen lock"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. " launcher clipboard"))
+hl.bind(mainMod .. " + Semicolon", hl.dsp.exec_cmd(ipc .. "launcher windows"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. " volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. " volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. " volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. " volume muteInput"), { locked = true, repeating = true })
+hl.bind(mainMod .. " + CTRL + SHIFT + L", hl.dsp.exec_cmd(ipc .. "lockScreen lock"))
+
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "volume muteInput"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
 

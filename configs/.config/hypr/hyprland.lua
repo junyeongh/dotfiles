@@ -6,12 +6,12 @@ require("configs")
 
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
-    hl.exec_cmd("noctalia-shell")
-    hl.exec_cmd("kime --no-daemon")
-    hl.exec_cmd("dropbox start")
-    hl.exec_cmd("1password --silent")
-    hl.exec_cmd("solaar --window hidden")
-    hl.exec_cmd("kanata")
+  hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd("kime --no-daemon")
+  hl.exec_cmd("dropbox start")
+  hl.exec_cmd("1password --silent")
+  hl.exec_cmd("solaar --window hidden")
+  hl.exec_cmd("kanata")
 end)
 
 -------------------------------
@@ -49,11 +49,11 @@ hl.env("XMODIFIERS", "@im=kime")
 ----------------
 
 hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
-    },
-    ecosystem = {
-        no_update_news = true,
-    },
+  misc = {
+    force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
+    disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+  },
+  ecosystem = {
+    no_update_news = true,
+  },
 })
