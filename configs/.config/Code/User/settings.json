@@ -17,6 +17,9 @@
   "[just]": {
     "editor.defaultFormatter": "nefrob.vscode-just-syntax"
   },
+  "[lua]": {
+    "editor.defaultFormatter": "sumneko.lua"
+  },
   "[markdown]": {
     "editor.autoClosingBrackets": "beforeWhitespace",
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
@@ -152,10 +155,9 @@
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "markdown": false,
     "plaintext": false,
-    "rust": false,
     "scminput": false
   },
   "github.copilot.nextEditSuggestions.eagerness": "low",
@@ -240,6 +242,7 @@
   },
   "notebook.lineNumbers": "on",
   "oxc.enable": true,
+  "powershell.promptToUpdatePowerShell": false,
   "quotick.showWelcomeMessage": false,
   "remote.autoForwardPortsSource": "hybrid",
   "resmon.show.battery": false,
@@ -271,15 +274,14 @@
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
-  "settingsSync.ignoredExtensions": [
-    // "qwtel.sqlite-viewer"
-  ],
+  "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [
     // "-window.zoomLevel"
     "oxc.path.node",
     "oxc.path.oxfmt",
     "oxc.path.oxlint",
-    "deno.path"
+    "deno.path",
+    "direnv.path.executable"
   ],
   "settingsSync.keybindingsPerPlatform": false,
   "tabout.enableReverseShiftTab": true,
@@ -337,8 +339,17 @@
   },
   "workbench.editor.showTabIndex": true,
   "workbench.editor.useModal": "some",
+  "workbench.experimental.modernUI": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
   "workbench.tree.indent": 20,
-  "workbench.tree.renderIndentGuides": "always"
+  "workbench.tree.renderIndentGuides": "always",
+  "yaml.disableSchemaDetection": [
+    "**/.github/workflows/*.yml",
+    "**/.github/workflows/*.yaml",
+    "**/.gitea/workflows/*.yml",
+    "**/.gitea/workflows/*.yaml",
+    "**/.forgejo/workflows/*.yml",
+    "**/.forgejo/workflows/*.yaml"
+  ]
 }
