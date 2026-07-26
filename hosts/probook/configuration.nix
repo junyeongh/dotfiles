@@ -123,6 +123,9 @@
     git
     jq
   ];
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
   programs.vim.enable = true;
   programs.vim.defaultEditor = true;
 

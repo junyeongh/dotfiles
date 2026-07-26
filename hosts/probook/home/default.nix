@@ -9,9 +9,15 @@
   home.enableNixpkgsReleaseCheck = false;
 
   # wayland.windowManager.hyprland.enable = true;
-  # wayland.windowManager.hyprland.plugins = [
-  #   inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-  # ];
+  wayland.windowManager.hyprland.plugins = [
+    # pkgs.hyprlandPlugins.<plugin>
+    # pkgs.hyprlandPlugins.hyprbar
+  ];
+  # xdg.configFile."hypr/nix-plugins.lua".text = ''
+  #   return {
+  #     hyprbars = "${pkgs.hyprlandPlugins.hyprbars}/lib/libhyprbars.so",
+  #   }
+  # '';
 
   services.tailscale-systray.enable = true;
 
