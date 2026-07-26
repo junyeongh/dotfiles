@@ -31,9 +31,10 @@ ripgrep    = "latest"
 rumdl      = "latest"
 typst      = "latest"
 uv         = "latest"
+yazi       = "latest"
 yq         = "latest"
 zoxide     = "latest"
 
-# Text Editor
+# Text Editors
 helix  = "latest"
 neovim = "latest"
