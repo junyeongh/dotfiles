@@ -1,0 +1,27 @@
+theme = "nord"
+
+[editor.statusline]
+# left = ["mode", "spinner", "file-name", "read-only-indicator", "version-control","file-modification-indicator"]
+# center = []
+# right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+G = "goto_file_end"
+C-s = ":w" # Maps Ctrl-s to the typable command :w which is an alias for :write (save file)
+C-o = ":open ~/.config/helix/config.toml" # Maps Ctrl-o to opening of the helix config file
+
+# https://gist.github.com/Schr3da/4767e436f2cc47c5d23fc05745fd6d03
+C-e = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+C-g = [':sh lazygit']
