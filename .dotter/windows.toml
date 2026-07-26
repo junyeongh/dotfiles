@@ -1,8 +1,10 @@
+# ./local.toml
 includes = []
 packages = ["default"]
 
 [files]
 "configs\\.config\\Code" = "~\\AppData\\Roaming\\Code"
+"configs\\.config\\helix" = "~\\AppData\\Roaming\\helix"
 "configs\\.config\\zed" = "~\\AppData\\Roaming\\Zed"
 "hosts\\windows\\configs" = "~"
 "hosts\\windows\\powershell" = { target = "~\\Documents\\PowerShell", type = "symbolic" }
