@@ -346,11 +346,15 @@
   // settingsSync.ignored{Extensions, Settingss}
   "settingsSync.ignoredExtensions": [],
   "settingsSync.ignoredSettings": [
+    "deno.path",
     "oxc.path.node",
     "oxc.path.oxfmt",
     "oxc.path.oxlint",
-    "deno.path"
+    // "direnv.path.executable",
+    // "window.zoomLevel"
   ],
+  // on Windows
+  // "window.zoomLevel": -1
   // on Linux
   // "oxc.path.node": "/home/yeong/.local/share/fnm/aliases/default/bin/node",
   // "oxc.path.oxfmt": "/home/yeong/.local/share/pnpm/oxfmt",
