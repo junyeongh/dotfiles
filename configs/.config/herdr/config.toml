@@ -1,3 +1,5 @@
+onboarding = false
+
 [theme]
 name = "nord"
 auto_switch = false
