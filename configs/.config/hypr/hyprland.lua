@@ -8,12 +8,14 @@ require("configs")
 hl.on("hyprland.start", function()
   hl.exec_cmd("noctalia-shell")
 
-  hl.exec_cmd("sleep 1")
   hl.exec_cmd("kime --no-daemon")
   hl.exec_cmd("dropbox start")
   hl.exec_cmd("1password --silent")
   hl.exec_cmd("solaar --window hide")
   hl.exec_cmd("kanata")
+
+  hl.exec_cmd("ferdium", { workspace = "special:ferdium" })
+  hl.exec_cmd("heynote", { workspace = "special:heynote" })
 end)
 
 -------------------------------

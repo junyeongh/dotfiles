@@ -84,18 +84,7 @@ hl.bind(mainMod .. " + SHIFT + X", function()
     hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
   end
 end)
-local function launch_or_toggle(name, cmd)
-  return function()
-    local windows = hl.get_windows({ workspace = "special:" .. name })
-    if #windows > 0 then
-      hl.dispatch(hl.dsp.workspace.toggle_special(name))
-    else
-      hl.dispatch(hl.dsp.exec_cmd(name or cmd, { workspace = "special:" .. name }))
-    end
-  end
-end
-hl.bind("ALT + X", launch_or_toggle("ferdium"))
-hl.bind("ALT + H", launch_or_toggle("heynote"))
+
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
@@ -132,4 +121,16 @@ hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { 
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
 
 -- Custom binds
+local function toggle_special_or_launch_fire(name)
+  return function()
+    hl.dispatch(hl.dsp.workspace.toggle_special(name))
+    local windows = hl.get_windows({ workspace = "special:" .. name })
+    if #windows == 0 then
+      hl.dispatch(hl.dsp.exec_cmd(name, { workspace = "special:" .. name }))
+    end
+  end
+end
+hl.bind("ALT + X", toggle_special_or_launch_fire("ferdium"))
+hl.bind("ALT + H", toggle_special_or_launch_fire("heynote"))
+-- hl.bind("ALT + H", hl.dsp.workspace.toggle_special("heynote"))
 hl.bind("CTRL + ALT + SPACE", hl.dsp.exec_cmd("1password --quick-access"))
