@@ -274,15 +274,6 @@
   "scm.repositories.explorer": true,
   "scm.repositories.selectionMode": "single",
   "security.workspace.trust.untrustedFiles": "open",
-  "settingsSync.ignoredExtensions": [],
-  "settingsSync.ignoredSettings": [
-    // "-window.zoomLevel"
-    "oxc.path.node",
-    "oxc.path.oxfmt",
-    "oxc.path.oxlint",
-    "deno.path",
-    "direnv.path.executable"
-  ],
   "settingsSync.keybindingsPerPlatform": false,
   "tabout.enableReverseShiftTab": true,
   "tailwind-fold.autoFold": false,
@@ -351,5 +342,19 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ]
+  ],
+  // settingsSync.ignored{Extensions, Settingss}
+  "settingsSync.ignoredExtensions": [],
+  "settingsSync.ignoredSettings": [
+    "oxc.path.node",
+    "oxc.path.oxfmt",
+    "oxc.path.oxlint",
+    "deno.path"
+  ],
+  // on Linux
+  // "oxc.path.node": "/home/yeong/.local/share/fnm/aliases/default/bin/node",
+  // "oxc.path.oxfmt": "/home/yeong/.local/share/pnpm/oxfmt",
+  // "oxc.path.oxlint": "/home/yeong/.local/share/pnpm/oxlint",
+  // "deno.path": "/home/yeong/.local/share/mise/installs/deno/latest/bin/deno",
+  // "direnv.path.executable": "/home/yeong/.local/share/mise/installs/direnv/latest/direnv"
 }

@@ -1,10 +1,10 @@
 [
   {
-    "command": "workbench.action.terminal.sendSequence",
-    "key": "ctrl+enter",
     "args": {
       "text": "\\\r\n"
     },
+    "command": "workbench.action.terminal.sendSequence",
+    "key": "ctrl+enter",
     "when": "terminalFocus"
   },
   {
@@ -69,13 +69,13 @@
     "key": "ctrl+shift+numpad_subtract"
   },
   {
-    "key": "ctrl+oem_minus",
     "command": "-workbench.action.browser.zoomOut",
+    "key": "ctrl+oem_minus",
     "when": "browserFocused && browserHasUrl && !browserHasError && activeEditor == 'workbench.editor.browser'"
   },
   {
-    "key": "ctrl+oem_plus",
     "command": "-workbench.action.browser.zoomIn",
+    "key": "ctrl+oem_plus",
     "when": "browserFocused && browserHasUrl && !browserHasError && activeEditor == 'workbench.editor.browser'"
   },
   // {
@@ -149,15 +149,15 @@
     "key": "shift+f1"
   },
   {
-    "command": "runCommands",
-    "key": "ctrl+shift+alt+b",
     "args": {
       "commands": [
         "workbench.action.toggleSidebarVisibility",
         "workbench.action.toggleAuxiliaryBar"
       ],
       "when": "(!sideBarVisible && !auxiliaryBarVisible) || (sideBarVisible && auxiliaryBarVisible)"
-    }
+    },
+    "command": "runCommands",
+    "key": "ctrl+shift+alt+b"
   },
   {
     "command": "workbench.action.closeSidebar",
@@ -238,12 +238,12 @@
   // },
   // Terminal
   {
-    "command": "workbench.action.terminal.sendSequence",
-    "key": "shift+enter",
-    "when": "terminalFocus",
     "args": {
       "text": "\\\r\n"
-    }
+    },
+    "command": "workbench.action.terminal.sendSequence",
+    "key": "shift+enter",
+    "when": "terminalFocus"
   },
   {
     "command": "-workbench.action.tasks.build",
@@ -254,16 +254,6 @@
     "command": "outline.focus",
     "key": "ctrl+shift+o"
   },
-  // {
-  //   "key": "tab",
-  //   "command": "tabout",
-  //   "when": "editorTextFocus && !editorHasMultipleSelections && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible && !inlineEditIsVisible"
-  // },
-  // {
-  //   "key": "tab",
-  //   "command": "-tabout",
-  //   "when": "editorTextFocus && !editorHasMultipleSelections && !inSnippetMode && !inlineSuggestionVisible && !suggestWidgetVisible"
-  // },
   {
     "command": "-editor.action.formatSelection",
     "key": "ctrl+k ctrl+f",
