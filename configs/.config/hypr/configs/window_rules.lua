@@ -48,7 +48,12 @@ end
 -- Custom window rules for specific applications
 hl.window_rule({
     name = "floating apps at right",
-    match = { class = class_match({ "Heynote", "org.pwmt.zathura" }) },
+    match = {
+        class = class_match({
+            "Heynote",
+            "org.pwmt.zathura"
+        })
+    },
 
     float = true,
     size = { "monitor_w / 3", "monitor_h * 0.8" },
@@ -60,10 +65,11 @@ hl.window_rule({
         class = class_match({
             "1password",
             "Ferdium",
-            "obsidian",
             "Spotify",
             "com.mitchellh.ghostty",
+            "obsidian",
             "org.gnome.Nautilus",
+            "solaar",
         }),
         workspace = "w[1-99]"
     },

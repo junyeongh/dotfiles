@@ -84,6 +84,18 @@ hl.bind(mainMod .. " + SHIFT + X", function()
     hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
   end
 end)
+local function launch_or_toggle(name, cmd)
+  return function()
+    local windows = hl.get_windows({ workspace = "special:" .. name })
+    if #windows > 0 then
+      hl.dispatch(hl.dsp.workspace.toggle_special(name))
+    else
+      hl.dispatch(hl.dsp.exec_cmd(name or cmd, { workspace = "special:" .. name }))
+    end
+  end
+end
+hl.bind("ALT + X", launch_or_toggle("ferdium"))
+hl.bind("ALT + H", launch_or_toggle("heynote"))
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
