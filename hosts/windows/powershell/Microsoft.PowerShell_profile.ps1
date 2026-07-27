@@ -13,12 +13,6 @@ if (Get-Command fnm -ErrorAction SilentlyContinue) {
     # Fast and simple Node.js version manager, built in Rust
     Invoke-Expression (&fnm env --use-on-cd --shell powershell | Out-String)
 }
-if (Get-Command git-wt -ErrorAction SilentlyContinue) {
-    Invoke-Expression (&git-wt config shell init powershell | Out-String)
-    if (Get-Command wt -ErrorAction SilentlyContinue) {
-        Invoke-Expression (&wt config shell init powershell | Out-String)
-    }
-}
 if (Get-Command mise -ErrorAction SilentlyContinue) {
     Invoke-Expression (&mise activate pwsh | Out-String)
 }
@@ -111,10 +105,10 @@ if (Get-Command fzf -ErrorAction SilentlyContinue) {
 }
 
 if (Get-Command gh -ErrorAction SilentlyContinue) {
-    gh auth status *> $null
-    if ($LASTEXITCODE -eq 0) {
-        $env:GITHUB_TOKEN = gh auth token
-        $env:MISE_GITHUB_TOKEN = $env:GITHUB_TOKEN
+    $token = gh auth token 2>$null
+    if ($LASTEXITCODE -eq 0 -and $token) {
+        $env:GITHUB_TOKEN = $token
+        $env:MISE_GITHUB_TOKEN = $token
     }
 }
 
@@ -131,5 +125,3 @@ if (Get-Command pnpm -ErrorAction SilentlyContinue) {
         pnpm update --global --latest @args
     }
 }
-
-$env:CLAUDE_CODE_USE_POWERSHELL_TOOL = 1
