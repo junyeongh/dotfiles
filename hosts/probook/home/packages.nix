@@ -10,6 +10,7 @@ with pkgs;
   dconf-editor
   dropbox-cli
   ferdium
+  file
   firefox
   ghostty
   gnome-tweaks
@@ -42,7 +43,7 @@ with pkgs;
   gnomeExtensions.clipboard-indicator # Clipboard Indicator
   gnomeExtensions.dash-to-dock # Dash to Dock
   gnomeExtensions.osd-volume-number # OSD Volume Number
-  gnomeExtensions.quick-settings-tweaker
+  gnomeExtensions.quick-settings-tweaker # Quick Settings Tweaks
   gnomeExtensions.removable-drive-menu # Removable Drive Menu
   gnomeExtensions.tactile # Tactile
   gnomeExtensions.tiling-assistant # Tiling Assistant
