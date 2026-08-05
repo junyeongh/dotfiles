@@ -47,12 +47,13 @@ local function class_match(classes)
 end
 -- Custom window rules for specific applications
 hl.window_rule({
-    name = "floating apps at right",
+    name = "floating apps match by class at right",
     match = {
         class = class_match({
             "Heynote",
             "org.pwmt.zathura"
-        })
+        }),
+        -- initial_title = "KakaoTalk"
     },
 
     float = true,
@@ -60,7 +61,17 @@ hl.window_rule({
     move = { "monitor_w * 2 / 3", "monitor_h * 0.1" }
 })
 hl.window_rule({
-    name = "floating apps at center on occupied workspace",
+    name = "floating apps match by initialTitle at right",
+    match = {
+        initial_title = "KakaoTalk"
+    },
+
+    float = true,
+    size = { "monitor_w / 3", "monitor_h * 0.8" },
+    move = { "monitor_w * 2 / 3", "monitor_h * 0.1" }
+})
+hl.window_rule({
+    name = "floating apps match by class at center on occupied workspace",
     match = {
         class = class_match({
             "1password",

@@ -5,6 +5,7 @@
 
 with pkgs;
 [
+  bottles
   dbeaver-bin
   dconf-editor
   dropbox-cli
@@ -15,6 +16,7 @@ with pkgs;
   google-chrome
   heynote
   kanata
+  kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
   noctalia-shell
   obsidian
   openssl
