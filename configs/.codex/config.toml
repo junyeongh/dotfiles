@@ -21,6 +21,7 @@ status_line = [
 notifications = true
 
 [features]
+hooks = true
 use_linux_sandbox_bwrap = true
 multi_agent = true
 apps = true

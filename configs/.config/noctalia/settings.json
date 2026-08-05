@@ -93,7 +93,7 @@
                     "labelMode": "name",
                     "occupiedColor": "secondary",
                     "pillSize": 0.6,
-                    "showApplications": true,
+                    "showApplications": false,
                     "showApplicationsHover": true,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": false,
@@ -107,6 +107,17 @@
                     "id": "Clock",
                     "tooltipFormat": "hh:mm:ss AP",
                     "useCustomFont": false
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "id": "ActiveWindow",
+                    "maxWidth": 145,
+                    "scrollingMode": "hover",
+                    "showIcon": true,
+                    "showText": false,
+                    "textColor": "none",
+                    "useFixedWidth": false
                 }
             ],
             "left": [
@@ -165,17 +176,6 @@
                     "id": "plugin:privacy-indicator"
                 },
                 {
-                    "colorizeIcons": false,
-                    "hideMode": "hidden",
-                    "id": "ActiveWindow",
-                    "maxWidth": 145,
-                    "scrollingMode": "hover",
-                    "showIcon": true,
-                    "showText": false,
-                    "textColor": "none",
-                    "useFixedWidth": false
-                },
-                {
                     "compactMode": false,
                     "hideMode": "hidden",
                     "hideWhenIdle": false,
@@ -190,6 +190,68 @@
                     "textColor": "none",
                     "useFixedWidth": false,
                     "visualizerType": "linear"
+                },
+                {
+                    "colorizeIcons": false,
+                    "hideMode": "hidden",
+                    "iconScale": 0.8,
+                    "id": "Taskbar",
+                    "maxTaskbarWidth": 40,
+                    "onlyActiveWorkspaces": true,
+                    "onlySameOutput": true,
+                    "showPinnedApps": true,
+                    "showTitle": false,
+                    "smartWidth": true,
+                    "titleWidth": 120
+                },
+                {
+                    "defaultSettings": {
+                        "drawer": true,
+                        "expandDirection": "up",
+                        "hideEmptyWorkspaces": false,
+                        "mainIcon": "layout-grid",
+                        "panelBackgroundColor": "none",
+                        "panelBackgroundEnabled": false,
+                        "primaryBorderRadius": 1,
+                        "primaryFocusColor": "primary",
+                        "primaryPillColor": "none",
+                        "primaryShowPill": true,
+                        "primarySize": 0.9,
+                        "primarySymbolColor": "none",
+                        "workspaces": [
+                            {
+                                "borderRadius": 1,
+                                "focusColor": "primary",
+                                "icon": "message",
+                                "name": "communication",
+                                "pillColor": "primary",
+                                "showPill": true,
+                                "size": 0.9,
+                                "symbolColor": "none"
+                            },
+                            {
+                                "borderRadius": 1,
+                                "focusColor": "primary",
+                                "icon": "music",
+                                "name": "music",
+                                "pillColor": "primary",
+                                "showPill": true,
+                                "size": 0.9,
+                                "symbolColor": "none"
+                            },
+                            {
+                                "borderRadius": 1,
+                                "focusColor": "primary",
+                                "icon": "michelin-star",
+                                "name": "agent",
+                                "pillColor": "primary",
+                                "showPill": true,
+                                "size": 0.9,
+                                "symbolColor": "none"
+                            }
+                        ]
+                    },
+                    "id": "plugin:special-workspaces"
                 }
             ],
             "right": [
@@ -228,6 +290,12 @@
                 {
                     "displayMode": "onhover",
                     "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "onhover",
+                    "iconColor": "none",
                     "id": "Volume",
                     "middleClickCommand": "pwvucontrol || pavucontrol",
                     "textColor": "none"
@@ -249,6 +317,10 @@
                     "showPowerProfiles": true
                 },
                 {
+                    "id": "Spacer",
+                    "width": 20
+                },
+                {
                     "clockColor": "none",
                     "customFont": "",
                     "formatHorizontal": "yyyy-MM-dd (ddd)",
@@ -264,6 +336,10 @@
                     "id": "NotificationHistory",
                     "showUnreadBadge": true,
                     "unreadBadgeColor": "primary"
+                },
+                {
+                    "iconColor": "none",
+                    "id": "PowerProfile"
                 },
                 {
                     "colorizeDistroLogo": false,
@@ -697,7 +773,7 @@
                 "command": "",
                 "countdownEnabled": true,
                 "enabled": true,
-                "keybind": "6"
+                "keybind": "8"
             }
         ],
         "showHeader": true,

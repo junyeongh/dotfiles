@@ -1,10 +1,9 @@
 # Claude Code Notification Hook Script (Windows PowerShell)
 $json = ($input | Out-String) | ConvertFrom-Json -ErrorAction SilentlyContinue
-$hookEvent = $json.hook_event_name
-$message = switch ($hookEvent) {
+$message = switch ($json.hook_event_name) {
     "Stop"          { "Response finished" }
     "Notification"  { $json.message }
-    default         { "$($hookEvent): $($json.message)" }
+    default         { "$($json.hook_event_name): $($json.message)" }
 }
 
 # Windows Toast Notification

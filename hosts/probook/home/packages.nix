@@ -5,16 +5,19 @@
 
 with pkgs;
 [
+  bottles
   dbeaver-bin
   dconf-editor
   dropbox-cli
   ferdium
+  file
   firefox
   ghostty
   gnome-tweaks
   google-chrome
   heynote
   kanata
+  kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
   noctalia-shell
   obsidian
   openssl
@@ -40,7 +43,7 @@ with pkgs;
   gnomeExtensions.clipboard-indicator # Clipboard Indicator
   gnomeExtensions.dash-to-dock # Dash to Dock
   gnomeExtensions.osd-volume-number # OSD Volume Number
-  gnomeExtensions.quick-settings-tweaker
+  gnomeExtensions.quick-settings-tweaker # Quick Settings Tweaks
   gnomeExtensions.removable-drive-menu # Removable Drive Menu
   gnomeExtensions.tactile # Tactile
   gnomeExtensions.tiling-assistant # Tiling Assistant
