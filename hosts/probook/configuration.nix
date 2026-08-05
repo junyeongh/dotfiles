@@ -172,6 +172,7 @@
     description = "Junyeong Heo";
     extraGroups = [
       "input"
+      "lp"
       "networkmanager"
       "wheel"
       # container
