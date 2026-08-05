@@ -95,7 +95,7 @@
   };
 
   programs.hyprland.enable = true;
-  programs.hyprland.package = pkgs-unstable.hyprland;
+  # programs.hyprland.package = pkgs-unstable.hyprland;
   programs.hyprland.withUWSM = false;
 
   # Sounds

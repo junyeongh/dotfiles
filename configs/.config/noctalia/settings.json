@@ -338,6 +338,10 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
+                    "iconColor": "none",
+                    "id": "PowerProfile"
+                },
+                {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
                     "colorizeSystemText": "none",

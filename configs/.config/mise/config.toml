@@ -10,6 +10,9 @@ elixir = "latest"
 erlang = "latest"
 gleam  = "latest"
 
+# Programming Language Servers
+lua-language-server = "latest"
+
 # CLI Tools
 act        = "latest"
 ast-grep   = "latest"
