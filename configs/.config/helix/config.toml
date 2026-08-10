@@ -48,7 +48,7 @@ ignore = false # ignore .ignore files
 # maps ctrl-s to the typable command :w which is an alias for :write (save file)
 C-s = ":w"
 # maps ctrl-o to opening of the helix config file
-C-o = ":open ~/.config/helix/config.toml"
+C-o = ":config-open"
 # move line down
 A-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 # move line up
@@ -79,3 +79,9 @@ C-g = [
   ":redraw",
   ":reload-all",
 ]
+
+# https://github.com/helix-editor/helix/issues/1976
+[keys.normal.space]
+# Buffer related key remaps
+b = { a = ":buffer-close-all", b = "buffer_picker", o = ":buffer-close-others", x = ":buffer-close " }
+q = ":quit"
