@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "keybindings": {},
+  "platforms": {
+    "darwin": {},
+    "linux": {},
+    "win32": {
+      "tab.previousRecent": [],
+      "tab.nextAllTypes": [
+        "Mod+Tab"
+      ],
+      "tab.previousAllTypes": [
+        "Mod+Shift+Tab"
+      ]
+    }
+  }
+}
