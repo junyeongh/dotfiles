@@ -2,14 +2,29 @@ onboarding = false
 
 [theme]
 name = "nord"
+
 auto_switch = false
+
+[keys]
+prefix = "ctrl+space"
+
+previous_workspace = "prefix+shift+p"
+next_workspace     = "prefix+shift+n"
+focus_agent        = "prefix+alt+1..9"
+switch_workspace   = "prefix+shift+1..9"
+
+[[keys.command]]
+key     = "prefix+alt+g"
+type    = "popup"
+command = "lazygit"
+width   = "80%"
+height  = "80%"
+
+show_agent_labels_on_pane_borders = true
+agent_panel_sort = "spaces"
 
 [ui.toast]
 delivery = "herdr"
-
-[ui]
-show_agent_labels_on_pane_borders = true
-agent_panel_sort = "spaces"
 
 [experimental]
 pane_history = false
