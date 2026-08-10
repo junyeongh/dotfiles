@@ -83,5 +83,5 @@ C-g = [
 # https://github.com/helix-editor/helix/issues/1976
 [keys.normal.space]
 # Buffer related key remaps
-b = { a = ":buffer-close-all", b = "buffer_picker", o = ":buffer-close-others", x = ":buffer-close " }
+b = { a = ":buffer-close-all", b = "buffer_picker", o = ":buffer-close-others", x = ":buffer-close ", n = ":buffer-next", p = ":buffer-previous" }
 q = ":quit"
