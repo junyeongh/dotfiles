@@ -23,6 +23,10 @@ next_workspace     = "prefix+shift+n"
 # agent
 focus_agent        = "prefix+alt+1..9"
 
+# navigation
+navigate_workspace_up   = [ "shift+k","up"]
+navigate_workspace_down = [ "shift+j","down"]
+
 [[keys.command]]
 key     = "prefix+alt+g"
 type    = "popup"
