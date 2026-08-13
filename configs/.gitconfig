@@ -25,7 +25,7 @@
 	difft = -c diff.external=difft diff
 [core]
 	autocrlf = input
-	editor = code --wait
+	editor = hx
 	excludesfile = ~/.gitignore.global
 	ignorecase = false
 	symlinks = true

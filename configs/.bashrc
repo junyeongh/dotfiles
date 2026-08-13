@@ -96,6 +96,9 @@ fi
 if command -v fnm &>/dev/null; then
   eval "$(fnm env --use-on-cd --shell bash)"
 fi
+if command -v herdr &>/dev/null; then
+  eval "$(herdr completion bash)"
+fi
 if command -v oh-my-posh &>/dev/null; then
   eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/negligible_edit.toml)"
   # eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"

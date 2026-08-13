@@ -53,6 +53,19 @@ alias gcr='git shortlog -sn --no-merges'
 # git monthly commits count
 alias gmcc='git log --format='%ad' --date=format:'%Y-%m' | sort | uniq -c'
 
+# git uses `hx` (core.editor), except in VS Code's integrated terminal
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  export GIT_EDITOR="code --wait"
+fi
+
+# herdr aliases
+alias hr='herdr'
+alias hrs='herdr session'
+alias hrsl='herdr session list'
+alias hrsa='herdr session attach'
+alias hrss='herdr session stop'
+alias hrsd='herdr session delete'
+
 if command -v cargo &>/dev/null; then
   alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 fi
@@ -69,9 +82,16 @@ fi
 if command -v fzf &>/dev/null; then
   alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 fi
-if command -v gh &>/dev/null && gh auth status &>/dev/null; then
-  export GITHUB_TOKEN=$(gh auth token)
-  export MISE_GITHUB_TOKEN=$GITHUB_TOKEN
+# `gh auth status` makes a network call (~1s); `gh auth token` is a local
+# keyring lookup (~30ms) and already yields nothing when not authenticated.
+if command -v gh &>/dev/null; then
+  GITHUB_TOKEN=$(gh auth token 2>/dev/null)
+  if [[ -n $GITHUB_TOKEN ]]; then
+    export GITHUB_TOKEN
+    export MISE_GITHUB_TOKEN=$GITHUB_TOKEN
+  else
+    unset GITHUB_TOKEN
+  fi
 fi
 if command -v lazydocker &>/dev/null; then
   alias ld='lazydocker'
