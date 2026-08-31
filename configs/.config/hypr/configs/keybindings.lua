@@ -1,7 +1,6 @@
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
-
 -- Set programs that you use
 local terminal    = "ghostty"
 local fileManager = "nautilus"
@@ -10,13 +9,10 @@ local fileManager = "nautilus"
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
-
-
 -- https://docs.noctalia.dev/
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 -- local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + SHIFT + E",
@@ -24,8 +20,15 @@ hl.bind(mainMod .. " + SHIFT + E",
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 
+---------------------
 -- Windows management
+---------------------
 hl.bind(mainMod .. " + CTRL + SHIFT + C", hl.dsp.window.close())
+-- i3-like groupped(tabbed) windows
+hl.bind(mainMod .. " + T", hl.dsp.group.toggle())
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.group.lock_active())
+hl.bind(mainMod .. " + H", hl.dsp.group.prev())
+hl.bind(mainMod .. " + L", hl.dsp.group.next())
 -- Move focus
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
@@ -38,6 +41,7 @@ hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.center())
+hl.bind(mainMod .. " + SHIFT + Return", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 -- Resize active window
 hl.bind(mainMod .. " + ALT + H", hl.dsp.window.resize({ x = -50, y = 0, relative = true, window = "activewindow" }))
 hl.bind(mainMod .. " + ALT + J", hl.dsp.window.resize({ x = 0, y = -20, relative = true, window = "activewindow" }))
@@ -71,7 +75,10 @@ hl.bind(mainMod .. " + ALT + C", function()
     }))
   end
 end)
+
+----------------
 -- Window states
+----------------
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.layout("togglesplit")) -- dwindle only
@@ -84,20 +91,20 @@ hl.bind(mainMod .. " + SHIFT + X", function()
     hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
   end
 end)
-hl.bind(mainMod .. " + X", function()
-  hl.dispatch(hl.dsp.window.tag({ tag = "temp", window = hl.get_active_window() }))
-  hl.dispatch(hl.dsp.window.move({ workspace = "special:temp", follow = false }))
-end)
+-- hl.bind(mainMod .. " + X", function()
+--   hl.dispatch(hl.dsp.window.tag({ tag = "temp", window = hl.get_active_window() }))
+--   hl.dispatch(hl.dsp.window.move({ workspace = "special:temp", follow = false }))
+-- end)
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 -- Move between workspaces
-hl.bind(mainMod .. " + CTRL + Left", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ workspace = "e-1" }))
-hl.bind(mainMod .. " + CTRL + Right", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind(mainMod .. " + CTRL + Left", hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mainMod .. " + CTRL + H", hl.dsp.focus({ workspace = "-1" }))
+hl.bind(mainMod .. " + CTRL + Right", hl.dsp.focus({ workspace = "+1" }))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.focus({ workspace = "+1" }))
 for i = 1, 10 do
   local key = i % 10 -- 10 maps to key 0
   -- Switch workspaces with mainMod + [0-9]
@@ -124,8 +131,13 @@ hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "volume muteInput"), { locked
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
 
+---------------
 -- Custom binds
+---------------
 hl.bind("CTRL + ALT + SPACE", hl.dsp.exec_cmd("1password --quick-access"))
+hl.bind("Print",
+  hl.dsp.exec_cmd('grim - | satty -f - --copy-command wl-copy -o "~/Pictures/Screenshots/%Y%m%d_%H%M%S.png"'))
+
 local function toggle_special_or_launch_fire(name)
   return function()
     hl.dispatch(hl.dsp.workspace.toggle_special(name))

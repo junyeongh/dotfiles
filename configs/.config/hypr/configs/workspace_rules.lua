@@ -15,3 +15,8 @@
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+hl.workspace_rule({
+  workspace   = "s[true]",
+  layout      = "scrolling",
+  layout_opts = { direction = "right" }
+})

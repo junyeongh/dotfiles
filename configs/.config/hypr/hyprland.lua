@@ -14,14 +14,15 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("1password --silent")
     hl.exec_cmd("solaar --window hide")
     hl.exec_cmd("kanata")
-    hl.exec_cmd("xembedsniproxy", { workspace = "special:xembedsniproxy" })
   end, { timeout = 250, type = "oneshot" })
 
-  hl.timer(function()
-    hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
-    hl.exec_cmd("ferdium", { workspace = "special:ferdium" })
-    hl.exec_cmd("heynote", { workspace = "special:heynote" })
-  end, { timeout = 500, type = "oneshot" })
+  -- KakaoTalk
+  -- hl.timer(function()
+  --   hl.exec_cmd("xembedsniproxy", { workspace = "special:xembedsniproxy" })
+  -- end, { timeout = 500, type = "oneshot" })
+  -- hl.timer(function()
+  --   hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
+  -- end, { timeout = 1000, type = "oneshot" })
 end)
 
 -------------------------------

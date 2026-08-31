@@ -65,6 +65,17 @@ hl.config({
   animations = {
     enabled = true,
   },
+
+  group = {
+    groupbar = {
+      height = 16,
+      indicator_height = 4,
+      font_size = 12,
+      font_weight_active = "medium",
+      font_weight_inactive = "thin",
+      text_color = "#000000"
+    }
+  }
 })
 
 -- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
