@@ -5,33 +5,27 @@
   ...
 }:
 {
-  home.packages = lib.mkAfter (import ./packages.nix { inherit pkgs; });
   home.enableNixpkgsReleaseCheck = false;
+  home.packages = lib.mkAfter (import ./packages.nix { inherit pkgs; });
 
   # wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.plugins = [
-    # pkgs.hyprlandPlugins.<plugin>
-    # pkgs.hyprlandPlugins.hyprbar
-  ];
-  # xdg.configFile."hypr/nix-plugins.lua".text = ''
-  #   return {
-  #     hyprbars = "${pkgs.hyprlandPlugins.hyprbars}/lib/libhyprbars.so",
-  #   }
-  # '';
+  # wayland.windowManager.hyprland.plugins = [
+  #   pkgs.hyprlandPlugins.<plugin>
+  # ];
 
   services.tailscale-systray.enable = true;
 
   dconf.settings = {
     "org/gnome/desktop/wm/keybindings" = {
-      switch-applications          = [ "<Alt>Tab" ];
+      switch-applications = [ "<Alt>Tab" ];
       switch-applications-backward = [ "<Shift><Alt>Tab" ];
-      switch-group                 = [ "<Alt>Above_Tab" ];
-      switch-group-backward        = [ "<Shift><Alt>Above_Tab" ];
+      switch-group = [ "<Alt>Above_Tab" ];
+      switch-group-backward = [ "<Shift><Alt>Above_Tab" ];
 
-      move-to-monitor-down  = [ "<Super><Shift>Down" ];
-      move-to-monitor-left  = [ "<Super><Shift>Left" ];
+      move-to-monitor-down = [ "<Super><Shift>Down" ];
+      move-to-monitor-left = [ "<Super><Shift>Left" ];
       move-to-monitor-right = [ "<Super><Shift>Right" ];
-      move-to-monitor-up    = [ "<Super><Shift>Up" ];
+      move-to-monitor-up = [ "<Super><Shift>Up" ];
 
       move-to-workspace-1 = [ "<Super><Shift>1" ];
       move-to-workspace-2 = [ "<Super><Shift>2" ];
@@ -43,9 +37,9 @@
       switch-to-workspace-3 = [ "<Super><Alt>3" ];
       switch-to-workspace-4 = [ "<Super><Alt>4" ];
 
-      switch-to-workspace-up    = [ "<Super><Control>Up" ];
-      switch-to-workspace-down  = [ "<Super><Control>Down" ];
-      switch-to-workspace-left  = [ "<Super><Control>Left" ];
+      switch-to-workspace-up = [ "<Super><Control>Up" ];
+      switch-to-workspace-down = [ "<Super><Control>Down" ];
+      switch-to-workspace-left = [ "<Super><Control>Left" ];
       switch-to-workspace-right = [ "<Super><Control>Right" ];
     };
 
@@ -70,10 +64,10 @@
       switch-to-application-8 = [ "<Super>8" ];
       switch-to-application-9 = [ "<Super>9" ];
 
-      show-screenshot-ui        = [ "Print" ];
-      show-screen-recording-ui  = [ "<Shift>Print" ];
+      show-screenshot-ui = [ "Print" ];
+      show-screen-recording-ui = [ "<Shift>Print" ];
       focus-active-notification = [ "<Super>n" ];
-      toggle-message-tray       = [ "<Super>m" ];
+      toggle-message-tray = [ "<Super>m" ];
     };
   };
 }

@@ -5,7 +5,7 @@
 
 with pkgs;
 [
-  bottles
+  (bottles.override { removeWarningPopup = true; })
   dbeaver-bin
   dconf-editor
   dropbox-cli
@@ -28,6 +28,11 @@ with pkgs;
   yaak
   zathura
   zed-editor
+
+  # Screenshot
+  grim
+  satty
+  wl-clipboard
 
   # Claude Code sandbox dependencies
   bubblewrap
