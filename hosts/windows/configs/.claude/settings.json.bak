@@ -54,6 +54,7 @@
     }
   },
   "effortLevel": "high",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "voiceEnabled": true
 }

@@ -80,6 +80,7 @@ desktop.ini
 # ------------------------------
 # Miscellaneous
 # ------------------------------
+.worktree/
 .worktrees/
 *.local*
 *.local.*
