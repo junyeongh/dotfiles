@@ -252,6 +252,18 @@
                         ]
                     },
                     "id": "plugin:special-workspaces"
+                },
+                {
+                    "defaultSettings": {
+                        "enableCross": true,
+                        "enableWindowsSelection": true,
+                        "keepSourceScreenshot": false,
+                        "recordingNotifications": true,
+                        "recordingSavePath": "~/Videos",
+                        "savePath": "~/Pictures/Screenshots",
+                        "screenshotEditor": "swappy"
+                    },
+                    "id": "plugin:screen-shot-and-record"
                 }
             ],
             "right": [
@@ -467,7 +479,7 @@
                         "showVisualizer": false,
                         "visualizerType": "linear",
                         "x": 780,
-                        "y": 40
+                        "y": 60
                     },
                     {
                         "diskPath": "/",
@@ -478,20 +490,7 @@
                         "showBackground": true,
                         "statType": "CPU",
                         "x": 20,
-                        "y": 40
-                    },
-                    {
-                        "colorName": "primary",
-                        "height": 72,
-                        "hideWhenIdle": true,
-                        "id": "AudioVisualizer",
-                        "roundedCorners": true,
-                        "scale": 1.25,
-                        "showBackground": true,
-                        "visualizerType": "linear",
-                        "width": 320,
-                        "x": 780,
-                        "y": 980
+                        "y": 60
                     }
                 ]
             }
@@ -592,7 +591,7 @@
         "showChangelogOnStartup": true,
         "showHibernateOnLockScreen": true,
         "showScreenCorners": false,
-        "showSessionButtonsOnLockScreen": true,
+        "showSessionButtonsOnLockScreen": false,
         "smoothScrollEnabled": true,
         "telemetryEnabled": false
     },
@@ -639,9 +638,9 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": true,
+        "bluetoothAutoConnect": false,
         "bluetoothDetailsViewMode": "grid",
-        "bluetoothHideUnnamedDevices": false,
+        "bluetoothHideUnnamedDevices": true,
         "bluetoothRssiPollIntervalMs": 60000,
         "bluetoothRssiPollingEnabled": false,
         "disableDiscoverability": true,
