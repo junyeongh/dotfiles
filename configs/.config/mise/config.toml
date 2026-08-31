@@ -12,6 +12,10 @@ gleam  = "latest"
 
 # Programming Language Servers
 lua-language-server = "latest"
+tombi               = "latest"
+
+# Package managers
+pnpm = "latest"
 
 # CLI Tools
 act        = "latest"
