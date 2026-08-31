@@ -11,6 +11,9 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
@@ -73,8 +76,6 @@
   "chat.tools.confirmationCarousel.enabled": true,
   "chat.useAgentSkills": true,
   "chat.viewSessions.orientation": "stacked",
-  "chatgpt.commentCodeLensEnabled": false,
-  "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "claudeCode.preferredLocation": "panel",
   "claudeCode.useCtrlEnterToSend": true,
   "color-highlight.enable": false,
@@ -104,6 +105,7 @@
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 100, 120],
   "editor.smoothScrolling": true,
+  "editor.tabCompletion": "onlySnippets",
   "editor.tabSize": 2,
   "errorLens.excludeBySource": ["cSpell", "Harper"],
   "errorLens.gutterIconsEnabled": true,
@@ -134,8 +136,7 @@
   "extensions.allowOpenInModalEditor": true,
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.mdx": "markdown",
-    // "*config*": "properties",
+    "*.mdx": "mdx",
     ".aliases": "shellscript",
     ".json": "jsonc",
     ".prettierrc": "jsonc"
@@ -156,6 +157,7 @@
   "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
   "github.copilot.enable": {
     "*": false,
+    "lua": true,
     "markdown": false,
     "plaintext": false,
     "scminput": false
@@ -177,7 +179,6 @@
   ],
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 2,
-  "inlineChat.enableV2": true,
   "inlineChat.notebookAgent": true,
   "js/ts.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
   "js/ts.inlayHints.enumMemberValues.enabled": true,
@@ -203,31 +204,31 @@
   "markdown.extension.list.indentationSize": "inherit",
   "markdown.extension.tableFormatter.normalizeIndentation": true,
   "markdown.preview.breaks": true,
-  "markdownlint.config": {
-    "MD004": false, // Unordered list style
-    "MD010": false, // Hard tabs
-    "MD018": false, // No space after hash on atx style heading
-    "MD024": false, // Multiple headings with the same content
-    "MD026": false, // Trailing punctuation in heading
-    "MD028": false, // Blank line inside blockquote
-    "MD029": false, // Ordered list item prefix
-    "MD031": false, // Fenced code blocks should be surrounded by blank lines
-    "MD033": false, // Inline HTML
-    // "MD034": false, // Bare URL used
-    "MD036": false, // Emphasis used instead of a heading
-    "MD040": false, // Fenced code blocks should have a language specified
-    "MD041": false, // First line in a file should be a top-level heading
-    "MD045": false, // Images should have alternate text (alt text)
-    // "MD051": false, // Link fragments should be valid
-    "MD053": false, // Link and image reference definitions should be needed
-    "MD058": false, // Tables should be surrounded by blank lines
-    // "MD060": false,
-    "MD060": {
-      "aligned_delimiter": false,
-      "style": "compact"
-    },
-    "default": true
-  },
+  // "markdownlint.config": {
+  //   "MD004": false, // Unordered list style
+  //   "MD010": false, // Hard tabs
+  //   "MD018": false, // No space after hash on atx style heading
+  //   "MD024": false, // Multiple headings with the same content
+  //   "MD026": false, // Trailing punctuation in heading
+  //   "MD028": false, // Blank line inside blockquote
+  //   "MD029": false, // Ordered list item prefix
+  //   "MD031": false, // Fenced code blocks should be surrounded by blank lines
+  //   "MD033": false, // Inline HTML
+  //   // "MD034": false, // Bare URL used
+  //   "MD036": false, // Emphasis used instead of a heading
+  //   "MD040": false, // Fenced code blocks should have a language specified
+  //   "MD041": false, // First line in a file should be a top-level heading
+  //   "MD045": false, // Images should have alternate text (alt text)
+  //   // "MD051": false, // Link fragments should be valid
+  //   "MD053": false, // Link and image reference definitions should be needed
+  //   "MD058": false, // Tables should be surrounded by blank lines
+  //   // "MD060": false,
+  //   "MD060": {
+  //     "aligned_delimiter": false,
+  //     "style": "compact"
+  //   },
+  //   "default": true
+  // },
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
   "nix.serverSettings": {
@@ -350,15 +351,6 @@
     "oxc.path.node",
     "oxc.path.oxfmt",
     "oxc.path.oxlint",
-    // "direnv.path.executable",
-    // "window.zoomLevel"
-  ],
-  // on Windows
-  // "window.zoomLevel": -1
-  // on Linux
-  // "oxc.path.node": "/home/yeong/.local/share/fnm/aliases/default/bin/node",
-  // "oxc.path.oxfmt": "/home/yeong/.local/share/pnpm/oxfmt",
-  // "oxc.path.oxlint": "/home/yeong/.local/share/pnpm/oxlint",
-  // "deno.path": "/home/yeong/.local/share/mise/installs/deno/latest/bin/deno",
-  // "direnv.path.executable": "/home/yeong/.local/share/mise/installs/direnv/latest/direnv"
+    "oxc.path.tsgolint"
+  ]
 }

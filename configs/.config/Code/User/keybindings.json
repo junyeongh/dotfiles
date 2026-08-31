@@ -308,5 +308,35 @@
     "command": "workbench.action.createTerminalEditor",
     "key": "ctrl+alt+oem_3",
     "when": "terminalProcessSupported"
+  },
+  {
+    "key": "shift+alt+n",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetChoice && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetChoice && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "shift+alt+n",
+    "command": "jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "alt+n",
+    "command": "jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
   }
 ]

@@ -25,6 +25,13 @@
     "description": "back tick short-hand"
   },
   // React
+  "Use Effect": {
+    "prefix": ["rhue", "ue"],
+    "body": [
+      "useEffect(($2) => {$3}, [$1]);"
+    ],
+    "description": ""
+  },
   "Use State": {
     "prefix": ["rhus", "us"],
     "body": [
