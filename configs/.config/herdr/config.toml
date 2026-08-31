@@ -9,34 +9,46 @@ auto_switch = false
 prefix = "ctrl+space"
 
 # tab
-new_tab      = "prefix+t"
-close_tab    = "prefix+x"
-switch_tab   = "prefix+1..9"
+new_tab = "prefix+t"
+close_tab = "prefix+x"
+switch_tab = "prefix+1..9"
 previous_tab = "prefix+shift+tab"
-next_tab     = "prefix+tab"
+next_tab = "prefix+tab"
 # workspace
-new_workspace      = "prefix+shift+t"
-close_workspace    = "prefix+shift+x"
-switch_workspace   = "prefix+shift+1..9"
+new_workspace = "prefix+shift+t"
+close_workspace = "prefix+shift+x"
+switch_workspace = "prefix+shift+1..9"
 previous_workspace = "prefix+shift+p"
-next_workspace     = "prefix+shift+n"
+next_workspace = "prefix+shift+n"
 # agent
-focus_agent        = "prefix+alt+1..9"
+focus_agent = "prefix+alt+1..9"
 
 # navigation
-navigate_workspace_up   = [ "shift+k","up"]
-navigate_workspace_down = [ "shift+j","down"]
+navigate_workspace_up = ["shift+k", "up"]
+navigate_workspace_down = ["shift+j", "down"]
 
 [[keys.command]]
-key     = "prefix+alt+g"
-type    = "popup"
+key = "prefix+alt+g"
+type = "popup"
 command = "lazygit"
-width   = "80%"
-height  = "80%"
+width = "80%"
+height = "80%"
+
+[[keys.command]]
+key = "prefix+alt+e"
+type = "popup"
+command = "yazi"
+width = "80%"
+height = "80%"
 
 [ui]
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "spaces"
+tab_bar_right = [
+  { type = "command", command = "echo ${HERDR_SESSION:-default}", interval_seconds = 3600, timeout_seconds = 2 },
+  { type = "zoom" },
+]
+tab_bar_right_separator = " "
 
 [ui.toast]
 delivery = "herdr"
