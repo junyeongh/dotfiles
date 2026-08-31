@@ -114,9 +114,8 @@ if command -v nix &>/dev/null; then
   alias nix-optimise="sudo nix-store --optimise"
   alias hm="home-manager --flake ~/dotfiles#wsl"
   alias hm-up="home-manager --flake ~/dotfiles#wsl switch"
-fi
 
-if command -v nixos-rebuild &>/dev/null; then
-  function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
-  alias nixos-gens="nixos-rebuild list-generations"
+  if command -v nixos-rebuild &>/dev/null; then
+    function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
+  fi
 fi
