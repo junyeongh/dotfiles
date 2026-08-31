@@ -62,8 +62,7 @@
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "blockman.n33A01B2FromDepth0ToInwardForAllBackgrounds": "45,0,0,2; none",
-  // "breadcrumbs.filePath": "last",
-  "chat.agent.enabled": true,
+  "chat.agent.enabled": false,
   // "chat.disableAIFeatures": true,
   "chat.math.enabled": true,
   "chat.mcp.discovery.enabled": {
@@ -142,6 +141,9 @@
     ".prettierrc": "jsonc"
   },
   "files.autoSave": "onFocusChange",
+  "files.exclude": {
+    "**/.git": false
+  },
   "files.trimTrailingWhitespace": true,
   "foam.completion.linkFormat": "link",
   "foam.files.newNotePath": "currentDir",
@@ -343,14 +345,5 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
-  ],
-  // settingsSync.ignored{Extensions, Settingss}
-  "settingsSync.ignoredExtensions": [],
-  "settingsSync.ignoredSettings": [
-    "deno.path",
-    "oxc.path.node",
-    "oxc.path.oxfmt",
-    "oxc.path.oxlint",
-    "oxc.path.tsgolint"
   ]
 }
