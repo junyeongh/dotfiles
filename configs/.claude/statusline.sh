@@ -1,32 +1,34 @@
 #!/usr/bin/env bash
 input=$(cat)
 
-# ANSI color codes
-BLACK='\033[38;5;0m'
-RED='\033[38;5;1m'
-GREEN='\033[38;5;2m'
-YELLOW='\033[38;5;3m'
-BLUE='\033[38;5;4m'
-MAGENTA='\033[38;5;5m'
-CYAN='\033[38;5;6m'
-WHITE='\033[38;5;7m'
-GRAY='\033[38;5;8m'
-BRIGHT_RED='\033[38;5;9m'
-BRIGHT_GREEN='\033[38;5;10m'
-BRIGHT_YELLOW='\033[38;5;11m'
-BRIGHT_BLUE='\033[38;5;12m'
-BRIGHT_MAGENTA='\033[38;5;13m'
-BRIGHT_CYAN='\033[38;5;14m'
-BRIGHT_WHITE='\033[38;5;15m'
+# ANSI color codes. Real ESC bytes, not "\033" literals: the output is emitted
+# with printf '%s', so Windows paths like C:\Users\... survive verbatim.
+BLACK=$'\033[38;5;0m'
+RED=$'\033[38;5;1m'
+GREEN=$'\033[38;5;2m'
+YELLOW=$'\033[38;5;3m'
+BLUE=$'\033[38;5;4m'
+MAGENTA=$'\033[38;5;5m'
+CYAN=$'\033[38;5;6m'
+WHITE=$'\033[38;5;7m'
+GRAY=$'\033[38;5;8m'
+BRIGHT_RED=$'\033[38;5;9m'
+BRIGHT_GREEN=$'\033[38;5;10m'
+BRIGHT_YELLOW=$'\033[38;5;11m'
+BRIGHT_BLUE=$'\033[38;5;12m'
+BRIGHT_MAGENTA=$'\033[38;5;13m'
+BRIGHT_CYAN=$'\033[38;5;14m'
+BRIGHT_WHITE=$'\033[38;5;15m'
 
-# Claude brand orange (#D97757), 24-bit with a 256-color fallback
-if [[ "$COLORTERM" == truecolor || "$COLORTERM" == 24bit ]]; then
-  CLAUDE_ORANGE='\033[38;2;217;119;87m'
+# Claude brand orange (#D97757), 24-bit with a 256-color fallback.
+# Windows Terminal sets WT_SESSION but not COLORTERM.
+if [[ "$COLORTERM" == truecolor || "$COLORTERM" == 24bit || -n "$WT_SESSION" ]]; then
+  CLAUDE_ORANGE=$'\033[38;2;217;119;87m'
 else
-  CLAUDE_ORANGE='\033[38;5;173m'
+  CLAUDE_ORANGE=$'\033[38;5;173m'
 fi
 
-RESET='\033[0m'
+RESET=$'\033[0m'
 
 # Get terminal width
 term_width=$(tput cols 2>/dev/null || echo 80)
@@ -37,6 +39,8 @@ get_current_dir() { echo "$input" | jq -r '.workspace.current_dir // empty'; }
 get_effort_level() { echo "$input" | jq -r '.effort.level // empty'; }
 get_model_display_name() { echo "$input" | jq -r '.model.display_name // "Claude"'; }
 get_project_dir() { echo "$input" | jq -r '.workspace.project_dir // empty'; }
+get_session_id() { echo "$input" | jq -r '.session_id // empty'; }
+get_session_name() { echo "$input" | jq -r '.session_name // empty'; }
 get_thinking_enabled() { echo "$input" | jq -r 'if .thinking.enabled then "1" else empty end'; }
 get_total_cost_usd() { echo "$input" | jq -r '.cost.total_cost_usd // 0'; }
 get_total_duration_ms() { echo "$input" | jq -r '.cost.total_duration_ms // 0'; }
@@ -44,6 +48,7 @@ get_total_input_tokens() { echo "$input" | jq -r '.context_window.total_input_to
 get_total_lines_added() { echo "$input" | jq -r '.cost.total_lines_added // 0'; }
 get_total_lines_removed() { echo "$input" | jq -r '.cost.total_lines_removed // 0'; }
 get_total_output_tokens() { echo "$input" | jq -r '.context_window.total_output_tokens // 0'; }
+get_transcript_path() { echo "$input" | jq -r '.transcript_path // empty'; }
 get_version() { echo "$input" | jq -r '.version // empty'; }
 
 # Use the helpers
@@ -52,6 +57,8 @@ CURRENT_DIR=$(get_current_dir)
 EFFORT_LEVEL=$(get_effort_level)
 MODEL_DISPLAY_NAME=$(get_model_display_name)
 PROJECT_DIR=$(get_project_dir)
+SESSION_ID=$(get_session_id)
+SESSION_NAME=$(get_session_name)
 THINKING_ENABLED=$(get_thinking_enabled)
 TOTAL_COST_USD=$(get_total_cost_usd)
 TOTAL_DURATION_MS=$(get_total_duration_ms)
@@ -59,6 +66,7 @@ TOTAL_INPUT_TOKENS=$(get_total_input_tokens)
 TOTAL_LINES_ADDED=$(get_total_lines_added)
 TOTAL_LINES_REMOVED=$(get_total_lines_removed)
 TOTAL_OUTPUT_TOKENS=$(get_total_output_tokens)
+TRANSCRIPT_PATH=$(get_transcript_path)
 VERSION=$(get_version)
 
 [ -n "$CURRENT_DIR" ] || CURRENT_DIR=$PWD
@@ -113,22 +121,25 @@ rate_limit_segment() {
     color="$BRIGHT_YELLOW"
   fi
   local reset=$(format_reset "$reset_epoch" "$fmt")
-  printf '%b' "${GRAY}${label}${RESET} ${color}${pct}%${RESET} [$(progress_bar "$pct" 8)]${reset:+ ${GRAY}(${reset})${RESET}} "
+  printf '%s' "${GRAY}${label}${RESET} ${color}${pct}%${RESET} [$(progress_bar "$pct" 8)]${reset:+ ${GRAY}(${reset})${RESET}} "
 }
 
-# Build output
+# Line 1
 output=""
 output="${output}${GREEN}(v${VERSION})${RESET} "
-output="${output}${CYAN}${CURRENT_DIR}${RESET} "
+output="${output}${CYAN}${CURRENT_DIR}${RESET}"
 
-if [ -n "$GIT_BRANCH" ]; then
-  output="${output}${RED}:: ${GIT_BRANCH}${RESET} "
-fi
+[ -n "$GIT_BRANCH" ] && output="${output} ${RED}:: ${GIT_BRANCH} ${RESET}"
 
 output="${output}${CLAUDE_ORANGE}${MODEL_DISPLAY_NAME}${RESET}"
 [ -n "$EFFORT_LEVEL" ] && output="${output} ${CLAUDE_ORANGE}${EFFORT_LEVEL}${RESET}"
 [ -n "$THINKING_ENABLED" ] && output="${output} ${CLAUDE_ORANGE}(thinking)${RESET}"
-output="${output}\n"
+
+output="${output}"$'\n'
+
+# Line 2
+[ -n "$SESSION_ID" ] && output="${output} ${GRAY}(${SESSION_ID:0:8})${RESET}"
+output="${output} "
 
 output="${output}${BRIGHT_YELLOW}\$$(printf '%.3f' "$TOTAL_COST_USD")${RESET} "
 
@@ -147,6 +158,7 @@ if [ "$USAGE" != "null" ] && [ "$CONTEXT_WINDOW_SIZE" -gt 0 ]; then
   PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
   output="${output}$(format_number "$CURRENT_TOKENS")/$(format_number "$CONTEXT_WINDOW_SIZE") ($PERCENT_USED%) "
 fi
+output="${output}"$'\t'
 
 # Subscription rate limits: only present for Claude.ai Pro/Max (or a spend-limit
 # gateway), and only after the first API response. "// empty" handles absence.
@@ -165,4 +177,4 @@ LIMITS="${LIMITS}$(rate_limit_segment '$' "$SPEND_LIMIT_PCT" "$SPEND_LIMIT_RESET
 output="${output}${LIMITS% }"
 
 # Output the final line
-printf "%b\n" "$output"
+printf '%s\n' "$output"

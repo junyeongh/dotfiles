@@ -128,7 +128,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "powershell -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/statusline.ps1\"",
+    "command": "\"$PROGRAMFILES/Git/bin/bash.exe\" \"$USERPROFILE/.claude/statusline.sh\"",
     "padding": 0
   },
   "enabledPlugins": {
