@@ -22,6 +22,14 @@ $BRIGHT_MAGENTA = "$([char]27)[38;5;13m"
 $BRIGHT_CYAN = "$([char]27)[38;5;14m"
 $BRIGHT_WHITE = "$([char]27)[38;5;15m"
 
+# Claude brand orange (#D97757), 24-bit with a 256-color fallback
+if ($env:COLORTERM -eq 'truecolor' -or $env:COLORTERM -eq '24bit' -or $env:WT_SESSION) {
+    $CLAUDE_ORANGE = "$([char]27)[38;2;217;119;87m"
+}
+else {
+    $CLAUDE_ORANGE = "$([char]27)[38;5;173m"
+}
+
 $RESET = "$([char]27)[0m"
 
 # Progress bar function
@@ -38,6 +46,43 @@ function Get-ProgressBar {
     $empty = $Width - $filled
 
     return ('=' * $filled) + ('-' * $empty)
+}
+
+# Unix epoch seconds -> local time string, empty when absent
+function Format-Reset {
+    param($Epoch, [string]$Format)
+
+    if ($null -eq $Epoch -or $Epoch -eq "") { return "" }
+    try {
+        return [DateTimeOffset]::FromUnixTimeSeconds([long]$Epoch).LocalDateTime.ToString($Format)
+    }
+    catch {
+        return ""
+    }
+}
+
+# label, used_percentage, resets_at (epoch), date format for the reset time
+function Get-RateLimitSegment {
+    param(
+        [string]$Label,
+        $UsedPercentage,
+        $ResetsAt,
+        [string]$Format
+    )
+
+    if ($null -eq $UsedPercentage) { return "" }
+
+    $pct = [int][math]::Round([double]$UsedPercentage, [MidpointRounding]::AwayFromZero)
+    $color = $GREEN
+    if ($pct -ge 90) { $color = $BRIGHT_RED }
+    elseif ($pct -ge 70) { $color = $BRIGHT_YELLOW }
+
+    $segment = "${GRAY}${Label}${RESET} ${color}${pct}%${RESET} [$(Get-ProgressBar -Percent $pct -Width 8)]"
+
+    $reset = Format-Reset -Epoch $ResetsAt -Format $Format
+    if ($reset) { $segment += " ${GRAY}(${reset})${RESET}" }
+
+    return "$segment "
 }
 
 # Read JSON input from stdin
@@ -65,6 +110,7 @@ try {
     $TOTAL_OUTPUT_TOKENS = if ($inputData.context_window.total_output_tokens) { $inputData.context_window.total_output_tokens } else { 0 }
     $VERSION = if ($inputData.version) { $inputData.version } else { "" }
     $CURRENT_USAGE = $inputData.context_window.current_usage
+    $RATE_LIMITS = $inputData.rate_limits
     $TOTAL_COST_USD = if ($null -ne $inputData.cost.total_cost_usd) { $inputData.cost.total_cost_usd } else { 0 }
     $TOTAL_LINES_ADDED = if ($null -ne $inputData.cost.total_lines_added) { $inputData.cost.total_lines_added } else { 0 }
     $TOTAL_LINES_REMOVED = if ($null -ne $inputData.cost.total_lines_removed) { $inputData.cost.total_lines_removed } else { 0 }
@@ -80,6 +126,7 @@ catch {
     $TOTAL_OUTPUT_TOKENS = 0
     $VERSION = ""
     $CURRENT_USAGE = $null
+    $RATE_LIMITS = $null
     $TOTAL_COST_USD = 0
     $TOTAL_LINES_ADDED = 0
     $TOTAL_LINES_REMOVED = 0
@@ -108,19 +155,14 @@ $output += "${GREEN}(v${VERSION})${RESET} "
 $output += "${CYAN}${CURRENT_DIR}${RESET} "
 
 if ($GIT_BRANCH) {
-    $output += "${RED}:: ${GIT_BRANCH}${RESET}`n"
-}
-else {
-    $output += "`n"
+    $output += "${RED}:: ${GIT_BRANCH}${RESET} "
 }
 
-$output += "${BRIGHT_WHITE}${MODEL_DISPLAY_NAME} ${EFFORT_LEVEL} "
-if ($THINKING_ENABLED) {
-    $output += "(thinking)${RESET} "
-}
-else {
-    $output += "${RESET} "
-}
+$output += "${CLAUDE_ORANGE}${MODEL_DISPLAY_NAME}${RESET}"
+if ($EFFORT_LEVEL) { $output += " ${CLAUDE_ORANGE}${EFFORT_LEVEL}${RESET}" }
+if ($THINKING_ENABLED) { $output += " ${CLAUDE_ORANGE}(thinking)${RESET}" }
+$output += "`n"
+
 $output += "${BRIGHT_YELLOW}`$$(("{0:F3}" -f $TOTAL_COST_USD))${RESET} "
 
 if ($TOTAL_LINES_ADDED -ne 0 -or $TOTAL_LINES_REMOVED -ne 0) {
@@ -139,10 +181,19 @@ if ($CURRENT_USAGE -and $CONTEXT_WINDOW_SIZE -gt 0) {
     $CURRENT_TOKENS = $input_tokens + $cache_creation + $cache_read
     $PERCENT_USED = [math]::Floor($CURRENT_TOKENS * 100 / $CONTEXT_WINDOW_SIZE)
 
-    $output += "$($CURRENT_TOKENS.ToString('#,0'))/$($CONTEXT_WINDOW_SIZE.ToString('#,0')) "
-    $output += "[$(Get-ProgressBar -Percent $PERCENT_USED -Width 10)] "
-    $output += "($PERCENT_USED%) "
+    $output += "$($CURRENT_TOKENS.ToString('#,0'))/$($CONTEXT_WINDOW_SIZE.ToString('#,0')) ($PERCENT_USED%) "
 }
+
+# Subscription rate limits: only present for Claude.ai Pro/Max (or a spend-limit
+# gateway), and only after the first API response. Each window may be absent.
+$LIMITS = ""
+if ($RATE_LIMITS) {
+    $LIMITS += Get-RateLimitSegment -Label '5h' -UsedPercentage $RATE_LIMITS.five_hour.used_percentage -ResetsAt $RATE_LIMITS.five_hour.resets_at -Format 'HH:mm'
+    $LIMITS += Get-RateLimitSegment -Label '7d' -UsedPercentage $RATE_LIMITS.seven_day.used_percentage -ResetsAt $RATE_LIMITS.seven_day.resets_at -Format 'ddd HH:mm'
+    $LIMITS += Get-RateLimitSegment -Label '$' -UsedPercentage $RATE_LIMITS.spend_limit.used_percentage -ResetsAt $RATE_LIMITS.spend_limit.resets_at -Format 'MMM d'
+}
+
+$output += $LIMITS.TrimEnd()
 
 # Output the final line
 Write-Host $output

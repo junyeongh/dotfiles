@@ -19,6 +19,13 @@ BRIGHT_MAGENTA='\033[38;5;13m'
 BRIGHT_CYAN='\033[38;5;14m'
 BRIGHT_WHITE='\033[38;5;15m'
 
+# Claude brand orange (#D97757), 24-bit with a 256-color fallback
+if [[ "$COLORTERM" == truecolor || "$COLORTERM" == 24bit ]]; then
+  CLAUDE_ORANGE='\033[38;2;217;119;87m'
+else
+  CLAUDE_ORANGE='\033[38;5;173m'
+fi
+
 RESET='\033[0m'
 
 # Get terminal width
@@ -89,23 +96,40 @@ format_number() {
   echo "${n}${result}"
 }
 
+format_reset() {
+  local epoch="$1" fmt="$2"
+  [ -n "$epoch" ] && [ "$epoch" != "null" ] && date -d "@$epoch" +"$fmt" 2>/dev/null
+}
+
+# label, used_percentage, resets_at (epoch), date format for the reset time
+rate_limit_segment() {
+  local label="$1" pct_raw="$2" reset_epoch="$3" fmt="$4"
+  [ -z "$pct_raw" ] && return
+  local pct=$(printf '%.0f' "$pct_raw")
+  local color="$GREEN"
+  if ((pct >= 90)); then
+    color="$BRIGHT_RED"
+  elif ((pct >= 70)); then
+    color="$BRIGHT_YELLOW"
+  fi
+  local reset=$(format_reset "$reset_epoch" "$fmt")
+  printf '%b' "${GRAY}${label}${RESET} ${color}${pct}%${RESET} [$(progress_bar "$pct" 8)]${reset:+ ${GRAY}(${reset})${RESET}} "
+}
+
 # Build output
 output=""
 output="${output}${GREEN}(v${VERSION})${RESET} "
 output="${output}${CYAN}${CURRENT_DIR}${RESET} "
 
 if [ -n "$GIT_BRANCH" ]; then
-  output="${output}${RED}:: ${GIT_BRANCH}${RESET}\n"
-else
-  output="${output}\n"
+  output="${output}${RED}:: ${GIT_BRANCH}${RESET} "
 fi
 
-output="${output}${BRIGHT_WHITE}${MODEL_DISPLAY_NAME} ${EFFORT_LEVEL} "
-if [ -n "$THINKING_ENABLED" ]; then
-  output="${output}(thinking)${RESET} "
-else
-  output="${output}${RESET} "
-fi
+output="${output}${CLAUDE_ORANGE}${MODEL_DISPLAY_NAME}${RESET}"
+[ -n "$EFFORT_LEVEL" ] && output="${output} ${CLAUDE_ORANGE}${EFFORT_LEVEL}${RESET}"
+[ -n "$THINKING_ENABLED" ] && output="${output} ${CLAUDE_ORANGE}(thinking)${RESET}"
+output="${output}\n"
+
 output="${output}${BRIGHT_YELLOW}\$$(printf '%.3f' "$TOTAL_COST_USD")${RESET} "
 
 if [ "$TOTAL_LINES_ADDED" != "0" ] || [ "$TOTAL_LINES_REMOVED" != "0" ]; then
@@ -121,10 +145,24 @@ if [ "$USAGE" != "null" ] && [ "$CONTEXT_WINDOW_SIZE" -gt 0 ]; then
   # Calculate current context from current_usage fields
   CURRENT_TOKENS=$(echo "$USAGE" | jq '(.input_tokens // 0) + (.cache_creation_input_tokens // 0) + (.cache_read_input_tokens // 0)')
   PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
-  output="${output}$(format_number "$CURRENT_TOKENS")/$(format_number "$CONTEXT_WINDOW_SIZE") "
-  output="${output}[$(progress_bar "$PERCENT_USED" 10)] "
-  output="${output}($PERCENT_USED%) "
+  output="${output}$(format_number "$CURRENT_TOKENS")/$(format_number "$CONTEXT_WINDOW_SIZE") ($PERCENT_USED%) "
 fi
+
+# Subscription rate limits: only present for Claude.ai Pro/Max (or a spend-limit
+# gateway), and only after the first API response. "// empty" handles absence.
+FIVE_HOUR_PCT=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // empty')
+FIVE_HOUR_RESET=$(echo "$input" | jq -r '.rate_limits.five_hour.resets_at // empty')
+SEVEN_DAY_PCT=$(echo "$input" | jq -r '.rate_limits.seven_day.used_percentage // empty')
+SEVEN_DAY_RESET=$(echo "$input" | jq -r '.rate_limits.seven_day.resets_at // empty')
+SPEND_LIMIT_PCT=$(echo "$input" | jq -r '.rate_limits.spend_limit.used_percentage // empty')
+SPEND_LIMIT_RESET=$(echo "$input" | jq -r '.rate_limits.spend_limit.resets_at // empty')
+
+LIMITS=""
+LIMITS="${LIMITS}$(rate_limit_segment '5h' "$FIVE_HOUR_PCT" "$FIVE_HOUR_RESET" '%H:%M')"
+LIMITS="${LIMITS}$(rate_limit_segment '7d' "$SEVEN_DAY_PCT" "$SEVEN_DAY_RESET" '%a %H:%M')"
+LIMITS="${LIMITS}$(rate_limit_segment '$' "$SPEND_LIMIT_PCT" "$SPEND_LIMIT_RESET" '%b %-d')"
+
+output="${output}${LIMITS% }"
 
 # Output the final line
 printf "%b\n" "$output"
