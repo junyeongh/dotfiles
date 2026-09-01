@@ -1,5 +1,5 @@
 {
-  "model": "opusplan",
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -148,9 +148,14 @@
     }
   },
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "medium"
+    }
+  },
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "voiceEnabled": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "inputNeededNotifEnabled": true
+  "voiceEnabled": true
 }
