@@ -25,25 +25,27 @@ RESET='\033[0m'
 term_width=$(tput cols 2>/dev/null || echo 80)
 
 # Helper functions for common extractions
-get_context_window_size() { echo "$input" | jq -r '.context_window.context_window_size'; }
-get_current_dir() { echo "$input" | jq -r '.workspace.current_dir'; }
-get_model_display_name() { echo "$input" | jq -r '.model.display_name'; }
-get_project_dir() { echo "$input" | jq -r '.workspace.project_dir'; }
-get_total_cost_usd() { echo "$input" | jq -r '.cost.total_cost_usd'; }
-get_total_duration_ms() { echo "$input" | jq -r '.cost.total_duration_ms'; }
-get_total_input_tokens() { echo "$input" | jq -r '.context_window.total_input_tokens'; }
-get_total_lines_added() { echo "$input" | jq -r '.cost.total_lines_added'; }
-get_total_lines_removed() { echo "$input" | jq -r '.cost.total_lines_removed'; }
-get_total_output_tokens() { echo "$input" | jq -r '.context_window.total_output_tokens'; }
-get_version() { echo "$input" | jq -r '.version'; }
-get_output_style() { echo "$input" | jq -r '.output_style.name'; }
+get_context_window_size() { echo "$input" | jq -r '.context_window.context_window_size // 0'; }
+get_current_dir() { echo "$input" | jq -r '.workspace.current_dir // empty'; }
+get_effort_level() { echo "$input" | jq -r '.effort.level // empty'; }
+get_model_display_name() { echo "$input" | jq -r '.model.display_name // "Claude"'; }
+get_project_dir() { echo "$input" | jq -r '.workspace.project_dir // empty'; }
+get_thinking_enabled() { echo "$input" | jq -r 'if .thinking.enabled then "1" else empty end'; }
+get_total_cost_usd() { echo "$input" | jq -r '.cost.total_cost_usd // 0'; }
+get_total_duration_ms() { echo "$input" | jq -r '.cost.total_duration_ms // 0'; }
+get_total_input_tokens() { echo "$input" | jq -r '.context_window.total_input_tokens // 0'; }
+get_total_lines_added() { echo "$input" | jq -r '.cost.total_lines_added // 0'; }
+get_total_lines_removed() { echo "$input" | jq -r '.cost.total_lines_removed // 0'; }
+get_total_output_tokens() { echo "$input" | jq -r '.context_window.total_output_tokens // 0'; }
+get_version() { echo "$input" | jq -r '.version // empty'; }
 
 # Use the helpers
 CONTEXT_WINDOW_SIZE=$(get_context_window_size)
 CURRENT_DIR=$(get_current_dir)
+EFFORT_LEVEL=$(get_effort_level)
 MODEL_DISPLAY_NAME=$(get_model_display_name)
-OUTPUT_STYLE=$(get_output_style)
 PROJECT_DIR=$(get_project_dir)
+THINKING_ENABLED=$(get_thinking_enabled)
 TOTAL_COST_USD=$(get_total_cost_usd)
 TOTAL_DURATION_MS=$(get_total_duration_ms)
 TOTAL_INPUT_TOKENS=$(get_total_input_tokens)
@@ -52,9 +54,13 @@ TOTAL_LINES_REMOVED=$(get_total_lines_removed)
 TOTAL_OUTPUT_TOKENS=$(get_total_output_tokens)
 VERSION=$(get_version)
 
+[ -n "$CURRENT_DIR" ] || CURRENT_DIR=$PWD
+
+# Get git branch using $CURRENT_DIR as the working directory
 get_git_branch() {
-  if git rev-parse --git-dir >/dev/null 2>&1; then
-    echo $(git -c core.fileMode=false branch --show-current 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+  if git -C "$CURRENT_DIR" rev-parse --git-dir >/dev/null 2>&1; then
+    git -C "$CURRENT_DIR" -c core.fileMode=false branch --show-current 2>/dev/null ||
+      git -C "$CURRENT_DIR" rev-parse --short HEAD 2>/dev/null
   fi
 }
 
@@ -94,8 +100,13 @@ else
   output="${output}\n"
 fi
 
-output="${output}${MODEL_DISPLAY_NAME} (${OUTPUT_STYLE})${RESET} "
-output="${output}${BRIGHT_YELLOW}\$$(printf '%.3f' $TOTAL_COST_USD)${RESET} "
+output="${output}${BRIGHT_WHITE}${MODEL_DISPLAY_NAME} ${EFFORT_LEVEL} "
+if [ -n "$THINKING_ENABLED" ]; then
+  output="${output}(thinking)${RESET} "
+else
+  output="${output}${RESET} "
+fi
+output="${output}${BRIGHT_YELLOW}\$$(printf '%.3f' "$TOTAL_COST_USD")${RESET} "
 
 if [ "$TOTAL_LINES_ADDED" != "0" ] || [ "$TOTAL_LINES_REMOVED" != "0" ]; then
   output="${output}("
@@ -106,12 +117,13 @@ if [ "$TOTAL_LINES_ADDED" != "0" ] || [ "$TOTAL_LINES_REMOVED" != "0" ]; then
 fi
 
 USAGE=$(echo "$input" | jq '.context_window.current_usage')
-if [ "$USAGE" != "null" ]; then
+if [ "$USAGE" != "null" ] && [ "$CONTEXT_WINDOW_SIZE" -gt 0 ]; then
   # Calculate current context from current_usage fields
-  CURRENT_TOKENS=$(echo "$USAGE" | jq '.input_tokens + .cache_creation_input_tokens + .cache_read_input_tokens')
+  CURRENT_TOKENS=$(echo "$USAGE" | jq '(.input_tokens // 0) + (.cache_creation_input_tokens // 0) + (.cache_read_input_tokens // 0)')
   PERCENT_USED=$((CURRENT_TOKENS * 100 / CONTEXT_WINDOW_SIZE))
-  output="${output}$(format_number $CURRENT_TOKENS)/$(format_number $CONTEXT_WINDOW_SIZE) ($PERCENT_USED%) "
+  output="${output}$(format_number "$CURRENT_TOKENS")/$(format_number "$CONTEXT_WINDOW_SIZE") "
   output="${output}[$(progress_bar "$PERCENT_USED" 10)] "
+  output="${output}($PERCENT_USED%) "
 fi
 
 # Output the final line

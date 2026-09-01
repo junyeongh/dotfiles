@@ -58,7 +58,8 @@ try {
     $CONTEXT_WINDOW_SIZE = if ($inputData.context_window.context_window_size) { $inputData.context_window.context_window_size } else { 0 }
     $CURRENT_DIR = if ($inputData.workspace.current_dir) { $inputData.workspace.current_dir } else { $pwd.Path }
     $MODEL_DISPLAY_NAME = if ($inputData.model.display_name) { $inputData.model.display_name } else { "Claude" }
-    $OUTPUT_STYLE = if ($inputData.output_style.name) { $inputData.output_style.name } else { "" }
+    $THINKING_ENABLED = if ($inputData.thinking.enabled) { $inputData.thinking.enabled } else { "" }
+    $EFFORT_LEVEL = if ($inputData.effort.level) { $inputData.effort.level } else { "" }
     $PROJECT_DIR = if ($inputData.workspace.project_dir) { $inputData.workspace.project_dir } else { "" }
     $TOTAL_INPUT_TOKENS = if ($inputData.context_window.total_input_tokens) { $inputData.context_window.total_input_tokens } else { 0 }
     $TOTAL_OUTPUT_TOKENS = if ($inputData.context_window.total_output_tokens) { $inputData.context_window.total_output_tokens } else { 0 }
@@ -72,7 +73,8 @@ catch {
     $CONTEXT_WINDOW_SIZE = 0
     $CURRENT_DIR = $pwd.Path
     $MODEL_DISPLAY_NAME = "Claude"
-    $OUTPUT_STYLE = ""
+    $THINKING_ENABLED = ""
+    $EFFORT_LEVEL = ""
     $PROJECT_DIR = ""
     $TOTAL_INPUT_TOKENS = 0
     $TOTAL_OUTPUT_TOKENS = 0
@@ -107,11 +109,18 @@ $output += "${CYAN}${CURRENT_DIR}${RESET} "
 
 if ($GIT_BRANCH) {
     $output += "${RED}:: ${GIT_BRANCH}${RESET}`n"
-} else {
+}
+else {
     $output += "`n"
 }
 
-$output += "${MODEL_DISPLAY_NAME} (${OUTPUT_STYLE})${RESET} "
+$output += "${BRIGHT_WHITE}${MODEL_DISPLAY_NAME} ${EFFORT_LEVEL} "
+if ($THINKING_ENABLED) {
+    $output += "(thinking)${RESET} "
+}
+else {
+    $output += "${RESET} "
+}
 $output += "${BRIGHT_YELLOW}`$$(("{0:F3}" -f $TOTAL_COST_USD))${RESET} "
 
 if ($TOTAL_LINES_ADDED -ne 0 -or $TOTAL_LINES_REMOVED -ne 0) {
@@ -126,10 +135,13 @@ if ($CURRENT_USAGE -and $CONTEXT_WINDOW_SIZE -gt 0) {
     $input_tokens = if ($CURRENT_USAGE.input_tokens) { $CURRENT_USAGE.input_tokens } else { 0 }
     $cache_creation = if ($CURRENT_USAGE.cache_creation_input_tokens) { $CURRENT_USAGE.cache_creation_input_tokens } else { 0 }
     $cache_read = if ($CURRENT_USAGE.cache_read_input_tokens) { $CURRENT_USAGE.cache_read_input_tokens } else { 0 }
+
     $CURRENT_TOKENS = $input_tokens + $cache_creation + $cache_read
     $PERCENT_USED = [math]::Floor($CURRENT_TOKENS * 100 / $CONTEXT_WINDOW_SIZE)
-    $output += "$($CURRENT_TOKENS.ToString('#,0'))/$($CONTEXT_WINDOW_SIZE.ToString('#,0')) ($PERCENT_USED%) "
+
+    $output += "$($CURRENT_TOKENS.ToString('#,0'))/$($CONTEXT_WINDOW_SIZE.ToString('#,0')) "
     $output += "[$(Get-ProgressBar -Percent $PERCENT_USED -Width 10)] "
+    $output += "($PERCENT_USED%) "
 }
 
 # Output the final line
