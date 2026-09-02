@@ -22,6 +22,8 @@
   "enabledPlugins": {
     "codex@openai-codex": true,
     "context7@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
   },
@@ -36,5 +38,7 @@
   "effortLevel": "medium",
   "tui": "default",
   "skipDangerousModePermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": true
 }
