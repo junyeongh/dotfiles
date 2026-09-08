@@ -35,10 +35,15 @@
       }
     }
   },
-  "effortLevel": "medium",
-  "tui": "default",
+  "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    }
+  },
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
-  "voiceEnabled": true,
+  "inputNeededNotifEnabled": true,
   "agentPushNotifEnabled": true,
-  "inputNeededNotifEnabled": true
+  "voiceEnabled": true
 }

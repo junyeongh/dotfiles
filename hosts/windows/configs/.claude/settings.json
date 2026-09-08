@@ -11,115 +11,13 @@
         ]
       }
     ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "StopFailure": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "SubagentStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "TeammateIdle": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
+    "SessionStart": [
       {
         "matcher": "*",
         "hooks": [
           {
             "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PostToolUseFailure": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
-            "timeout": 10
-          }
-        ]
-      }
-    ],
-    "PermissionRequest": [
-      {
-        "matcher": "*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "if [ -f '~/.orca/agent-hooks/claude-hook.cmd' ]; then '~/.orca/agent-hooks/claude-hook.cmd'; else { command -p cat 2>/dev/null || cat; } >/dev/null 2>&1 || :; fi",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$USERPROFILE/.claude/hooks/herdr-agent-state.ps1\" session",
             "timeout": 10
           }
         ]
@@ -150,7 +48,7 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5": {
-      "effortLevel": "medium"
+      "effortLevel": "high"
     }
   },
   "tui": "fullscreen",
