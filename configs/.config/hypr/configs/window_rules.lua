@@ -53,7 +53,7 @@ hl.window_rule({
       "Heynote",
       "org.pwmt.zathura"
     }),
-    workspace = "w[1-99]"
+    workspace = "w[1-99]s[false]"
   },
 
   float = true,
@@ -66,7 +66,7 @@ hl.window_rule({
     initial_title = match_regex({
       "KakaoTalk"
     }),
-    workspace = "w[1-99]"
+    workspace = "w[1-99]s[false]"
   },
 
   float = true,
@@ -99,7 +99,7 @@ hl.window_rule({
     initial_title = match_regex({
       "kime-candidate"
     }),
-    workspace = "w[1-99]"
+    workspace = "w[1-99]s[false]"
   },
 
   float = true,
