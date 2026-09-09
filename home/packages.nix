@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 # https://search.nixos.org/packages
-with pkgs;
-[
+(with pkgs; [ ])
+++
+(with pkgs-unstable; [
   btop
   dotter
   fnm
@@ -15,4 +16,4 @@ with pkgs;
   nixfmt
   tmux
   zellij
-]
+])

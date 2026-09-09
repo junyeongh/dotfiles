@@ -1,10 +1,13 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
-# NixOS-specific packages
 # https://search.nixos.org/packages
-
-with pkgs;
-[
+(
+  with pkgs;
+  # Stable packages
+  [ ])
+++
+(with pkgs-unstable; [
+  # Unstable packages
   (bottles.override { removeWarningPopup = true; })
   dbeaver-bin
   dconf-editor
@@ -34,7 +37,7 @@ with pkgs;
   satty
   wl-clipboard
 
-  # Claude Code sandbox dependencies
+  # dependencies for sandboxing coding agents (Claude Code, Codex)
   bubblewrap
   socat
   # Claude Code voice mode dependencies
@@ -52,4 +55,4 @@ with pkgs;
   gnomeExtensions.removable-drive-menu # Removable Drive Menu
   gnomeExtensions.tactile # Tactile
   gnomeExtensions.tiling-assistant # Tiling Assistant
-]
+])

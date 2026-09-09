@@ -15,10 +15,10 @@ inputs.nixpkgs.lib.nixosSystem {
     # home-manager
     inputs.home-manager.nixosModules.home-manager
     {
-      home-manager.useGlobalPkgs = false;
+      home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = {
-        pkgs = pkgs-unstable;
+        inherit pkgs-unstable;
       };
       home-manager.users.yeong =
         {
@@ -29,7 +29,7 @@ inputs.nixpkgs.lib.nixosSystem {
         {
           imports = [
             ../../home # default home-manager config
-            ./home     # host-specific home-manager config
+            ./home # host-specific home-manager config
           ];
         };
     }
