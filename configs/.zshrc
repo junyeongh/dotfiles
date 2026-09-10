@@ -38,6 +38,16 @@ if command -v zoxide >/dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
+# Git commit signing goes through op-ssh-sign, which talks to the 1Password GUI
+# app on the local display. Over ssh the approval dialog is unreachable and the
+# commit just hangs, so drop signing for remote sessions.
+# Use `GIT_CONFIG_COUNT=0 git commit -S` to sign anyway.
+if [[ -n $SSH_CONNECTION ]]; then
+  export GIT_CONFIG_COUNT=1
+  export GIT_CONFIG_KEY_0=commit.gpgsign
+  export GIT_CONFIG_VALUE_0=false
+fi
+
 # Alias definitions
 if [ -f ~/.aliases ]; then
   . ~/.aliases

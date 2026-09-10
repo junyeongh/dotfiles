@@ -6,6 +6,7 @@ require("configs")
 
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
+  hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets")
   hl.exec_cmd("noctalia-shell")
 
   hl.timer(function()
