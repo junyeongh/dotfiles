@@ -80,8 +80,11 @@ C-g = [
   ":reload-all",
 ]
 
-# https://github.com/helix-editor/helix/issues/1976
 [keys.normal.space]
 # Buffer related key remaps
 b = { a = ":buffer-close-all", b = "buffer_picker", o = ":buffer-close-others", x = ":buffer-close ", n = ":buffer-next", p = ":buffer-previous" }
 q = ":quit"
+
+# https://github.com/helix-editor/helix/pull/3958
+# [keys.normal.space.b]
+# label = "buffer"
