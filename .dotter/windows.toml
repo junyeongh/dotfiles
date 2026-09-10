@@ -3,10 +3,9 @@ includes = []
 packages = ["default"]
 
 [files]
-"configs\\.config\\Code" = "~\\AppData\\Roaming\\Code"
-"configs\\.config\\helix" = "~\\AppData\\Roaming\\helix"
-"configs\\.config\\zed" = "~\\AppData\\Roaming\\Zed"
-"hosts\\windows\\configs" = "~"
+"configs\\.config" = { target = "~\\AppData\\Roaming", type = "symbolic" }
+"configs\\.config\\oh-my-posh" = { target = "~\\.config\\oh-my-posh", type = "symbolic" }
+"hosts\\windows\\configs" = { target = "~", type = "symbolic" }
 "hosts\\windows\\powershell" = { target = "~\\Documents\\PowerShell", type = "symbolic" }
 
 [variables]
