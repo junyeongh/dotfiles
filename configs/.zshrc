@@ -14,29 +14,15 @@ compinit
 
 ####################################################################################################
 # enable tools
-if command -v mise &>/dev/null; then
-  eval "$(mise activate zsh)"
-fi
-if command -v direnv &>/dev/null; then
-  eval "$(direnv hook zsh)"
-fi
-if command -v fnm &>/dev/null; then
-  eval "$(fnm env --use-on-cd --shell zsh)"
-fi
-if command -v herdr &>/dev/null; then
-  eval "$(herdr completion zsh)"
-fi
-if command -v oh-my-posh &>/dev/null; then
-  eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
-  # eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
-  # themes = [kushal, robbyrussell, di4am0nd, negligible]
-fi
-if command -v tailscale &>/dev/null; then
-  eval "$(tailscale completion zsh)"
-fi
-if command -v zoxide >/dev/null; then
-  eval "$(zoxide init zsh)"
-fi
+# eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
+# themes = [kushal, robbyrussell, di4am0nd, negligible]
+eval "$(direnv hook zsh)"
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(herdr completion zsh)"
+eval "$(mise activate zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
+eval "$(tailscale completion zsh)"
+eval "$(zoxide init zsh)"
 
 # Git commit signing goes through op-ssh-sign, which talks to the 1Password GUI
 # app on the local display. Over ssh the approval dialog is unreachable and the
@@ -55,12 +41,25 @@ fi
 if [ -f ~/.aliases.local ]; then
   . ~/.aliases.local
 fi
-# worktrunk
-if command -v git-wt >/dev/null 2>&1; then eval "$(command git-wt config shell init zsh)"; fi
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 ####################################################################################################
 # Programming languages and runtimes
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+
+# `gh auth status` makes a network call (~1s); `gh auth token` is a local
+# keyring lookup (~30ms) and already yields nothing when not authenticated.
+if command -v gh &>/dev/null; then
+  GITHUB_TOKEN=$(gh auth token 2>/dev/null)
+  if [[ -n $GITHUB_TOKEN ]]; then
+    export GITHUB_TOKEN
+    export MISE_GITHUB_TOKEN=$GITHUB_TOKEN
+  else
+    unset GITHUB_TOKEN
+  fi
+fi
+
+if command -v nixos-rebuild &>/dev/null; then
+  function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
+fi

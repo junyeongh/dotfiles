@@ -77,3 +77,10 @@ home-manager switch --flake .#{attribute-name}
 [core]
   sshCommand = ssh.exe
 ```
+
+## Miscellaneous
+
+```pwsh
+# To check environment variables in Windows
+Get-ChildItem Env: | Format-Table -Wrap
+```

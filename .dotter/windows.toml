@@ -3,8 +3,12 @@ includes = []
 packages = ["default"]
 
 [files]
+# target %APPDATA%
 "configs\\.config" = { target = "~\\AppData\\Roaming", type = "symbolic" }
+# target ~/.config
 "configs\\.config\\oh-my-posh" = { target = "~\\.config\\oh-my-posh", type = "symbolic" }
+"configs\\.config\\mise" = { target = "~\\.config\\mise", type = "symbolic" }
+# window specifig configs
 "hosts\\windows\\configs" = { target = "~", type = "symbolic" }
 "hosts\\windows\\powershell" = { target = "~\\Documents\\PowerShell", type = "symbolic" }
 

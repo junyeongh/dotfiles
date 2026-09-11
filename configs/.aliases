@@ -66,56 +66,20 @@ alias hrsa='herdr session attach'
 alias hrss='herdr session stop'
 alias hrsd='herdr session delete'
 
-if command -v cargo &>/dev/null; then
-  alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
-fi
-if command -v claude &>/dev/null; then
-  alias claudex='claude --dangerously-skip-permissions'
-fi
-if command -v eza &>/dev/null; then
-  alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
-  alias tree='eza -all --tree'
-fi
-if command -v fastfetch &>/dev/null; then
-  alias ff='fastfetch'
-fi
-if command -v fzf &>/dev/null; then
-  alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
-fi
-# `gh auth status` makes a network call (~1s); `gh auth token` is a local
-# keyring lookup (~30ms) and already yields nothing when not authenticated.
-if command -v gh &>/dev/null; then
-  GITHUB_TOKEN=$(gh auth token 2>/dev/null)
-  if [[ -n $GITHUB_TOKEN ]]; then
-    export GITHUB_TOKEN
-    export MISE_GITHUB_TOKEN=$GITHUB_TOKEN
-  else
-    unset GITHUB_TOKEN
-  fi
-fi
-if command -v lazydocker &>/dev/null; then
-  alias ld='lazydocker'
-fi
-if command -v lazygit &>/dev/null; then
-  alias lg='lazygit'
-fi
+alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
+alias claudex='claude --dangerously-skip-permissions'
+alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
+alias tree='eza -all --tree'
+alias ff='fastfetch'
+alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
+alias ld='lazydocker'
+alias lg='lazygit'
 
 # Update
-if command -v pnpm &>/dev/null; then
-  alias pnpm-up='pnpm update --global --latest'
-fi
-
-if command -v mise &>/dev/null; then
-  alias mise-up='mise upgrade && mise prune --yes'
-fi
+alias pnpm-up='pnpm update --global --latest'
+alias mise-up='mise upgrade && mise prune --yes'
 
 # nix related
-if command -v nix &>/dev/null; then
-  alias nix-optimise="sudo nix-store --optimise"
-  alias hm="home-manager --flake ~/dotfiles#wsl"
-  alias hm-up="home-manager --flake ~/dotfiles#wsl switch"
-
-  if command -v nixos-rebuild &>/dev/null; then
-    function nixos-up() { sudo nixos-rebuild switch --flake ~/dotfiles#${1:-$(hostname)}; }
-  fi
-fi
+alias nix-optimise="sudo nix-store --optimise"
+alias hm="home-manager --flake ~/dotfiles#wsl"
+alias hm-up="home-manager --flake ~/dotfiles#wsl switch"
