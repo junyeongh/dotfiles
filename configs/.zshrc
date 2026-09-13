@@ -13,17 +13,36 @@ compinit
 # End of lines added by compinstall
 
 ####################################################################################################
-# enable tools
-# eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
-# themes = [kushal, robbyrussell, di4am0nd, negligible]
-eval "$(direnv hook zsh)"
-eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(herdr completion zsh)"
-eval "$(mise activate zsh)"
-eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
-eval "$(tailscale completion zsh)"
-eval "$(zoxide init zsh)"
+# Programming languages and runtimes
 
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+[ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+
+####################################################################################################
+# Alias definitions
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+if [ -f ~/.aliases.local ]; then
+  . ~/.aliases.local
+fi
+
+# enable tools
+eval "$(fnm env --use-on-cd --shell zsh)"
+eval "$(tailscale completion zsh)"
+
+eval "$(mise activate zsh)"
+# enable tools - installed using mise
+eval "$(direnv hook zsh)"
+eval "$(herdr completion zsh)"
+eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
+eval "$(zoxide init zsh)"
+# worktrunk
+eval "$(command git-wt config shell init zsh)"
+eval "$(command wt config shell init zsh)"
+
+####################################################################################################
 # Git commit signing goes through op-ssh-sign, which talks to the 1Password GUI
 # app on the local display. Over ssh the approval dialog is unreachable and the
 # commit just hangs, so drop signing for remote sessions.
@@ -33,20 +52,6 @@ if [[ -n $SSH_CONNECTION ]]; then
   export GIT_CONFIG_KEY_0=commit.gpgsign
   export GIT_CONFIG_VALUE_0=false
 fi
-
-# Alias definitions
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
-fi
-if [ -f ~/.aliases.local ]; then
-  . ~/.aliases.local
-fi
-####################################################################################################
-# Programming languages and runtimes
-
-[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
-[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
-[ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
 
 # `gh auth status` makes a network call (~1s); `gh auth token` is a local
 # keyring lookup (~30ms) and already yields nothing when not authenticated.

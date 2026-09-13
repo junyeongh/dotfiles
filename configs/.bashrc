@@ -83,36 +83,18 @@ if [ -x /usr/bin/dircolors ]; then
   alias egrep='egrep --color=auto'
 fi
 
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+  if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
+  elif [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+  fi
+fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# enable tools
-if command -v mise >/dev/null 2>&1 && [ "$(uname -s)" = "Linux" ]; then
-  eval "$(mise activate bash)"
-fi
-if command -v direnv &>/dev/null; then
-  eval "$(direnv hook bash)"
-fi
-if command -v fnm &>/dev/null; then
-  eval "$(fnm env --use-on-cd --shell bash)"
-fi
-if command -v herdr &>/dev/null; then
-  eval "$(herdr completion bash)"
-fi
-if command -v oh-my-posh &>/dev/null; then
-  eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/negligible_edit.toml)"
-  # eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/{theme}.omp.json')"
-  # themes = [kushal, robbyrussell, di4am0nd, negligible]
-fi
-if command -v tailscale &>/dev/null; then
-  eval "$(tailscale completion bash)"
-fi
-if command -v zoxide >/dev/null; then
-  eval "$(zoxide init bash)"
-fi
-# worktrunk
-if command -v git-wt >/dev/null 2>&1; then eval "$(command git-wt config shell init bash)"; fi
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init bash)"; fi
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -134,20 +116,23 @@ if [ -f ~/.aliases.local ]; then
   . ~/.aliases.local
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
-
 ####################################################################################################
 # Programming languages and runtimes
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f "$HOME/.deno/env" ] && . "$HOME/.deno/env"
 [ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env"
+
+# enable tools
+eval "$(fnm env --use-on-cd --shell bash)"
+eval "$(tailscale completion bash)"
+
+eval "$(mise activate bash)"
+# enable tools - installed using mise
+eval "$(direnv hook bash)"
+eval "$(herdr completion bash)"
+eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/negligible_edit.toml)"
+eval "$(zoxide init bash)"
+# worktrunk
+eval "$(command git-wt config shell init bash)"
+eval "$(command wt config shell init bash)"

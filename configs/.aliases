@@ -58,15 +58,6 @@ if [[ "$TERM_PROGRAM" == "vscode" ]]; then
   export GIT_EDITOR="code --wait"
 fi
 
-# herdr aliases
-alias hr='herdr'
-alias hrs='herdr session'
-alias hrsl='herdr session list'
-alias hrsa='herdr session attach'
-alias hrss='herdr session stop'
-alias hrsd='herdr session delete'
-
-alias cargo-upgrade="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 alias claudex='claude --dangerously-skip-permissions'
 alias ls='eza -all --icons --git --header --group-directories-first --sort=type'
 alias tree='eza -all --tree'
@@ -76,10 +67,19 @@ alias ld='lazydocker'
 alias lg='lazygit'
 
 # Update
-alias pnpm-up='pnpm update --global --latest'
+alias cargo-up="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
 alias mise-up='mise upgrade && mise prune --yes'
+alias pnpm-up='pnpm update --global --latest'
 
 # nix related
 alias nix-optimise="sudo nix-store --optimise"
 alias hm="home-manager --flake ~/dotfiles#wsl"
 alias hm-up="home-manager --flake ~/dotfiles#wsl switch"
+
+# herdr aliases
+alias hr='herdr'
+alias hrs='herdr session'
+alias hrsl='herdr session list'
+alias hrsa='herdr session attach'
+alias hrss='herdr session stop'
+alias hrsd='herdr session delete'
