@@ -117,6 +117,8 @@
     package = pkgs-unstable.tailscale;
   };
   services.solaar.enable = true;
+  # NixOS 26.11 will include solaar (unstable already includes the package)
+  # programs.solaar.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
