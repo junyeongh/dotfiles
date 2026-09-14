@@ -14,6 +14,9 @@ gleam  = "latest"
 lua-language-server = "latest"
 tombi               = "latest"
 
+# Programming Language Formatters
+shfmt = "latest"
+
 # Package managers
 pnpm = "latest"
 
@@ -39,6 +42,7 @@ ripgrep    = "latest"
 rumdl      = "latest"
 typst      = "latest"
 uv         = "latest"
+worktrunk  = "latest"
 yazi       = "latest"
 yq         = "latest"
 zoxide     = "latest"

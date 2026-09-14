@@ -41,6 +41,12 @@ command = "yazi"
 width = "80%"
 height = "80%"
 
+[[keys.command]]
+key = "prefix+shift+b"
+type = "shell"
+command = "herdr plugin action invoke open-sidebar --plugin herdr-sidebar"
+description = "toggle herdr-sidebar"
+
 [ui]
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "spaces"

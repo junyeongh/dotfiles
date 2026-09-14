@@ -87,3 +87,5 @@ desktop.ini
 !local/
 !*example
 !*example.*
+
+**/.claude/.cc-writes/
