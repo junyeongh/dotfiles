@@ -118,7 +118,7 @@ local ipc = "noctalia-shell msg "
 hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "settings toggle"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
 
-hl.bind(mainMod .. " + Semicolon", hl.dsp.exec_cmd(ipc .. "launcher windows"))
+hl.bind(mainMod .. " + Semicolon", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
 

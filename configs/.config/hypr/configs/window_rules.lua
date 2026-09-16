@@ -78,13 +78,13 @@ hl.window_rule({
   match = {
     class = match_regex({
       "1password",
-      "Ferdium",
-      "Spotify",
+      "com.gabm.satty",
       "com.mitchellh.ghostty",
-      "obsidian",
+      "ferdium",
+      "md.obsidian.Obsidian",
       "org.gnome.Nautilus",
       "solaar",
-      "com.gabm.satty",
+      "spotify",
     }),
     workspace = "w[1-99]s[false]"
   },
