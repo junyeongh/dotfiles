@@ -13,7 +13,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kime --no-daemon")
     hl.exec_cmd("dropbox start")
     hl.exec_cmd("1password --silent")
-    hl.exec_cmd("solaar --window hide")
+    -- hl.exec_cmd("solaar --window hide")
     hl.exec_cmd("kanata")
   end, { timeout = 250, type = "oneshot" })
 
