@@ -7,13 +7,6 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    solaar.url = "https://flakehub.com/f/Svenum/Solaar-Flake/*.tar.gz";
-    solaar.inputs.nixpkgs.follows = "nixpkgs-unstable";
-
-    # hyprland.url = "github:hyprwm/Hyprland";
-    # hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
-    # hyprland-plugins.inputs.hyprland.follows = "hyprland";
   };
 
   outputs =

@@ -10,8 +10,6 @@ inputs.nixpkgs.lib.nixosSystem {
     ./configuration.nix
     # ./flakes
 
-    # solaar
-    inputs.solaar.nixosModules.default
     # home-manager
     inputs.home-manager.nixosModules.home-manager
     {

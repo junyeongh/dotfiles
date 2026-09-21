@@ -16,5 +16,8 @@
 
   services.tailscale-systray.enable = true;
 
+  programs.helix.enable = true;
+  programs.helix.defaultEditor = true;
+
   dconf.settings = import ./dconf.nix;
 }

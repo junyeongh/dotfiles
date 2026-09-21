@@ -95,8 +95,10 @@
   };
 
   programs.hyprland.enable = true;
-  # programs.hyprland.package = pkgs-unstable.hyprland;
+  programs.hyprland.package = pkgs-unstable.hyprland;
   programs.hyprland.withUWSM = false;
+  # NixOS 26.11 will include solaar (unstable already includes the package)
+  # programs.solaar.enable = true;
 
   # Sounds
   services.pulseaudio.enable = false;
@@ -116,9 +118,6 @@
     enable = true;
     package = pkgs-unstable.tailscale;
   };
-  services.solaar.enable = true;
-  # NixOS 26.11 will include solaar (unstable already includes the package)
-  # programs.solaar.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
@@ -129,7 +128,6 @@
     NIXOS_OZONE_WL = "1";
   };
   programs.vim.enable = true;
-  programs.vim.defaultEditor = true;
 
   # Fonts
   fonts.packages = with pkgs; [
