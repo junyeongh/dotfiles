@@ -1,0 +1,8 @@
+[language-server.rumdl]
+command = "rumdl"
+args = ["server"]
+
+[[language]]
+name = "markdown"
+language-servers = ["rumdl"]
+formatter = { command = "rumdl", args = ["check", "--fix", "--stdin"] }
