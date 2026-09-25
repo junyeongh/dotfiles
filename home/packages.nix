@@ -11,6 +11,7 @@
   git
   git-lfs
   mise
+  neovim
   nil
   nixd
   nixfmt
