@@ -46,7 +46,3 @@ worktrunk  = "latest"
 yazi       = "latest"
 yq         = "latest"
 zoxide     = "latest"
-
-# Text Editors
-helix  = "latest"
-neovim = "latest"

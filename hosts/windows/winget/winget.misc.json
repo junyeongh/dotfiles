@@ -7,6 +7,7 @@
         { "PackageIdentifier": "AdGuard.AdGuard" },
         { "PackageIdentifier": "AdGuard.AdGuardVPN" },
         { "PackageIdentifier": "Anthropic.Claude" },
+        { "PackageIdentifier": "Blizzard.BattleNet" },
         { "PackageIdentifier": "Discord.Discord" },
         { "PackageIdentifier": "Elgato.StreamDeck" },
         { "PackageIdentifier": "Ferdium.Ferdium" },
@@ -19,10 +20,11 @@
         { "PackageIdentifier": "KiCad.KiCad" },
         { "PackageIdentifier": "Logitech.LogiTune" },
         { "PackageIdentifier": "Notion.Notion" },
+        { "PackageIdentifier": "Notion.NotionCalendar" },
         { "PackageIdentifier": "Obsidian.Obsidian" },
         { "PackageIdentifier": "Olivia.VIA" },
         { "PackageIdentifier": "REALiX.HWiNFO" },
-        { "PackageIdentifier": "ShareX.Share" },
+        { "PackageIdentifier": "ShareX.ShareX" },
         { "PackageIdentifier": "SlackTechnologies.Slack" },
         { "PackageIdentifier": "Surfshark.Surfshark" },
         { "PackageIdentifier": "Valve.Steam" },
@@ -39,7 +41,6 @@
     },
     {
       "Packages": [
-        { "PackageIdentifier": "9PFXXSHC64H3", "_comment": "Raycast" },
         { "PackageIdentifier": "9PKTQ5699M62", "_comment": "iCloud" },
         { "PackageIdentifier": "9PLM9XGG6VKS", "_comment": "Codex" },
         { "PackageIdentifier": "9p7nj351x9tl", "_comment": "SPAN Finder" }

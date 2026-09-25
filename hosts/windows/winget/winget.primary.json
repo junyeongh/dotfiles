@@ -13,7 +13,8 @@
         { "PackageIdentifier": "Logitech.OptionsPlus" },
         { "PackageIdentifier": "Microsoft.PowerToys" },
         { "PackageIdentifier": "Mozilla.Firefox" },
-        { "PackageIdentifier": "voidtools.Everything" }
+        { "PackageIdentifier": "voidtools.Everything" },
+        { "PackageIdentifier": "voidtools.Everything.Cli" }
       ],
       "SourceDetails": {
         "Argument": "https://cdn.winget.microsoft.com/cache",

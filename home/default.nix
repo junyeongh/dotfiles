@@ -13,4 +13,8 @@
   };
 
   programs.home-manager.enable = true;
+
+  programs.neovim.enable = true;
+  programs.helix.enable = true;
+  programs.helix.defaultEditor = true;
 }
