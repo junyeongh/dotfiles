@@ -1,0 +1,72 @@
+snapshot_file := justfile_directory() / "pnpm-global-packages.json"
+
+# List available recipes
+default:
+    @just --list
+
+# Save globally installed pnpm packages to pnpm-global-packages.json
+snapshot:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    pnpm list -g | awk '
+      /── / {
+        pkg = $2
+        sub(/@[^@]*$/, "", pkg)
+        pkgs[n++] = pkg
+      }
+      END {
+        print "{"
+        print "  \"packages\": ["
+        for (i = 0; i < n; i++)
+          printf "    \"%s\"%s\n", pkgs[i], (i < n - 1 ? "," : "")
+        print "  ]"
+        print "}"
+      }
+    ' > "{{ snapshot_file }}"
+    echo "Saved to {{ snapshot_file }}"
+
+# Copy the install command to the clipboard
+install-command:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    cmd="$(just --justfile '{{ justfile() }}' _packages | awk '
+      { pkgs[n++] = $0 }
+      END {
+        print "pnpm add --global \\"
+        for (i = 0; i < n; i++)
+          printf "  %s%s\n", pkgs[i], (i < n - 1 ? " \\" : "")
+      }
+    ')"
+    if command -v wl-copy >/dev/null; then
+      printf '%s\n' "$cmd" | wl-copy
+    elif command -v xclip >/dev/null; then
+      printf '%s\n' "$cmd" | xclip -selection clipboard
+    elif command -v xsel >/dev/null; then
+      printf '%s\n' "$cmd" | xsel --clipboard --input
+    else
+      printf '%s\n' "$cmd"
+      echo "No clipboard tool found (install wl-clipboard or xclip); command printed above" >&2
+      exit 0
+    fi
+    printf 'Copied:\n%s\n' "$cmd"
+
+# Install all packages from the snapshot
+install:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    mapfile -t pkgs < <(just --justfile '{{ justfile() }}' _packages)
+    if (( ${#pkgs[@]} == 0 )); then
+      echo "No packages to install" >&2
+      exit 1
+    fi
+    pnpm add --global "${pkgs[@]}"
+
+# Print package names from the snapshot, one per line
+_packages:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [[ ! -s "{{ snapshot_file }}" ]]; then
+      echo "No snapshot found. Run: just snapshot" >&2
+      exit 1
+    fi
+    jq -r '.packages[]' "{{ snapshot_file }}"

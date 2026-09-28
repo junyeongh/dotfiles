@@ -1,0 +1,14 @@
+{
+  "packages": [
+    "@anthropic-ai/sandbox-runtime",
+    "@github/copilot",
+    "@openai/codex",
+    "oxfmt",
+    "oxlint",
+    "portless",
+    "skills",
+    "typescript",
+    "typescript-language-server",
+    "vscode-json-languageserver"
+  ]
+}
