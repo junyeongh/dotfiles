@@ -29,22 +29,13 @@ navigate_workspace_down = ["shift+j", "down"]
 
 [[keys.command]]
 key = "prefix+alt+g"
-type = "popup"
+type = "pane"
 command = "lazygit"
-width = "80%"
-height = "80%"
-
-[[keys.command]]
-key = "prefix+alt+e"
-type = "popup"
-command = "yazi"
-width = "80%"
-height = "80%"
 
 [[keys.command]]
 key = "prefix+shift+b"
-type = "shell"
-command = "herdr plugin action invoke open-sidebar --plugin herdr-sidebar"
+type = "plugin_action"
+command = "herdr-sidebar.open-sidebar"
 description = "toggle herdr-sidebar"
 
 [ui]

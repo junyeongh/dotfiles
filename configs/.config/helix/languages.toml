@@ -1,8 +1,14 @@
-[language-server.rumdl]
-command = "rumdl"
-args = ["server"]
+[language-server]
+vscode-json-languageserver = { command = "vscode-json-languageserver", args = [
+  "--stdio",
+] }
+rumdl = { command = "rumdl", args = ["server"] }
 
 [[language]]
 name = "markdown"
 language-servers = ["rumdl"]
 formatter = { command = "rumdl", args = ["check", "--fix", "--stdin"] }
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-languageserver"]
