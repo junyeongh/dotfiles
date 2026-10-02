@@ -114,22 +114,23 @@ for i = 1, 10 do
 end
 
 -- noctalia - Core binds
-local ipc = "noctalia-shell msg "
-hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "settings toggle"))
-hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
+local ipc = "noctalia msg "
+hl.bind(mainMod .. " + Comma", hl.dsp.exec_cmd(ipc .. "panel-toggle settings"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 
-hl.bind(mainMod .. " + Semicolon", hl.dsp.exec_cmd(ipc .. "launcher emoji"))
-hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
+hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd(ipc .. "window-switcher"))
+hl.bind(mainMod .. " + Semicolon", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher /emo"))
+hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 
-hl.bind(mainMod .. " + CTRL + SHIFT + L", hl.dsp.exec_cmd(ipc .. "lockScreen lock"))
+hl.bind(mainMod .. " + CTRL + SHIFT + L", hl.dsp.exec_cmd(ipc .. "session lock"))
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "volume muteInput"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "mic-mute"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
 
 ---------------
 -- Custom binds

@@ -20,8 +20,7 @@
   google-chrome
   heynote
   kanata
-  kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
-  noctalia-shell
+  # kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
   obsidian
   openssl
   spotify

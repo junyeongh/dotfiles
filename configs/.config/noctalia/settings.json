@@ -43,7 +43,7 @@
         "autoHideDelay": 500,
         "autoShowDelay": 150,
         "backgroundOpacity": 0.93,
-        "barType": "floating",
+        "barType": "simple",
         "capsuleColorKey": "primary",
         "capsuleOpacity": 0.75,
         "contentPadding": 2,
@@ -54,8 +54,8 @@
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginHorizontal": 0,
+        "marginVertical": 0,
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
@@ -75,7 +75,7 @@
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
-        "widgetSpacing": 6,
+        "widgetSpacing": 4,
         "widgets": {
             "center": [
                 {
@@ -808,7 +808,7 @@
         "enableUserTheming": false
     },
     "ui": {
-        "boxBorderEnabled": true,
+        "boxBorderEnabled": false,
         "fontDefault": "Pretendard",
         "fontDefaultScale": 1,
         "fontFixed": "D2CodingLigature Nerd Font Mono",

@@ -6,8 +6,12 @@ require("configs")
 
 -- https://wiki.hypr.land/Configuring/Basics/Autostart/
 hl.on("hyprland.start", function()
+  hl.exec_cmd(
+    "dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE XDG_CURRENT_DESKTOP"
+    .. " && systemctl --user stop hyprland-session.target && systemctl --user start hyprland-session.target"
+  )
   hl.exec_cmd("gnome-keyring-daemon --start --components=pkcs11,secrets")
-  hl.exec_cmd("noctalia-shell")
+  hl.exec_cmd("noctalia")
 
   hl.timer(function()
     hl.exec_cmd("kime --no-daemon")
@@ -17,13 +21,17 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kanata")
   end, { timeout = 250, type = "oneshot" })
 
-  -- KakaoTalk
   -- hl.timer(function()
   --   hl.exec_cmd("xembedsniproxy", { workspace = "special:xembedsniproxy" })
   -- end, { timeout = 500, type = "oneshot" })
+  -- KakaoTalk
   -- hl.timer(function()
   --   hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
   -- end, { timeout = 1000, type = "oneshot" })
+end)
+
+hl.on("hyprland.shutdown", function()
+  hl.exec_cmd("systemctl --user stop hyprland-session.target")
 end)
 
 -------------------------------

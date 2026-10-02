@@ -36,6 +36,36 @@ hl.window_rule({
   float = true,
 })
 
+-- Make xembedsniproxy's XEmbed icon containers (e.g., KakaoTalk tray icon via Bottles) invisible.
+-- They can't be moved away: xembedsniproxy repositions them on every tray click, pulling them back.
+-- Same matcher as fix-xwayland-drags
+hl.window_rule({
+  name        = "hide-xembedsniproxy-containers",
+  match       = {
+    class    = "^$",
+    title    = "^$",
+    xwayland = true,
+  },
+
+  opacity     = "0.0 override",
+  border_size = 0,
+  no_shadow   = true,
+  no_blur     = true,
+  no_anim     = true,
+})
+-- Wine/Proton tray context menus (e.g., KakaoTalk) open at xembedsniproxy's container
+-- position instead of the tray icon; move them under the cursor instead.
+hl.window_rule({
+  name  = "move-proton-tray-menus-to-cursor",
+  match = {
+    class = "^steam_proton$",
+    title = "^$",
+    float = true,
+  },
+
+  move  = { "cursor_x - (window_w * 0.5)", "cursor_y" },
+})
+
 -- Build a "^(a|b|c)$" class-match regex from a plain list of class names,
 -- escaping literal dots so they aren't treated as regex wildcards.
 local function match_regex(classes)
