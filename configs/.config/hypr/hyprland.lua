@@ -21,13 +21,10 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("kanata")
   end, { timeout = 250, type = "oneshot" })
 
-  -- hl.timer(function()
-  --   hl.exec_cmd("xembedsniproxy", { workspace = "special:xembedsniproxy" })
-  -- end, { timeout = 500, type = "oneshot" })
   -- KakaoTalk
-  -- hl.timer(function()
-  --   hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
-  -- end, { timeout = 1000, type = "oneshot" })
+  hl.timer(function()
+    hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
+  end, { timeout = 1000, type = "oneshot" })
 end)
 
 hl.on("hyprland.shutdown", function()
