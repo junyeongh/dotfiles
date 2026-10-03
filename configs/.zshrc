@@ -30,7 +30,9 @@ fi
 
 # enable tools
 eval "$(fnm env --use-on-cd --shell zsh)"
-eval "$(tailscale completion zsh)"
+if command -v tailscale &>/dev/null; then
+  eval "$(tailscale completion zsh)"
+fi
 
 eval "$(mise activate zsh)"
 # enable tools - installed using mise
