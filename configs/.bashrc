@@ -134,5 +134,5 @@ eval "$(herdr completion bash)"
 eval "$(oh-my-posh init bash --config ~/.config/oh-my-posh/negligible_edit.toml)"
 eval "$(zoxide init bash)"
 # worktrunk
-eval "$(command git-wt config shell init bash)"
-eval "$(command wt config shell init bash)"
+# eval "$(command git-wt config shell init bash)"
+# eval "$(command wt config shell init bash)"

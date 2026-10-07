@@ -41,8 +41,8 @@ eval "$(herdr completion zsh)"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/negligible_edit.toml)"
 eval "$(zoxide init zsh)"
 # worktrunk
-eval "$(command git-wt config shell init zsh)"
-eval "$(command wt config shell init zsh)"
+# eval "$(command git-wt config shell init zsh)"
+# eval "$(command wt config shell init zsh)"
 
 ####################################################################################################
 # Git commit signing goes through op-ssh-sign, which talks to the 1Password GUI
