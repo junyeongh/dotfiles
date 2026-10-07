@@ -25,7 +25,6 @@ capsule_radius = 10
 capsule_thickness = 0.75
 start = ["workspaces"]
 center = ["active_window"]
-end = ["group:g1", "group:g3", "group:g2", "clock", "control-center"]
 concave_edge_corners = false
 font_family = "D2CodingLigature Nerd Font"
 margin_ends = 4
@@ -33,6 +32,7 @@ padding = 12
 radius = 8
 radius_top_left = 0
 radius_top_right = 0
+end = ["group:g1", "group:g3", "group:g2", "clock", "group:g4"]
 
 [[bar.default.capsule_group]]
 accordion = false
@@ -63,6 +63,17 @@ id = "g3"
 members = ["network", "bluetooth"]
 opacity = 1.0
 padding = 6.0
+
+[[bar.default.capsule_group]]
+accordion = false
+accordion_direction = "end"
+enabled = true
+fill = "shadow"
+id = "g4"
+members = ["control-center", "session"]
+opacity = 1.0
+padding = 6.0
+radius = 10.0
 
 
 [widget.battery]

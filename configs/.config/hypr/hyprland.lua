@@ -22,9 +22,9 @@ hl.on("hyprland.start", function()
   end, { timeout = 250, type = "oneshot" })
 
   -- KakaoTalk
-  hl.timer(function()
-    hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
-  end, { timeout = 1000, type = "oneshot" })
+  -- hl.timer(function()
+  --   hl.exec_cmd("bottles-cli run -b Kakaotalk -p KakaoTalk")
+  -- end, { timeout = 1000, type = "oneshot" })
 end)
 
 hl.on("hyprland.shutdown", function()
