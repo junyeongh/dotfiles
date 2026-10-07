@@ -10,9 +10,15 @@ esac
 # Builtin command Aliases
 alias mkdir='mkdir -pv'
 
-function cd_ls() {
-  builtin cd "$@" && ls -al
-}
+if command -v eza &>/dev/null; then
+  function cd_ls() {
+    eza "$@" && ls -al
+  }
+else
+  function cd_ls() {
+    builtin cd "$@" && ls -al
+  }
+fi
 alias cd='cd_ls'
 
 # Git aliases
@@ -65,6 +71,7 @@ alias ff='fastfetch'
 alias fzfp='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 alias ld='lazydocker'
 alias lg='lazygit'
+alias zj='zellij'
 
 # Update
 alias cargo-up="cargo install $(cargo install --list | awk '/:$/ { print $1; }')"
