@@ -2,8 +2,7 @@
 
 # https://search.nixos.org/packages
 (with pkgs; [ ])
-++
-(with pkgs-unstable; [
+++ (with pkgs-unstable; [
   btop
   dotter
   fnm

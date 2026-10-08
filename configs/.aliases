@@ -12,7 +12,7 @@ alias mkdir='mkdir -pv'
 
 if command -v eza &>/dev/null; then
   function cd_ls() {
-    eza "$@" && ls -al
+    builtin cd "$@" && eza -al
   }
 else
   function cd_ls() {

@@ -5,8 +5,7 @@
   with pkgs;
   # Stable packages
   [ ])
-++
-(with pkgs-unstable; [
+++ (with pkgs-unstable; [
   # Unstable packages
   (bottles.override { removeWarningPopup = true; })
   dbeaver-bin
