@@ -27,7 +27,6 @@
   vscode
   wofi
   yaak
-  zathura
   zed-editor
 
   # Screenshot

@@ -6,6 +6,27 @@ mode = "light"
 sidebar = "full"
 sidebar_section = "full"
 
+[control_center.calendar]
+show_events_card = false
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "nightlight"
+
+[[control_center.shortcuts]]
+type = "notification"
+
 [dock]
 enabled = true
 icon_size = 36
@@ -23,8 +44,6 @@ capsule = true
 capsule_fill = "shadow"
 capsule_radius = 10
 capsule_thickness = 0.75
-start = ["workspaces"]
-center = ["active_window"]
 concave_edge_corners = false
 font_family = "D2CodingLigature Nerd Font"
 margin_ends = 4
@@ -32,7 +51,10 @@ padding = 12
 radius = 8
 radius_top_left = 0
 radius_top_right = 0
-end = ["group:g1", "group:g3", "group:g2", "clock", "group:g4"]
+
+start = ["workspaces", "active_window"]
+center = ["clock", "notes"]
+end = ["group:g1", "group:g2", "group:g3", "group:g4"]
 
 [[bar.default.capsule_group]]
 accordion = false
@@ -50,7 +72,7 @@ accordion_direction = "end"
 enabled = true
 fill = "shadow"
 id = "g2"
-members = ["volume", "brightness", "battery"]
+members = ["bluetooth", "network", "bar"]
 opacity = 1.0
 padding = 6.0
 
@@ -60,7 +82,7 @@ accordion_direction = "end"
 enabled = true
 fill = "shadow"
 id = "g3"
-members = ["network", "bluetooth"]
+members = ["volume", "brightness", "battery"]
 opacity = 1.0
 padding = 6.0
 
@@ -75,9 +97,8 @@ opacity = 1.0
 padding = 6.0
 radius = 10.0
 
-
 [widget.battery]
-hide_when_full = true
+hide_when_full = false
 show_label = false
 
 [widget.brightness]
@@ -96,9 +117,23 @@ pinned = ["kime"]
 show_label = false
 
 [widget.clock]
+tooltip_format = "{:%Y-%m-%d}"
 format = "{:%-I:%M %p}"
 
 [widget.lock_keys]
 display = "full"
 hide_when_off = true
 show_scroll_lock = true
+
+[widget.bar]
+type = "rylos/tailnet:bar"
+
+[widget.notes]
+type = "noctalia/notes:notes"
+
+[plugins]
+enabled = ["rylos/tailnet", "noctalia/notes"]
+
+[plugin_settings."noctalia/umbriel-companion"]
+panel_placement = "floating"
+panel_position = "center"

@@ -7,6 +7,9 @@
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+
+    # openlogi.url = "github:AprilNEA/OpenLogi";
+    # openlogi.inputs.nixpkgs.follows = "nixpkgs-unstable";
   };
 
   outputs =

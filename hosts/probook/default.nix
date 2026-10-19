@@ -31,5 +31,7 @@ inputs.nixpkgs.lib.nixosSystem {
           ];
         };
     }
+
+    # inputs.openlogi.nixosModules.default
   ];
 }

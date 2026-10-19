@@ -245,6 +245,7 @@
   },
   "notebook.lineNumbers": "on",
   "oxc.enable": true,
+  "powershell.integratedConsole.suppressTerminalStoppedNotification": true,
   "powershell.promptToUpdatePowerShell": false,
   "quotick.showWelcomeMessage": false,
   "remote.autoForwardPortsSource": "hybrid",
@@ -334,6 +335,10 @@
   },
   "workbench.editor.showTabIndex": true,
   "workbench.editor.useModal": "some",
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.md": "vscode.markdown.preview.editor"
+  },
   "workbench.experimental.modernUI": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none",
@@ -346,5 +351,12 @@
     "**/.gitea/workflows/*.yaml",
     "**/.forgejo/workflows/*.yml",
     "**/.forgejo/workflows/*.yaml"
+  ],
+  "settingsSync.ignoredSettings": [
+    "deno.path",
+    "oxc.path.node",
+    "oxc.path.oxfmt",
+    "oxc.path.oxlint",
+    "vscode-just.justPath"
   ]
 }

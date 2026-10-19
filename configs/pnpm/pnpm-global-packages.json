@@ -1,7 +1,6 @@
 {
   "packages": [
     "@anthropic-ai/sandbox-runtime",
-    "@github/copilot",
     "@openai/codex",
     "oxfmt",
     "oxlint",

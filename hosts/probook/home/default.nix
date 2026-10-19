@@ -25,6 +25,7 @@
   };
 
   programs.noctalia.enable = true;
+  programs.zathura.enable = true;
 
   services.xembed-sni-proxy.enable = true;
   services.xembed-sni-proxy.package = pkgs.kdePackages.plasma-workspace;

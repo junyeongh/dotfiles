@@ -86,6 +86,8 @@
   programs.hyprland.withUWSM = false;
   # NixOS 26.11 will include solaar (unstable already includes the package)
   # programs.solaar.enable = true;
+  # programs.openlogi.enable = true;
+  # programs.openlogi.launchAtLogin = true;
 
   # Sounds
   services.pulseaudio.enable = false;
