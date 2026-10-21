@@ -13,7 +13,7 @@ local fileManager = "nautilus"
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 -- local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-local mainMod = "SUPER" -- Sets "Windows" key as main modifier
+local mainMod     = "SUPER" -- Sets "Windows" key as main modifier
 
 hl.bind(mainMod .. " + SHIFT + E",
   hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -91,10 +91,10 @@ hl.bind(mainMod .. " + SHIFT + X", function()
     hl.dispatch(hl.dsp.window.move({ workspace = "special:minimized", follow = false }))
   end
 end)
--- hl.bind(mainMod .. " + X", function()
---   hl.dispatch(hl.dsp.window.tag({ tag = "temp", window = hl.get_active_window() }))
---   hl.dispatch(hl.dsp.window.move({ workspace = "special:temp", follow = false }))
--- end)
+hl.bind(mainMod .. " + X", function()
+  hl.dispatch(hl.dsp.window.tag({ tag = "temp", window = hl.get_active_window() }))
+  hl.dispatch(hl.dsp.window.move({ workspace = "special:temp", follow = false }))
+end)
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

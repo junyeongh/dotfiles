@@ -64,11 +64,11 @@ A-k = [
 G = "goto_file_end"
 # https://gist.github.com/Schr3da/4767e436f2cc47c5d23fc05745fd6d03
 C-e = [
-  ':sh rm -f /tmp/unique-file',
-  ':insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file',
+  ":sh rm -f /tmp/unique-file",
+  ":insert-output yazi %{buffer_name} --chooser-file=/tmp/unique-file > /dev/tty",
   ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
-  ':open %sh{cat /tmp/unique-file}',
-  ':redraw',
+  ":open %sh{cat /tmp/unique-file}",
+  ":redraw",
 ]
 # https://github.com/helix-editor/helix/discussions/12045
 C-g = [
