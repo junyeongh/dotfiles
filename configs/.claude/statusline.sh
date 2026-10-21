@@ -129,7 +129,11 @@ output=""
 output="${output}${GREEN}(v${VERSION})${RESET} "
 output="${output}${CYAN}${CURRENT_DIR}${RESET}"
 
-[ -n "$GIT_BRANCH" ] && output="${output} ${RED}:: ${GIT_BRANCH} ${RESET}"
+if [ -n "$GIT_BRANCH" ]; then
+  output="${output} ${RED}:: ${GIT_BRANCH} ${RESET}"
+else
+  output="${output} "
+fi
 
 output="${output}${CLAUDE_ORANGE}${MODEL_DISPLAY_NAME}${RESET}"
 [ -n "$EFFORT_LEVEL" ] && output="${output} ${CLAUDE_ORANGE}${EFFORT_LEVEL}${RESET}"

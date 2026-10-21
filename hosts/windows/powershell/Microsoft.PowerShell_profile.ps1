@@ -79,8 +79,11 @@ if (Get-Command cargo -ErrorAction SilentlyContinue) {
 }
 
 if (Get-Command claude -ErrorAction SilentlyContinue) {
-    Set-ProfileAlias -Name claudex -FunctionName Invoke-ClaudeUnsafe -ScriptBlock {
+    Set-ProfileAlias -Name clx -FunctionName Invoke-ClaudeUnsafe -ScriptBlock {
         claude --dangerously-skip-permissions @args
+    }
+    Set-ProfileAlias -Name clr -FunctionName Invoke-ClaudeUnsafe -ScriptBlock {
+        claude rc @args
     }
 }
 
