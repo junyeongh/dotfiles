@@ -336,7 +336,6 @@
   "workbench.editor.showTabIndex": true,
   "workbench.editor.useModal": "some",
   "workbench.editorAssociations": {
-    "*.copilotmd": "vscode.markdown.preview.editor",
     "*.md": "vscode.markdown.preview.editor"
   },
   "workbench.experimental.modernUI": true,

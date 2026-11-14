@@ -26,7 +26,7 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + CTRL + SHIFT + C", hl.dsp.window.close())
 -- i3-like groupped(tabbed) windows
 hl.bind(mainMod .. " + T", hl.dsp.group.toggle())
-hl.bind(mainMod .. " + SHIFT + T", hl.dsp.group.lock_active())
+hl.bind(mainMod .. " + SHIFT + T", hl.dsp.group.lock())
 hl.bind(mainMod .. " + H", hl.dsp.group.prev())
 hl.bind(mainMod .. " + L", hl.dsp.group.next())
 -- Move focus
