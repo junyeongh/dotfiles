@@ -4,6 +4,7 @@
 (with pkgs; [ ])
 ++ (with pkgs-unstable; [
   btop
+  direnv
   dotter
   fnm
   gh
