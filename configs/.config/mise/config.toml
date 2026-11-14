@@ -1,17 +1,21 @@
 #:schema https://mise.jdx.dev/schema/mise.json
+
+# [settings]
+# tool_update.global_auto = true
+
 [tools]
 # Programming Languages
-bun  = "latest"
+bun = "latest"
 deno = "latest"
-go   = "latest"
+go = "latest"
 # BEAM
 elixir = "latest"
 erlang = "latest"
-gleam  = "latest"
+gleam = "latest"
 
 # Programming Language Servers
 lua-language-server = "latest"
-tombi               = "latest"
+tombi = "latest"
 
 # Programming Language Formatters
 shfmt = "latest"
@@ -20,28 +24,29 @@ shfmt = "latest"
 pnpm = "latest"
 
 # CLI Tools
-act        = "latest"
-ast-grep   = "latest"
-bat        = "latest"
-ctop       = "latest"
-delta      = "latest"
+act = "latest"
+ast-grep = "latest"
+bat = "latest"
+claude = { version = "latest", auto_update = true, minimum_release_age = "0" }
+ctop = "latest"
+delta = "latest"
 difftastic = "latest"
-direnv     = "latest"
-eza        = "latest"
-fastfetch  = "latest"
-fzf        = "latest"
-herdr      = "latest"
-hunk       = "latest"
-hyperfine  = "latest"
-jq         = "latest"
-just       = "latest"
+eza = "latest"
+fastfetch = "latest"
+fzf = "latest"
+github-cli = "latest"
+herdr = "latest"
+hunk = "latest"
+hyperfine = "latest"
+jq = "latest"
+just = "latest"
 lazydocker = "latest"
-lazygit    = "latest"
+lazygit = "latest"
 oh-my-posh = "latest"
-ripgrep    = "latest"
-rumdl      = "latest"
-typst      = "latest"
-uv         = "latest"
-yazi       = "latest"
-yq         = "latest"
-zoxide     = "latest"
+ripgrep = "latest"
+rumdl = "latest"
+typst = "latest"
+uv = "latest"
+yazi = "latest"
+yq = "latest"
+zoxide = "latest"
