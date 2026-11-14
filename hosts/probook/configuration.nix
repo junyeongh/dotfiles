@@ -100,6 +100,9 @@
   };
   # Other services
   services.fprintd.enable = true;
+  # pam_fprintd can't tell a herdr pane attached over ssh is remote, so sudo
+  # waits on the sensor; time out quickly to fall back to the password prompt.
+  security.pam.services.sudo.rules.auth.fprintd.settings.timeout = 5;
   services.openssh.enable = true;
   services.printing.enable = true;
 

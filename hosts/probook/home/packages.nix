@@ -1,11 +1,12 @@
 { pkgs, pkgs-unstable, ... }:
 
 # https://search.nixos.org/packages
-(
-  with pkgs;
-  # Stable packages
-  [ ])
-++ (with pkgs-unstable; [
+# (
+#   with pkgs;
+#   # Stable packages
+#   [ ])
+# ++
+(with pkgs-unstable; [
   # Unstable packages
   (bottles.override { removeWarningPopup = true; })
   dbeaver-bin
@@ -17,17 +18,20 @@
   ghostty
   gnome-tweaks
   google-chrome
+  herdr
+  herdr-desktop
   heynote
   kanata
-  # kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
   obsidian
   openssl
   spotify
   vlc
   vscode
-  wofi
-  yaak
   zed-editor
+  # herdr-core
+  # kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
+  # wofi
+  # yaak
 
   # Screenshot
   grim
@@ -41,15 +45,15 @@
   sox
 
   # gnome extensions
-  gnomeExtensions.appindicator # AppIndicator and KStatusNotifierItem Support
-  gnomeExtensions.apps # Apps Menu
-  gnomeExtensions.blur-my-shell # Blur my Shell
-  gnomeExtensions.caffeine # Caffeine
-  gnomeExtensions.clipboard-indicator # Clipboard Indicator
-  gnomeExtensions.dash-to-dock # Dash to Dock
-  gnomeExtensions.osd-volume-number # OSD Volume Number
-  gnomeExtensions.quick-settings-tweaker # Quick Settings Tweaks
-  gnomeExtensions.removable-drive-menu # Removable Drive Menu
-  gnomeExtensions.tactile # Tactile
-  gnomeExtensions.tiling-assistant # Tiling Assistant
+  # gnomeExtensions.appindicator           # AppIndicator and KStatusNotifierItem Support
+  # gnomeExtensions.apps                   # Apps Menu
+  # gnomeExtensions.blur-my-shell          # Blur my Shell
+  # gnomeExtensions.caffeine               # Caffeine
+  # gnomeExtensions.clipboard-indicator    # Clipboard Indicator
+  # gnomeExtensions.dash-to-dock           # Dash to Dock
+  # gnomeExtensions.osd-volume-number      # OSD Volume Number
+  # gnomeExtensions.quick-settings-tweaker # Quick Settings Tweaks
+  # gnomeExtensions.removable-drive-menu   # Removable Drive Menu
+  # gnomeExtensions.tactile                # Tactile
+  # gnomeExtensions.tiling-assistant       # Tiling Assistant
 ])
