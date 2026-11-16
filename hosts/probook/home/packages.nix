@@ -19,6 +19,7 @@
   gnome-tweaks
   google-chrome
   herdr
+  herdr-core
   herdr-desktop
   heynote
   kanata
@@ -28,7 +29,6 @@
   vlc
   vscode
   zed-editor
-  # herdr-core
   # kdePackages.plasma-workspace # for xembedsniproxy (Wine tray icon -> noctalia-shell tray bridge)
   # wofi
   # yaak
