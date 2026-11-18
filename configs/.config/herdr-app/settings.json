@@ -1,0 +1,14 @@
+{
+  "zoom": 1,
+  "sounds": {
+    "enabled": true
+  },
+  "font_ligatures": true,
+  "terminal_line_height": 1,
+  "terminal_cell_width": 1,
+  "terminal_scroll_speed": 1,
+  "telemetry": false,
+  "minimum_contrast": 1,
+  "ui_font": "Bahnschrift",
+  "appearance": "dark"
+}
