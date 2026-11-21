@@ -9,6 +9,7 @@ import {
   window,
   layout,
   settings,
+  nextCommand,
 } from 'herdr';
 
 function find(node, id) {
@@ -48,8 +49,27 @@ function label(tab, lead) {
   return (tab.name === prog || !tab.named) && telling ? live : base;
 }
 
+// Any sidebar shown: hide both. Both hidden: show both.
+function toggleBothSidebars() {
+  const root = layout();
+  const nodes = ['sidebar', 'right-sidebar']
+    .map((id) => find(root, id))
+    .filter(Boolean);
+  const anyShown = nodes.some((n) => !n.hidden);
+  for (const n of nodes)
+    run(anyShown ? 'layout.hide' : 'layout.show', { id: n.id });
+}
+
 export default class Tabs extends View {
-  init() {
+  init(_props, cx) {
+    // Key commands bound as "hr-plus-tabs.<command>" in keys.json.
+    cx.spawn(async (cx) => {
+      for (;;) {
+        const c = await nextCommand();
+        if (c === 'toggle-sidebars') toggleBothSidebars();
+        cx.notify();
+      }
+    });
     this.pressed = null;
     this.scroll = ScrollHandle.new();
     try {
