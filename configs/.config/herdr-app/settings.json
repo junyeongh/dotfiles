@@ -9,6 +9,5 @@
   "terminal_scroll_speed": 1,
   "telemetry": false,
   "minimum_contrast": 1,
-  "ui_font": "Bahnschrift",
-  "appearance": "dark"
+  "ui_font": "Bahnschrift"
 }

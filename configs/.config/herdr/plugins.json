@@ -2,7 +2,7 @@
   {
     "plugin_id": "herdr-sidebar",
     "name": "herdr-sidebar",
-    "version": "0.15.1",
+    "version": "0.16.0",
     "min_herdr_version": "0.8.0",
     "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
     "manifest_path": "/home/yeong/.config/herdr/plugins/github-installations/herdr-sidebar-7ff2582a7c8a/718641-0/checkout/plugins/herdr-sidebar/herdr-plugin.toml",
@@ -271,6 +271,48 @@
     ],
     "events": [
       {
+        "on": "pane.closed",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--reap"
+        ]
+      },
+      {
+        "on": "pane.closed",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--reap"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--reap"
+        ]
+      },
+      {
+        "on": "pane.exited",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--reap"
+        ]
+      },
+      {
         "on": "pane.focused",
         "platforms": [
           "linux",
@@ -283,6 +325,26 @@
       },
       {
         "on": "pane.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "pane.moved",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "pane.moved",
         "platforms": [
           "windows"
         ],
