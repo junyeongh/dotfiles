@@ -23,7 +23,6 @@ pnpm = "latest"
 act = "latest"
 ast-grep = "latest"
 bat = "latest"
-claude = { version = "latest", auto_update = true, minimum_release_age = "0" }
 ctop = "latest"
 delta = "latest"
 difftastic = "latest"
@@ -45,3 +44,7 @@ uv = "latest"
 yazi = "latest"
 yq = "latest"
 zoxide = "latest"
+
+# Agentic Tools
+claude = { version = "latest", auto_update = true, minimum_release_age = "0" }
+codex = { version = "latest", auto_update = true, minimum_release_age = "0" }
