@@ -1,7 +1,6 @@
 {
   "packages": [
     "@anthropic-ai/sandbox-runtime",
-    "@openai/codex",
     "oxfmt",
     "oxlint",
     "portless",
