@@ -29,7 +29,9 @@
     "pyright-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "serena@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "delta@zed-industries": true,
+    "cc-plugin-you-should-know@builtin": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -43,6 +45,12 @@
   "modelSettings": {
     "claude-opus-5-5": {
       "effortLevel": "medium"
+    },
+    "zed-industries": {
+      "source": {
+        "source": "github",
+        "repo": "zed-industries/delta-claude"
+      }
     }
   },
   "tui": "fullscreen",
